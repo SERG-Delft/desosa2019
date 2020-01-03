@@ -1,71 +1,77 @@
 ---
 layout: default
-title: Delft Students on Software Architecture -- DESOSA 2015
+title: Delft Students on Software Architecture -- DESOSA 2019
 overview: true
 creator: 
 - role: Editor
 - text: Arie van Deursen and Rogier Slag (editors)
-date: August 2015, Version 1.1
+date: December 2019, Version 0.1
 ---
 
-# Delft Students on Software Architecture: DESOSA 2015
+# Delft Students on Software Architecture: DESOSA 2019
 
 
-**[Arie van Deursen] and [Rogier Slag].**<br/>
-*Delft University of Technology, The Netherlands, July 2, 2015*
+**[Arie van Deursen], [Maurício Aniche], and [Andy Zaidman]**<br/>
+*Delft University of Technology, The Netherlands, December 20, 2019*
 
 [arie van deursen]: http://avandeursen.com
-[rogier slag]: https://github.com/rogierslag
+[Andy Zaidman]: http://www.st.ewi.tudelft.nl/~zaidman/
+[maurício aniche]: http://www.mauricioaniche.com
+
+
+We are proud to present the fifth edition of
+_Delft Students on Software Architecture_, a collection of 25 architectural descriptions of open source software systems written by students from Delft University of Technology during a [master-level course][in4315] that took place in the spring of 2019.
+
+[in4315]: https://se.ewi.tudelft.nl/delftswa2019/
+
+In this course, teams of approximately 4 students could adopt an open source project of choice on GitHub.
+The projects selected had to be sufficiently complex and actively maintained (one or more pull requests merged per day).
+
+During an 8-week period, the students spent one third of their time on this course, and engaged with these systems in order to understand and describe their software architecture.
+
+Inspired by Amy Brown and Greg Wilson's [Architecture of Open Source Applications][aosa], we decided to organize each description as a chapter, resulting in the present online book.
 
 
 
-_Delft Students on Software Architecture_ is a collection of architectural descriptions of open source software systems written by students from Delft University of Technology during a [master-level course][in4315] taking place in the spring of 2015.
-
-[in4315]: http://www.studiegids.tudelft.nl/a101_displayCourse.do?course_id=31246
-
-At the start of the course, teams of 3-4 students could adopt a project of choice on GitHub. The projects selected had to be sufficiently complex and actively maintained (one or more pull requests merged per day).
-
-During a 10 week period, the students spent one third of their time on this course,and engaged with these systems in order to understand and describe their software architecture.
-
-Inspired by Brown and Wilsons' [Architecture of Open Source Applications][aosa], we decided to organize each description as a chapter, resulting in the present online book.
-
-## Recurring Themes
-
-The chapters share several common themes, which are based on smaller assignments the students conducted as part of the course. These themes cover different architectural 'theories' as available on the web or in textbooks. The course used  Rozanski and Woods' [Software Systems Architecture][rw], and therefore several of their architectural [viewpoints] and [perspectives] recur.
+The chapters share several common themes, which are based on smaller assignments the students conducted as part of the course.
+These themes cover different architectural 'theories' as available on the web or in textbooks.
+The course used  Rozanski and Woods' [Software Systems Architecture][rw], and therefore several of their architectural [viewpoints] and [perspectives] recur.
 
 [viewpoints]: http://www.viewpoints-and-perspectives.info/home/viewpoints/
 [perspectives]: http://www.viewpoints-and-perspectives.info/home/perspectives/
 
-The first theme is outward looking, focusing on the use of the system. Thus, many of the chapters contain an explicit [stakeholder analysis], as well as a description of the [context] in which the systems operate. These were based on available online documentation, as well as on an analysis of open and recently closed issues for these systems.
+The first theme is outward looking, focusing on the use of the system.
+Thus, many of the chapters contain an explicit [stakeholder analysis], as well as a description of the [context] in which the systems operate.
+These were based on available online documentation, as well as on an analysis of open and recently closed (GitHub) issues for these systems.
 
 [context]: http://www.viewpoints-and-perspectives.info/home/viewpoints/context/
 [stakeholder analysis]: http://www.mindtools.com/pages/article/newPPM_07.htm
 
-A second theme involves the [development viewpoint][development], covering modules, layers, components, and their inter-dependencies. Furthermore, it addresses integration and testing processes used for the system under analysis.
+A second theme involves the [development viewpoint][development], covering modules, layers, components, and their inter-dependencies.
+Furthermore, it addresses integration and testing processes used for the system under analysis.
 
-[development]: http://www.viewpoints-and-perspectives.info/home/viewpoints/
+[development]: https://www.viewpoints-and-perspectives.info/home/viewpoints/development/
 
-A third recurring theme is _variability management_. Many of today's software systems are highly configurable. In such systems, different features can be enabled or disabled, at compile time or at run time. Using techniques from the field of [product line engineering][fospl], several of the chapters provide feature-based variability models of the systems under study.
+A third recurring theme is [technical debt][debt]. Large and long existing projects are commonly vulnerable to debt.
+The students assessed the current debt in the systems and provided proposals on resolving this debt where possible.
 
-A fourth theme is [metrics-based evaluation of software architectures][bouwers]. Using such metrics architects can discuss  (desired) quality attributes (performance, scaleability, maintainability, …) of a system quantitatively. Therefore various chapters discuss metrics and in some cases actual measurements tailored towards the systems under analysis.
+[debt]: https://speakerdeck.com/avandeursen/lehman-versus-lehman-dealing-with-debt?slide=2
+
+Besides these common themes, students were encouraged to include an analysis of additional [viewpoints] and [perspectives], addressing, e.g., security, privacy, regulatory, evolution, or product configuration aspects of the system they studied.
 
 
 ## First-Hand Experience
 
-Last but not least, the chapters are also based on the student's experience in actually contributing to the systems described. As part of the course over 75 pull requests to the projects under study were made, including refactorings
-([Jekyll 3545](https://github.com/jekyll/jekyll/pull/3545),
-  [Docker 11350](https://github.com/docker/docker/pull/11350),
-  [Docker 11323](https://github.com/docker/docker/pull/11323),
-  [Syncany 391](https://github.com/syncany/syncany/pull/391)), bug fixes
-([Diaspora 5714](https://github.com/diaspora/diaspora/pull/5714),
- [OpenRA 7486](https://github.com/OpenRA/OpenRA/pull/7486), [OpenRA 7544](https://github.com/OpenRA/OpenRA/pull/7544),
- [Kodi 6570](https://github.com/xbmc/xbmc/pull/6570)), and helpful documentation such as a [Play Framework screen cast](https://www.youtube.com/watch?v=47TqFH8MXhk).
+Last but not least, all students made a substantial effort to try to contribute to the actual projects.
+With these contributions the students had the ability to interact with the community; they often discussed with other developers and architects of the systems. This provided them insights in the architectural trade-offs made in these systems.
 
-Through these contributions the students often interacted with lead developers and architects of the systems under study, gaining first-hand experience with the architectural trade-offs made in these systems.
+Student contributions included documentation changes, bug fixes, refactorings, as well as small new features.
+
+
 
 ## Feedback
 
-While we worked hard on the chapters to the best of our abilities, there will be plenty of omissions and inaccuracies.
+While we worked hard on the chapters to the best of our abilities, there might always be omissions and inaccuracies.
 We value your feedback on any of the material in the book. For your feedback, you can:
 
 * Open an issue on our [GitHub repository for this book][dswa.io].
@@ -73,7 +79,7 @@ We value your feedback on any of the material in the book. For your feedback, yo
 * Contact @[delftswa][dswa.tw] on Twitter.
 * Send an email to Arie.vanDeursen at tudelft.nl.
 
-[dswa.io]: https://github.com/delftswa/delftswa.github.io
+[dswa.io]: https://github.com/serg-delft/desosa2019
 [dswa.tw]: https://twitter.com/delftswa
 
 
@@ -81,26 +87,34 @@ We value your feedback on any of the material in the book. For your feedback, yo
 
 We would like to thank:
 
-* The additional members of the teaching team: Eric Bouwers, Nicolas Dintzner, Annibale Panichella, and Felienne Hermans.
-* Michael de Jong and Alex Nederlof who were instrumental in the earlier editions of this course.
+* Anand Kanav, Arjan Langerak, and Bernd Kreynen, who did an amazing job as teaching assistants to the course
+* Our 2019 guest speakers Mike Ciavarella, Bert Wolter, Ayushi Rastogi, Xavier Devroey, Erci Greuter, Marco di Biase, and Matthias Noback.
+* Alex Nederlof and Michael de Jong who were instrumental in the earlier editions of this course.
 * All open source developers who helpfully responded to the student's questions and contributions.
 
+## Previous DESOSA editions
 
+1. Arie van Deursen, Maurício Aniche, Andy Zaidman, Liam Clark, Gijs Weterings and Romi Kharisnawan (editors). Delft Students on Software Architecture: [DESOSA 2018], 2018.
+1. Arie van Deursen, Maurício Aniche, Andy Zaidman, Valentine Mairet, Sander van den Oever (editors). Delft Students on Software Architecture: [DESOSA 2017], 2017.
+1. Arie van Deursen, Maurício Aniche, Joop Aué (editors). Delft Students on Software Architecture: [DESOSA 2016], 2016.
+1. Arie van Deursen and Rogier Slag (editors). Delft Students on Software Architecture: DESOSA 2015. [DESOSA 2015], 2015.
 
+[DESOSA 2018]: https://delftswa.gitbooks.io/desosa2018/
+[DESOSA 2017]: https://delftswa.gitbooks.io/desosa-2017/content/
+[DESOSA 2016]: https://delftswa.gitbooks.io/desosa2016/content/
+[DESOSA 2015]: https://delftswa.github.io/
 
 ## Further Reading
 
+1. Arie van Deursen, Maurício Aniche, Joop Aué, Rogier Slag, Michael de Jong, Alex Nederlof, Eric Bouwers. [A Collaborative Approach to Teach Software Architecture][sigcse]. 48th ACM Technical Symposium on Computer Science Education (SIGCSE), 2017.
 1. Arie van Deursen, Alex Nederlof, and Eric Bouwers. Teaching Software Architecture: with GitHub! [avandeursen.com][teaching-swa], December 2013.
-2. Nick Rozanski and Eoin Woods. [Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives][rw]. Addison-Wesley, 2012, 2nd edition.
-3. Sven Apel, Don Batory, Christian Kästner, Gunter Saake. [Feature-Oriented Software Product Lines: Concepts and Implementation][fospl]. Springer-Verlag, 2013.
-4. Eric Bouwers. [Metric-based Evaluation of Implemented Software Architectures][bouwers]. PhD Thesis, Delft University of Technology, 2013.
-5. Amy Brown and Greg Wilson (editors). [The Architecture of Open Source Applications][aosa]. Volumes 1-2, 2012.
+1. Amy Brown and Greg Wilson (editors). [The Architecture of Open Source Applications][aosa]. Volumes 1-2, 2012.
+1. Nick Rozanski and Eoin Woods. [Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives][rw]. Addison-Wesley, 2012, 2nd edition.
 
+[sigcse]: https://pure.tudelft.nl/portal/en/publications/a-collaborative-approach-to-teaching-software-architecture(0c7f2aeb-f2d6-4c56-9ab7-5f47f73d133f).html
 [teaching-swa]: http://avandeursen.com/2013/12/30/teaching-software-architecture-with-github/
 [rw]: http://www.viewpoints-and-perspectives.info/
 [aosa]: http://aosabook.org/
-[fospl]: http://link.springer.com/book/10.1007/978-3-642-37521-7
-[bouwers]: http://repository.tudelft.nl/view/ir/uuid:6b65c5f5-398c-4a41-8806-31c638b1891c/
 
 
 ## Copyright and License
