@@ -2,10 +2,11 @@
 layout: default
 title: Delft Students on Software Architecture -- DESOSA 2019
 overview: true
-creator: 
-- role: Editor
-- text: Arie van Deursen and Rogier Slag (editors)
-date: December 2019, Version 0.1
+author:
+- Arie van Deursen
+- Maurício Aniche
+- Andy Zaidman
+date: December 2019, version 0.1
 ---
 
 # Delft Students on Software Architecture: DESOSA 2019

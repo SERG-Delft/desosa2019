@@ -1,7 +1,7 @@
-# https://github.com/IDPF/epubcheck/releases/tag/v3.0.1
-EPUBCHECKJAR=$(HOME)/pkgs/epubcheck-3.0.1/epubcheck-3.0.1.jar
+# https://github.com/w3c/epubcheck/releases
+EPUBCHECKJAR=$(HOME)/pkgs/epubcheck-4.2.2/epubcheck.jar
 
-DOC=desosa2015
+DOC=desosa2019
 
 CHAPTERS=$(wildcard chapters/*)
 
@@ -58,6 +58,7 @@ pdf:
 	 $(CHAPTERS_MD)
 
 docker:
+	# Within the docker container you can run your jekyll commands, including "jekyll build --watch"
 	docker run --rm --volume="$(CURDIR):/srv/jekyll" -it jekyll/builder:3.8.4 bash
 
 serve:
