@@ -49,9 +49,8 @@ pdf:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
 	 --include-in-header=preamble.tex \
-	 --smart \
 	 --toc \
-	 --chapters \
+	 --top-level-division=chapter \
 	 --number-sections \
 	 --toc-depth=2 \
 	 --output=$(PDF_OUT) \

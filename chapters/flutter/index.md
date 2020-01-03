@@ -165,7 +165,8 @@ Common design models are needed to reduce duplicate effort and to increase techn
 - **Rendering**: the widget building recursion tree bottoms out in `RenderObjectWidgets`, which are widgets that create nodes in the underlying render tree. The render tree is a data structure that stores the geometry of the user interface, which is computed during layout.
 
 - **State Management**: Flutter is declarative. This means that Flutter builds its user interface to reflect the current state of your app. When the state of your app changes (e.g., a button is clicked), then the UI rebuilds from scratch.
-  ![](images/flutter/flutter_state.png)
+  
+![](images/flutter/flutter_state.png)
 
 - **Debugging**: Flutter provides the `flutter analyze` tool for static analysis. Furthermore, they provide a versatile [debugger](https://flutter.dev/docs/testing/debugging) to print logs, which can be used for debugging the various application layers (widgets, rendering, scheduling, etc.).
 
