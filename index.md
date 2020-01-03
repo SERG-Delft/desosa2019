@@ -108,7 +108,8 @@ We would like to thank:
 The copyright of the chapters is with the authors of the chapters. All chapters are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
 Reuse of the material is permitted, provided adequate attribution (such as a link to chapter on the [DESOSA book site][desosa]) is included.
 
-Cover image: Inntel Hotel, Zaandam, [Wikimedia](https://commons.wikimedia.org/wiki/File:1211_Zaandam_051.JPG#/media/File:1211_Zaandam_051.JPG).
+Cover image: Église Saint-Pierre de Firminy, Le Corbusier. [Wikimedia](https://en.wikipedia.org/wiki/File:EgliseSaintPierreLeCorbusierFirminy.jpg)
+
 
 [![Creative Commons](img/cc-by.png)][cc-by]
 
