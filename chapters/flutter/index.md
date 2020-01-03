@@ -15,7 +15,7 @@ _Yanni Chiodi, Mathieu Post, Emiel Rietdijk, and Eva Verboom_
 
 1. [Introduction](#introduction)
 1. [Stakeholders](#stakeholders)
-1. [Power vs. Interest](#power-vs-interest)
+1. [Power versus Interest](#power-versus-interest)
 1. [Context View](#context-view)
 1. [Development View](#development-view)
 1. [Technical Debt](#technical-debt)
@@ -92,7 +92,7 @@ The end users of Flutter are the customers that will eventually download and use
 
 Some of the companies that are using Flutter, reach out to the core team for a partnership. For example when they believe that they need additional features and they are willing to invest in that, they can build that together with the core team and other members of the community. When there is a close relation between Flutter and the customer, they try to give a higher priority to issues related to such a partnership.
 
-## Power vs. Interest
+## Power versus Interest
 
 A graphical representation of the involvement of all stakeholders is shown in the figure below. The core team has the most power and interest in Flutter. Though, according to Ian (Tech Lead) the other contributors are as much a part of Flutter, thus they are close to each other in the grid. Google does have a lot of power, but as Flutter is not one of their main products, their interest is lower and they are not directly one of the key stakeholder. Furthermore, there are some developers that use Flutter for application development, but do not contribute. They have high interest and should be kept informed. Their power lies in giving feedback on usability and proposing new features. Lastly, Dart and the operating systems the SDK is built for are minimal effort stakeholders.
 
