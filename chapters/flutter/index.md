@@ -7,6 +7,8 @@ chapter: true
 
 # Flutter
 
+_Yanni Chiodi, Mathieu Post, Emiel Rietdijk, and Eva Verboom_
+
 ![](images/flutter/flutter-logo-sharing.png)
 
 ## Table of contents
