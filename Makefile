@@ -3,9 +3,9 @@ EPUBCHECKJAR=$(HOME)/pkgs/epubcheck-3.0.1/epubcheck-3.0.1.jar
 
 DOC=desosa2015
 
-CHAPTERS=syncany openra playframework angulardart docker diaspora vagrant jekyll joomla kodi
+CHAPTERS=$(wildcard chapters/*)
 
-CHAPTERS_MD=$(patsubst %,chapters/%/index.md,$(CHAPTERS))
+CHAPTERS_MD=$(patsubst %,%/index.md,$(CHAPTERS))
 
 EXTRACTDIR=zzz-epub-extract
 TARGET_DIR=target
@@ -19,18 +19,17 @@ all:
 epub:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
-	 --smart \
 	 --toc \
 	 --number-sections \
 	 --toc-depth=2 \
-	 --epub-cover-image=epub-cover.png \
+	 --epub-cover-image=img/cover.jpg \
 	 --output=$(EPUB_OUT) \
 	 index.md \
 	 $(CHAPTERS_MD)
 
-img:
+allimg:
 	mkdir -p images
-	$(foreach chapter, $(CHAPTERS), cp -r -i chapters/$(chapter)/images/* images/;)
+	$(foreach chapter, $(CHAPTERS), cp -r -i $(chapter)/images/* images/;)
 
 check:
 	java -jar $(EPUBCHECKJAR) $(EPUB_OUT)

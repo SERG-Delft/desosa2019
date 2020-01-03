@@ -7,7 +7,7 @@ chapter: true
 
 # Flutter
 
-![](flutter-logo-sharing.png)
+![](images/flutter/flutter-logo-sharing.png)
 
 ## Table of contents
 
@@ -80,7 +80,8 @@ There are several websites that posted about the Flutter project like One More T
 
 #### Competitors
 
-Currently there are many different systems that can be used to develop mobile application, such as [Apache Cordova](https://cordova.apache.org/), [Adobe PhoneGap](https://phonegap.com/), [Iconic](https://ionicframework.com/) and Facebook's [React Native](https://facebook.github.io/react-native/). 
+Currently there are many different systems that can be used to develop mobile application, such as [Apache Cordova](https://cordova.apache.org/), [Adobe PhoneGap](https://phonegap.com/), [Iconic](https://ionicframework.com/) and Facebook's [React Native](https://facebook.github.io/react-native/).
+
 #### End Users
 
 The end users of Flutter are the customers that will eventually download and use the apps of the companies that use Flutter to build their own mobile applications.
@@ -93,7 +94,7 @@ Some of the companies that are using Flutter, reach out to the core team for a p
 
 A graphical representation of the involvement of all stakeholders is shown in the figure below. The core team has the most power and interest in Flutter. Though, according to Ian (Tech Lead) the other contributors are as much a part of Flutter, thus they are close to each other in the grid. Google does have a lot of power, but as Flutter is not one of their main products, their interest is lower and they are not directly one of the key stakeholder. Furthermore, there are some developers that use Flutter for application development, but do not contribute. They have high interest and should be kept informed. Their power lies in giving feedback on usability and proposing new features. Lastly, Dart and the operating systems the SDK is built for are minimal effort stakeholders.
 
-![Power vs. Interest Grid of the Flutter Project](power-interest-grid.png)
+![Power vs. Interest Grid of the Flutter Project](images/flutter/power-interest-grid.png)
 
 ### Integrators
 
@@ -124,7 +125,7 @@ Flutters main objective is to help other developers to build high quality mobile
 
 The figure shows a simple block-box context model implementation of the Flutter project. Here all stakeholders in the right half of the figure are part of Google Inc. Here we can see that Flutter is developed on GitHub, built in Dart and runs on three different operating systems. The three contributors that are listed are part of the core team employed by Google and have the most contributions, though there are many other contributors. All of these developers communicate via Gitter, Slack and Google Groups. The upper box shows some of the companies that use Flutter to build their own applications. Of course, there are many others working with Flutter and this set of stakeholders is just an example. Finally, in the bottom left corner the main competitors of the application are shown.
 
-![](contextmodel.png)
+![](images/flutter/contextmodel.png)
 
 ### External Entities
 
@@ -151,7 +152,7 @@ In large code bases it is very important to organize source code well, to make m
 
 In the graph all dependencies between the modules are drawn. The dependencies are drawn in such a way that it is easy to see which layer depends on which other layers. All the layers only depend on layers underneath (i.e., they build on each other).
 
-![](flutter-module.png)
+![](images/flutter/flutter-module.png)
 
 ### Common Design Models
 
@@ -164,7 +165,7 @@ Common design models are needed to reduce duplicate effort and to increase techn
 - **Rendering**: the widget building recursion tree bottoms out in `RenderObjectWidgets`, which are widgets that create nodes in the underlying render tree. The render tree is a data structure that stores the geometry of the user interface, which is computed during layout.
 
 - **State Management**: Flutter is declarative. This means that Flutter builds its user interface to reflect the current state of your app. When the state of your app changes (e.g., a button is clicked), then the UI rebuilds from scratch.
-  ![](flutter_state.png)
+  ![](images/flutter/flutter_state.png)
 
 - **Debugging**: Flutter provides the `flutter analyze` tool for static analysis. Furthermore, they provide a versatile [debugger](https://flutter.dev/docs/testing/debugging) to print logs, which can be used for debugging the various application layers (widgets, rendering, scheduling, etc.).
 

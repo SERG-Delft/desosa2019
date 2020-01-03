@@ -7,12 +7,13 @@ chapter: true
 
 # The Arduino IDE
 
-<img src="images/ArduinoCommunityLogo.png"><a name="arduino"></a>
+![](images/arduino/ArduinoCommunityLogo.png)
+<a name="arduino"></a>
 
 Authors: [Pieter Kools](https://github.com/Pieter12345), [Ivo Wilms](https://github.com/iwilms), [Diwakar Babu](https://github.com/DBabu), [Arkajit Bhattacharya](https://github.com/arkajitb)
 
 
-### Table of Contents
+## Table of Contents
 1. [Introduction](#intro)
 2. [Stakeholder Analysis](#sview)
 3. [Context View](#cview)
@@ -23,7 +24,7 @@ Authors: [Pieter Kools](https://github.com/Pieter12345), [Ivo Wilms](https://git
 8. [References](#ref)
 9. [Appendix](#app)
 
-### Introduction<a name="intro"></a>
+## Introduction<a name="intro"></a>
 Arduino is an open source electronics platform which uses simple I/O boards and a development environment to interact with the board.
 Arduino boards are capable of performing multiple functionalities based on the set of instructions sent to the microcontroller.
 The open-source Arduino software (Arduino IDE) is used to write code (C and C++) and upload it to the board.
@@ -32,7 +33,7 @@ We have aimed at providing insight into the system from different viewpoints.
 These viewpoints are defined and explained by Rozanski and Woods in their book _Software Systems Architecture, Working with Stakeholders using Viewpoints and Perspectives_[[5]](#r5).
 First, a context view along with stakeholder analysis is performed, followed by development view, deployment view and finally technical debt.
 
-### Stakeholder Analysis<a name="sview"></a>
+## Stakeholder Analysis<a name="sview"></a>
 In this section, we identify the stakeholders involved in Arduino. The following table identifies the eleven types of stakeholders as explained by Rozanski and Woods[[5.1]](#r5_1).
 
 |Type|Stakeholder|Small Description|
@@ -49,7 +50,7 @@ In this section, we identify the stakeholders involved in Arduino. The following
 |Testers|Core Developers and community|Developers and contributors are responsible for running JUnit tests to test the code before a PR is made, merged and officially released.|
 |Users|Hobbyists, organizations, Arduino research community groups|152 user groups with each group consisting of more than 100 members are recorded throughout the globe [[8]](#r8). The applications vary from IOT to wireless applications to Robotics.|
 
-#### Beyond the classification of stakeholders by Rozanski and Woods:
+### Beyond the classification of stakeholders by Rozanski and Woods:
 The following stakeholders identified are additional stakeholders who do not match the groups in Rozanski and Woods.
 
 - Apart from the Arduino website, local Arduino authorized *hardware suppliers* to supply the Arduino hardware.
@@ -61,16 +62,17 @@ The following stakeholders identified are additional stakeholders who do not mat
 - [Arduino blog *writers*](https://blog.arduino.cc/) is a space where unambiguous and reliable sources of information from users who use and help new developers to use Arduino can be found. Therefore, we can consider the bloggers as an indirect stakeholder.
 
 - *Translators* contribute to translations for Arduino's documentation for the software on their [website](https://www.arduino.cc/en/main/documentation), who are active contributors for Arduino software.
-#### Analyzing the stakeholder's involvement: Power vs Interest Grid
+
+### Analyzing the stakeholder's involvement: Power vs Interest Grid
 Mendelow's power-interest grid [[13]](#r13) is used to classify the groups of stakeholders that should be managed closely. Figure [1](#fig1) shows that the core developers, active contributors on Github and Arduino community are stakeholders who have both high interest and power. These are the people that actively contribute to and maintain the project and need to be managed closely. Users like teachers, bloggers that use Arduino software without many active contributions show high interest, but have very low power and must be informed well. The [dependencies](https://github.com/arduino/Arduino/blob/master/build/build.xml) have high interest and minimum power. The reason being, users usually buy Arduino shields which comes with libraries and the user can easily use them without much effort. Other users like TU Delft and GSMA show very high interest in the Arduino development, but provide fewer contributions and therefore are not categorized as active contributors.
 
-<img src="images/p_i_grid.jpg"><a name="fig1"></a> \
+![](images/arduino/p_i_grid.jpg)<a name="fig1"></a> \
 *Figure 1: Power Interest Grid of the Arduino IDE where the interest of the stakeholder is shown on the horizontal axis and the power of the stakeholder is shown on the vertical axis.*
 
-### Context View <a name="cview"></a>
+## Context View <a name="cview"></a>
 The context view describes the scope and responsibilities of Arduino, i.e. its boundaries in terms of what it does or does not do. To be more precise, it defines the relationships, dependencies and interactions between the Arduino IDE and other external/internal systems, organizations, and people across these boundaries.
 
-#### Scopes and Responsibilities
+### Scopes and Responsibilities
 The Arduino IDE has a well-defined scope for their system. During the design process, core developers discuss what should be part of the scope for the new version. Some of the scopes for the Arduino's current versions are:
 
 * Provide apps for MacOS, Windows and Linux.
@@ -82,9 +84,9 @@ The Arduino IDE has a well-defined scope for their system. During the design pro
 * Emphasize real use case over theoretical possibilities.
 * Recognize that documentation is just as important as the code. Documentation here means the Javadocs, comments on the code that explains the particular snippets of codes.
 
-#### Context Diagram and the External entities and Interfaces
+### Context Diagram and the External entities and Interfaces
 
-<img src="images/uml.png" width="100%" height="100%"><a name="fig2"></a> \
+![](images/arduino/uml.png)<a name="fig2"></a> \
 *Figure 2: Context View of the Arduino IDE describing the relationships with its environment*
 
 A short explanation of some of the components in the context view model is as follows:
@@ -103,19 +105,20 @@ A short explanation of some of the components in the context view model is as fo
 
 -**Language**: The Arduino IDE is written in Java and is designed for C/C++ development for Arduino microprocessors.
 
-### Development View<a name="dev"></a>
+## Development View<a name="dev"></a>
 
-<a name="fig3"><img src="images/architecture.JPG"></a> \
+<a name="fig3"></a>
+![](images/arduino/architecture.JPG)
 *Figure 3: High-level architecture of the Arduino IDE.*
 
 Figure [3](#fig3) shows the high-level architecture of the Arduino IDE, consisting of main modules `arduino-core`, `app` and `build`. The functionality of these modules will be explained in the [Module organization](#modules) section, followed by a look into the [Common Design Model](#cdmodel). The [Codeline model](#codeline) then takes a deeper look into the project structure and last, the [Stakeholders concerned with Development View](#sholder) are identified.
 
 <a name="modules"></a>
 
-<a name="modules"></a>
-#### Module Organization
+### Module Organization
 
-<a name="fig4"><img src="images/module_organization1.JPG"></a> \
+<a name="fig4"></a>
+![](images/arduino/module_organization1.JPG)
 *Figure 4: Module Organization of the Arduino IDE.*
 
 Figure [4](#fig4) shows the various modules of the Arduino IDE and how they relate to each other.
@@ -158,7 +161,8 @@ The `arduino-core` and `app` modules both contain a `processing.app` package con
 
 
 <a name="cdmodel"></a>
-#### Common Design Model
+
+### Common Design Model
 Every version of Arduino is found to be similar due to the commonality factor, which is provided by the constraints of the development of the Arduino IDE. The main reason for this is to reduce risk and duplication of effort, in combination with increasing the system's overall coherence.
 
 **Common Processing**  
@@ -183,13 +187,16 @@ The Development policy [[15]](#r15) is well documented in each area of open-sour
 
 
 <a name="codeline"></a>
-#### Codeline model
+
+### Codeline model
 The codeline models in terms of the source code structure, release process, configuration management, build and testing processes are discussed below.
 
-<a name="fig5"><img src="images/arduino_codeline_source.png"></a> \
+<a name="fig5"></a>
+![](images/arduino/arduino_codeline_source.png)
 *Figure 5: Source code structure of the app and arduino-core module source directories.*
 
-<a name="fig6"><img src="images/arduino_codeline_test_source.png"></a> \
+<a name="fig6"></a>
+![](images/arduino/arduino_codeline_test_source.png)
 *Figure 6: Source code structure of the app module test source directory.*
 
 The source code structure in figures [5](#fig5) and [6](#fig6) show the main packages and top-level classes used to build and test the Arduino IDE.
@@ -213,12 +220,13 @@ After these steps, the production engineer ensures that the release notes are up
 
 The Arduino IDE is managed by a small set of developers and contributed to by a larger group of users and developers. Version control is used to document additional features and non-backward compatible changes. Pull requests for such changes are postponed until all changes combined are worth a version bump. Since pull requests are always built and often user-tested before merging to the master branch, the technical integrity of the master branch is maintained (it is nearly always stable). While developers do often discuss features, they less often discuss how they should be implemented. This could be because contributors are doing a good job, but it could also mean that developers mainly care about the final result. The Arduino IDE project does not have any static analysis tools and does not come with a code style template. While most of the code is consistent, there are still quite some inconsistencies (mostly whitespace usage) and the documentation (Javadoc) is poor.
 
-### Deployment View<a name="dep"></a>
+## Deployment View<a name="dep"></a>
 
 This section summarizes the system requirements and dependencies to successfully run the Arduino IDE.
 Figure [7](#fig7) illustrates the deployment view of the Arduino IDE.
 
-<img src="images/dep_view.jpg"><a name="fig7"></a> \
+<a name="fig7"></a>
+![](images/arduino/dep_view.jpg)
 *Figure 7: Deployment View of the Arduino IDE*
 
 - *Run-time Software Requirements:* Java run-time environment is an important requirement for the installation and run-time of the Arduino IDE. 
@@ -252,21 +260,21 @@ Figure [7](#fig7) illustrates the deployment view of the Arduino IDE.
   The IDE adds parameters to the URL with specifics about the OS when getting the latest version number.
   The libraries specify their own URL for where to check for updates.
 
-### Technical Debt<a name="tec"></a>
+## Technical Debt<a name="tec"></a>
 Technical debt is a concept that represents the difference between the actual solution and the ideal solution. 
 Choosing an easy, non-ideal solution that is often faster to implement can seem like a good solution, but it can mean that even more work has to be done in the future when working with this non-ideal solution. 
 In computer science, this includes things such as not writing proper documentation, leaving unused or outdated files/code in the project, not creating proper abstraction layers for components that are subject to change and not writing automated tests for new code. There are several forms of technical debt, some of which are discussed below.
 
-#### Design Debt
+### Design Debt
 Design debt is created by developers making poor design choices for the system.
 To analyze a part of the design debt, we have used the static analysis tool [PMD](https://pmd.github.io/latest/pmd_rules_java_performance.html) to identify code smells.
 
-##### Code Analysis
+#### Code Analysis
 PMD helps in identifying five types of code violations : Blocker, Critical, Urgent and Warning violations.
 As per PMD, there are more than 3500 violations, which made it impossible to analyse all of them.
 Thus, we reduced the scope to Blocker and Crititical violations, which reduced the number of violations to approximately 200.
 
-###### Blocker and Critical Issues
+##### Blocker and Critical Issues
 We have observed the below mentioned blocker violations : 
 
 * Formal Parameter Naming Convention: The parameter names provided do not follow the naming convention provided by [Java Code Style guidelines](#r20).
@@ -282,7 +290,7 @@ A tool such as PMD cannot truly determine how bad code is, it is instead used to
 Another issue which is observed a lot in Arduino code is the lack of documentation and inconsistent code style which makes it difficult to understand all the functionalities.
 To summarize the above mentioned observations, it can be concluded that the code smell is quite high for the Arduino IDE project.
 
-##### Issue Analysis
+#### Issue Analysis
 There are multiple issues related to the Arduino IDE.
 For instance, [#6951](https://github.com/arduino/Arduino/issues/6951) proposed that 'Ctrl+F' in mac opens the find and replace window and it takes roughly half a second for the cursur to move to the new window.
 This issue was raised because of a couple of commits([0d50f0b](https://github.com/arduino/Arduino/commit/0d50f0bb6c6baf8bf750cd268451418c8cd81e21) and [65103aa](https://github.com/arduino/Arduino/commit/0d50f0bb6c6baf8bf750cd268451418c8cd81e21)) related to another issue[#6603](https://github.com/arduino/Arduino/pull/6603).
@@ -290,21 +298,21 @@ The issue mentioned was reported as a bug and it is difficult to implement the c
 This shows lack of end-to-end testing to find the impact of a change in other functionalities of the IDE which doesn't really reduce the count of issues as it might lead to another issue.
 In total, there are 110 open issues related to the Arduino IDE  which still needs to be taken care of.
 
-##### Historical Analysis
+#### Historical Analysis
 We have compared the code for the previous releases of the Arduino IDE(ide-1.0.x and ide-1.5.0.x) using PMD to understand the evolution of the design debt over time.
 It has been observed that a lot of files were removed and added during the process.
 As per PMD, the number of violations increased with the newer version (1.5.x).
 Although this comparison do not mean that there will be more problems in future assuming that both the versions didn't take code practices in account, it is important for any open source project to follow a coding style which leads to a consistent code base. 
 A static analysis tool could have had an impact on this project as the code quality would have stayed roughly the same which is important for a project like the Arduino IDE with more than 100 contributors.
 
-#### Documentation Debt
+### Documentation Debt
 Documentation is of great importance in any project for both developers and users. It is very important for a project like the Arduino IDE since it allows developers to more easily find the code they want to edit and understand how the current code works.
 With proper documentation, one would have to read less code to understand what's happening. Proper documentation also makes it easier to compare what some method/function does with what it should do.
 It is equally important for users as well to understand the installation procedure and navigation of the software which can be made easy only by proper documentation.
 We have checked issues related to documentation raised in the past and we have observed that the type of issues, i.e. typos and inconsistency in documentation, still remains the same.
 This follows from our analysis of the issues. Some examples are mentioned below.
 
-##### Issue Analysis
+#### Issue Analysis
 This section looks into issues related to the documentation about Arduino IDE.
 There are 105 open issues related to documentation.Thus, the documentation debt seems to be really high.
 For instance, [issue 1055](https://github.com/arduino/Arduino/issues/1055) is about the improper documentation of *pins_arduino.h*, which is important to meet the needs of custom-designed boards.
@@ -312,29 +320,30 @@ Another issue in Arduino documentation is the inconsistency of data.
 There were issues raised regarding the inconsistency in data in the website and the documentation.
 For example, in Issue [#8086](https://github.com/arduino/Arduino/issues/8086), the FPGA chip number was wrongly mentioned in the documentation.
 
-#### Test Debt
+### Test Debt
 The Arduino IDE consists of two projects: 'app' and 'arduino-core'. The 'app' project contains JUnit tests and the 'arduino-core' project contains no tests at all. However, since the 'arduino-core' project is used by the 'app' project, it is indirectly tested. 
 In total, there are 65 tests and some of them may fail based on the Operating system(macOS,Linux or Windows) and its version.
 The results of running a test with instruction coverage are shown below:
 
-<img src="images/Testing_Coverage_1.png" width="100%" height="100%"><a name="fig8"></a> \
+<a name="fig8"></a>
+![](images/arduino/Testing_Coverage_1.png)
 *Figure 8: Test Coverage*
 
 From the above table, it can be observed that the test coverage for arduino-core is only 15.1% and for app it is only 5.9%.
 From the observations above, we can conclude that the testing debt for Arduino is very high.
 
-#### Project Debt
+### Project Debt
 The project debt is quite high for the Arduino IDE as there are 920 open issues and 160 pull requests still to be taken care of. 
 Since the core developers are responsible for testing the pull requests, it becomes nearly impossible to keep track of all the pull requests on time and perform a thorough check before merging them.
 
-### Suggestions
+## Suggestions
 To avoid documentation debt, we suggest the contributors to properly document their changes in relevant places.
 Moreover, core developers should refuse to merge the code if proper documentation is not present.
 In addition to the above mentioned points, there should not be any inconsistencies in different documents regarding a common topic.
 The backlog of issues can be a symptom of technical debt which should be considered.
 Similar to 'CONTRIBUTING.md' file which serves as a checklist before contributing to the repository, a file should be added to the repository regarding the code style guidelines which have to be followed for any contribution. 
 
-### Conclusion<a name="con"></a>
+## Conclusion<a name="con"></a>
 In this chapter the architecture of the Arduino IDE was analyzed using the viewpoints described by Rozanski and Woods in their book _Software Systems Architecture, Working with Stakeholders using Viewpoints and Perspectives_[[5]](#r5).
 The _stakeholder view_ identified the stakeholders involved in the project.
 The stakeholders were analysed using a Power vs Interest grid which led to the conclusion that stakeholders with highest interest and power include the core developers, active contributors on Github and the Arduino community.
@@ -346,7 +355,7 @@ Finally, the analysis performed in _technical debt_ helped us to understand that
 
 In conclusion, Arduino is a very interesting project maintained by highly skilled engineers, but it would benefit from more active efforts to reduce the technical debt.
 
-### References <a name="ref"></a>
+## References <a name="ref"></a>
 <a name="r1"></a> 1. https://en.wikipedia.org/wiki/Arduino_IDE
 
 <a name="r2"></a> 2. https://github.com/arduino/Arduino/wiki/Building-Arduino
