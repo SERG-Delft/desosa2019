@@ -1,0 +1,8 @@
+highlighter: rouge
+relative_permalinks: false
+
+timezone: UTC
+exclude: ['README.md','test_links.rb','Makefile','preamble.tex']
+
+# Server settings
+host: 0.0.0.0
