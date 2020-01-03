@@ -45,6 +45,9 @@ unzip:
 clean:
 	rm -rf images $(EXTRACTDIR) $(TARGET_DIR)
 
+# Create the full book.
+# To create single chapter use:
+# $ make pdf CHAPTERS=chapters/scipy/
 pdf:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
