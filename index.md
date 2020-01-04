@@ -32,7 +32,7 @@ During an 8-week period, the students spent one third of their time on this cour
 
 Inspired by Amy Brown and Greg Wilson's [Architecture of Open Source Applications][aosa], we decided to organize each description as a chapter, resulting in the present online book.
 
-
+## Recurring Themes
 
 The chapters share several common themes, which are based on smaller assignments the students conducted as part of the course.
 These themes cover different architectural 'theories' as available on the web or in textbooks.
