@@ -52,6 +52,7 @@ pdf:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
 	 --include-in-header=preamble.tex \
+     --variable urlcolor=cyan \
 	 --toc \
 	 --top-level-division=chapter \
 	 --number-sections \
