@@ -20,10 +20,11 @@ chapter: true
 5. [Performance Perspective](#performance-perspective)
 6. [Technical Debt](#technical-debt)
 7. [Conclusion](#conclusion)
-[Appendix A: Core Team](#appendix-a-core-team)
-[Appendix B: Suppliers](#appendix-b-suppliers)
-[Appendix C: Pull request analysis](#appendix-c-decision-making-analysis)
-[Appendix D: Code Coverage](#appendix-d-code-coverage)
+
+* [Appendix A: Core Team](#appendix-a-core-team)
+* [Appendix B: Suppliers](#appendix-b-suppliers)
+* [Appendix C: Pull request analysis](#appendix-c-decision-making-analysis)
+* [Appendix D: Code Coverage](#appendix-d-code-coverage)
 
 ## Introduction
 Pandas is an open source data analysis toolkit for Python which has enabled millions of users to perform complex data analysis in a relatively simple way. According to its creator, Wes McKinney, the package is meant to accelerate the data analysis workflow and reduce the need for people to deal with technical issues. It is currently used all over the world, with 5-10 million users worldwide. This chapter contains a collection of views and perspectives on pandas' architecture. 
@@ -289,7 +290,7 @@ We analyzed the technical debt using SonarQube for all main releases of pandas a
 ### Technical Debt Discussions
 Technical debt is an important subject for discussion in the pandas team. A lot of insights in how technical debt is discussed can be gained from the pandas mailing list and from the way the developers use constructs such as FIXMEs and TODOs.
 
-At the end of 2015, pandas' fast growth was a key reason for the core team to start discussing major refactorings via their mailing list. Wes McKinney was pushing for large internal refactorings to expose less of the core to the end-users [^ml-2016-January]. It was mentioned that some features, required a large amount of effort due to the architectural issues with pandas and its over-reliance on NumPy's `ndarray` data format, which did not properly support the new needs of pandas (e.g. categorical data). Later on, there was discussion about releasing pandas 1.0, so that the focus could shift to bug-fixing. The idea was to start a new pandas 2.0 development branch for the major refactorings [^ml-2016-July]. However, Joris van den Bossche indicated that this may hinder contributors, since new feature PRs would then not be welcome on either branches. Pandas 2.0 is still actively discussed and pandas' creator Wes McKinney has shifted his attention to Apache Arrow, which is intended to be at the core of pandas 2.0 [^pandas-2.0] [^wes-blog-pandas-2.0] [^podcast-wes]. The mailing list also contains lots of discussions about smaller technical debt issues, an example being a violation of the DRY principle, where both Series and DataFrame had a subclass for sparse data [^ml-2018-November]. 
+At the end of 2015, pandas' fast growth was a key reason for the core team to start discussing major refactorings via their mailing list. Wes McKinney was pushing for large internal refactorings to expose less of the core to the end-users [^ml-2016-January]. It was mentioned that some features, required a large amount of effort due to the architectural issues with pandas and its over-reliance on NumPy's `ndarray` data format, which did not properly support the new needs of pandas (e.g. categorical data). Later on, there was discussion about releasing pandas 1.0, so that the focus could shift to bug-fixing. The idea was to start a new pandas 2.0 development branch for the major refactorings [^ml-2016-July]. However, Joris van den Bossche indicated that this may hinder contributors, since new feature PRs would then not be welcome on either branches. Pandas 2.0 is still actively discussed and pandas' creator Wes McKinney has shifted his attention to Apache Arrow, which is intended to be at the core of pandas 2.0 [^pandas-20] [^wes-blog-pandas-20] [^podcast-wes]. The mailing list also contains lots of discussions about smaller technical debt issues, an example being a violation of the DRY principle, where both Series and DataFrame had a subclass for sparse data [^ml-2018-November]. 
 
 The pandas developers also make use of FIXMEs and TODOs to discuss about technical debt. We analyzed the FIXME and TODOs at the repository's state from [commit 79205ea](https://github.com/pandas-dev/pandas/tree/79205ea8a6aac4c82a1572276ede7510f5a38e8e/pandas/tests/io). It became apparent that FIXMEs and TODOs are rarely linked to GitHub issues, making it hard to determine whether they were already taken care of. Most of the FIXME comments are in test modules, which seems to indicate that the test modules are suffering from technical debt. TODOs are more present in non-test modules. [`ops.py`](https://github.com/pandas-dev/pandas/blob/79205ea8a6aac4c82a1572276ede7510f5a38e8e/pandas/core/ops.py) was one of the non-test modules that had GitHub issues and PRs associated with its FIXMEs ([5284](https://github.com/pandas-dev/pandas/issues/5284), [5035](https://github.com/pandas-dev/pandas/issues/5035), [19448](https://github.com/pandas-dev/pandas/pull/19448)). Noteworthy is that the linked PR is not really related to the described issue, but rather where it came up in.
 
@@ -304,7 +305,9 @@ After the refactor, this module was split up into smaller modules, hence elimina
 Pandas is an ever growing library for data analysis and is becoming the new standard in the Python community. We have analyzed pandas from different perspectives and viewpoints and found that pandas is awaiting large refactorings. Although pandas does not have a large amount of technical debt, its rapid growth is becoming a problem as its dependencies can not keep up with the growth. Due to this, the responsibilities of pandas are increasing, requiring a philosophical and architectural shift, that will ultimately benefit the usability of the stack. Pandas' creator Wes Mckinney has shifted his attention to Apache Arrow, which should unify the management of in-memory data representations across different toolkits and languages, which pandas 2.0 will also rely on. All in all, pandas is here to stay and is only becoming larger.
 
 ## Appendix A: Core Team
+
 *Table 2: The complete core team as documented by the pandas governance repository [^pandas-people].*
+
 | Full Name | GitHub Handle |
 |-----------|---------------|
 | Andy Hayden | [@hayd](https://github.com/hayd) |
@@ -326,7 +329,9 @@ Pandas is an ever growing library for data analysis and is becoming the new stan
 | William Ayd | [@willayd](https://github.com/willayd) |
 
 ## Appendix B: Suppliers
+
 *Table 3: Suppliers of the pandas library*
+
 |Supplier | Type | Role |
 |--|--|--|
 |Python|Software|Language in which pandas is written|
@@ -358,7 +363,9 @@ Overall, the tagging yields a swarm plot, which visualizes the density of activi
 ### Most Discussed Rejected Pull Requests
 
 #### 1. [ENH: Google BigQuery IO Module #4140](https://github.com/pandas-dev/pandas/pull/4140)
+
 ##### Context
+
 - Author: sean-schaefer
 - Timespan: 2013-07 : 2013-10
 - Touches: Integration of the pandas.io.gbq module for integration with Google's BigQuery
@@ -770,7 +777,9 @@ Main finding here is that the founder Wes Mckinney seems out of touch with panda
 
 
 ## Appendix D: Code Coverage
+
 *Table 3: Code coverage reported by Codecov as of commit [707c7201a744c48c835f719421e47480beee2184](https://github.com/pandas-dev/pandas/commit/707c7201a744c48c835f719421e47480beee2184)*
+
 | Files | Tracked Lines | Covered Lines | Missed Lines | Coverage |
 |-------|---------------|---------------|--------------|----------|
 | _libs	| 7 | 7 | 0 | 100.00% |
@@ -785,6 +794,7 @@ Main finding here is that the founder Wes Mckinney seems out of touch with panda
 | **Totals (172 files)** | **52.977** | **48.342** | **4.635** | **91.2%** |
 
 ## References
+
 [^rozanski-woods-2012]: Nick Rozanski and Eóin Woods. 2012. Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives. *Addison-Wesley Professional.*
 
 [^pandas-history]: pandas. History of Development. https://pandas.pydata.org/community.html. Accessed On: 25 February 2019.
@@ -865,8 +875,8 @@ Main finding here is that the founder Wes Mckinney seems out of touch with panda
 
 [^issue-test-split]: Jeff Reback. TST: split out sparse tests. https://github.com/pandas-dev/pandas/issues/18969. Accessed On: 8 April 2019
 
-[^pandas-2.0]: pandas Development Team. Pandas 2.0 Design Documents. https://pandas-dev.github.io/pandas2/. Accessed on 4 April 2019.
+[^pandas-20]: pandas Development Team. Pandas 2.0 Design Documents. https://pandas-dev.github.io/pandas2/. Accessed on 4 April 2019.
 
-[^wes-blog-pandas-2.0]: Wes McKinney. Apache Arrow and the "10 Things I Hate About pandas". http://wesmckinney.com/blog/apache-arrow-pandas-internals/. Accessed on 4 April 2019.
+[^wes-blog-pandas-20]: Wes McKinney. Apache Arrow and the 10 Things I Hate About pandas. http://wesmckinney.com/blog/apache-arrow-pandas-internals/. Accessed on 4 April 2019.
 
 [^podcast-wes]: Tobias Macey (Host). Wes McKinney's Career In Python For Data Analysis - Episode 203. https://www.pythonpodcast.com/wes-mckinney-python-for-data-analysis-episode-203/ Accessed on 4 April 2019.
