@@ -1,7 +1,7 @@
 ---
 layout: default
 project: arduino-ide
-title: The Arduino IDE
+title: Arduino IDE
 chapter: true
 ---
 
@@ -417,15 +417,18 @@ Nevertheless, an example of a PR that was rejected because it introduced an unwa
 If the PR isn't rejected outright, it is iterated upon until the PR is either accepted or rejected.
 During that iteration, the code is reviewed and tested by the community and the core developers.
 Based on those reviews and tests, the following steps all happen simultaneously:
+
 - If bugs are reported, they will often be resolved by the original author.
 - Code quality issues (e.g. duplicate code) will also be reported and fixed.
 - Finally, tradeoffs will be discussed with the core developers and the community.
+
 If the PR hasn't been rejected before this point, it will be merged.
 
 
 Most of these tradeoffs happen on some level for all PRs, but the choice is so clear that it doesn't really count as a tradeoff.
 But once every so often, there is a genuine tradeoff and the core developers need to provide guidance to the community in which way they want the project to go.
 The tradeoffs that we found in our analysis are:
+
 - _Amount, severity and likelihood of being fixed of known bugs vs desirability and urgency of the PR_ \
   Sometimes, a known bug in a PR can't easily be fixed, or the PR has a certain urgency to it.
   In cases like these, the core developers must decide whether to accept these known bugs in order to merge now or to defer merging until the bug is fixed. \
@@ -460,6 +463,7 @@ The tradeoffs that we found in our analysis are:
   Examples of this can be seen in [PR #1803](https://github.com/arduino/Arduino/pull/1803) and PRs [#3549](https://github.com/arduino/Arduino/pull/3549) and [#4457](https://github.com/arduino/Arduino/pull/).
 
 Finally, we will look at some of the reasons why a PR can get rejected.
+
 - If the original author stops responding, the PR has a high chance of being rejected.
   If the code is good, someone else can copy it to their own fork and open a new PR, as was the case for [PR #3549](https://github.com/arduino/Arduino/pull/3549), which was continued in [PR #4457](https://github.com/arduino/Arduino/pull/4457).
 - A PR may also be rejected if the code got merged some other way, like the previous point where someone else opened a new PR, or like [PR #7029](https://github.com/arduino/Arduino/pull/7029), where the code had already been merged in a rebase at some point.
