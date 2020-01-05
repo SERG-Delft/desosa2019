@@ -349,9 +349,6 @@ Most of the code smells detected were related to the testing module and could be
 
 Overall, analyzing Polymer was interesting. We are pleasantly surprised by the quality of code especially with regards to tests and the low technical debt maintained by the team. One area that can be improved is the documentation of the project. The documentation is somewhat lacking, making it difficult to assess how certain decisions are made by the team. 
 
-
-## References
-
 [^1]: SonarSource S. A. Continuous inspection \| sonarqube. Retrieved March 20, 2019 from https: //www.sonarqube.org/
 
 [^2]: Angular. Angular. Retrieved February 28, 2019 from https://angular.io/
@@ -362,7 +359,7 @@ Overall, analyzing Polymer was interesting. We are pleasantly surprised by the q
 
 [^5]: The Polymer Project Authors. Document your elements - polymer project. Retrieved March 21, 2019 from https://polymer-library.polymer-project.org/3.0/docs/tools/documentation
 
-6. The Polymer Project Authors. Browser support overview - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/browsers
+[^6]: The Polymer Project Authors. Browser support overview - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/browsers
 
 [^7]: The Polymer Project Authors. Polyfills - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/polyfills
 
