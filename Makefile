@@ -7,6 +7,8 @@ CHAPTERS=$(wildcard chapters/*)
 
 CHAPTERS_MD=$(patsubst %,%/index.md,$(CHAPTERS))
 
+RESOURCE_PATH=$(subst $(EVAL) $(EVAL),:,$(CHAPTERS)):./
+
 EXTRACTDIR=zzz-epub-extract
 TARGET_DIR=target
 
@@ -23,13 +25,10 @@ epub:
 	 --number-sections \
 	 --toc-depth=2 \
 	 --epub-cover-image=img/cover.jpg \
+	 --resource-path=$(RESOURCE_PATH) \
 	 --output=$(EPUB_OUT) \
 	 index.md \
 	 $(CHAPTERS_MD)
-
-allimg:
-	mkdir -p images
-	$(foreach chapter, $(CHAPTERS), cp -r -i $(chapter)/images/* images/;)
 
 check:
 	java -jar $(EPUBCHECKJAR) $(EPUB_OUT)
@@ -57,6 +56,7 @@ pdf:
 	 --top-level-division=chapter \
 	 --number-sections \
 	 --toc-depth=2 \
+	 --resource-path=$(RESOURCE_PATH) \
 	 --output=$(PDF_OUT) \
 	 index.md \
 	 $(CHAPTERS_MD)
