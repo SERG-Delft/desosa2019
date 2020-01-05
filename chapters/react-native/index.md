@@ -23,7 +23,7 @@ chapter: true
 -   [Technical Debt](#technical-debt)
 -   [Architecture of Apps Written in React Native](#architecture-of-apps-written-in-react-native)
 -   [Conclusion](#conclusion)
--   [Appendices](appendix.md)
+-   [Appendices](#appendices)
 
 ## Introduction
 
@@ -405,3 +405,89 @@ React Native is an important framework for mobile apps, used by many prominent s
 [^19]: http://blog.nparashuram.com/2019/01/react-natives-new-architecture-glossary.html
 
 [^20]: https://github.com/futurice/pepperoni-app-kit/blob/master/docs/ARCHITECTURE.md
+
+## Appendices
+
+### Top Contributor Analysis
+
+From the [core team](https://www.reactiflux.com/transcripts/react-native-team/) we see a lot of contributions from [shergin](https://github.com/shergin) (ranked 1st), [sahrens](https://github.com/sahrens) (5), [hramos](https://github.com/hramos) (7), [mdvacca](https://github.com/mdvacca) (11), and [TheSavior](https://github.com/TheSavior) (15). 
+
+Although the core team consists of Facebook employees, it is interesting to see that other Facebook employees also actively contribute to React Native.
+In fact, the top 15 most active contributors consists mostly of Facebook employees:
+[javache](https://github.com/javache) (2), [davidaurelio](https://github.com/davidaurelio) (3), [mkonicek](https://github.com/mkonicek) (4, former Facebook employee, currently inactive), [vjeux](https://github.com/vjeux) (8, currently inactive), [jeanlauliac](https://github.com/jeanlauliac) (10, currently inactive), [frantic](https://github.com/frantic) (12, currently inactive), and [bestander](https://github.com/bestander) (14, currently inactive). Some of these employees may be former core team members.
+
+Finally, we have identified a few non-Facebook employees in the top contributors:
+[nicklockwood](https://github.com/nicklockwood) (6), [tadeuzagallo](https://github.com/tadeuzagallo) (9), and [janicduplessis](https://github.com/janicduplessis) (13).
+
+### Merged PRs
+
+Id    | Reason for getting merged
+------|--------------------------
+[17751](https://github.com/facebook/react-native/pull/17752) | Simply added an error message, merged due to uncontroversial nature.
+[21492](https://github.com/facebook/react-native/pull/21492) | Small discussion, author implemented suggested fix.
+[18300](https://github.com/facebook/react-native/pull/18300) | Most comments were about comment style, eventually merged. **note:** A lot of pining, implying that the core team and/or maintainers was overloaded at the time. 
+[18278](thttps://github.com/facebook/react-native/pull/18278)| Problem was urgent. **note:** A lot of frustration sensed, due to slow replies and asking for information updates often.
+[21702](https://github.com/facebook/react-native/pull/21702) | Dominated by bots. Short discussion followed by merge.
+[23318](https://github.com/facebook/react-native/pull/23318) | Maintainer was quick to point out that a lot of work had to be done. Author implemented changes and eventually large subset was merged.
+[18522](https://github.com/facebook/react-native/pull/18522) | Interesting technical discussion lead by [hramos](https://github.com/hramos). Stack trace of internal fb test was shared, before fix was implemented and merged.
+[21392](https://github.com/facebook/react-native/pull/21392) | Mostly code quality issues, uncontroversial and quickly merged.
+[18534](https://github.com/facebook/react-native/pull/18534) | At the time this PR was merged, it seems that the internal team was heavily focused on getting tests to work on the master. Only after a month was the PR revisited, and changes from an internal review were applied. After this, it was merged. This reveals the team also has an internal agenda which determines if something gets merged or not.
+[22242](https://github.com/facebook/react-native/pull/22242) | Supportive discussion, where the author quickly implemented suggestions from the original author before it got merged.
+
+### Unmerged PRs
+
+Id    | Reason for not getting merged
+------|------------------------------
+[22733](https://github.com/facebook/react-native/pull/22733) | There was no activity on the PR for over a month.
+[17422](https://github.com/facebook/react-native/pull/17422) | A long discussion ensued, and eventually it was decided it was better to start a new PR as suggested by [hramos](https://github.com/hramos).
+[17741](https://github.com/facebook/react-native/pull/17741) | The functionality implemented by this PR was added to master in the meantime.
+[20904](https://github.com/facebook/react-native/pull/20904) | Targeted functionality which was moved to a separate repository.
+[19489](https://github.com/facebook/react-native/pull/19489) | Rebase went wrong so a new PR was opened.
+[20854](https://github.com/facebook/react-native/pull/20854) | A large subset of this PR was merged during the discussion.
+[18187](https://github.com/facebook/react-native/pull/18187) | Author did not have time anymore to work on this PR and no one volunteered. However as of writing this PR has been reopened.
+[18456](https://github.com/facebook/react-native/pull/18456) | Targeted bug was fixed elsewhere.
+[19536](https://github.com/facebook/react-native/pull/19536) | Functionality of PR was implemented by other PR's in the meantime.
+[17572](https://github.com/facebook/react-native/pull/17572) | Closed in favour of moving fix to separate repository.
+
+### Manual Static Technical Debt Analyses
+
+We analysed a sample of 4 source code files. We present our findings below.
+
+**Modal.js**: A component used to display modal dialogs. This component has a clear single responsibility and its public interface is well documented. In fact, every property that can be passed to it is individually annotated. The `render()` method might be split into smaller submethods: There are 7 branching points in this method, which is on the high side. However, this is not as straightforward as it might seem, since the computed values in those branches are needed in the rendering part in the final JSX part of the method.
+
+**Geolocation.js**: A component used to get the geolocation of the host device. This component also has a clear single responsibility. Two functions (`clearWatch` and `stopObserving`) did not have public documentation. Although the reader might be able to deduce what they do, adding documentation here would help clarify this proactively. We added this documentation in [a pull request](https://github.com/facebook/react-native/pull/23987). We also found an obsolete static analysis suppression comment.
+
+**ShakeDetector.java**: A hardware interface that detects shakes using the accelerometer. The class has two public methods to start and stop shake detection, and two that are used by the `SensorManager` to indicate that the sensor's state has changed. While the public interface is easy to understand and well-documented, the design may not be optimal. Firstly, the class seems to violate the single responsibility principle because it has two responsibilities: Translating accelerometer measurements to a usable format, and deciding whether the measurements correspond to a shake. This could be resolved by adding an interface in between the sensor manager and the detector. Secondly, the shake detector supports exactly one listener, but it may be worthwhile to make it support multiple listeners.
+
+**InterpolationAnimatedNode.java**: A drawable node of which the location can be interpolated in between frames. This class suffers from several design issues which make it hard to comprehend. Firstly, the available interpolation methods are hardcoded as a series of strings. A first, naive solution would be to use an enum that lists the methods. This would resolve the issue of not being able to check whether all users of the interpolation method support a newly added method. However, this solution does not allow for adding new methods, and thus violates the open/closed principle. A second problem is that ranges are described as arrays of values, but its bounds are never checked and some functionality is written in helper methods in the node class. This class would become easier to comprehend and safer to use if ranges were described as objects which perform validation internally. 
+
+### Contributions to Decrease Technical Debt
+
+* Adding tests for utilities: [#23903](https://github.com/facebook/react-native/pull/23903) and [#23989](https://github.com/facebook/react-native/pull/23989). 
+* Adding tests for the geolocation module: [#23987](https://github.com/facebook/react-native/pull/23987).
+* Fixing existing end-to-end tests for Android: [#23958](https://github.com/facebook/react-native/pull/23958).
+
+#### Coverage Improvement Breakdowns per File
+
+We created this comparison by starting at the last commit before our first contribution, `581711c`. We then ran `yarn jest --coverage` to compute the test coverage. To add our contributions, we cherry-picked the relevant (squashed) commits (`47e0615`, `f541c34`, and `6047d42`) and computed the coverage again.
+
+| `Libraries/Geolocation` | Before                      | After (+9 tests)                 |
+| ----------------------- | ---------------------------:| --------------------------------:|
+| Branches                | 0% _0/40_ | 77.50% _31/40_ |
+| Lines                   | 0% _0/49_ | 91.84% _45/49_ |
+
+| `Libraries/Utilities` | Before                              | After (+35 tests)                   |
+| --------------------- | -----------------------------------:| -----------------------------------:|
+| Branches              | 34.77% _153/440_  | 41.36% _182/440_  |
+| Lines                 | 48.3% _398/824_   | 54.25% _447/824_  |
+
+### Contributions
+
+* [https://github.com/react-native-community/discussions-and-proposals/pull/103](https://github.com/react-native-community/discussions-and-proposals/pull/103)
+* [https://github.com/facebook/buck/pull/2200](https://github.com/facebook/buck/pull/2200)
+* [https://github.com/facebook/react-native-website/pull/805](https://github.com/facebook/react-native-website/pull/805)
+* [https://github.com/facebook/react-native/pull/23804](https://github.com/facebook/react-native/pull/23804)
+* [https://github.com/facebook/react-native/pull/23903](https://github.com/facebook/react-native/pull/23903)
+* [https://github.com/facebook/react-native/pull/23958](https://github.com/facebook/react-native/pull/23958)
+* [https://github.com/facebook/react-native/pull/23987](https://github.com/facebook/react-native/pull/23987)
+* [https://github.com/facebook/react-native/pull/23989](https://github.com/facebook/react-native/pull/23989)
