@@ -1,3 +1,10 @@
+---
+layout: default
+project: react-native
+title: "React Native"
+chapter: true
+---
+
 # React Native
 
 ![](images/avatars/group.png)
