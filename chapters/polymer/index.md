@@ -22,12 +22,12 @@ _Max de Krieger, David van der Leij, Sharon Grundmann, and Thomas Kolenbrander_
 
 Created by Google Inc. in 2015, Polymer is an open-source JavaScript library for building web applications. Through the use of web features like web components, HTTP/2 and service workers, Polymer allows its users to build modern web applications with minimal overhead and maximal performance. In addition to this, the team is dedicated to advocating for emerging standards to improve web development.
 
-In this chapter, we analyze the architecture of Polymer according to concepts presented by Nick Rozanski and Eoin Woods [36]. We begin by analyzing Polymer's stakeholders. We identify major stakeholders associated with the project and their influence on decision-making processes and eventual success of Polymer.
+In this chapter, we analyze the architecture of Polymer according to concepts presented by Nick Rozanski and Eoin Woods [^36]. We begin by analyzing Polymer's stakeholders. We identify major stakeholders associated with the project and their influence on decision-making processes and eventual success of Polymer.
 From there, we present two architectural views introduced by Rozanksi and Woods. The context view describes relationships, dependencies, and interactions between Polymer and its environment while the development view  addresses aspects related to the system development process. Additionally, we analyze the technical debt of Polymer and discuss how variability is managed.
 
 ## Stakeholder Analysis
 
-We present the stakeholders of the Polymer project according to the stakeholder classes defined by Rozanski and Woods [36]. In addition, we identify other stakeholder classes that are relevant to this project.
+We present the stakeholders of the Polymer project according to the stakeholder classes defined by Rozanski and Woods [^36]. In addition, we identify other stakeholder classes that are relevant to this project.
 
 #### Acquirer
 
@@ -35,7 +35,7 @@ The acquirer of Polymer is Google as they oversee the project with their team.
 
 #### Assessors
 
-Besides being the acquirer, Google can also be seen as the assessor of the project. Legal complications of the project are covered by a Contributor License Agreement (CLA) stating that contributors do not own any of the code they provided. Furthermore, the Polymer team also decides what standards to support, as stated in a blog post [23].
+Besides being the acquirer, Google can also be seen as the assessor of the project. Legal complications of the project are covered by a Contributor License Agreement (CLA) stating that contributors do not own any of the code they provided. Furthermore, the Polymer team also decides what standards to support, as stated in a blog post [^23].
 
 #### Communicators
 
@@ -47,11 +47,11 @@ Polymer is developed by the Polymer team and Github contributors from the open-s
 
 #### Maintainers
 
-All developers can be considered maintainers as well. However, the Github contributors do not have any say in the future of Polymer as decisions like releases and roadmaps are made by the Polymer team. The members of the Google Polymer team that integrate new content (merge or close pull requests) are [Steve Orvell](https://github.com/sorvell) (lead engineer, project coordinator) [13], [Kevin Schaaf](https://github.com/kevinpschaaf) (lead engineer, project coordinator) [14], and [Daniel Freedman](https://github.com/azakus) [15].
+All developers can be considered maintainers as well. However, the Github contributors do not have any say in the future of Polymer as decisions like releases and roadmaps are made by the Polymer team. The members of the Google Polymer team that integrate new content (merge or close pull requests) are [Steve Orvell](https://github.com/sorvell) (lead engineer, project coordinator) [^13], [Kevin Schaaf](https://github.com/kevinpschaaf) (lead engineer, project coordinator) [^14], and [Daniel Freedman](https://github.com/azakus) [^15].
 
 #### Suppliers
 
-As a development and communication platform, Polymer makes use of Github. For distribution, the project relies on the npm package manager [42]. As the Polymer core team is paid and maintained by Google, Google can be seen as a supplier of the project as well.
+As a development and communication platform, Polymer makes use of Github. For distribution, the project relies on the npm package manager [^42]. As the Polymer core team is paid and maintained by Google, Google can be seen as a supplier of the project as well.
 
 #### Support staff
 
@@ -63,7 +63,7 @@ As all code committed should be tested, the developers (the Polymer team and Git
 
 #### Users
 
-Polymer is used in many applications world-wide and in many of Google's products as well. This includes YouTube, Google Earth and Google Music. Besides Google, other notable users are: [Netflix](https://netflix.com/), [ING](https://www.ing.com), [Coca-Cola](https://www.coca-cola.com/), [McDonald's](https://www.mcdonalds.com/) and [IBM](https://www.ibm.com) [22].
+Polymer is used in many applications world-wide and in many of Google's products as well. This includes YouTube, Google Earth and Google Music. Besides Google, other notable users are: [Netflix](https://netflix.com/), [ING](https://www.ing.com), [Coca-Cola](https://www.coca-cola.com/), [McDonald's](https://www.mcdonalds.com/) and [IBM](https://www.ibm.com) [^22].
 
 #### Regulatory structures
 
@@ -71,7 +71,7 @@ The World Wide Web Consortium (W3C) is a regulatory stakeholder of the Polymer p
 
 #### Competitors
 
-Another group of stakeholders are competitors. Although they are not directly involved with the project and its management, they have an interest in it and can indirectly influence the design of products and success of the project as a whole. Some competitors of the Polymer Project include [Angular](https://angular.io/) [2], [Vue.js](https://vuejs.org/) [40] and [React](https://reactjs.org/) [20].
+Another group of stakeholders are competitors. Although they are not directly involved with the project and its management, they have an interest in it and can indirectly influence the design of products and success of the project as a whole. Some competitors of the Polymer Project include [Angular](https://angular.io/) [^2], [Vue.js](https://vuejs.org/) [^40] and [React](https://reactjs.org/) [^20].
 
 ### Stakeholder influence
 
@@ -92,7 +92,7 @@ In the context view, we consider the system as a black box while describing its 
 
 ### Key functional requirements
 
-In order to identify the key functional requirements we first examine the [feature overview](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview) [4]. The main features of Polymer identified include:
+In order to identify the key functional requirements we first examine the [feature overview](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview) [^4]. The main features of Polymer identified include:
 
 - Custom elements that function like DOM elements
 - Elements consisting of ECMAScript modules with classes
@@ -100,7 +100,7 @@ In order to identify the key functional requirements we first examine the [featu
 - Declarative syntax to attach listeners to elements children, with gesture support
 - Data binding of properties and attributes with observers and computed properties
 
-The underlying goal of these requirements is to "help developers unlock the web’s full potential" [25].
+The underlying goal of these requirements is to "help developers unlock the web’s full potential" [^25].
 
 ### External entities
 
@@ -110,7 +110,7 @@ We have identified the following external entities:
 - **Users** - Polymer is used by a large number of companies including well-known companies like: Netflix, ING, Coca-Cola, McDonald's and IBM. Besides these companies Polymer is also used by its main developer, Google, and can be found in various products created by Google.
 - **Runs in** - Polymer is used to create web applications and thus requires a browser to work. Thus, Polymer is dependent on the features that certain browsers support.
 - **Competitors** - Competitors of Polymer include other Javascript libraries focused on web applications. At the time of writing, popular alternatives to Polymer are Vue.js, AngularJS and React.
-- **Development tools** - Polymer is developed in JavaScript and is distributed through the npm package manager. Github is used to support the development of Polymer. The included testing framework runs on Node.js and includes several JavaScript frameworks. The JavaScript frameworks included in the testing environment are: [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Async](https://github.com/caolan/async), [Lodash](https://lodash.com/) and [Sinon](http://sinonjs.org/) [26]. For continuous integration purposes Travis CI is used.
+- **Development tools** - Polymer is developed in JavaScript and is distributed through the npm package manager. Github is used to support the development of Polymer. The included testing framework runs on Node.js and includes several JavaScript frameworks. The JavaScript frameworks included in the testing environment are: [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [Async](https://github.com/caolan/async), [Lodash](https://lodash.com/) and [Sinon](http://sinonjs.org/) [^26]. For continuous integration purposes Travis CI is used.
 - **Communication** - The official communication channels for Polymer are their website, Github, Twitter, Slack and Google Groups.
 - **License** - The Polymer library is available under the BSD license.
 
@@ -132,7 +132,7 @@ Lastly, the polymer CLI allows developers to execute a myriad of project structu
 For Polymer to work properly, developers need to make Polymer interface with npm to retrieve the required packages. Next to this, the framework itself is also hosted on the npm repository.
 This interaction is done via the HTTP protocol.
 
-Although the volume of requests for this interaction is relatively small (only for package updates and setting up the project), it can pose a problem for external entities that use Polymer if the service is down for an extended amount of time. The service level of npm however seems to be near a [100%](http://ping.npmjs.com/) uptime [41].
+Although the volume of requests for this interaction is relatively small (only for package updates and setting up the project), it can pose a problem for external entities that use Polymer if the service is down for an extended amount of time. The service level of npm however seems to be near a [100%](http://ping.npmjs.com/) uptime [^41].
 
 ### Context view diagram
 
@@ -152,15 +152,15 @@ The codeline model is in place to guide the development process. It explains how
 
 #### Build and Test Approach
 
-All Polymer projects make use of [Polymer CLI](https://github.com/Polymer/tools/tree/master/packages/cli) [27], a command-line tool for the installation, testing and building of Polymer projects and Web Components. There is no configuration required to use Polymer CLI which makes creating a Polymer project rather easy. The tests are run using the so-called [web-component-tester (WCT)](https://github.com/Polymer/tools/tree/master/packages/web-component-tester) [26], which is a browser-based testing environment created by the Polymer team. This environment also supports [SauceLabs](https://saucelabs.com/) [37] which allows for multi-platform cloud-based testing.
+All Polymer projects make use of [Polymer CLI](https://github.com/Polymer/tools/tree/master/packages/cli) [^27], a command-line tool for the installation, testing and building of Polymer projects and Web Components. There is no configuration required to use Polymer CLI which makes creating a Polymer project rather easy. The tests are run using the so-called [web-component-tester (WCT)](https://github.com/Polymer/tools/tree/master/packages/web-component-tester) [^26], which is a browser-based testing environment created by the Polymer team. This environment also supports [SauceLabs](https://saucelabs.com/) [^37] which allows for multi-platform cloud-based testing.
 
 #### Release Process
 
-Releases are done via the Github [releases](https://github.com/Polymer/polymer/releases) [28] and [tags](https://github.com/Polymer/polymer/tags) [29] sections. In this section, Polymer is released for both the 2.x and 3.x versions of the library. Every release lists the new features, meaningful changes and a raw list of all commits in this release. The release itself contains a tar and zip archive with the source code. To our knowledge there seems to be no documentation on what constitutes a release candidate and it seems a release is pushed when a significant amount of commits are made since the last release and the continuous integration does not raise an error.
+Releases are done via the Github [releases](https://github.com/Polymer/polymer/releases) [^28] and [tags](https://github.com/Polymer/polymer/tags) [^29] sections. In this section, Polymer is released for both the 2.x and 3.x versions of the library. Every release lists the new features, meaningful changes and a raw list of all commits in this release. The release itself contains a tar and zip archive with the source code. To our knowledge there seems to be no documentation on what constitutes a release candidate and it seems a release is pushed when a significant amount of commits are made since the last release and the continuous integration does not raise an error.
 
 #### Continuous integration
 
-After every commit the continuous integration tool [TravisCI](https://travis-ci.org/) [9] is invoked. This utility executes a [build script](https://github.com/Polymer/polymer/blob/master/.travis.yml) [30] which performs the following tasks:
+After every commit the continuous integration tool [TravisCI](https://travis-ci.org/) [^9] is invoked. This utility executes a [build script](https://github.com/Polymer/polymer/blob/master/.travis.yml) [^30] which performs the following tasks:
 
 1. Specifies variables such as the Linux distribution and NodeJS version
 2. Installs and builds the project and dependencies using Gulp
@@ -196,7 +196,7 @@ A visualization of the source code modules can be found in the figure below. The
 
 ![The code modules for Polymer](images/polymer/swa-codemodules.png)
 
-Next to the main functionality the Polymer project offers, there are three additional folders with source code for different goals. The source code located in the _Externs_ module contains only variable and function declarations. This is necessary when using the project in combination with the [Google Closure Compiler](https://developers.google.com/closure/compiler) [17]. The source code in the _Util_ folder is very minimal and meant for assisting the developers of Polymer (with tools such as a changelog-generator, etc.) and the _Test_ folder is, as expected, full of tests that ensure the quality of the Polymer project.
+Next to the main functionality the Polymer project offers, there are three additional folders with source code for different goals. The source code located in the _Externs_ module contains only variable and function declarations. This is necessary when using the project in combination with the [Google Closure Compiler](https://developers.google.com/closure/compiler) [^17]. The source code in the _Util_ folder is very minimal and meant for assisting the developers of Polymer (with tools such as a changelog-generator, etc.) and the _Test_ folder is, as expected, full of tests that ensure the quality of the Polymer project.
 
 The features polymer offers are divided in four modules: __elements__, __mixins__, __utils__ and __legacy__. The source code contained in __elements__ could be classified as a code module that serves the purpose of providing the Polymer user with pre-defined HTML elements. All HTML elements are based on the _polymer-element.js_ file in the root of the directory, the _polymer-element.js_ is therefore a dependency. Other dependencies of this module are __mixins__ and __utils__.
 
@@ -213,18 +213,18 @@ In order to construct an accurate model, we analyzed the Polymer GitHub reposito
 
 #### Standard design
 
-Polymer standardizes its elements in order to make them usable and easy to maintain. In this regard, all elements must conform to the [Polymer element style guide](https://www.polymer-project.org/3.0/docs/tools/documentation) [5] which defines how to specify properties and documentation.
+Polymer standardizes its elements in order to make them usable and easy to maintain. In this regard, all elements must conform to the [Polymer element style guide](https://www.polymer-project.org/3.0/docs/tools/documentation) [^5] which defines how to specify properties and documentation.
 
-- **Coding style** - The Polymer team uses the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) [18] and [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) [19] to structure their code. Adherence to these guidelines is mandatory and all contributions to the projects are checked for conformance. This ensures that the coding style of the project stays uniform
+- **Coding style** - The Polymer team uses the [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html) [^18] and [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html) [^19] to structure their code. Adherence to these guidelines is mandatory and all contributions to the projects are checked for conformance. This ensures that the coding style of the project stays uniform
 and developers can easily understand and maintain the project.
 
-- **Commit style** - Unlike other Google projects, Polymer's standard guide to contributing to the project is fairly flexible. The [guide](https://github.com/Polymer/polymer/blob/master/CONTRIBUTING.md) [31] states how bugs should be filed and pull requests can be made by the GitHub community. The team also has a template for reporting issues detected in the code.
+- **Commit style** - Unlike other Google projects, Polymer's standard guide to contributing to the project is fairly flexible. The [guide](https://github.com/Polymer/polymer/blob/master/CONTRIBUTING.md) [^31] states how bugs should be filed and pull requests can be made by the GitHub community. The team also has a template for reporting issues detected in the code.
 
 #### Standard elements and common processing
 
 Polymer primarily exposes one custom element to the user that is called __PolymerElement__. This element is built up from several mixins (described in the code modules section above). The pattern that can be seen in all of the source code is that functionality is built in mixin classes (or higher-order functions) and the actual exported elements are constructed using these mixin classes.
 
-Next to __PolymerElement__, Polymer offers several other elements that the user can use such as the [ArraySelector](https://github.com/Polymer/polymer/blob/master/lib/elements/array-selector.js) element [16]. These additional elements are extensions of __PolymerElement__ with additional functionality. An example is shown below:
+Next to __PolymerElement__, Polymer offers several other elements that the user can use such as the [ArraySelector](https://github.com/Polymer/polymer/blob/master/lib/elements/array-selector.js) element [^16]. These additional elements are extensions of __PolymerElement__ with additional functionality. An example is shown below:
 
 ```js
 // The functionality is defined as a function that returns
@@ -251,11 +251,11 @@ In this section we discuss technical debt related to the Polymer project. Techni
 
 ### Discussion in pull requests
 
-After analyzing the thirty most recent pull requests that had more than five comments, the conclusion must be drawn that there is not much discussion about technical debt in the Polymer pull requests. Only in one single case ([5451](https://github.com/Polymer/polymer/pull/5451) [11]) was there a request to refactor a line of code to make it more reusable, which can be seen as a discussion about technical debt. One other pull request ([5347](https://github.com/Polymer/polymer/pull/5347) [12]) was on the topic of cleaning up code after a conversion. More often (four out of thirty pull requests), a change is requested to add one or two comments to improve readability.
+After analyzing the thirty most recent pull requests that had more than five comments, the conclusion must be drawn that there is not much discussion about technical debt in the Polymer pull requests. Only in one single case ([5451](https://github.com/Polymer/polymer/pull/5451) [^11]) was there a request to refactor a line of code to make it more reusable, which can be seen as a discussion about technical debt. One other pull request ([5347](https://github.com/Polymer/polymer/pull/5347) [^12]) was on the topic of cleaning up code after a conversion. More often (four out of thirty pull requests), a change is requested to add one or two comments to improve readability.
 
 ### Code quality
 
-In order to evaluate the code quality of Polymer, we made use of two code evaluation tools: [DeepScan](https://deepscan.io/home/) [10] and [SonarQube](https://www.sonarqube.org/) [1]. Both of these tools are static code analysis tools where DeepScan is specifically designed for Javascript. The evaluation of the codebase was performed on the 6th of March 2019, so results may have changed in the mean time.
+In order to evaluate the code quality of Polymer, we made use of two code evaluation tools: [DeepScan](https://deepscan.io/home/) [^10] and [SonarQube](https://www.sonarqube.org/) [^1]. Both of these tools are static code analysis tools where DeepScan is specifically designed for Javascript. The evaluation of the codebase was performed on the 6th of March 2019, so results may have changed in the mean time.
 
 #### DeepScan
 
@@ -282,7 +282,7 @@ In an e-mail interview with Polymer ex-core team member Tim van der Lippe we dis
 
 ### Testing debt
 
-The web-component-tester (WCT) environment does not natively support the generation of code coverage. In order to generate code coverage an external plugin is required. The [istanbul tool](https://istanbul.js.org/) [21] has been made available for the WCT environment but is not maintained actively. Due to this we were unfortunately not able to generate test coverage reports.
+The web-component-tester (WCT) environment does not natively support the generation of code coverage. In order to generate code coverage an external plugin is required. The [istanbul tool](https://istanbul.js.org/) [^21] has been made available for the WCT environment but is not maintained actively. Due to this we were unfortunately not able to generate test coverage reports.
 
 The project in general does not rely on line coverage requirements but instead requires that all functionalities are tested. Unfortunately we were not able to gather the actual coverage statistics of the project. The large number of test cases show that testing is definitely taken into consideration when contributions are made. Testing is also often discussed in the pull requests which shows that testing is an integral part of the project. Because of the aforementioned reasons it would be obvious to assume that the testing debt is rather low. However, due to our lack of information we can not be sure of this. When inspecting the code manually we did manage to find some testing debt. An example of this is the "path.js" file in the utils package which has a testing class that does not cover all its functions. This shows that there is at least some form of testing debt present in Polymer.
 
@@ -290,7 +290,7 @@ The project in general does not rely on line coverage requirements but instead r
 
 Polymer is a web component library and needs to be compatible with all major browsers in order to be adopted by web developers. Naturally, major browsers differ in implementation and this introduces variability in Polymer. Most variability in Polymer is not concerned with providing different features to the developer but instead, the developer should take it into account in order to deliver consistent web components to all major browsers.
 Next to browser compatibility, Polymer also creates variability by introducing flags for certain commands in the Polymer command-line interface. Polymer makes use of load-time and run-time binding for its variability implementation, allowing for flexible development and reconfiguration. However, these mechanisms for load-time and run-time binding incur a memory and
-performance overhead, since all variations are compiled into a single binary and consistency conditions must be checked at run-time [3].
+performance overhead, since all variations are compiled into a single binary and consistency conditions must be checked at run-time [^3].
 
 ### Examples and implementation
 
@@ -298,21 +298,21 @@ Below are examples of variability in Polymer and their implementation.
 
 #### Polyfills
 
-Some features used by Polymer are not supported by major browsers [6], polyfills are used to build a bridge between them. A polyfill is a term used to describe a library that checks if a browser API supports a certain functionality; if it does not, the polyfill will intercept any calls to that functionality and run its own implementation [35].
+Some features used by Polymer are not supported by major browsers [^6], polyfills are used to build a bridge between them. A polyfill is a term used to describe a library that checks if a browser API supports a certain functionality; if it does not, the polyfill will intercept any calls to that functionality and run its own implementation [^35].
 
 __Implementation__
 
-Polymer uses the polyfills from webcomponents.org [39]. To load the polyfills to the browser, the Polymer user can load either `webcomponents-bundle.js` or `webcomponents-loader.js` from the `@webcomponents` module [7]. The first script retrieves all polyfills and loads them to the browser, resulting in extra bytes sent over the network (even unnecessary polyfills are sent). The alternative is the latter script, which assesses what features are supported by the browsers and then only retrieves the relevant polyfills. The latter option results in possibly less bytes sent over the network but does require an extra round-trip. This variability is bound at load time when the appropriate JavaScript file is used.
+Polymer uses the polyfills from webcomponents.org [^39]. To load the polyfills to the browser, the Polymer user can load either `webcomponents-bundle.js` or `webcomponents-loader.js` from the `@webcomponents` module [^7]. The first script retrieves all polyfills and loads them to the browser, resulting in extra bytes sent over the network (even unnecessary polyfills are sent). The alternative is the latter script, which assesses what features are supported by the browsers and then only retrieves the relevant polyfills. The latter option results in possibly less bytes sent over the network but does require an extra round-trip. This variability is bound at load time when the appropriate JavaScript file is used.
 
 #### Command-line interface
 
-The Polymer project offers a command-line interface (CLI) that offers useful functionality to developers such as building the application [8]. The commands `polymer build` and `polymer serve` accept flags that provide functionality. Because the `polymer build` command has fourteen possible flags, certain presets are offered that bundle common flag combinations.
+The Polymer project offers a command-line interface (CLI) that offers useful functionality to developers such as building the application [^8]. The commands `polymer build` and `polymer serve` accept flags that provide functionality. Because the `polymer build` command has fourteen possible flags, certain presets are offered that bundle common flag combinations.
 
 __Implementation__
 
 
 The Polymer team created a TypeScript interface named `Command` which all CLI commands implement. At run-time, a user can use the configuration options provided by the Polymer CLI to configure his or her project. This includes defining the root of the project, the build files, shell and fragments that could be implemented.
-In a specific command such as `build`, the supported flags are described by creating an array of `ArgDescriptor`s, which also is a TypeScript interface. During the execution of the command, the flags are implemented as conditionals. An example is the `--js-minify` flag which is implemented in the `js-transform.js` file as follows [24].
+In a specific command such as `build`, the supported flags are described by creating an array of `ArgDescriptor`s, which also is a TypeScript interface. During the execution of the command, the flags are implemented as conditionals. An example is the `--js-minify` flag which is implemented in the `js-transform.js` file as follows [^24].
 
 ```js
   if (options.minify) {
@@ -334,11 +334,11 @@ How variability is managed is different for users and developers of the project.
 
 #### Variability management for users
 
-When building a project with Polymer, the user has to decide on hosting features and supported browsers [32]. The first decision is based on whether the hosting provider supports user agent detection and the ability to serve different files to different user agents. If that is the case then the user is able to deploy multiple builds and depending on the browser used, the most optimized build is served. If this is not supported by the hosting provider, the user has to generate a single build and has to decide which specific browsers to support. For an individual build Polymer supports 17 parameters [33], allowing the user a lot of freedom in their choices. Such an amount of parameters can be overwhelming and therefore three presets are offered in addition which each provide a different, standard level of support for browsers.
+When building a project with Polymer, the user has to decide on hosting features and supported browsers [^32]. The first decision is based on whether the hosting provider supports user agent detection and the ability to serve different files to different user agents. If that is the case then the user is able to deploy multiple builds and depending on the browser used, the most optimized build is served. If this is not supported by the hosting provider, the user has to generate a single build and has to decide which specific browsers to support. For an individual build Polymer supports 17 parameters [^33], allowing the user a lot of freedom in their choices. Such an amount of parameters can be overwhelming and therefore three presets are offered in addition which each provide a different, standard level of support for browsers.
 
 #### Variability management for developers
 
-For the support of older browsers, Polymer relies on polyfills created by the [Web Components project](https://github.com/webcomponents/webcomponentsjs) [38]. So, developers of Polymer do not have to directly handle the support of older browsers. Since the project is heavily reliant on these polyfills, the Polymer team has also been concerned with the development and maintenance of these polyfills [34].
+For the support of older browsers, Polymer relies on polyfills created by the [Web Components project](https://github.com/webcomponents/webcomponentsjs) [^38]. So, developers of Polymer do not have to directly handle the support of older browsers. Since the project is heavily reliant on these polyfills, the Polymer team has also been concerned with the development and maintenance of these polyfills [^34].
 
 Whether Polymer is fully (natively) supported or not is mostly dependant on the choice of browsers to support the Web Components API. Developers themselves have little to no influence in this decision unfortunately.
 
@@ -352,89 +352,89 @@ Overall, analyzing Polymer was interesting. We are pleasantly surprised by the q
 
 ## References
 
-1. SonarSource S. A. Continuous inspection | sonarqube. Retrieved March 20, 2019 from https: //www.sonarqube.org/
+[^1]: SonarSource S. A. Continuous inspection \| sonarqube. Retrieved March 20, 2019 from https: //www.sonarqube.org/
 
-2. Angular. Angular. Retrieved February 28, 2019 from https://angular.io/
+[^2]: Angular. Angular. Retrieved February 28, 2019 from https://angular.io/
 
-3. Sven Apel, Don Batory, Christian Kastner, and Gunter Saake. 2016. Feature-oriented software product lines. Springer.
+[^3]: Sven Apel, Don Batory, Christian Kastner, and Gunter Saake. 2016. Feature-oriented software product lines. Springer.
 
-4. The Polymer Project Authors. 2018. Polymer library - polymer project. Retrieved February 28, 2019 from https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview
+[^4]: The Polymer Project Authors. 2018. Polymer library - polymer project. Retrieved February 28, 2019 from https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview
 
-5. The Polymer Project Authors. Document your elements - polymer project. Retrieved March 21, 2019 from https://polymer-library.polymer-project.org/3.0/docs/tools/documentation
+[^5]: The Polymer Project Authors. Document your elements - polymer project. Retrieved March 21, 2019 from https://polymer-library.polymer-project.org/3.0/docs/tools/documentation
 
 6. The Polymer Project Authors. Browser support overview - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/browsers
 
-7. The Polymer Project Authors. Polyfills - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/polyfills
+[^7]: The Polymer Project Authors. Polyfills - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/polyfills
 
-8. The Polymer Project Authors. Polymer cli commands - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/tools/polymer-cli-commands
+[^8]: The Polymer Project Authors. Polymer cli commands - polymer project. Retrieved April 2, 2019 from https://polymer-library.polymer-project.org/3.0/docs/tools/polymer-cli-commands
 
-9. Travis CI. Travis ci - test and deploy your code with confidence. Retrieved March 21, 2019 from https://travis-ci.org/
+[^9]: Travis CI. Travis ci - test and deploy your code with confidence. Retrieved March 21, 2019 from https://travis-ci.org/
 
-10. deepscan.io. How to ensure javascript code quality | deepscan. Retrieved March 20, 2019 from https://deepscan.io/home/
+[^10]: deepscan.io. How to ensure javascript code quality \| deepscan. Retrieved March 20, 2019 from https://deepscan.io/home/
 
-11. GitHub. 2018. Retrieved March 20, 2019 from https://github.com/Polymer/polymer/pull/5451 
+[^11]: GitHub. 2018. Retrieved March 20, 2019 from https://github.com/Polymer/polymer/pull/5451 
 
-12. GitHub. 2018. Retrieved March 20, 2019 from https://github.com/Polymer/polymer/pull/5347
+[^12]: GitHub. 2018. Retrieved March 20, 2019 from https://github.com/Polymer/polymer/pull/5347
 
-13. GitHub. Sorvell (steve orvell). Retrieved February 28, 2019 from https://github.com/sorvell
+[^13]: GitHub. Sorvell (steve orvell). Retrieved February 28, 2019 from https://github.com/sorvell
 
-14. GitHub. Kevinpschaaf (kevin schaaf). Retrieved February 28, 2019 from https://github.com/k evinpschaaf
+[^14]: GitHub. Kevinpschaaf (kevin schaaf). Retrieved February 28, 2019 from https://github.com/k evinpschaaf
 
-15. GitHub. Azakus (daniel freedman). Retrieved February 28, 2019 from https://github.com/aza kus
+[^15]: GitHub. Azakus (daniel freedman). Retrieved February 28, 2019 from https://github.com/aza kus
 
-16. GitHub. Polymer/array-selector.js at master polymer/polymer. Retrieved March 20, 2019 from https://github.com/Polymer/polymer/blob/master/lib/elements/array-selector.js
+[^16]: GitHub. Polymer/array-selector.js at master polymer/polymer. Retrieved March 20, 2019 from https://github.com/Polymer/polymer/blob/master/lib/elements/array-selector.js
 
-17. Google. Closure compiler | google developers. Retrieved March 20, 2019 from https://develope rs.google.com/closure/compiler
+[^17]: Google. Closure compiler \| google developers. Retrieved March 20, 2019 from https://develope rs.google.com/closure/compiler
 
-18. Google. Google javascript style guide. Retrieved March 21, 2019 from https://google.github.io /styleguide/jsguide.html
+[^18]: Google. Google javascript style guide. Retrieved March 21, 2019 from https://google.github.io /styleguide/jsguide.html
 
-19. Google. Google html/css style guide. Retrieved March 21, 2019 from https://google.github.io /styleguide/htmlcssguide.html
+[^19]: Google. Google html/css style guide. Retrieved March 21, 2019 from https://google.github.io /styleguide/htmlcssguide.html
 
-20. Facebook Inc. React – a javascript library for building user interfaces. Retrieved February 28, 2019 from https://reactjs.org/
+[^20]: Facebook Inc. React – a javascript library for building user interfaces. Retrieved February 28, 2019 from https://reactjs.org/
 
-21. Istanbul. Istanbul, a javascript test coverage tool. Retrieved March 21, 2019 from https: //istanbul.js.org/
+[^21]: Istanbul. Istanbul, a javascript test coverage tool. Retrieved March 21, 2019 from https: //istanbul.js.org/
 
-22. Tim van der Lippe. 2018. Who’s using polymer? Retrieved February 28, 2019 from https://www.polymer-project.org/blog/2018-05-02-roadmap-update
+[^22]: Tim van der Lippe. 2018. Who’s using polymer? Retrieved February 28, 2019 from https://www.polymer-project.org/blog/2018-05-02-roadmap-update
 
-23. Gray Norton. 2018. Roadmap update, part 1: 3.0 and beyond updates on the polymer 3.0 release and what comes next. Retrieved February 28, 2019 from https://www.polymer- project.org/blog/2018-05-02-roadmap-update
+[^23]: Gray Norton. 2018. Roadmap update, part 1: 3.0 and beyond updates on the polymer 3.0 release and what comes next. Retrieved February 28, 2019 from https://www.polymer- project.org/blog/2018-05-02-roadmap-update
 
-24. Polymer. 2018. Polymer-build/js-transform.ts at master - polymer/polymer-build - github. Retrieved April 2, 2019 from https://github.com/Polymer/polymer-build/blob/master/src/js- transf orm.ts
+[^24]: Polymer. 2018. Polymer-build/js-transform.ts at master - polymer/polymer-build - github. Retrieved April 2, 2019 from https://github.com/Polymer/polymer-build/blob/master/src/js- transf orm.ts
 
-25. Polymer. Polymer project. Retrieved April 12, 2019 from https://www.polymer-project.org/
+[^25]: Polymer. Polymer project. Retrieved April 12, 2019 from https://www.polymer-project.org/
 
-26. Polymer. Tools/packages/web-component-tester at master polymer/tools. Retrieved February 28, 2019 from https://github.com/Polymer/tools/tree/master/packages/web-component-tester
+[^26]: Polymer. Tools/packages/web-component-tester at master polymer/tools. Retrieved February 28, 2019 from https://github.com/Polymer/tools/tree/master/packages/web-component-tester
 
-27. Polymer. Tools/packages/cli at master - polymer/tools. Retrieved March 21, 2019 from https://github.com/Polymer/tools/tree/master/packages/cli
+[^27]: Polymer. Tools/packages/cli at master - polymer/tools. Retrieved March 21, 2019 from https://github.com/Polymer/tools/tree/master/packages/cli
 
-28. Polymer. Releases - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Pol ymer/polymer/releases
+[^28]: Polymer. Releases - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Pol ymer/polymer/releases
 
-29. Polymer. Tags - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Polym er/polymer/tags
+[^29]: Polymer. Tags - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Polym er/polymer/tags
 
-30. Polymer. Polymer/.travis.yml at master - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Polymer/polymer/blob/master/.travis.yml
+[^30]: Polymer. Polymer/.travis.yml at master - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Polymer/polymer/blob/master/.travis.yml
 
-31. Polymer. Polymer/contributing.md at master - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Polymer/polymer/blob/master/CONTRIBUTING.md
+[^31]: Polymer. Polymer/contributing.md at master - polymer/polymer. Retrieved March 21, 2019 from https://github.com/Polymer/polymer/blob/master/CONTRIBUTING.md
 
-32. Polymer. Build for production - polymer project. Retrieved from https://polymer-library.poly mer-project.org/3.0/docs/apps/build-for-production
+[^32]: Polymer. Build for production - polymer project. Retrieved from https://polymer-library.poly mer-project.org/3.0/docs/apps/build-for-production
 
-33. Polymer. Polymer.json specification - polymer project. Retrieved from https://polymer- library.polymer-project.org/3.0/docs/tools/polymer-json
+[^33]: Polymer. Polymer.json specification - polymer project. Retrieved from https://polymer- library.polymer-project.org/3.0/docs/tools/polymer-json
 
-34. Polymer. Roadmap update, part 1: 3.0 and beyond - polymer project. Retrieved from https://www.polymer-project.org/blog/2018-05-02-roadmap-update
+[^34]: Polymer. Roadmap update, part 1: 3.0 and beyond - polymer project. Retrieved from https://www.polymer-project.org/blog/2018-05-02-roadmap-update
 
-35. Axel Rauschmayer. 2014. Speaking javascript - an in-depth guide for programmers. Retrieved April 2, 2019 from http://speakingjs.com/es5/ch30.html
+[^35]: Axel Rauschmayer. 2014. Speaking javascript - an in-depth guide for programmers. Retrieved April 2, 2019 from http://speakingjs.com/es5/ch30.html
 
-36. Nick Rozanski and Eoin Woods. 2011. Software systems architecture: Working with stakeholders using viewpoints and perspectives. Addison-Wesley.
+[^36]: Nick Rozanski and Eoin Woods. 2011. Software systems architecture: Working with stakeholders using viewpoints and perspectives. Addison-Wesley.
 
-37. SauceLabs. Cross browser testing. Retrieved March 21, 2019 from https://saucelabs.com/
+[^37]: SauceLabs. Cross browser testing. Retrieved March 21, 2019 from https://saucelabs.com/
 
-38. webcomponents. Webcomponents/webcomponents.js: A suite of polyfills supporting the html web components specs. Retrieved from https://github.com/webcomponents/webcomponentsjs
+[^38]: webcomponents. Webcomponents/webcomponents.js: A suite of polyfills supporting the html web components specs. Retrieved from https://github.com/webcomponents/webcomponentsjs
 
-39. webcomponents.org. Webcomponents.org. Retrieved April 2, 2019 from https://www.webcom ponents.org/
+[^39]: webcomponents.org. Webcomponents.org. Retrieved April 2, 2019 from https://www.webcom ponents.org/
 
-40. Evan You. Vue.js. Retrieved February 28, 2019 from https://vuejs.org/
+[^40]: Evan You. Vue.js. Retrieved February 28, 2019 from https://vuejs.org/
 
-41. Npm http service uptime – service uptime in the past 90 days. Retrieved February 28, 2019 from http://ping.npmjs.com/
+[^41]: Npm http service uptime – service uptime in the past 90 days. Retrieved February 28, 2019 from http://ping.npmjs.com/
 
-42. Npm. npm. Retrieved April 14, 2019 from https://www.npmjs.com/
+[^42]: Npm. npm. Retrieved April 14, 2019 from https://www.npmjs.com/
 
 ## Appendix A - Analyses of pull requests
 
