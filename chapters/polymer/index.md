@@ -79,7 +79,7 @@ Using a power/interest grid, we categorize the stakeholders based on their influ
 the system conforms to standards and legal regulations. Aside from these groups, it is important to keep the contributors of the system including the GitHub community and other Polymer employees and users informed. Although these groups are highly interested in Polymer, they do not have much power. Lastly, the competitors of Polymer only have to be monitored since they
 have the least interest and influence on the system.
 
-![Diagram showing power and interests of stakeholders](res/img/swa-powerinterestgrid.png)
+![Diagram showing power and interests of stakeholders](images/polymer/swa-powerinterestgrid.png)
 
 ### Decision making process
 
@@ -136,7 +136,7 @@ Although the volume of requests for this interaction is relatively small (only f
 
 ### Context view diagram
 
-![The context view for Polymer, showing the entities and their relationships](res/img/swa-contextview.png)
+![The context view for Polymer, showing the entities and their relationships](images/polymer/swa-contextview.png)
 
 The context view diagram in the figure above gives an overview of the different entities involved in Polymer and their relationships. Polymer runs in different browsers, which all have the ability to support or exclude certain standards. The developers of Polymer have take into account these decisions. The development process is supported by several tools/platforms such as npm and Travis CI. Developers and users of Polymer are able to communicate with each other through several platforms including Github, Twitter and Slack.
 
@@ -176,25 +176,25 @@ Pull requests are thoroughly reviewed by the core Polymer team before they are a
 
 In the figure below, a hierarchical view is shown of the file structure of the polymer project. It can be seen that the project is divided into three parts namely the actual library which is contained in lib, the testing part which is contained in the test folder and the root of the project where most configuration files are located. These configuration files specify dependencies or the continuous integration files for example. What is especially interesting is the size of the testing files in comparison with the actual framework itself. We can see that this part is about two to three times the size of the actual framework. This shows that the Polymer has a comprehensive test suite high on the list of priorities.
 
-![Source code file structure. The white circles are files. The names of the corresponding folders is displayed](res/img/source_code_structure_all.png)
+![Source code file structure. The white circles are files. The names of the corresponding folders is displayed](images/polymer/source_code_structure_all.png)
 
 #### Lib
 
 As seen in the figure below the actual framework itself is divided into 4 elements. These are the elements, utils, mixins and legacy folders. The utils folder contains utility classes such as async and array operations. The mixins folder contains a couple of base mixins. A mixin is a function that takes a class and returns a subclass. The legacy folder contains files that are necessary to stay compatible with older versions of Polymer. Lastly, the elements folder contains some base elements that allow users to easily use standard patterns and not have to redefine these patterns.
 
-![Library file structure](res/img/source_code_structure_lib.png)
+![Library file structure](images/polymer/source_code_structure_lib.png)
 
 #### Testing
 
 In the figure below the testing file structure is shown. It can be seen that the majority of the tests consist of unit tests. There are a small amount of performance tests. Lastly there are some smoke tests as well which run certain functionality in browser and check if the expected result is achieved.
 
-![Testing file structure](res/img/source_code_structure_testing.png)
+![Testing file structure](images/polymer/source_code_structure_testing.png)
 
 ### Code modules and dependencies
 
 A visualization of the source code modules can be found in the figure below. The source of the core Polymer API is transparent in the sense that every class in the project is something that contains a functionality to the Polymer users. This makes explaining the code modules straight forward, meaning that what you see in the source is what you get as a user.
 
-![The code modules for Polymer](res/img/swa-codemodules.png)
+![The code modules for Polymer](images/polymer/swa-codemodules.png)
 
 Next to the main functionality the Polymer project offers, there are three additional folders with source code for different goals. The source code located in the _Externs_ module contains only variable and function declarations. This is necessary when using the project in combination with the [Google Closure Compiler](https://developers.google.com/closure/compiler) [17]. The source code in the _Util_ folder is very minimal and meant for assisting the developers of Polymer (with tools such as a changelog-generator, etc.) and the _Test_ folder is, as expected, full of tests that ensure the quality of the Polymer project.
 
@@ -261,7 +261,7 @@ In order to evaluate the code quality of Polymer, we made use of two code evalua
 
 The result of running DeepScan can be seen in the figure below. According to DeepScan, the overall grade of the project was 'Good' which is the highest grade available. The tool found a total of 12 issues, 9 of which are related to code quality and marked as 'low impact'. The remaining 3 issues are related to possible errors in the code and considered 'medium impact'. The issues do not seem to have a common quality and are all rather different, so there is no pattern to be found which means that the issues are not structural and rather incidents.
 
-![Evaluation results of DeepScan](res/img/swa-deepscan.png)
+![Evaluation results of DeepScan](images/polymer/swa-deepscan.png)
 
 #### SonarQube
 
@@ -272,7 +272,7 @@ SonarQube rates the code on several different aspects. The results can be found 
 - **Maintainability** - The maintainability is defined by the number of code smells detected. SonarQube was able to detect a total of 25 code smells. Over half of these smells are related to unused imports or variables. The other half consists of various issues. The rating for maintainability is also dependent on the size of the project, with a larger project code smells are more likely and thus to be expected. Due to the large size of the project and the small number of code smells Polymer received an 'A' rating for maintainability.
 - **Duplication** - SonarQube does grade the duplication but just shows the results. In total, 13.1% of the lines was duplicated. However, all the duplications are located in the test folder which is no surprise as testing often requires repeating the same instructions with small differences. We can therefore conclude that duplication is no problem in the Polymer project.
 
-![Evaluation results of SonarQube](res/img/swa-sonarqube.png)
+![Evaluation results of SonarQube](images/polymer/swa-sonarqube.png)
 
 Both DeepScan and SonarQube report very positive results for the Polymer project. It can therefore be concluded that the project does not contain a lot of technical debt and is very healthy in general.
 
@@ -326,7 +326,7 @@ In a specific command such as `build`, the supported flags are described by crea
 
 In the figure below we can see a figure of the variability in Polymer. This model does not contain all the features of Polymer but rather the ones where a user (developer) can introduce variability. The figure is from the view of the developer since those are the users of Polymer. The browser choice is not explicitly given in Polymer but it does influence whether the use of polyfills, shady CSS and shady DOM can be enabled. For example: newer versions of Chrome do not require any of these features and if a user of Polymer decides to only support this browser these features are not used.
 
-![Variability feature model for Polymer](res/img/feature_model.pdf)
+![Variability feature model for Polymer](images/polymer/feature_model.png)
 
 ### Variability management
 
