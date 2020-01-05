@@ -1,16 +1,12 @@
 ---
-title: Polymer
-author: Max de Krieger,
-        David van der Leij,
-        Sharon Grundmann,
-        Thomas Kolenbrander
-csl: res/acm.csl
-bibliography: res/bibliography.bib
-header-includes:
-  - \usepackage{float}
-  - \usepackage{a4wide}
-  - \usepackage{natbib}
+layout: default
+project: polymer
+title: "Polymer"
+chapter: true
 ---
+
+# Polymer
+_Max de Krieger, David van der Leij, Sharon Grundmann, and Thomas Kolenbrander_
 
 # Table of Contents
 
