@@ -186,7 +186,13 @@ The JavaScript code that the user interacts with can be found in the `Libraries/
 
 We aim to better understand the decision-making process of stakeholders, and the characteristics of how the community operates. To this end, we analyzed 20 PRs from less than one year ago. We start by first tagging each comment on each PR to gain a better understanding of what is happening. For tagging purposes we used the following tags:
 
-<table><colgroup><col style="width: 22%" /><col style="width: 77%" /></colgroup><thead><tr class="header"><th>Tag</th><th>Subcategory</th></tr></thead><tbody><tr class="odd"><td>Git</td><td>-</td></tr><tr class="even"><td>Procedure</td><td>-</td></tr><tr class="odd"><td>Bot</td><td>facebook-github-bot <br> analysis-bot <br> pull-bot <br> react-native-bot <br> es-lint-bot</td></tr><tr class="even"><td>Discussion</td><td>General <br> Bugs <br> Duplicate <br> Test request <br> Reference other <br> Review request <br> Code style</td></tr></tbody></table>
+|Tag|Subcategory|
+|--- |--- |
+|Git|-|
+|Procedure|-|
+|Bot|facebook-github-bot,  analysis-bot,  pull-bot,  react-native-bot,  es-lint-bot|
+|Discussion|General,  Bugs,  Duplicate,  Test request,  Reference other,  Review request,  Code style|
+
 
 Three members of our team proceeded to tag each comment and discussed disagreements until we reached a consensus. For each PR, we also noted why it was or was not merged, listed in the appendix. Below we also see a side-by-side comparison of the type of tags for each PR.
 
@@ -292,7 +298,10 @@ After we identified the testing debt as the most pressing issue in this project,
 
 To see the decrease in testing debt by adding the new unit tests, we now compare the test coverage before and after our contributions. The appendix contains a description of the process and a detailed breakdown per component.
 
-<table><thead><tr class="header"><th>All Files</th><th style="text-align: right;">Before</th><th style="text-align: right;">After</th></tr></thead><tbody><tr class="odd"><td>Branches</td><td style="text-align: right;">8.70% <br> <small>2565/29485</small></td><td style="text-align: right;">8.90% <br> <small>2625/29485</small></td></tr><tr class="even"><td>Lines</td><td style="text-align: right;">11.87% <br> <small>4113/34639</small></td><td style="text-align: right;">12.15% <br> <small>4207/34639</small></td></tr></tbody></table>
+|All Files|Before|After|
+|--- |--- |--- |
+|Branches|8.70%  _2565/29485_|8.90%  _2625/29485_|
+|Lines|11.87%  _4113/34639_|12.15%  _4207/34639_|
 
 In hindsight, writing the tests took us quite some effort. Although the coverage increased a bit, only 12.1% of the lines in the codebase are now covered. We conclude that there is still significant testing debt present in the codebase. The actual cost of this debt remains elusive: Which bugs that could have been detected by tests will go by unnoticed? There is likely no clear answer to this, but we prefer staying on the safe side by covering more of the codebase with tests.
 
