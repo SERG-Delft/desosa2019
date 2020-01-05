@@ -7,7 +7,7 @@ chapter: true
 
 # React Native
 
-![](images/avatars/group.png)
+![](images/react-native/avatars/group.png)
 
 [J.S. Abrahams](http://github.com/JSAbrahams), [G. Andreadis](https://github.com/gandreadis), [C.C. Boone](https://github.com/casperboone), [F.W. Dekker](https://github.com/FWDekker)
 
@@ -117,7 +117,7 @@ React Native is used by many companies (to improve consistency between platforms
 
 We visualize the stakeholders in this section based on their power and interest in the project in the figure below:
 
-![Power Interest](images/diagrams/power_interest.png)
+![Power Interest](images/react-native/diagrams/power_interest.png)
 
 ## Context View
 
@@ -125,7 +125,7 @@ In this section, we place React Native in its greater context. We portray its in
 
 As React Native is a framework for cross-platform mobile development, a key requirement is that developers can write platform-agnostic code. Another critical requirement is that the performance of applications written in React Native is comparable to applications written in the languages of those platforms. In general, users of React Native are developers, meaning React Native fits between those developers and the iOS and Android systems, respectively.
 
-![Context View](images/diagrams/context-view.png)
+![Context View](images/react-native/diagrams/context-view.png)
 
 Going clockwise, users are the ones that use React Native to build their (mobile) applications (see [Stakeholder Analysis](#stakeholder-analysis)). React Native is deployed using the npm package manager [^12]. Development tools also make it easier to develop React Native applications. Such tools include Yoga, an open source tool which allows the creation of flexible layouts on multiple platforms [^16].
 
@@ -141,11 +141,11 @@ For large projects, it is essential to carefully consider the code structure and
 
 Fundamentally, React Native runs on three threads: the native thread, the shadow thread, and the JavaScript thread [^17]. Users interface with the JavaScript thread to modify the state of the application. When the interface needs to be updated, the JavaScript thread asynchronously calls the shadow thread, which maintains a virtual platform-independent DOM called the shadow tree. The shadow thread’s reconciler occasionally calculates what has changed since the last update and tells the native thread what should be changed, calculating the desired positions of components using [Yoga](https://github.com/facebook/yoga). Communication between the native and shadow thread happens over the bridge, which (asynchronously) translates JavaScript objects to native objects and back. Finally, the native thread is where the actual UI updates take place by directly interacting with the DOM.
 
-![Old module organization](images/diagrams/module-organization-old.png)
+![Old module organization](images/react-native/diagrams/module-organization-old.png)
 
 Currently, React Native is in the process of migrating to a new architecture [^18]. The new architecture replaces the bridge by the JavaScript Interface (JSI). With the JSI, the interaction between the shadow thread and the native thread changes radically. Rather than translating JSON to and from native objects asynchronously, the JSI will expose the native DOM as a JavaScript API so that the shadow thread can interact with it directly. The benefit of this approach is that the shadow thread will no longer need to maintain a virtual DOM since it can directly change the native DOM [^19].
 
-![New module organization](images/diagrams/module-organization-new.png)
+![New module organization](images/react-native/diagrams/module-organization-new.png)
 
 ### Common Processing
 
@@ -231,7 +231,7 @@ To independently analyze the quality of the codebase, we ran a SonarQube analysi
 
 Before we give the full analysis, we first investigate the distribution of code volume over language. A breakdown of line counts over language is given in the figure below:
 
-![Static analysis report](images/sonarqube/language-breakdown.png)
+![Static analysis report](images/react-native/sonarqube/language-breakdown.png)
 
 Overall, the main folders of this codebase have more than 224k lines of code.
 
@@ -279,7 +279,7 @@ In this section, we give a brief historical overview of two perspectives on tech
 
 We first look at static analysis. We ran SonarQube on 6 of the past 50 releases, spaced evenly (time-wise). As pointed out in our analysis of the current state, static analysis may yield many false positives. However, it generally gives an indication of technical debt. The plot below visualizes the evolution.
 
-![Sonar evolution](images/plots/sonar_evolution.png)
+![Sonar evolution](images/react-native/plots/sonar_evolution.png)
 
 Although not consistent over all metrics, there seems to be a general increase in SonarQube violations over the past two years. Especially the number of bugs seems to increase steadily. The root cause of this is difficult to establish, but it remains an indication of an increasing amount of technical debt.
 
@@ -287,15 +287,15 @@ Although not consistent over all metrics, there seems to be a general increase i
 
 We now turn to the evolution of test coverage. Since historical data for this was not publicly available, we have written a script which computes the coverage of the JavaScript part of the codebase for the last 50 releases. In the figure below, the results of this analysis are plotted against their release date. Releases where coverage could not be computed are excluded.
 
-![Coverage evolution](images/plots/coverage_fractions.png)
+![Coverage evolution](images/react-native/plots/coverage_fractions.png)
 
 Because React Native follows a release model where releases are placed in a dedicated branch and snapshot tests are generated on that branch, coverage of releases is higher than the coverage of day-to-day commits.
 
 Overall, we see a decline in line coverage over time, starting from over 50% and dropping below 40%. Branch coverage has stayed relatively stable. To analyze this further, we plot the covered and total lines/branches, individually:
 
-![Line coverage evolution](images/plots/coverage_lines.png)
+![Line coverage evolution](images/react-native/plots/coverage_lines.png)
 
-![Branch coverage evolution](images/plots/coverage_branches.png)
+![Branch coverage evolution](images/react-native/plots/coverage_branches.png)
 
 It becomes apparent that the increase in lines is not met as well in coverage as the increase in branches. This likely can be traced back to long linear blocks of code, which do not significantly contribute to branch complexity but do impact line coverage.
 
@@ -360,7 +360,7 @@ Modules are represented as a directory and form a part of the domain. A module c
 
 As an example, the following modules are present in QR Code:
 
-![QR Code structure](images/apps/qrcodestructure.png)
+![QR Code structure](images/react-native/apps/qrcodestructure.png)
 
 ## Testing and Software Quality
 
