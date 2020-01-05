@@ -203,7 +203,8 @@ We aim to better understand the decision-making process of stakeholders, and the
 
 Three members of our team proceeded to tag each comment and discussed disagreements until we reached a consensus. For each PR, we also noted why it was or was not merged, listed in the appendix. Below we also see a side-by-side comparison of the type of tags for each PR.
 
-<img src="images/diagrams/type-comments-pr.png" alt="Comment type" height="350"/> <img src="images/diagrams/type-comments-per-pr.png" alt="Comment type per PR" height="350"/>
+![Comment type](images/react-native/diagrams/type-comments-pr.png)
+![Comment type per PR](images/react-native/diagrams/type-comments-per-pr.png)
 
 We observe that user [hramos](https://github.com/hramos) is heavily involved in many PRs and often refers people to other people, as seen in PRs [18522](https://github.com/facebook/react-native/pull/18522) and [17422](https://github.com/facebook/react-native/pull/17422), thereby functioning as a bridge.
 
