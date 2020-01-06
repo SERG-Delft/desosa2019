@@ -56,9 +56,7 @@ This chapter aims to describe the high-level architecture starting with an analy
 
 According to Rozanski and Woods \[1\], a stakehold is a person, a group or an entity that has interest and concerns about the realization of the architecture. According to their classification based on the roles and concerns, 10 types of stakeholders are identified: acquirers, assessors, communicators, developers, maintainers, suppliers, support staff, system administrators, testers and users. In Django, the non-profit organization **Django Software Foundation** (DSF), the **Core Members** and the **Technical Board** have a major impact in the administration of the project. Thus, special attention is required in order to fully understand their responsibilities and how they integrate with the RW categorization.
 
-##### Django Software Foundation
-
-Based on the Django [organization](https://docs.djangoproject.com/en/2.1/internals/organization/), the Django Software Foundation handles the financial and legal aspects of the project. The goal of the [foundation](https://www.djangoproject.com/foundation/) is to promote, support and advance the project. Therefore, they support the development by organising meetups and community events, by promoting the use of Django in the online development community, protecting the intellectual property and advancing the state of the art in Web development. The foundation is composed of **corporate members**, **individual members** and the **board of directors**.
+**Django Software Foundation** Based on the Django [organization](https://docs.djangoproject.com/en/2.1/internals/organization/), the Django Software Foundation handles the financial and legal aspects of the project. The goal of the [foundation](https://www.djangoproject.com/foundation/) is to promote, support and advance the project. Therefore, they support the development by organising meetups and community events, by promoting the use of Django in the online development community, protecting the intellectual property and advancing the state of the art in Web development. The foundation is composed of **corporate members**, **individual members** and the **board of directors**.
 
 The [corporate members](https://www.djangoproject.com/foundation/corporate-members/) offer the financial support in the form of one year subscription based packages. The packages are formed based on the number of people from the organization and the payment amount, ranging from organizations with up to 10 people and a dues of 2000$ (Bronze package) to organizations with more than 500 people and dues of 100,000$ (Platinum package).
 
@@ -66,9 +64,7 @@ The [individual members](https://www.djangoproject.com/foundation/individual-mem
 
 The board of directors is formed of Frank Wiles - President, [Anna Makarudze](http://blog.djangogirls.org/post/146535801439/your-django-story-meet-anna-makarudze) - Vice President, James Bennett - Secretary, [Jessica Deaton](https://www.linkedin.com/in/jessica-deaton/) - Treasurer, [Katie McLaughlin](https://www.linkedin.com/in/glasnt/) and Ola Tarkowska. Most of the members of the board of directors are public speakers, who help with Django events and conferences organization or are very experienced developers.
 
-##### Core Members
-
-The [core team members](https://docs.djangoproject.com/en/2.1/internals/organization/#core-team) are a group of volunteers that have shown dedication over time and became trustworthy to manage the Django Project. Some of the attributions of the core members are:
+**Core Members** The [core team members](https://docs.djangoproject.com/en/2.1/internals/organization/#core-team) are a group of volunteers that have shown dedication over time and became trustworthy to manage the Django Project. Some of the attributions of the core members are:
 
 -   triaging tickets;
 -   writing, reviewing and merging patches;
@@ -86,9 +82,7 @@ They also have authority over the Django Project infrastructure, the webite, the
 -   Technical board
 -   Technical team - Veterans contributors who are active in the day to day development
 
-##### Technical Board
-
-The Technical Board is a special category of core members. Their role is to steer the technical choices and to mantain the quality and stabilty of Django. The members are chosen on every release and the current board of the 2.2 release is: Adam Johnson, Andrew Godwin, Aymeric Augustin, Carl Meyer, James Bennett. The main attributes of the technical board is to grant or remove commit access and make decisions when no consensus is found.
+**Technical Board** The Technical Board is a special category of core members. Their role is to steer the technical choices and to mantain the quality and stabilty of Django. The members are chosen on every release and the current board of the 2.2 release is: Adam Johnson, Andrew Godwin, Aymeric Augustin, Carl Meyer, James Bennett. The main attributes of the technical board is to grant or remove commit access and make decisions when no consensus is found.
 
 Based on the three major categories idetified and their roles in the organization, the RW stakeholder categorization of Django is as follows:
 
@@ -109,21 +103,13 @@ Based on the three major categories idetified and their roles in the organizatio
 
 Besides the clasification introduced by Rozanski and Woods, we have identified other types of stakeholders that influence the development of the project from other perspectives.
 
-##### Competitors
+**Competitors** The competitors are one of the stakeholders that influence the project from a different point of view: competition. Based on what other frameworks can or can not do, the project might adjust its own capabilities. Therefore, the main competitors identified are either other major Python web frameworks, such as [Flask](http://flask.pocoo.org/) or [Pyramid](https://trypyramid.com/), which are more lightweight but lack some functionalities, or fully-fledged web frameworks, such as PHP's [CodeIgniter](https://codeigniter.com/).
 
-The competitors are one of the stakeholders that influence the project from a different point of view: competition. Based on what other frameworks can or can not do, the project might adjust its own capabilities. Therefore, the main competitors identified are either other major Python web frameworks, such as [Flask](http://flask.pocoo.org/) or [Pyramid](https://trypyramid.com/), which are more lightweight but lack some functionalities, or fully-fledged web frameworks, such as PHP's [CodeIgniter](https://codeigniter.com/).
+**Translators** Translators are the people who help with the project internationalization. The framework has a very well defined methodology to help translators, described in developement view [chapter](#development-view).
 
-##### Translators
+ **Founders** The Django founders are [Adrian Holovaty](http://www.holovaty.com/) (web-developer, journalist and antreprenor) and [Simon Willison](https://simonwillison.net/) (programmmer, director of architecture Eventbrite).
 
-Translators are the people who help with the project internationalization. The framework has a very well defined methodology to help translators, described in developement view [chapter](#development-view).
-
-##### Founders
-
-The Django founders are [Adrian Holovaty](http://www.holovaty.com/) (web-developer, journalist and antreprenor) and [Simon Willison](https://simonwillison.net/) (programmmer, director of architecture Eventbrite).
-
-##### Donators
-
-Django accepts donations that are used to support, promote and advance the framework. The donors might be individual persons or companies, who can be found at the end of the fundraising [page](https://www.djangoproject.com/fundraising/). Their help further support programs such as [Django Girls](https://www.djangoproject.com/fundraising/#django-girls), the [fellowship program](https://www.djangoproject.com/fundraising/#fellowship-program) or events and conferences in general. The donators can contribute using one of the several methods for donations such as: + Django's own donation [page](https://www.djangoproject.com/fundraising/) where one can choose the type of donation (monthly, quarterly, yearly or one-time) + mailing checks to the foundation address + payroll deduction via Benevity Workplace Giving Program + through [Amazon Smile](https://smile.amazon.com/about).
+**Donators** Django accepts donations that are used to support, promote and advance the framework. The donors might be individual persons or companies, who can be found at the end of the fundraising [page](https://www.djangoproject.com/fundraising/). Their help further support programs such as [Django Girls](https://www.djangoproject.com/fundraising/#django-girls), the [fellowship program](https://www.djangoproject.com/fundraising/#fellowship-program) or events and conferences in general. The donators can contribute using one of the several methods for donations such as: + Django's own donation [page](https://www.djangoproject.com/fundraising/) where one can choose the type of donation (monthly, quarterly, yearly or one-time) + mailing checks to the foundation address + payroll deduction via Benevity Workplace Giving Program + through [Amazon Smile](https://smile.amazon.com/about).
 
 ### Power-interest Grid
 
@@ -153,7 +139,7 @@ In conclusion, Django has very well established and regulated decision process t
 
 In order to truly understand the architecture behind Django, one needs to first understand the context surrounding the project, its scope, responsibilities and dependencies.
 
-#### System Scope and Responsibilities
+### System Scope and Responsibilities
 
 Since Django is a web framework, the scope of the project is restricted to building web applications only and since it is a full stack framework, it is suitable for various use cases, such as social networks, internet banking applications etc. Therefore, we have divided the main responsibility of allowing the building of a web application in multiple sub-responsibilities:
 
@@ -166,7 +152,7 @@ Since Django is a web framework, the scope of the project is restricted to build
 -   Provide specialized modules that ensure the security of the web application.
 -   Provide the flexibility of interfacing to other libraries of frameworks.
 
-#### Context view diagram
+### Context view diagram
 
 ![Context view](images/django/context_view.png)
 
@@ -182,7 +168,7 @@ The figure above shows a context model implementation for the Django project. By
     -   Virtualization solutions, such as [Docker](https://www.docker.com/)
 -   You can discover extensive **discussions** about the framework on StackOverflow and you can stay updated regarding the latest developments either through the IRC Channel or the RSS feed. More details about getting in contact with the Django community can be found [here](https://www.djangoproject.com/community/)
 
-#### Conclusion
+### Conclusion
 
 To sum up, by modelling the context view, we have discovered that Django has various responsibilities when it comes to functionality. Moreover, we have found there are many dependencies surrounding the projects.
 
@@ -198,89 +184,61 @@ Django is organized in multiple modules that encapsulate different functionaliti
 
 The main Django module, which is encapsulated in the `/django` folder, contains the actual functionality of the project. It is composed by various packages, that contain mostly Python scripts, but also Javascript, CSS and HTML. However, in order to better understand how various functionalities are grouped inside this module, we have also evaluated the grouping of the sub-modules. We have identified 8 groupings that reflect different functionalities that the project offers.
 
-###### Core functionality & configuration
-
-This grouping handles the application configuration and low-level functionality and contains 2 packages:
+**Core functionality & configuration** This grouping handles the application configuration and low-level functionality and contains 2 packages:
 
 -   The `conf` [package](https://docs.djangoproject.com/en/2.1/topics/settings/) contains the default global configuration settings of the application, such as environment variables, locale formats etc.
 -   The `core` package, contains the core low-level functionalities that the application needs, such as caching, exceptions, serializers, file operations.
 
 The functionality in these packages is used in various places in the application, especially in the lower levels.
 
-###### Communication
+**Communication** Django has a built in [signal dispatcher](https://docs.djangoproject.com/en/2.1/topics/signals/), which helps allow decoupled applications to receive notifications when a specific action occurs. The `dispatch` package contains the implementation of this functionality, which is used by various other levels for event signaling.
 
-Django has a built in [signal dispatcher](https://docs.djangoproject.com/en/2.1/topics/signals/), which helps allow decoupled applications to receive notifications when a specific action occurs. The `dispatch` package contains the implementation of this functionality, which is used by various other levels for event signaling.
+**Persistent storage functions** As most application nowadays require some form of persistent storage, Django incorporates a `db` package, which acts as an ORM for a variety of databases.
 
-###### Persistent storage functions
-
-As most application nowadays require some form of persistent storage, Django incorporates a `db` package, which acts as an ORM for a variety of databases.
-
-###### State change handlers
-
-As Django is a web framework, it uses HTTP [request and response](https://docs.djangoproject.com/en/2.1/ref/request-response/) objects to pass state through the system. There are 2 packages that encapsulate this functionality:
+**State change handlers** As Django is a web framework, it uses HTTP [request and response](https://docs.djangoproject.com/en/2.1/ref/request-response/) objects to pass state through the system. There are 2 packages that encapsulate this functionality:
 
 -   The `http` package implements the Response and Request objects and all the needed functionality (encoding, scheming, headers, cookie parsers etc.).
 -   The `url` package handles parsing and processing of URLs in order to do matching with various components, such as a view.
 
-###### Request / Response processing
+**Request / Response processing** The `middleware` [package](https://docs.djangoproject.com/en/2.1/topics/http/middleware/) is the intermediary between the front-end architecture and the server. It handles tasks such as communicating with the cache, processing requests and responses, enforcing security policies etc. This package is mostly used by the client interaction packages.
 
-The `middleware` [package](https://docs.djangoproject.com/en/2.1/topics/http/middleware/) is the intermediary between the front-end architecture and the server. It handles tasks such as communicating with the cache, processing requests and responses, enforcing security policies etc. This package is mostly used by the client interaction packages.
-
-###### Client interaction
-
-This grouping encapsulates the whole front-end architecture and can be described by 4 packages:
+**Client interaction** This grouping encapsulates the whole front-end architecture and can be described by 4 packages:
 
 -   The `views` package contains the implementation of the most important component of Django's frontend architecture: a view. Every Python function that receives a web request and returns a response (e.g. web page, document, JSON etc.) is considered a view.
 -   The `forms` package contains various functions that help implement and operate forms (render forms, fetch inputs etc.).
 -   The `template` package contains the implementation of Django's template system, which enables the developer to re-use various web page components or custom elements. The tags and filters that are used by the template system are defined in the `templatetags` package.
 
-###### Helpers & Tools
-
-The framework has 3 packages that encapsulate various helper functions and utilities that can be used throughout the different levels of the architecture:
+**Helpers & Tools** The framework has 3 packages that encapsulate various helper functions and utilities that can be used throughout the different levels of the architecture:
 
 -   The `contrib` [package](https://docs.djangoproject.com/en/2.1/ref/contrib/) contains various optional tools that solve common Web development problems, such as a search functionality with query autocompletes, an admin page, sitemaps etc.
 -   The `test` package contains utilities for building tests quicker and easier
 -   The `utils` package contains various helpers for aiding development in different parts of the application. It is one of the most used packages throughout the rest of the framework.
 
-#### Test fixtures
+**Test fixtures** The Django team uses *test-driven development* as a programming paradigm. This means every new functionality or bug fix needs a corresponding set of tests. The tests cand be found in 2 packages, depending on the programming language the tests are made for. Therefore, the Python tests are stored in the `/tests` folder, while the Javascripts tests are stored in `/js_tests`.
 
-The Django team uses *test-driven development* as a programming paradigm. This means every new functionality or bug fix needs a corresponding set of tests. The tests cand be found in 2 packages, depending on the programming language the tests are made for. Therefore, the Python tests are stored in the `/tests` folder, while the Javascripts tests are stored in `/js_tests`.
-
-#### Documentation module
-
-Since Django is a full stack framework, that means the documentation can also be stored in the project and served on the main project website. The documentation module, which can be found in the `/docs` folder of the framework, contains the whole documentation, written in .txt files. It contains pages such as basic tutorials (`intro`), the API Reference (`ref`), in-depth how-to guides (`howto`) or releases (`releases`).
+**Documentation module** Since Django is a full stack framework, that means the documentation can also be stored in the project and served on the main project website. The documentation module, which can be found in the `/docs` folder of the framework, contains the whole documentation, written in .txt files. It contains pages such as basic tutorials (`intro`), the API Reference (`ref`), in-depth how-to guides (`howto`) or releases (`releases`).
 
 ### Common patterns
 
 In Django, there are multiple patterns used, each being applied to a certain piece such as the models that follow the "Active record" design pattern or the templates that are designed to follow the principle of "template inheritance", therefore avoiding duplicate code. Moreover, Django is object oriented and the development follows the test-driven development process.
 
-##### Django design philosophies
-
-As the official [documentation](https://docs.djangoproject.com/en/2.1/misc/design-philosophies/) of Django explains, they have included several principles or patterns during the project's life. Overall, they aim for: \* loose coupling and tight cohesion, where the layers of the project should not depend one on another unless is necessary; \* less code - which aims for using as much as possible the Pyhton's capabilities, such as introspection. The downside is the high dependency of Django on Python, which requires careful maintanance in order to comply with Python's changes. \* quick development - which is the most wanted feature of a framework from the user's point of view. \* adhering to the ["Don't Repeat Yourself" Principle](http://wiki.c2.com/?DontRepeatYourself) - therefore, each component of the application should be in one and single place, which increases the normalization and reduces the redundancy. \* consistency - by leveraging Python \* explicit behaviour - which means that the code should not assume certain aspects, such as properties or data types of the models.
+**Django design philosophies** As the official [documentation](https://docs.djangoproject.com/en/2.1/misc/design-philosophies/) of Django explains, they have included several principles or patterns during the project's life. Overall, they aim for: \* loose coupling and tight cohesion, where the layers of the project should not depend one on another unless is necessary; \* less code - which aims for using as much as possible the Pyhton's capabilities, such as introspection. The downside is the high dependency of Django on Python, which requires careful maintanance in order to comply with Python's changes. \* quick development - which is the most wanted feature of a framework from the user's point of view. \* adhering to the ["Don't Repeat Yourself" Principle](http://wiki.c2.com/?DontRepeatYourself) - therefore, each component of the application should be in one and single place, which increases the normalization and reduces the redundancy. \* consistency - by leveraging Python \* explicit behaviour - which means that the code should not assume certain aspects, such as properties or data types of the models.
 
 ### Common processing
 
-##### Message logging
-
-In Django, message logging is being done using Python's built in [logging](https://docs.python.org/3/library/logging.html#module-logging) module.
+**Message logging** In Django, message logging is being done using Python's built in [logging](https://docs.python.org/3/library/logging.html#module-logging) module.
 
 The message is forwarded from the logger to the *handler*, which decides the destination of a message. *Filters* can be configured to have additional control over which records are passed from the logger to the handler.
 
-##### Testing
-
-The testing process can be observed in the figure below and is split by programming language and level of detail.
+**Testing** The testing process can be observed in the figure below and is split by programming language and level of detail.
 
 ![The testing process](images/django/Testing_process.png)
 
-##### Documentation
-
-Documentation has an important role in the project and the members aim to improve it whenever is necessary. The documentation uses [Sphinx](http://www.sphinx-doc.org/en/master/) system which is based on [docutils](http://docutils.sourceforge.net/), which transforms plain text into pdf or other prefered output format. The language is [reStructuredText](http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html#rst-index), which is a plain markdown language used in both Docutils and Sphinx. Besides the Sphinx markup, Django introduced an additional set of tags such as: *setting, templatetag, templatefilter, fieldlookup, django\_admin, django\_admin\_option and ticket*. To compress documentation images, the project uses [OptiPNG](http://optipng.sourceforge.net/) and [AdvanceCOMP](https://github.com/amadvance/advancecomp). Moreover, the spell check is done using additional tools such as [pyenchant](https://pypi.org/project/pyenchant/) and [sphinxcontrib-spelling](https://pypi.org/project/sphinxcontrib-spelling/).
+**Documentation** Documentation has an important role in the project and the members aim to improve it whenever is necessary. The documentation uses [Sphinx](http://www.sphinx-doc.org/en/master/) system which is based on [docutils](http://docutils.sourceforge.net/), which transforms plain text into pdf or other prefered output format. The language is [reStructuredText](http://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html#rst-index), which is a plain markdown language used in both Docutils and Sphinx. Besides the Sphinx markup, Django introduced an additional set of tags such as: *setting, templatetag, templatefilter, fieldlookup, django\_admin, django\_admin\_option and ticket*. To compress documentation images, the project uses [OptiPNG](http://optipng.sourceforge.net/) and [AdvanceCOMP](https://github.com/amadvance/advancecomp). Moreover, the spell check is done using additional tools such as [pyenchant](https://pypi.org/project/pyenchant/) and [sphinxcontrib-spelling](https://pypi.org/project/sphinxcontrib-spelling/).
 
 ### Standard design
 
-##### Coding style
-
-Django Project contains besides the Python code, Javascript code to develop the front-end modules *admin* and *gis*. Therefore, the project follows two different coding style conventions for each programming language.
+**Coding style** Django Project contains besides the Python code, Javascript code to develop the front-end modules *admin* and *gis*. Therefore, the project follows two different coding style conventions for each programming language.
 
 The Python style follows the [PEP-8](https://www.python.org/dev/peps/pep-0008/) Python style guide. Moreover, Django sets additional rules such as: the line length, identation, alignment, usage of single or double quotes. They also standardised the variable name notations and imports style, which uses [isort](https://github.com/timothycrosley/isort) library to sort the imports according to predefined rules. Another helper used in the project is [flake8](https://pypi.org/project/flake8/), a style checker that identifies mistakes.
 
@@ -288,9 +246,7 @@ The Javascript style follows the general Javascript conventions. The main differ
 
 To ensure the developers use the same identation style, the project contains the *.editorconfig* file for both Python and Javascript.
 
-##### Internationalization and localization
-
-Django supports internationalization and localization for text translation, time zones and formatting dates, times and numbers.
+**Internationalization and localization** Django supports internationalization and localization for text translation, time zones and formatting dates, times and numbers.
 
 To perform translation, Django uses "translation strings" which represents strings that need translation. Then, the language dependent corresponding string is transformed using GNU gettext toolset, which retrieves the text from *.po* files. Moreover, Django supports plural words, by extending *gettext*. The Javascript translation raised a few challenges, because it could not access *gettext* by default. Therefore, Django made its own implementation to address translation in Javascript, called *JavaScriptCatalog view*.
 
@@ -298,13 +254,9 @@ Moreover, to monitor the translation activity, Django uses [Transifex](https://w
 
 ### Standard software components
 
-##### Javascript libraries
+**Javascript libraries** The additional libraries for Javascript used are related to code inspection and project building, which are all included in the [package.json](https://github.com/django/django/blob/master/package.json) file.
 
-The additional libraries for Javascript used are related to code inspection and project building, which are all included in the [package.json](https://github.com/django/django/blob/master/package.json) file.
-
-##### Python modules
-
-Django uses additional Python modules only for running the test suite. The external modules installation represents a requirement for test running, which can be found in the [requirements](https://github.com/django/django/tree/master/tests/requirements) folder under tests.
+**Python modules** Django uses additional Python modules only for running the test suite. The external modules installation represents a requirement for test running, which can be found in the [requirements](https://github.com/django/django/tree/master/tests/requirements) folder under tests.
 
 ### Build approach
 
@@ -326,7 +278,7 @@ Technical debt represents the costs of choosing a "quick and ugly" solution now,
 
 We used [SonarQube](https://www.sonarqube.org/) to gather various code metrics in order to find technical debt in Django. This tool provides information about application health, code quality, bugs and many more. We chose this tool, because it analyzes code written in python, JavaScript and HTML, which are all used in Django. We analyzed the current version, as well as 2 previous versions, to see how the technical debt changes over time.
 
-##### Scan results
+#### Scan results
 
 | Version | Bugs | Vulnerabilities | Code smells | Duplicity | Lines of Code |
 |---------|------|-----------------|-------------|-----------|---------------|
@@ -334,7 +286,7 @@ We used [SonarQube](https://www.sonarqube.org/) to gather various code metrics i
 | 2.1     | 73   | 185             | 1165        | 1 %       | 255 251       |
 | 2.0     | 66   | 185             | 1152        | 1 %       | 251 107       |
 
-##### Bugs
+#### Bugs
 
 The current version has 73 bugs. Considering Django's 263 000 LOC, 1 bug per 3600 LOC does not represent a major issue.
 
@@ -342,15 +294,13 @@ Taking a closer look at the bugs, we observed that most of them are several year
 
 Bugs are mainly consisting of wrong or missing HTML tags in the documentation section, potentially undefined variables and too many relational operators in if statement. They are also present in the older versions.
 
-##### Vulnerabilities
+#### Vulnerabilities
 
 SonarQube reports 173 vulnerabilities. They are composed almost entirely of statically set IP addresses in the test suite, which does not represent a major problem because all the tests are for the internal use of Django. These vulnerabilities are present in all tested versions.
 
-##### Code Smell
+#### Code Smell
 
 Code smell refers to any symptom in the source code that may indicate a deeper problem, although they are not technically incorrect and do not currently prevent the program from functioning. They indicate weaknesses in design that may slow down development or increase the risk of bugs in the future.
-
-In Django there are less than 1200 code smells. When we compare different version of Django, the number of code smells stays practically the same. That is an indication of improvement of quality control in the last years, because most of the issues are the same across the versions. A closer analysis of code smells can be seen in the table below. SonarQube estimates that solving all the code smells will require approximately 528 hours of work.
 
 | Code smell type                           | Occurences |
 |-------------------------------------------|:----------:|
@@ -360,11 +310,13 @@ In Django there are less than 1200 code smells. When we compare different versio
 | Code leftovers for legacy support         |     119    |
 | Potential if merges                       |     59     |
 
-##### Duplicity
+In Django there are less than 1200 code smells. When we compare different version of Django, the number of code smells stays practically the same. That is an indication of improvement of quality control in the last years, because most of the issues are the same across the versions. A closer analysis of code smells can be seen in the table above. SonarQube estimates that solving all the code smells will require approximately 528 hours of work.
+
+#### Duplicity
 
 Duplicity of code in Django is about 1%, but 87% of duplicated lines are in tests, which is understandable. Moreover, the number of duplicities is decreasing with newer versions.
 
-##### Ticket System
+#### Ticket System
 
 Django project uses the Trac ticket system for bugs and optimizations, of which there are currently 872 open tickets. The Django team should consider to open tickets to get rid of the technical debt presented here, since this needs to be handled proactively.
 
@@ -372,13 +324,13 @@ Django project uses the Trac ticket system for bugs and optimizations, of which 
 
 Testing is an important tool to asses and control the quality of a piece of software. Therefore a weak test suite or low test code coverage are part of a systems technical debt. Especially for a complex project like Django, which offers a significant amount of functionality and has a big user base, maintaining an extensive test suite is of paramount importance.
 
-##### Testing practices
+#### Testing practices
 
 The test suite contains both testcases for the Python and the Javascript code. They are implemented using the [unittest](https://docs.python.org/3/library/unittest.html#module-unittest) python module and [QUnit](https://qunitjs.com/) respectively. The central piece to executing the tests is the *runtests.py* script. This is usually run through the [tox](https://tox.readthedocs.io/en/latest/) build tool. The tool can be executed using different python versions, which assures backwards capability of the test suite. This prevents technical debt since it decouples the runtime from the tests themselves.
 
 Since Django is a full stack web framework, the execution of the test suites depends on the database management system that is used in the stack. Django supports Oracle, PostgreSQL, MySQL and SQLite by default. Upon invoking tox, a setting file can be passed as an argument, that specifies which DBMS to use and how it should be set up. The test suite comes with a setting file for SQLite as the default system, since it is usually part of the Python installation. This also prevents technical debt since it makes the data layer of the stack completely interchangeable.
 
-##### Test coverage
+#### Test coverage
 
 The Django development team has done an admirable job and the test suite reaches a 79% line coverage and an 77% branch coverage when run with the standard settings. This is achieved mainly through the strict guidelines, that all pull request have to adhere to which enforce the extension or adaption of the test suite, for any change that is made to the code.
 
