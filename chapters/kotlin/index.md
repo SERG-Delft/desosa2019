@@ -286,7 +286,18 @@ A dependency graph has been created to show the links between each subproject. F
 
 The top 10 nodes by amount of times referenced are the following:
 
-<table><colgroup><col style="width: 24%" /><col style="width: 15%" /><col style="width: 59%" /></colgroup><thead><tr class="header"><th>Name</th><th>Times Referenced</th><th>Description</th></tr></thead><tbody><tr class="odd"><td><code>:kotlin-stdlib</code></td><td>68</td><td>Contains the Kotlin standard library <span class="citation" data-cites="stdlib">[36]</span>. Used in all Kotlin projects.</td></tr><tr class="even"><td><code>:idea</code></td><td>63</td><td>Contains all editor integration between IntelliJ IDEA and Kotlin adjacent projects.</td></tr><tr class="odd"><td><code>:compiler:frontend</code></td><td>59</td><td>Contains classes and methods to analyze Kotlin code, resolve types, and show diagnostic compiler messages.</td></tr><tr class="even"><td><code>:compiler:util</code></td><td>52</td><td>Contains various utilities ranging from constants to class conversions.</td></tr><tr class="odd"><td><code>:compiler:tests-common</code></td><td>44</td><td>Contains all kinds of boilerplate for creating language tests. Used in many projects.</td></tr><tr class="even"><td><code>:compiler</code></td><td>42</td><td>Groups all sub-modules together: contains no functionality on its own.</td></tr><tr class="odd"><td><code>:compiler:frontend.java</code></td><td>39</td><td>Contains behavior when the Kotlin compiler interacts with a Java source file.</td></tr><tr class="even"><td><code>:compiler:cli</code></td><td>32</td><td>Contains code for command line tools <code>kotlinc</code>, <code>kotlin-dce-js</code>, etc.</td></tr><tr class="odd"><td><code>:core:descriptors</code></td><td>27</td><td>Contains classes for naming Kotlin language elements and types.</td></tr><tr class="even"><td><code>:idea:core</code></td><td>27</td><td>Contains all editor integration between IntelliJ IDEA and Kotlin.</td></tr></tbody></table>
+| Name                      | Times Referenced | Description                                                  |
+| ------------------------- | ---------------- | ------------------------------------------------------------ |
+| `:kotlin-stdlib`          | 68               | Contains the Kotlin standard library [@stdlib]. Used in all Kotlin projects. |
+| `:idea`                   | 63               | Contains all editor integration between IntelliJ IDEA and Kotlin adjacent projects. |
+| `:compiler:frontend`      | 59               | Contains classes and methods to analyze Kotlin code, resolve types, and show diagnostic compiler messages. |
+| `:compiler:util`          | 52               | Contains various utilities ranging from constants to class conversions. |
+| `:compiler:tests-common`  | 44               | Contains all kinds of boilerplate for creating language tests. Used in many projects. |
+| `:compiler`               | 42               | Groups all sub-modules together: contains no functionality on its own. |
+| `:compiler:frontend.java` | 39               | Contains behavior when the Kotlin compiler interacts with a Java source file. |
+| `:compiler:cli`           | 32               | Contains code for command line tools `kotlinc`, `kotlin-dce-js`, etc. |
+| `:core:descriptors`       | 27               | Contains classes for naming Kotlin language elements and types. |
+| `:idea:core`              | 27               | Contains all editor integration between IntelliJ IDEA and Kotlin. |
 
 **Table 301** - Top 10 nodes by amount of times referenced
 
