@@ -7,7 +7,7 @@ chapter: true
 
 # Django
 
-![](images/logo-transparent.png)
+![](images/django/logo-transparent.png)
 
 By [Alexandru Balan](https://github.com/alexanderblnf), [Andra Ionescu](https://github.com/AndraIonescu), [Phil Misteli](https://github.com/pmisteliac), [David Vojtek](https://github.com/sejd0n)
 
@@ -187,7 +187,7 @@ Furthermore, there are the entities who do not have a high power, but have a hig
 
 Finally the less active community and the Stackoverflow community have little power in the project development, but their impact is very high for developers and users that struggle with the framework and seek guidance.
 
-<img src="images/power-interest.png" width="550" height="500">
+![Power-interest grid](images/django/power-interest.png)
 
 ## Decision-making process of pull requests
 
@@ -222,7 +222,7 @@ Since Django is a web framework, the scope of the project is restricted to build
 
 #### Context view diagram
 
-<img src="images/context_view.png" width="775" height="500">
+![Context view](images/django/context_view.png)
 
 The figure above shows a context model implementation for the Django project. By analyzing it, we were able to uncover several relevant findings:
 
@@ -246,7 +246,7 @@ To sum up, by modelling the context view, we have discovered that Django has var
 
 Django is organized in multiple modules that encapsulate different functionalities of the project and serve different purposes. We have identified 3 high-level modules, which are then organized into multiple packages. An interesting remark here is that we have noticed a similar structure in [DESOSA 2016](https://pure.tudelft.nl/portal/files/8039977/desosa2016.pdf) for Ruby on Rails (although less complex and with less modules). When investigating the [release page of Ruby on Rails](https://weblog.rubyonrails.org/releases/), we have discovered many references to Django, which shows that the architecture of the 2 is very similar.
 
-<img src="images/Django_modules.png" width="650" height="500">
+![Django modules](images/django/Django_modules.png)
 
 #### Main Django module
 
@@ -324,9 +324,7 @@ The message is forwarded from the logger to the *handler*, which decides the des
 
 The testing process can be observed in the figure below and is split by programming language and level of detail.
 
-<img src="images/Testing_process.png" width="408" height="500" hspace="100">
-
-*The testing process*
+![The testing process](images/django/Testing_process.png)
 
 ##### Documentation
 
@@ -370,11 +368,9 @@ Every developer is requested to submit a pull request (PR) which is reviewed by 
 
 The Django team schedules a major feature release every 8 months. Throughout the period, 3 major phases can be identified: feature proposal, development and bugfixes. The timeline, along with the characteristics of each phase, can be observed in the figure below. The final steps of the lengthy process are detailed in the pre-release and release checklists in the figures below. The pre-release process starts approximately one week before the actual release.
 
-![The release timeline](images/Release_process.png) *The release timeline*
+![The release timeline](images/django/Release_process.png) *The release timeline*
 
-<img src="images/Release_checklist.png" width="600" height="372" hspace="150">
-
-*The release checklist*
+![The release checklist](images/django/Release_checklist.png)
 
 ## Technical debt
 
@@ -462,7 +458,7 @@ They released the first public version of Django (0.9) on 16 November 2005 under
 
 The project quickly attracted a lot of interest from web developers who were tired of the complex and heavy weight LAMP stack that was prevalent at the time and a very active community started to grow around the project. This community has been one of the driving forces behind the evolution of Django and helped to improve and expand the framework with every release.
 
-<img src="images/django timeline.jpg" >
+![Django timeline](images/django/django_timeline.jpg)
 
 ### Aspects of evolution
 
