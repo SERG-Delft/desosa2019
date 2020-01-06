@@ -15,7 +15,7 @@ chapter: true
 
 _Kotlin Banner [26]_
 
-# Table of Contents
+## Table of Contents
 
 -   [Introduction](#introduction)
 -   [Stakeholders](#stakeholders)
@@ -28,8 +28,7 @@ _Kotlin Banner [26]_
 
  
 
-Introduction
-============
+## Introduction
 
 Kotlin is a relatively young language, developed by JetBrains, which quickly gained popularity. Announced in 2011 \[1\], it is a first-class language for Android \[2\]. Kotlin is used in approximately 5% of the apps available, but in roughly 25% of the “top apps”, such as Twitter or TikTok (\[3\]).
 
@@ -45,15 +44,13 @@ In this chapter, Kotlin will be researched in more detail by first giving an ove
 
  
 
-Stakeholders
-============
+## Stakeholders
 
 Stakeholders are important to any software architecture, as these people can influence the direction a project moves towards. Therefore, their opinions should be taken into account when evaluating a project as a whole.
 
 The following section gives an overview and analysis of the stakeholders of Kotlin. The stakeholders are categorized based on the stakeholder categories defined by Rozanski and Woods \[5\].
 
-JetBrains s.r.o.
-----------------
+### JetBrains s.r.o.
 
 JetBrains is a software vendor, which develops tools for software developers and project managers. Their motivation to create Kotlin was that they needed a language on the JVM meeting the needs of their company \[6\]. JetBrains expects that the success of Kotlin will increase sales of IntelliJ IDEA, JetBrains’ IDE.
 
@@ -68,8 +65,7 @@ JetBrains role in Kotlin partly comes from manpower: 50+ engineers are working o
 -   **Tester**
 -   **User**
 
-Kotlin Foundation
------------------
+### Kotlin Foundation
 
 The non-profit Kotlin Foundation was created by JetBrains and Google in 2017. The Language Committee adheres to guidelines \[8\], which describe the decision making process, regarding incompatible changes to Kotlin.
 
@@ -77,18 +73,15 @@ The mission of the Kotlin Foundation is “to protect, promote and advance the d
 
 This stakeholder plays a large role as an **Assessor**, overseeing language evolution.
 
-Lead Language Designer - Andrey Breslav
----------------------------------------
+### Lead Language Designer - Andrey Breslav
 
 Andrey Breslav is the President of the Kotlin Foundation, and is a member of both the Board of Directors and the Language Committee. He is also employed by JetBrains as the Lead Language Designer in Kotlin \[9\]. Andrey is an important stakeholder within Kotlin, being an **Assessor**, **Developer**, **Maintainer**, and **Tester** with high authority.
 
-Google Inc.
------------
+### Google Inc.
 
 Google is the main distributor for Android applications, which can be written in Kotlin. Google has an interest in Kotlin, because the language could empower developers writing applications for their platform to work more efficiently. Google is an **Acquirer** of Kotlin.
 
-Contributors
-------------
+### Contributors
 
 Contributors are volunteers who are external to JetBrains who contribute to Kotlin as open source developers.
 
@@ -96,20 +89,17 @@ These Contributors can be found in the Kotlin Slack \[10\], a channel of communi
 
 These contributors are a part of the **Developer**, **Maintainer**, and **Tester** classes.
 
-Users
------
+### Users
 
 Developers writing code in Kotlin directly benefit from improvements to the language. Often, they represent themselves or their development team via public channels such as Twitter or Slack.
 
 Furthermore, people using products written in Kotlin have to be considered, because they have important interests such as application performance, security, and stability.
 
-Suppliers
----------
+### Suppliers
 
 -   *Gradle:* Gradle is a build system that is capable of building Kotlin projects. Their interest in the Kotlin project is twofold: first, their build system should support Kotlin projects, and second, Gradle is also partially written in Kotlin \[11\].
 
-Communication/Support
----------------------
+### Communication/Support
 
 Kotlin has various channels to communicate with their community \[12\].
 
@@ -117,18 +107,15 @@ Kotlin has various channels to communicate with their community \[12\].
 -   *Support:* StackOverflow
 -   *Gatherings:* User Groups, KotlinConf, Google I/O
 
-Competitors
------------
+### Competitors
 
 Kotlin has a multitude of competitors such as Groovy, Scala \[13\], and Java. All these programming languages are object oriented and focus on a similar group of developers, usually with prior Java experience and offer a comparable feature set.
 
-Enhancers
----------
+### Enhancers
 
 An important stakeholder type are Enhancers, library developers creating new functionalities for Kotlin language users. Therefore, these stakeholders add value to Kotlin by creating their own solutions within the scope of Kotlin.
 
-Tools
------
+### Tools
 
 An additional class of stakeholders create tools for Kotlin developers, to increase their productivity and ease software development. Their interests are to generate income, add value to Kotlin and further spread Kotlin.
 
@@ -136,15 +123,13 @@ An additional class of stakeholders create tools for Kotlin developers, to incre
 -   *dokka:* Documentation engine for Kotlin \[15\]
 -   *IntelliJ IDEA*
 
-Power/Interest grid
--------------------
+### Power/Interest grid
 
 A power/interest grid shows the power of a stakeholder to influence a project and their interest in the project \[16\].
 
 ![Power/Interest grid with the stakeholders of the Kotlin project.](images/kotlin/diagrams/power-interest-grid.png)
 
-Influence on Stakeholders
--------------------------
+### Influence on Stakeholders
 
 An onion diagram shows the interaction of stakeholders with a project and effect of the project on the stakeholders \[17,18\]. The diagram consists of five layers:
 
@@ -156,20 +141,17 @@ An onion diagram shows the interaction of stakeholders with a project and effect
 
 ![Onion diagram of the key stakeholders of the Kotlin project and stakeholder types](images/kotlin/diagrams/onion.png)
 
-Context View
-============
+## Context View
 
 The context view describes the relationships, dependencies and interactions between the system and its environment. This is visualized in the diagram. Each element of the diagram will be described in more detail in this section, along with an overview of the scope of the system.
 
 ![Context View of Kotlin](images/kotlin/diagrams/contextview-diagram.png)
 
-System Scope
-------------
+## System Scope
 
 Kotlin is a object-oriented programming language aiming to “provide a more concise, more productive, safer alternative to Java that’s suitable in all contexts where Java is used today” \[19\]. Kotlin tries to eliminate some of Java’s biggest issues like nullity and excessive coding \[20\]. In this regard, Kotlin’s scope is to provide an gradual upgrade from Java, by integrating Kotlin code into their existing Java Project. In order to enable developers to quickly adopt Kotlin, workflow and feature set are very similar.
 
-Context Model
--------------
+### Context Model
 
 At the heart of the context model is the language itself. Kotlin is written in Java and Kotlin, and runs on the JVM by default. It can also be compiled to JavaScript \[21\] and to native code \[22\]. Kotlin natively makes use Java or JavaScript functions, when the correct compiler configuration is selected
 
@@ -193,8 +175,7 @@ The Kotlin language is supported by many IDEs, such as JetBrains’ own IDE Inte
 
 A big advantage of using Kotlin is the support from Google for its Android platform. Another major use cases is in server side code. Examples of popular applications that have been developed using Kotlin are Uber \[26\], Netflix, Slack, and Twitter \[20\]. For Kotlin development there are enhancing frameworks available.
 
-Pull Request Analysis
-=====================
+## Pull Request Analysis
 
 In this section we analyze the top ten most commented pull requests for Kotlin on GitHub \[27\], that were merged and rejected. We want to identify project integrators, main reasons why pull requests are rejected and which changes could lead to successful merge requests. Our strategy to identify these patterns, was to find the core of the discussion in PRs and discover reoccurring issues.
 
@@ -212,22 +193,19 @@ Kotlin uses a pull-based development model for doing reviews. Developers review 
 
 Pull requests are integrated by senior developers at JetBrains, who review the code and request changes. One person, Mikhail Glukhikh \[28\], is assigned very often to review PRs.
 
-Contact with JetBrains
-----------------------
+### Contact with JetBrains
 
 We tried to establish direct communication with the JetBrains Kotlin Team. Unfortunately, this did not succeed, thus, all communication, e.g. asking question was done on the Kotlin Slack \[10\].
 
  
 
-Technical Debt
-==============
+## Technical Debt
 
 In this section, technical debt in Kotlin is identified and analyzed, by dividing it into four areas: code debt, test debt, design debt, and communication about debt.
 
 Code debt is important since it shows how maintainable the code is. Test debt is an important factor since lacking tests and bad test habits can have a large impact on the project and are hard to resolve in future. Design debt describes the debt caused by the module structure of the project, and dependencies on other code. Finally, communication about debt shows that the developers are aware of the debt.
 
-Code Debt
----------
+### Code Debt
 
 In order to properly analyze Kotlin, automatic analyzation tools are necessary. For this section we used detekt \[14\], a framework made specifically for Kotlin, and the Statistic plugin \[29\] for IntelliJ IDEA. Statistic allows to check several relatively simple metrics, e.g. logical lines of code (LLoC). Line based metrics have limited validity, but can provide basic insights.
 
@@ -256,8 +234,7 @@ Furthermore, the overall number of open TODOs is increasing, reaching more than 
 
 ![History of TODOs since 2012 with main components, stacked amount of TODOs](images/kotlin/charts/TODOs-history-with-major-components.png)
 
-Test Debt
----------
+### Test Debt
 
 In this section the testing debt of Kotlin is analyzed, by looking at bugs and analyzing the test quality.
 
@@ -277,8 +254,7 @@ TeamCity and IntelliJ IDEA do not support code coverage for the Kotlin language 
 
 To improve testing standards (see section [Standardization of testing](#Standardization%20of%20Testing)) JetBrains could create quality requirements and guidelines for open source developers. Furthermore, test reviews should be mandatory for pull requests, because testing is not checked in pull request reviews (see section Pull Request Analysis).
 
-Design Debt
------------
+### Design Debt
 
 Since Kotlin is a large project, the internal dependencies are difficult to evaluate (see in section [Module Organization](#Modules)). It is evident that the internal structure is quite complex with many intertwined modules. This is an indicator of high coupling, and thus large code debt. Meaning it is tough to add changes to the system.
 
@@ -286,8 +262,7 @@ While analyzing the dependencies of Kotlin, older version of libraries were foun
 
 One of the major dependencies of Kotlin is Java. Java 6 was deprecated in december 2018, but is still a listed dependency of Kotlin. This is probably due to Android still heavily depending on Java 6. Since Android is a target platform for Kotlin, this might be why Kotlin still wants to support Java 6.
 
-Communication about Debt
-------------------------
+### Communication about Debt
 
 In this section we discuss how Kotlin developers communicate and discuss about technical debt.
 
@@ -297,13 +272,11 @@ All these findings indicate that Kotlin developers very rarely discuss technical
 
  
 
-Development View
-================
+## Development View
 
 To analyse the development of Kotlin, we will take a look at the architecturally significant concerns. The approach as specified by Rozanski and Woods \[5\] will be used in this section.
 
-Concerns
---------
+### Concerns
 
 ### Modules
 
@@ -369,16 +342,14 @@ In conclusion, there are issues with documentation and clarity in the Kotlin pro
 
  
 
-Contributors Perspective
-========================
+## Contributors Perspective
 
 Kotlin is a project that partially relies on open source contributions in order to evolve and has welcome contributors since it was made open source in 2012 \[47\]. In order for these contributors to work effectively, they should be supported throughout the process. In this section the journey of contributiors throughout making contributions and proposing new features will be explored, before giving recommendations for potential improvements. This journey was derived from three personas (see Appendix Personas) and the contribution barriers (see the figure below) identified by Steinmacher et al \[48\].
 
 ![](images/kotlin/diagrams/contribution-barriers-steinmacher.jpg)
 _Barriers for new open source contributors found in a literature review by Steinmacher et al. in 2015 \[48\]._
 
-Orientation
------------
+### Orientation
 
 In the orientation phase, the contributor sets up the development environment, picks an issue and gets familiar to the proceedings of Kotlin.
 
@@ -394,8 +365,7 @@ To improve the start for contributors, the issue tracker could allow developers 
 
 Because KEEP is can be slow and very time consuming JetBrains should add further information on how to request features for Kotlin without making a large commitment.
 
-Development and Testing
------------------------
+### Development and Testing
 
 In this section, the development and testing experience for an open source contributor for Kotlin after an issue was chosen will be explored. This involves understanding the project organization, documentation, requirements, and implementation of the selected issue.
 
@@ -415,8 +385,7 @@ Coverage information should be fixed for the Kotlin project so that information 
 
 To help new contributors, a mentorship program could be created, where more experienced open source developers would assist newcomers. This approach is recommended by the open source guide as well \[60\]. Mentors can help newcomers to understand the technical details, coding guidelines, and rules of the project and thus, increase their productivity and quality of contributions.
 
-Submission
-----------
+### Submission
 
 This section addresses the final steps for a contribution: submitting a pull request to the Kotlin repository and the review by project maintainers.
 
@@ -426,8 +395,7 @@ The timespan of the PR review process should be lowered. This barrier was also i
 
  
 
-Conclusion
-==========
+## Conclusion
 
 In this chapter, Kotlin was analyzed. Being a fairly new, but popular, language, Kotlin has attracted a lot of attention. Thus, it was important to first get an overview of the different stakeholders. It was found that evolution of the language is controlled by the Kotlin Foundation, and more specifically the Language Committee. Almost all of the people in this foundation represent one of the other two major stakeholders, JetBrains and Google.
 
