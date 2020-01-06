@@ -155,23 +155,23 @@ Kotlin is a object-oriented programming language aiming to “provide a more con
 
 At the heart of the context model is the language itself. Kotlin is written in Java and Kotlin, and runs on the JVM by default. It can also be compiled to JavaScript \[21\] and to native code \[22\]. Kotlin natively makes use Java or JavaScript functions, when the correct compiler configuration is selected
 
-### Developers
+#### Developers
 
 Kotlin is an open source project to which anyone can contribute on GitHub. These contributions are reviewed by JetBrains employees and merged into the project. Together with Google, JetBrains sponsors Kotlin. They are both represented in the Kotlin Foundation. The Language Committee is a part of the Kotlin Foundation and reviews breaking changes. Andrey Breslav is the lead Language Designer of the language. These people make all decisions regarding the development of the project and evolution of the language \[9\], as well as overviewing the community contributions.
 
-### Related Processes
+#### Related Processes
 
 GitHub is used for contributing and project management of Kotlin. JetBrains uses their own software YouTrack for discussing and tracking issues, features, and bugs. TeamCity is used for continuous integration and deployment. Finally, other related processes are: JUnit for testing (with Kotlin extensions), Apache 2 License \[23\] and Gradle for building.
 
-### Community
+#### Community
 
 The Kotlin community has multiple channels to communicate their feedback for Kotlin. Conferences like Kotlin Conf serve to present updates from the Kotlin development team, as well as user’s talks about the state and usage of the language. The official Twitter \[24\] and the Kotlin subreddit \[25\] provide channels to post news updates, pose questions and discuss issues with the language where the JetBrains’ Kotlin team frequently responds. There are also more direct channels used to support developers like StackOverflow and Slack.
 
-### Supported by
+#### Supported by
 
 The Kotlin language is supported by many IDEs, such as JetBrains’ own IDE IntelliJ IDEA, Google’s Android Studio, and third party IDEs like NetBeans and Eclipse.
 
-### Used by
+#### Used by
 
 A big advantage of using Kotlin is the support from Google for its Android platform. Another major use cases is in server side code. Examples of popular applications that have been developed using Kotlin are Uber \[26\], Netflix, Slack, and Twitter \[20\]. For Kotlin development there are enhancing frameworks available.
 
@@ -211,7 +211,7 @@ In order to properly analyze Kotlin, automatic analyzation tools are necessary. 
 
 Detekt is more powerful, but only analyses Kotlin files. It provides strong metrices, such as McCabe cyclometic complexity (MCC). Additionally, it also estimates the time to fix the code debt and points out specific problems.
 
-### Results
+#### Results
 
 It is evident that there is some serious code debt in Kotlin, negatively impacting maintenance due to a lack of clarity and explanations for the methods \[30\]. This creates a growing threshold for contributors in terms of time wasted on understanding the system.
 
@@ -224,7 +224,7 @@ By running Detekt on several commits, once every year, code debt evolution was a
 ![Comparison of the overall debt (in hours) and logical lines of code over time.](images/kotlin/charts/DebtLLoCEvolution.png)
 ![The ratio between number of code smells and logical lines of code over time.](images/kotlin/charts/CSLLoCEvolution.png)
 
-### Open TODOs
+#### Open TODOs
 
 Unresolved TODOs in code are a good metric for known technical debt in the project, the analysis of the TODOs history can be seen in the figure below.
 
@@ -238,7 +238,7 @@ Furthermore, the overall number of open TODOs is increasing, reaching more than 
 
 In this section the testing debt of Kotlin is analyzed, by looking at bugs and analyzing the test quality.
 
-### Bugs
+#### Bugs
 
 On YouTrack \[31\], all bugs in Kotlin are tracked with priorities and affected subsystems. The analysis focused on major and critical bugs, because these are the ones with the highest impact.
 
@@ -246,7 +246,7 @@ In the period from 2011 until March 2019, 2428 major and 629 critical bugs were 
 
 ![Top 10 affected subsystem by bugs with stacked amount of bugs and current state (March 2019)](images/kotlin/charts/Top10-Combined-Bugs-per-Module.png)
 
-### Test Quality
+#### Test Quality
 
 The current state of testing in Kotlin is difficult to assess, because analyzing test coverage is very difficult due to the project having more than 55.000 tests, while lacking test coverage tools.
 
@@ -278,7 +278,7 @@ To analyse the development of Kotlin, we will take a look at the architecturally
 
 ### Concerns
 
-### Modules
+#### Modules
 
 The Kotlin project repository is organized into modules and orchestrated using Gradle. Analyzing the build files of the project showed there are 199 modules.
 
@@ -309,13 +309,13 @@ Furthermore, there have been 7 general layers of modules identified.
 
 ![Diagram of the module structure.](images/kotlin/diagrams/Module_structure.png)
 
-### Standardization of design
+#### Standardization of design
 
 There are not a lot of explicit rules or guidelines for standardizing the design of the Kotlin source code. The contributer’s guide \[37\] only specifies rules in regards to creating the pull request and communicating what this contributes to the project. The only code related check that needs to be done is that tests have to be written, run, and passed for the contribution. Aside from that, the current workflow appears to be to first look at similar contributions, and then attempt to be consistent with their style.
 
 There is, however, a coding conventions document \[38\] for the Kotlin language. Since the Kotlin project is mainly written in Kotlin, this means these guidelines still apply for the source code contributions. Any pattern that can be used to make the contributed code more efficient would be mentioned in the review, but they are not defined beforehand.
 
-### Standardization of testing
+#### Standardization of testing
 
 As was mentioned before, there is a requirement to create tests when submitting a pull request. Since there is a standardised way to create tests, this is a relatively easy process. For each type of feature, there is a package in which tests can be added. Tests can then be generated by Gradle, which can then also execute tests.
 
@@ -323,7 +323,7 @@ According to the contributor’s guide for Kotlin \[37\] every developer has to 
 
 JUnit 4 and automatically generated test collections are used to simplify test creation. For most types of test there is a file in the tests package that automatically generates code. This code will test the files it will find in the corresponding package in testdata. The tests are generated by running the “generate all tests” configuration in IntelliJ IDEA. All these tests are stored in multiple test suites regarding different modules of the system, e.g. testIDE or compiler.
 
-### Instrumentation
+#### Instrumentation
 
 For a programming language, instrumentation is a key property. Kotlin supports code tracing, debugging, profiling, and data logging.
 
@@ -337,7 +337,7 @@ Kotlin provides some options to profile software. Compiler Instrumentation \[44\
 
 Logging can be done in a similar way to logging in Java. Furthermore, in IntelliJ IDEA many issues are identified and shown to the developer during code writing. This is an feature of Kotlin, giving direct feedback to Kotlin developers.
 
-### Codeline Organisation
+#### Codeline Organisation
 
 The codeline organisation \[5\] refers to the way the directory structure is managed and tested, while being regulated via configuration management. The management of the building and tests is done using Gradle. The testing itself is done using JUnit 3 and 4.
 
