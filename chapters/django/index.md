@@ -42,8 +42,7 @@ By [Alexandru Balan](https://github.com/alexanderblnf), [Andra Ionescu](https://
     -   [Evolution conclusion](#evolution-conclusion)
 -   [Conclusion](#conclusion-2)
 
-Introduction
-------------
+## Introduction
 
 According to the description on Django's [website](https://www.djangoproject.com/):
 
@@ -53,8 +52,7 @@ In other words, Django is an open source web framework that enables the user to 
 
 This chapter aims to describe the high-level architecture starting with an analysis of the stakeholders, followed by the context and development view, technical debt and finally, the evolution of the project.
 
-Stakeholders
-------------
+## Stakeholders
 
 According to Rozanski and Woods \[1\], a stakehold is a person, a group or an entity that has interest and concerns about the realization of the architecture. According to their classification based on the roles and concerns, 10 types of stakeholders are identified: acquirers, assessors, communicators, developers, maintainers, suppliers, support staff, system administrators, testers and users. In Django, the non-profit organization **Django Software Foundation** (DSF), the **Core Members** and the **Technical Board** have a major impact in the administration of the project. Thus, special attention is required in order to fully understand their responsibilities and how they integrate with the RW categorization.
 
@@ -191,8 +189,7 @@ Finally the less active community and the Stackoverflow community have little po
 
 <img src="images/power-interest.png" width="550" height="500">
 
-Decision-making process of pull requests
-----------------------------------------
+## Decision-making process of pull requests
 
 After careful analysis of 20 pull request, 10 accepted and 10 rejected ones, we were able to gain a thorough insight into decision-making process in the Django project organization.
 
@@ -206,8 +203,7 @@ All integrators seem to work independently and can alone decide if a pull reques
 
 In conclusion, Django has very well established and regulated decision process that is strictly followed and is designed to keep the quality of the project on its high level.
 
-Context view
-------------
+## Context view
 
 In order to truly understand the architecture behind Django, one needs to first understand the context surrounding the project, its scope, responsibilities and dependencies.
 
@@ -244,8 +240,7 @@ The figure above shows a context model implementation for the Django project. By
 
 To sum up, by modelling the context view, we have discovered that Django has various responsibilities when it comes to functionality. Moreover, we have found there are many dependencies surrounding the projects.
 
-Development view
-----------------
+## Development view
 
 ### Module structure
 
@@ -381,8 +376,7 @@ The Django team schedules a major feature release every 8 months. Throughout the
 
 *The release checklist*
 
-Technical debt
---------------
+## Technical debt
 
 Technical debt represents the costs of choosing a "quick and ugly" solution now, instead of using a proper approach that is harder and slower. We present the results of our code and test analysis in this section to assess Django's debt.
 
@@ -456,8 +450,7 @@ A detailed inspection shows that the few lines and branches that are not covered
 
 Based on our analysis we can state that Django has very little technical debt. Given the size and complexity of the framework, this is very impressive. If the code quality standards keep being enforced so rigorously, the development of Django should not run into any future problems because of technical debt.
 
-Evolution Perspective
----------------------
+## Evolution Perspective
 
 This section analyses the evolution and history of Django. The evolution perspective focuses on how the software evolved throughout the years and how it dealt with changes and problems. According to Rozanski and Woods, a software system should be flexible enough to deal with all possible types of changes, that it faces during its lifetime. We identify and discuss major changes to the Django project over the years and analyze their causes and consequences.
 
@@ -497,8 +490,7 @@ The Django team is very aware of changes in its ecosystem and tries to keep up w
 
 To summarize, the evolution of Django has been a well-managed process, guided by smart decision of the core developer team and supported by its active community.
 
-Conclusion
-----------
+## Conclusion
 
 Django is a highly maintained project, with a big community that helps the project growing by suggesting possible features, reporting bugs and also contributing to the code. Thus, the repository has daily commits, code reviews and merged pull requests.
 
