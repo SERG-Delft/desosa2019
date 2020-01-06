@@ -11,7 +11,7 @@ chapter: true
 
 *Delft University of Technology*
 
-![](images/kotlin_banner.png)
+![](images/kotlin/images/kotlin_banner.png)
 
 _Kotlin Banner [26]_
 
@@ -141,12 +141,7 @@ Power/Interest grid
 
 A power/interest grid shows the power of a stakeholder to influence a project and their interest in the project \[16\].
 
-<figure class="image">
-<img src="diagrams/power-interest-grid.png" width="600"alt="{{ include.description }}">
-<figcaption>
-<b>Figure 201</b> - Power/Interest grid with the stakeholders of the Kotlin project.
-</figcaption>
-</figure>
+![Power/Interest grid with the stakeholders of the Kotlin project.](images/kotlin/diagrams/power-interest-grid.png)
 
 Influence on Stakeholders
 -------------------------
@@ -159,24 +154,14 @@ An onion diagram shows the interaction of stakeholders with a project and effect
 -   **Layer 3** - Beneficiaries
 -   **Layer 4** - wider environment
 
-<figure class="image">
-<img src="diagrams/onion.png"  width="500" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 202</b> Onion diagram of the key stakeholders of the Kotlin project and stakeholder types
-</figcaption>
-</figure>
+![Onion diagram of the key stakeholders of the Kotlin project and stakeholder types](images/kotlin/diagrams/onion.png)
 
 Context View
 ============
 
 The context view describes the relationships, dependencies and interactions between the system and its environment. This is visualized in the diagram. Each element of the diagram will be described in more detail in this section, along with an overview of the scope of the system.
 
-<figure class="image">
-<img src="diagrams/contextview-diagram.png"  width="1000" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 203</b> Context View of Kotlin
-</figcaption>
-</figure>
+![Context View of Kotlin](images/kotlin/diagrams/contextview-diagram.png)
 
 System Scope
 ------------
@@ -256,35 +241,20 @@ Statistic showed that roughly 12% of the content of Java and Kotlin files are co
 
 Detekt shows that the MCC and code smells per 1000 LLoC are high for a project of its size. Detekt estimates that the time it would take to fix all code debt in Kotlin at 642 days, although no reasoning is given for this estimate. However, some of these code smells might not be issues; for instance, Detekt does not exclude generated files.
 
-By running Detekt on several commits, once every year, code debt evolution was analyzed. Figure **401** shows that while the overall debt has grown massively, it has decreased compared to the LLoC. Figure **402** shows that the relative number of code smells has slightly decreased over time.
+By running Detekt on several commits, once every year, code debt evolution was analyzed. The first figure below shows that while the overall debt has grown massively, it has decreased compared to the LLoC. The second figure below shows that the relative number of code smells has slightly decreased over time.
 
-<figure class="image">
-<img src="charts/DebtLLoCEvolution.png"  width="600" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 401</b> - Comparison of the overall debt (in hours) and logical lines of code over time.
-</figcaption>
-</figure>
-<figure class="image">
-<img src="charts/CSLLoCEvolution.png"  width="600" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 402</b> - The ratio between number of code smells and logical lines of code over time.
-</figcaption>
-</figure>
+![Comparison of the overall debt (in hours) and logical lines of code over time.](images/kotlin/charts/DebtLLoCEvolution.png)
+![The ratio between number of code smells and logical lines of code over time.](images/kotlin/charts/CSLLoCEvolution.png)
 
 ### Open TODOs
 
-Unresolved TODOs in code are a good metric for known technical debt in the project, the analysis of the TODOs history can be seen in figure **403**.
+Unresolved TODOs in code are a good metric for known technical debt in the project, the analysis of the TODOs history can be seen in the figure below.
 
 In 2016, the amount of TODOs grew significantly from about 850 to over 3000. The developers added many TODOs in testing, especially in `idea` and `compiler`. Likely due to Kotlin being released around this time they did not resolve these issues right away, increasing the testing debt further.
 
 Furthermore, the overall number of open TODOs is increasing, reaching more than 4000 in March 2019, indicating significant technical debt in the `idea` and `compiler` components. Not all this is necessarily bad, as long as they can be repaid \[30\]. The increasing number of TODOs does not however bode well as this also means the time to resolve these TODOs keeps increasing.
 
-<figure class="image">
-<img src="charts/TODOs-history-with-major-components.png"  width="900" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 403</b> - History of TODOs since 2012 with main components, stacked amount of TODOs
-</figcaption>
-</figure>
+![History of TODOs since 2012 with main components, stacked amount of TODOs](images/kotlin/charts/TODOs-history-with-major-components.png)
 
 Test Debt
 ---------
@@ -295,14 +265,9 @@ In this section the testing debt of Kotlin is analyzed, by looking at bugs and a
 
 On YouTrack \[31\], all bugs in Kotlin are tracked with priorities and affected subsystems. The analysis focused on major and critical bugs, because these are the ones with the highest impact.
 
-In the period from 2011 until March 2019, 2428 major and 629 critical bugs were fixed in Kotlin. However, 774 major and 5 critical bugs remain unfixed. An analysis of the issue tracker shows that critical bugs are likely to be resolved within a few months. However, major bugs stay unfixed much longer, some even for multiple years (see examples 1 \[32\], 2 \[33\], and 3 \[34\]. The main components affected by bugs are IDE, Frontend, Tools, and Backend (see figure **403**).
+In the period from 2011 until March 2019, 2428 major and 629 critical bugs were fixed in Kotlin. However, 774 major and 5 critical bugs remain unfixed. An analysis of the issue tracker shows that critical bugs are likely to be resolved within a few months. However, major bugs stay unfixed much longer, some even for multiple years (see examples 1 \[32\], 2 \[33\], and 3 \[34\]. The main components affected by bugs are IDE, Frontend, Tools, and Backend (see the figure below).
 
-<figure class="image">
-<img src="charts/Top10-Combined-Bugs-per-Module.png"  width="900" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 404</b> - Top 10 affected subsystem by bugs with stacked amount of bugs and current state (March 2019)
-</figcaption>
-</figure>
+![Top 10 affected subsystem by bugs with stacked amount of bugs and current state (March 2019)](images/kotlin/charts/Top10-Combined-Bugs-per-Module.png)
 
 ### Test Quality
 
@@ -326,7 +291,7 @@ Communication about Debt
 
 In this section we discuss how Kotlin developers communicate and discuss about technical debt.
 
-Filtering issues on YouTrack on the keywords “refactoring”, “refactor”, “maintain”, “maintenance”, and “debt”, does not return any discussions about technical debt. Furthermore, there are no labels for technical debt of any kind. Filtering the commit messages with the same keywords results in more than 2000 commits with refactorings, but very few discussions about maintenance or refactoring. Additionally, only 20 TODOs (figure **404**) contain the words “refactor” or “maintain”. On their Slack \[10\] there are no dedicated channels for refactorings, testing or maintenance.
+Filtering issues on YouTrack on the keywords “refactoring”, “refactor”, “maintain”, “maintenance”, and “debt”, does not return any discussions about technical debt. Furthermore, there are no labels for technical debt of any kind. Filtering the commit messages with the same keywords results in more than 2000 commits with refactorings, but very few discussions about maintenance or refactoring. Additionally, only 20 TODOs (see the figure above) contain the words “refactor” or “maintain”. On their Slack \[10\] there are no dedicated channels for refactorings, testing or maintenance.
 
 All these findings indicate that Kotlin developers very rarely discuss technical debt.
 
@@ -358,12 +323,7 @@ Furthermore, there have been 7 general layers of modules identified.
 
 **The module structure graph** shows the general relationship between module layers.
 
-<figure class="image">
-<img src="diagrams/Module_structure.png" width="600"alt="{{ include.description }}">
-<figcaption>
-<b>Figure 501</b> - Diagram of the module structure.
-</figcaption>
-</figure>
+![Diagram of the module structure.](images/kotlin/diagrams/Module_structure.png)
 
 ### Standardization of design
 
@@ -412,14 +372,10 @@ In conclusion, there are issues with documentation and clarity in the Kotlin pro
 Contributors Perspective
 ========================
 
-Kotlin is a project that partially relies on open source contributions in order to evolve and has welcome contributors since it was made open source in 2012 \[47\]. In order for these contributors to work effectively, they should be supported throughout the process. In this section the journey of contributiors throughout making contributions and proposing new features will be explored, before giving recommendations for potential improvements. This journey was derived from three personas (see Appendix Personas) and the contribution barriers (see figure **601**) identified by Steinmacher et al \[48\].
+Kotlin is a project that partially relies on open source contributions in order to evolve and has welcome contributors since it was made open source in 2012 \[47\]. In order for these contributors to work effectively, they should be supported throughout the process. In this section the journey of contributiors throughout making contributions and proposing new features will be explored, before giving recommendations for potential improvements. This journey was derived from three personas (see Appendix Personas) and the contribution barriers (see the figure below) identified by Steinmacher et al \[48\].
 
-<figure class="image">
-<img src="diagrams/contribution-barriers-steinmacher.jpg"  width="700" alt="{{ include.description }}">
-<figcaption>
-<b>Figure 601</b> - Barriers for new open source contributors found in a literature review by Steinmacher et al. in 2015 \[48\].
-</figcaption>
-</figure>
+![](images/kotlin/diagrams/contribution-barriers-steinmacher.jpg)
+_Barriers for new open source contributors found in a literature review by Steinmacher et al. in 2015 \[48\]._
 
 Orientation
 -----------
@@ -466,7 +422,7 @@ This section addresses the final steps for a contribution: submitting a pull req
 
 Submitting pull requests works without problems. In our experience the time between code submission and first review can vary between a day and three weeks. After it is accepted, the change is integrated into the `master` branch and is integrated in the project, automatically picked up by TeamCity to be included in a following release (see section 3 - Development Process).
 
-The timespan of the PR review process should be lowered. This barrier was also identified by six of the reviewed studies by Steinmacher et al. (see figure **501**) and is also addressed in the opensource guide \[61\]. A long period of waiting can be demotivating for new contributors, because it can make your contribution feel insignificant after a lot of effort was poured into it. A good response time recommended in literature is below 48 hours \[62\].
+The timespan of the PR review process should be lowered. This barrier was also identified by six of the reviewed studies by Steinmacher et al. (see the diagram of the module structure above) and is also addressed in the opensource guide \[61\]. A long period of waiting can be demotivating for new contributors, because it can make your contribution feel insignificant after a lot of effort was poured into it. A good response time recommended in literature is below 48 hours \[62\].
 
  
 
