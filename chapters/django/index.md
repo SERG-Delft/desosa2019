@@ -92,72 +92,18 @@ The Technical Board is a special category of core members. Their role is to stee
 
 Based on the three major categories idetified and their roles in the organization, the RW stakeholder categorization of Django is as follows:
 
-<table style="width:40%;">
-<colgroup>
-<col width="6%" />
-<col width="16%" />
-<col width="16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Type &amp; Description</th>
-<th align="center">Stakeholder</th>
-<th align="center">Observations</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Aquirers <br> <sub><sup> Oversee the procurement of the system or product </sup></sub></td>
-<td align="center">Django Software Foundation</td>
-<td align="center">The DSF oversees the whole financial and legal aspects, but the funding, in particular, comes from the Corporate Members: Platinum (JetBrains, Instagram), Silver (Sentry, Cadre, Education Ecosystem and more), Bronze (Boomerang, Divio, Django Stars, TeamUp and many more)</td>
-</tr>
-<tr class="even">
-<td align="left">Assessors <br> <sub><sup> Oversee the system’s conformance to standards and legal regulation </sup></sub></td>
-<td align="center">Technical Board <br><br> Django Software Foundation</td>
-<td align="center">Technical Board maintains the quality and stability, while the DSF handles the legal regulations</td>
-</tr>
-<tr class="odd">
-<td align="left">Communicators <br> <sub><sup> Explain the system to other stakeholders via its documentation and training materials </sup></sub></td>
-<td align="center">Django Software Foundation <br><br> Core Team</td>
-<td align="center">DSF represents the communicators through the board of directors who are involved in organising conferences and events, while the core team helps explaining the system from a technical point of view</td>
-</tr>
-<tr class="even">
-<td align="left">Developers <br> <sub><sup> Construct and deploy the system from specifications (or lead the teams that do this) </sup></sub></td>
-<td align="center"><a href="https://people.djangoproject.com/">Django People</a><br> <br>Core Team</td>
-<td align="center">Since one of the responsibilities of the core team is to develop, review and merge patches, they also represent the developers among the rest of the community</td>
-</tr>
-<tr class="odd">
-<td align="left">Maintainers <br> <sub><sup> Manage the evolution of the system once it is operational </sup></sub></td>
-<td align="center">Technical Board <br> <br> Ops Team</td>
-<td align="center">The technical board goal is to maintain the project, while the Ops Team maintains the infrastructure</td>
-</tr>
-<tr class="even">
-<td align="left">Suppliers <br> <sub><sup> Build and/or supply the hardware, software, or infrastructure on which the system will run </sup></sub></td>
-<td align="center">Operating Systems <br><br> Python <br><br> Javascript</td>
-<td align="center">Django runs on MacOS, Linux and Windows. Besides a host, Django also needs Python and Javascript to run, giving the fact that is a Python web framework.</td>
-</tr>
-<tr class="odd">
-<td align="left">Support Staff <br> <sub><sup> Provide support to users for the product or system when it is running </sup></sub></td>
-<td align="center">Core Members <br><br> Django People</td>
-<td align="center">The Core Members have the authority over the <a href="irc://irc.freenode.net/django">IRC channel</a>, <a href="https://code.djangoproject.com/query">Issue tracker</a>, mailing list, where other community members may contribute too. Moreover, all the people that are engaged into conversations on <a href="https://stackoverflow.com/questions/tagged/django">StackOverflow</a> are part of the support staff</td>
-</tr>
-<tr class="even">
-<td align="left">System administrators <br> <sub><sup> Run the system once it has been deployed </sup></sub></td>
-<td align="center">Ops Team <br> <br>Releasers</td>
-<td align="center">The releasers are concerned with releasing the project to the public, while the ops team maintains the servers</td>
-</tr>
-<tr class="odd">
-<td align="left">Testers <br> <sub><sup> Test the system to ensure that it is suitable for use </sup></sub></td>
-<td align="center">Developers</td>
-<td align="center">Django follows the Test Driven Development methodology, therefore the developers are also responsible for writing test cases and running the tests</td>
-</tr>
-<tr class="even">
-<td align="left">Users <br> <sub><sup> Define the system’s functionality and ultimately make use of it </sup></sub></td>
-<td align="center">Community Members <br><br> End Users <br> <br>Content Creators</td>
-<td align="center">The members of the community are part of the users, because they use Django and also create Trac issues to help improve the project or create new functionality. The end users represent the developers from companies such as Instagram, Spotify, Mozilla FireFox, Bitbucket and Disqus, who are using Django to develop their products. The content creators are the people who are using Django to help other users by publishing blog posts, tutorials and videos.</td>
-</tr>
-</tbody>
-</table>
+| Type & Description | Stakeholder | Observations |
+| :--- | :---------: | :---------: |
+| Aquirers _Oversee the procurement of the system or product_ | Django Software Foundation | The DSF oversees the whole financial and legal aspects, but the funding, in particular, comes from the Corporate Members: Platinum (JetBrains, Instagram), Silver (Sentry, Cadre, Education Ecosystem and more), Bronze (Boomerang, Divio, Django Stars, TeamUp and many more)|
+| Assessors _Oversee the system’s conformance to standards and legal regulation_ | Technical Board  /  Django Software Foundation| Technical Board maintains the quality and stability, while the DSF handles the legal regulations|
+| Communicators _Explain the system to other stakeholders via its documentation and training materials_ | Django Software Foundation / Core Team | DSF represents the communicators through the board of directors who are involved in organising conferences and events, while the core team helps explaining the system from a technical point of view|
+| Developers _Construct and deploy the system from specifications (or lead the teams that do this)_ | [Django People](https://people.djangoproject.com/) / Core Team | Since one of the responsibilities of the core team is to develop, review and merge patches, they also represent the developers among the rest of the community|
+| Maintainers _Manage the evolution of the system once it is operational_ | Technical Board / Ops Team | The technical board goal is to maintain the project, while the Ops Team maintains the infrastructure |
+| Suppliers _Build and/or supply the hardware, software, or infrastructure on which the system will run_ | Operating Systems / Python / Javascript | Django runs on MacOS, Linux and Windows. Besides a host, Django also needs Python and Javascript to run, giving the fact that is a Python web framework. |
+| Support Staff _Provide support to users for the product or system when it is running_ | Core Members / Django People | The Core Members have the authority over the [IRC channel](irc://irc.freenode.net/django), [Issue tracker](https://code.djangoproject.com/query), mailing list, where other community members may contribute too. Moreover, all the people that are engaged into conversations on [StackOverflow](https://stackoverflow.com/questions/tagged/django) are part of the support staff|
+| System administrators _Run the system once it has been deployed_ | Ops Team / Releasers | The releasers are concerned with releasing the project to the public, while the ops team maintains the servers |
+| Testers _Test the system to ensure that it is suitable for use_ | Developers | Django follows the Test Driven Development methodology, therefore the developers are also responsible for writing test cases and running the tests |
+| Users _Define the system’s functionality and ultimately make use of it_ | Community Members / End Users / Content Creators| The members of the community are part of the users, because they use Django and also create Trac issues to help improve the project or create new functionality. The end users represent the developers from companies such as Instagram, Spotify, Mozilla FireFox, Bitbucket and Disqus, who are using Django to develop their products. The content creators are the people who are using Django to help other users by publishing blog posts, tutorials and videos. |  
 
 ### Other stakeholders
 
