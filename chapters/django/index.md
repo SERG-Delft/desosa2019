@@ -1,12 +1,17 @@
-Django
-=
+---
+layout: default
+project: django
+title: Django
+chapter: true
+---
 
-<br><br>
-<img src="images/logo-transparent.png" alt="Django logo" width="400" height="130" hspace="200">
-<br><br>
+# Django
+
+![](images/logo-transparent.png)
 
 By [Alexandru Balan](https://github.com/alexanderblnf), [Andra Ionescu](https://github.com/AndraIonescu), [Phil Misteli](https://github.com/pmisteliac), [David Vojtek](https://github.com/sejd0n)
 
+## Table of Contents
 -   [Introduction](#introduction)
 -   [Stakeholders](#stakeholders)
     -   [Django Software Foundation](#django-software-foundation)
