@@ -344,15 +344,13 @@ Concerns
 
 The Kotlin project repository is organized into modules and orchestrated using Gradle. Analyzing the build files of the project showed there are 199 modules.
 
-[A dependency graph](diagrams/dependencies.pdf) has been created to show the links between each subproject. From this graph, it can be seen that sub-projects tend to have many dependencies to other sub-projects. Kotlin has multiple third-party dependencies such as, Java, JUnit, ANTLR 4, and Google Guava.
+A dependency graph has been created to show the links between each subproject. From this graph, it can be seen that sub-projects tend to have many dependencies to other sub-projects. Kotlin has multiple third-party dependencies such as, Java, JUnit, ANTLR 4, and Google Guava.
 
 The top 10 nodes by amount of times referenced are the following:
 
 <table><colgroup><col style="width: 24%" /><col style="width: 15%" /><col style="width: 59%" /></colgroup><thead><tr class="header"><th>Name</th><th>Times Referenced</th><th>Description</th></tr></thead><tbody><tr class="odd"><td><code>:kotlin-stdlib</code></td><td>68</td><td>Contains the Kotlin standard library <span class="citation" data-cites="stdlib">[36]</span>. Used in all Kotlin projects.</td></tr><tr class="even"><td><code>:idea</code></td><td>63</td><td>Contains all editor integration between IntelliJ IDEA and Kotlin adjacent projects.</td></tr><tr class="odd"><td><code>:compiler:frontend</code></td><td>59</td><td>Contains classes and methods to analyze Kotlin code, resolve types, and show diagnostic compiler messages.</td></tr><tr class="even"><td><code>:compiler:util</code></td><td>52</td><td>Contains various utilities ranging from constants to class conversions.</td></tr><tr class="odd"><td><code>:compiler:tests-common</code></td><td>44</td><td>Contains all kinds of boilerplate for creating language tests. Used in many projects.</td></tr><tr class="even"><td><code>:compiler</code></td><td>42</td><td>Groups all sub-modules together: contains no functionality on its own.</td></tr><tr class="odd"><td><code>:compiler:frontend.java</code></td><td>39</td><td>Contains behavior when the Kotlin compiler interacts with a Java source file.</td></tr><tr class="even"><td><code>:compiler:cli</code></td><td>32</td><td>Contains code for command line tools <code>kotlinc</code>, <code>kotlin-dce-js</code>, etc.</td></tr><tr class="odd"><td><code>:core:descriptors</code></td><td>27</td><td>Contains classes for naming Kotlin language elements and types.</td></tr><tr class="even"><td><code>:idea:core</code></td><td>27</td><td>Contains all editor integration between IntelliJ IDEA and Kotlin.</td></tr></tbody></table>
 
 **Table 301** - Top 10 nodes by amount of times referenced
-
-See the appendix for the full list.
 
 This list of top referenced nodes also shows points of common processing: nodes that are included often must contain some kind of functionality that is useful to share and distribute across other modules.
 
@@ -401,7 +399,7 @@ The codeline organisation \[5\] refers to the way the directory structure is man
 
 Furthermore, JetBrains uses TeamCity for an continuous integration and deployment process \[46\]. TeamCity runs a multitude of build agents on the latest master, creating new builds roughly every 3 hours, if all tests pass.
 
-The file structure itself is confusing for newcomers. The project has not been structured in a clear and logical form, nor is there any documentation on how the structure for the Kotlin project should be organized. Nevertheless, an attempt was made to comprehensibly identify all the packages of the project and their purpose, which can be found in [diagrams/directories.md](diagrams/directories.md)
+The file structure itself is confusing for newcomers. The project has not been structured in a clear and logical form, nor is there any documentation on how the structure for the Kotlin project should be organized. Nevertheless, an attempt was made to comprehensibly identify all the packages of the project and their purpose, which can be found in the appendix.
 
 For people that are wanting to contribute, it is the easiest to start with looking at the `idea` folder, since this contains plugins for IntelliJ IDEA, such as inspections. Most of the up-for-grabs issues are also centered around this package.
 
@@ -614,320 +612,33 @@ Summarizing the results, Kotlin is a language that is starting to mature, and th
 \[62\] C. Jensen, S. King, V. Kuechler, Joining free/open source software communities: An analysis of newbies’ first interactions on project mailing lists, in: 2011 44th Hawaii International Conference on System Sciences, 2011: pp. 1–10. doi:[10.1109/HICSS.2011.264](https://doi.org/10.1109/HICSS.2011.264).
 
 ## Appendix
-| Name | Times Referenced |
-|------|------------------|
-| `orgjetbrainskotlinkotlinstdlib` | 68 |
-| `orgjetbrainskotlinidea` | 63 |
-| `orgjetbrainskotlinfrontend` | 59 |
-| `orgjetbrainskotlinutil` | 52 |
-| `orgjetbrainskotlintestscommon` | 44 |
-| `orgjetbrainskotlinkotlincompiler` | 42 |
-| `orgjetbrainskotlinfrontendjava` | 39 |
-| `orgjetbrainskotlincli` | 32 |
-| `orgjetbrainskotlindescriptors` | 27 |
-| `orgjetbrainskotlinideacore` | 27 |
-| `orgjetbrainskotlinbackend` | 25 |
-| `comandroidtoolsbuildbuilder` | 24 |
-| `orgjetbrainskotlinclicommon` | 23 |
-| `orgjetbrainskotlinideaandroid` | 21 |
-| `orgjetbrainskotlinkotlinreflectapi` | 21 |
-| `orgjetbrainskotlinjsfrontend` | 20 |
-| `orgjetbrainskotlinkotlingradleplugin` | 19 |
-| `orgjetbrainskotlinideamaven` | 18 |
-| `orgjetbrainskotlinincrementalcompilationimpl` | 18 |
-| `orgjetbrainskotlinandroidextensionside` | 18 |
-| `orgjetbrainskotlinideajvm` | 17 |
-| `orgjetbrainskotlinkotlinreflect` | 17 |
-| `orgjetbrainskotlinkotlinbuildcommon` | 17 |
-| `comandroidtoolsbuildgradlecore` | 17 |
-| `orgjetbrainskotlindescriptorsjvm` | 17 |
-| `orgjetbrainskotlincompiler` | 17 |
-| `orgapachemavenmavencore` | 17 |
-| `comjcabijcabiaether` | 17 |
-| `orgjetbrainskotlinideagradle` | 16 |
-| `orgjetbrainskotlinpluginapi` | 16 |
-| `orgjetbrainskotlindaemoncommon` | 16 |
-| `orgjetbrainskotlinkotlinscriptingcompiler` | 16 |
-| `orgjetbrainskotlinideajpscommon` | 15 |
-| `orgjetbrainskotlinutilruntime` | 15 |
-| `orgjetbrainskotlinkotlinscriptutil` | 15 |
-| `orgjetbrainskotlingenerators` | 15 |
-| `orgjetbrainskotlinfrontendscript` | 14 |
-| `orgjetbrainskotlinlightclasses` | 14 |
-| `orgjetbrainskotlinideagradlenative` | 14 |
-| `orgjetbrainskotlinjpsplugin` | 14 |
-| `netrubygrapefruitnativeplatform` | 14 |
-| `orgjetbrainskotlinirtree` | 13 |
-| `orgjetbrainskotlinideatestframework` | 13 |
-| `orgjetbrainskotlindeserialization` | 13 |
-| `orgjetbrainskotlinj2k` | 13 |
-| `orgjetbrainskotlinkotlinscriptingjvmhost` | 13 |
-| `orgjetbrainskotlinannotationbasedcompilerpluginsidesupport` | 12 |
-| `orgcodehausplexusplexusutils` | 12 |
-| `orgjetbrainskotlinkotlintestjvm` | 12 |
-| `orgjetbrainskotlinjstranslator` | 12 |
-| `orgjetbrainskotlinbackendcommon` | 12 |
-| `orgjetbrainskotlinkotlinannotationprocessing` | 12 |
-| `orgjetbrainskotlinjsserializer` | 11 |
-| `comandroidtoolssdkcommon` | 11 |
-| `comandroidtoolscommon` | 11 |
-| `comandroidtoolslintlintapi` | 11 |
-| `orgjetbrainskotlinideanative` | 11 |
-| `orgjetbrainskotlinkotlinscriptruntime` | 11 |
-| `comgoogleguavaguava` | 11 |
-| `orgjetbrainskotlinkotlinnoargcompilerplugin` | 11 |
-| `orgapachemavenmavenaetherprovider` | 11 |
-| `comandroidtoolssdklib` | 10 |
-| `orgjetbrainskotlinkotlincompilerrunner` | 10 |
-| `orgjetbrainskotlinjvmabigen` | 10 |
-| `orgjetbrainskotlinjsast` | 9 |
-| `orgjetbrainskotlinkotlingradlepluginapi` | 9 |
-| `orgjetbrainskotlinuastkotlin` | 9 |
-| `orgjetbrainskotlinkotlinscriptingjvm` | 9 |
-| `orgjetbrainskotlinkotlinscriptingcommon` | 9 |
-| `orgjetbrainskotlinresolve` | 9 |
-| `orgjetbrainskotlinserialization` | 9 |
-| `orgjetbrainskotlinbackendjs` | 9 |
-| `orgjetbrainskotlinirbackendcommon` | 9 |
-| `orgjetbrainskotlinkotlinallopencompilerplugin` | 9 |
-| `orgjetbrainskotlinbackendjvm` | 9 |
-| `orgsonatypeaetheraetherapi` | 9 |
-| `orgjetbrainskotlinidecommon` | 9 |
-| `orgjetbrainskotlinkotlindaemonclient` | 9 |
-| `orgjetbrainskotlinpsi` | 9 |
-| `orgjetbrainskotlinnoargideplugin` | 9 |
-| `orgkualimavenwagonsmavens3wagon` | 9 |
-| `orgjetbrainskotlinsamwithreceiverideplugin` | 9 |
-| `comandroidtoolsbuildmanifestmerger` | 8 |
-| `orgjetbrainskotlinmetadata` | 8 |
-| `orgjetbrainskotlintree` | 8 |
-| `orgjetbrainskotlinlint` | 8 |
-| `orgjetbrainskotlinpsi2fir` | 8 |
-| `orgjetbrainskotlinallopenideplugin` | 8 |
-| `orgjetbrainskotlinkotlinnativelibraryreader` | 8 |
-| `orgsonatypeaetheraetherutil` | 8 |
-| `orgsonatypeaetheraetherconnectorwagon` | 8 |
-| `orgjetbrainskotlinandroidextensionscompiler` | 8 |
-| `orgjetbrainskotlinuastkotlinidea` | 8 |
-| `orgjetbrainskotlinkotlinxserializationcompilerplugin` | 8 |
-| `orgjetbrainskotlinkotlinandroidextensions` | 8 |
-| `orgkualicommonkualis3` | 7 |
-| `orgjetbrainskotlinfrontendcommon` | 7 |
-| `orgjetbrainskotlinxkotlinxmetadatajvm` | 7 |
-| `comandroiddatabindingcompilerCommon` | 7 |
-| `comandroidtoolsanalyticslibrarytracker` | 7 |
-| `comandroidtoolsanalyticslibraryshared` | 7 |
-| `orgjetbrainskotlinandroidtests` | 7 |
-| `orgjetbrainskotlinirpsi2ir` | 7 |
-| `orgsonatypeaetheraetherspi` | 7 |
-| `orgsonatypesisusisuinjectplexus` | 7 |
-| `organtlrantlr4` | 7 |
-| `orgjetbrainskotlinkotlinsamwithreceivercompilerplugin` | 7 |
-| `orgjetbrainskotlinkapt3idea` | 7 |
-| `orgjetbrainskotlinkotlingradlesubpluginexample` | 7 |
-| `orgjetbrainskotlinfirview` | 7 |
-| `comamazonawsawsjavasdk` | 6 |
-| `comandroidtoolsbuildbuildermodel` | 6 |
-| `orgow2asmasmtree` | 6 |
-| `orgjetbrainskotlinkotlingradletooling` | 6 |
-| `orgjetbrainskotlinkotlinxmetadata` | 6 |
-| `orgapachemavenmavenmodelbuilder` | 6 |
-| `orgcodehausplexusplexuscomponentannotations` | 6 |
-| `orgjetbrainskotlindaemon` | 6 |
-| `orgjetbrainskotlinkotlintestjunit` | 6 |
-| `comgoogleandroidandroid` | 6 |
-| `orgapachehttpcomponentshttpclient` | 6 |
-| `orgjetbrainskotlinkotlinnoarg` | 6 |
-| `orgsonatypeaetheraetherimpl` | 6 |
-| `orgapachemavenmavensettingsbuilder` | 6 |
-| `orgjetbrainskotlinkotlinallopen` | 6 |
-| `orgjetbrainskotlinjsparser` | 5 |
-| `orgjetbrainskotlinmetadatajvm` | 5 |
-| `orgjetbrainskotlinkotlintestannotationscommon` | 5 |
-| `comjcabijcabiaspects` | 5 |
-| `orgjetbrainskotlinkotlinnativeutils` | 5 |
-| `orgapachemavenmavenmodel` | 5 |
-| `comandroidtoolslintlint` | 5 |
-| `orgjetbrainskotlinkotlincompilerembeddable` | 5 |
-| `comandroidtoolsddmsddmlib` | 5 |
-| `orgjetbrainskotlinjava` | 5 |
-| `orgjetbrainskotlinirir2cfg` | 5 |
-| `comandroidtoolslayoutliblayoutlibapi` | 5 |
-| `comandroidtoolsannotations` | 5 |
-| `orgjetbrainskotlinkotlinscriptingintellij` | 5 |
-| `orgjetbrainskotlinkotlinannotationsjvm` | 5 |
-| `orgjetbrainskotlindescriptorsruntime` | 5 |
-| `orgjetbrainskotlinjsdce` | 5 |
-| `orgjetbrainskotlinkotlingradlepluginmodel` | 5 |
-| `orgjetbrainskotlinkotlinannotationprocessingcli` | 5 |
-| `orgjetbrainskotlintestgenerator` | 5 |
-| `orgjetbrainskotlinscriptingjvmmavendepshost` | 5 |
-| `orgsonatypeaetheraetherconnectorasynchttpclient` | 5 |
-| `comandroidtoolsrepository` | 5 |
-| `orgjetbrainskotlinkotlinsamwithreceiver` | 5 |
-| `orgjetbrainskotlinkotlinxserializationideplugin` | 5 |
-| `orgjetbrainskotlinkotlinjsr223localexample` | 5 |
-| `commonsiocommonsio` | 4 |
-| `orgslf4jslf4japi` | 4 |
-| `orgjetbrainskotlinkotlinstdlibcommon` | 4 |
-| `orgow2asmasm` | 4 |
-| `orgjetbrainskotlincones` | 4 |
-| `orgjetbrainskotlinkotlinstdlibjdk8` | 4 |
-| `orgapachemavenwagonwagonproviderapi` | 4 |
-| `orgjetbrainskotlinkotlinandroidextensionsruntime` | 4 |
-| `orgjetbrainskotlinkotlintestjs` | 4 |
-| `comgoogleprotobufprotobufjava` | 4 |
-| `orgjetbrainskotlinkotlinserialization` | 4 |
-| `comandroidtoolsanalyticslibraryprotos` | 4 |
-| `orgjetbrainskotlinkotlinpreloader` | 4 |
-| `orgjetbrainskotlinresolution` | 4 |
-| `orgjetbrainskotlinprotobuflite` | 4 |
-| `orgjetbrainskotlincontainer` | 4 |
-| `orgjetbrainskotlinxkotlinxcoroutinescore` | 4 |
-| `orgapachemavenmavenartifact` | 4 |
-| `orgapachemavenmavenpluginapi` | 4 |
-| `orgsonatypeplexusplexussecdispatcher` | 4 |
-| `orgsonatypeaetheraetherconnectorfile` | 4 |
-| `orgjetbrainskotlinkotlinscriptingidea` | 4 |
-| `orgjetbrainskotlinidearunner` | 4 |
-| `orgjetbrainskotlinkotlinmainkts` | 4 |
-| `orgkualicommonkualithreads` | 3 |
-| `orgslf4jjcloverslf4j` | 3 |
-| `comgooglecodegsongson` | 3 |
-| `netsfkxmlkxml2` | 3 |
-| `comjcabijcabilog` | 3 |
-| `orgjunitjupiterjunitjupiterapi` | 3 |
-| `orgjetbrainskotlinbinarycompatibilityvalidator` | 3 |
-| `orgjetbrainskotlintestscommonjvm6` | 3 |
-| `orgjetbrainskotlinkotlinsourcesectionscompilerplugin` | 3 |
-| `orgow2asmasmcommons` | 3 |
-| `orgjetbrainskotlinkotlintestcommon` | 3 |
-| `orgcodehausplexusplexusinterpolation` | 3 |
-| `comandroidtoolsbuildgradleapi` | 3 |
-| `orgow2asmasmanalysis` | 3 |
-| `orgow2asmasmutil` | 3 |
-| `comandroidtoolsbuildbuildertestapi` | 3 |
-| `orgbouncycastlebcpkixjdk15on` | 3 |
-| `orgbouncycastlebcprovjdk15on` | 3 |
-| `orgjetbrainskotlinscriptingjvmsimplescript` | 3 |
-| `orgjetbrainskotlinkotlinimportsdumpercompilerplugin` | 3 |
-| `orgapachemavensharedmavendependencytree` | 3 |
-| `orgapachemavenmavenrepositorymetadata` | 3 |
-| `orgcodehausplexusplexusclassworlds` | 3 |
-| `orgjetbrainskotlinformatter` | 3 |
-| `comningasynchttpclient` | 3 |
-| `commonsloggingcommonslogging` | 3 |
-| `comandroidtoolslintlintchecks` | 3 |
-| `orgjetbrainskotlinscriptingjvmmavendeps` | 3 |
-| `orgapachemavenmavensettings` | 3 |
-| `orgjetbrainskotlineval4j` | 3 |
-| `comandroidtoolsbuildgradle` | 3 |
-| `orgjetbrainskotlinscriptingjvmembeddablehost` | 3 |
-| `orgapachehttpcomponentshttpmime` | 3 |
-| `orgjetbrainskotlinkotlingradleplugintestutilsembeddable` | 3 |
-| `orgjetbrainskotlinscriptingjvmsimplescripthost` | 3 |
-| `commonslangcommonslang` | 2 |
-| `orgsonatypesisusisuinjectbean` | 2 |
-| `orgsonatypesisusisuguice` | 2 |
-| `comandroidtoolsexternalorgjetbrainsuast` | 2 |
-| `comandroidtoolsexternallomboklombokast` | 2 |
-| `comandroidtoolsexternalcomintellijintellijcore` | 2 |
-| `orgjetbrainskotlinkotlinstdlibjdk7` | 2 |
-| `comandroidtoolsdvlib` | 2 |
-| `orgjunitplatformjunitplatformcommons` | 2 |
-| `orgapiguardianapiguardianapi` | 2 |
-| `orgjetbrainskotlinkotlinstdlibjs` | 2 |
-| `orgjacocoorgjacocoreport` | 2 |
-| `orgjacocoorgjacococore` | 2 |
-| `netsfjoptsimplejoptsimple` | 2 |
-| `netsfproguardproguardgradle` | 2 |
-| `orgjetbrainskotlinkotlingradleplugindslcodegen` | 2 |
-| `organtlrST4` | 2 |
-| `organtlrantlrruntime` | 2 |
-| `orgjetbrainskotlinkotlinstdlibgen` | 2 |
-| `javaxvalidationvalidationapi` | 2 |
-| `orgjetbrainskotlinkotlinannotationprocessingruntime` | 2 |
-| `orgapachehttpcomponentshttpcore` | 2 |
-| `commonscodeccommonscodec` | 2 |
-| `comandroidtoolsbuildgradlemodel` | 2 |
-| `orgjetbrainskotlinkotlinant` | 2 |
-| `orgjetbrainskotlinkotlintestjunit5` | 2 |
-| `comgooglejimfsjimfs` | 2 |
-| `cglibcglib` | 2 |
-| `orgjetbrainskotlinkotlinannotationprocessinggradle` | 2 |
-| `orgapachecommonscommonscompress` | 2 |
-| `orgjetbrainskotlinkotlinannotationprocessingbase` | 2 |
-| `orgjetbrainskotlinkotlinp` | 2 |
-| `orgcodehausjacksonjacksonmapperasl` | 2 |
-| `orgcodehausjacksonjacksoncoreasl` | 2 |
-| `orgjetbrainskotlinkotlintesttestng` | 2 |
-| `orgapacheantant` | 1 |
-| `orgapacheantantlauncher` | 1 |
-| `orgjetbrainskotlinpluginscriptingpluginmarker` | 1 |
-| `orgopentest4jopentest4j` | 1 |
-| `comandroidtoolsbuildtransformapi` | 1 |
-| `comandroidtoolsbuildapksig` | 1 |
-| `comsquareupjavawriter` | 1 |
-| `itunimidsifastutil` | 1 |
-| `comgooglecodejsonsimplejsonsimple` | 1 |
-| `orgjetbrainskotlinjvmminimalfortest` | 1 |
-| `comintellijannotations` | 1 |
-| `orgjetbrainskotlinxkotlinxserializationruntime` | 1 |
-| `orgeclipseaetheraetherutil` | 1 |
-| `orgjetbrainskotlinkotlinjsr223daemonlocalevalexample` | 1 |
-| `orgjetbrainstrove4jtrove4j` | 1 |
-| `comgooglecodefindbugsjsr305` | 1 |
-| `comgoogleerrorproneerror_prone_annotations` | 1 |
-| `comgooglej2objcj2objcannotations` | 1 |
-| `orgcodehausmojoanimalsnifferannotations` | 1 |
-| `organtlrantlr4runtime` | 1 |
-| `orgabegotreelayoutorgabegotreelayoutcore` | 1 |
-| `orgglassfishjavaxjson` | 1 |
-| `comibmicuicu4j` | 1 |
-| `orgjbossnettynetty` | 1 |
-| `orgkhronosopenglapi` | 1 |
-| `xercesxmlParserAPIs` | 1 |
-| `xpp3xpp3` | 1 |
-| `orgjsonjson` | 1 |
-| `orgjetbrainskotlintestinstrumenter` | 1 |
-| `orgeclipsejdtcorecompilerecj` | 1 |
-| `orgjetbrainskotlinkotlinidl2k` | 1 |
-| `orgjetbrainskotlinannotationprocessorexample` | 1 |
-| `orgjetbrainskotlinideaandroidoutputparser` | 1 |
-| `iojavaslangjavaslang` | 1 |
-| `iojavaslangjavaslangmatch` | 1 |
-| `orgaspectjaspectjrt` | 1 |
-| `orgjetbrainskotlinsamples` | 1 |
-| `netsfproguardproguardbase` | 1 |
-| `orgapachecommonscommonslang3` | 1 |
-| `orgjetbrainskotlinxkotlinxcoroutinesjdk8` | 1 |
-| `comandroiddatabindingbaseLibrary` | 1 |
-| `comgooglecodejuniversalchardetjuniversalchardet` | 1 |
-| `asmasm` | 1 |
-| `orgsonatypeplexusplexuscipher` | 1 |
-| `orgjetbrainskotlinkotlinscriptingcompilerembeddable` | 1 |
-| `orgjetbrainskotlinpluginspringpluginmarker` | 1 |
-| `orgjetbrainskotlinkotlinrunner` | 1 |
-| `orgjetbrainskotlinkotlintestjsit` | 1 |
-| `junitjunit` | 1 |
-| `orghamcresthamcrestcore` | 1 |
-| `netrubygrapefruitnativeplatformfreebsdamd64libcpp` | 1 |
-| `netrubygrapefruitnativeplatformfreebsdamd64libstdcpp` | 1 |
-| `netrubygrapefruitnativeplatformfreebsdi386libcpp` | 1 |
-| `netrubygrapefruitnativeplatformfreebsdi386libstdcpp` | 1 |
-| `netrubygrapefruitnativeplatformlinuxamd64` | 1 |
-| `netrubygrapefruitnativeplatformlinuxi386` | 1 |
-| `netrubygrapefruitnativeplatformosxamd64` | 1 |
-| `netrubygrapefruitnativeplatformosxi386` | 1 |
-| `netrubygrapefruitnativeplatformwindowsamd64` | 1 |
-| `netrubygrapefruitnativeplatformwindowsi386` | 1 |
-| `netrubygrapefruitnativeplatformlinuxamd64ncurses5` | 1 |
-| `netrubygrapefruitnativeplatformlinuxamd64ncurses6` | 1 |
-| `netrubygrapefruitnativeplatformlinuxi386ncurses5` | 1 |
-| `netrubygrapefruitnativeplatformlinuxi386ncurses6` | 1 |
-| `orgjetbrainskotlinideagit` | 1 |
-| `orgjetbrainskotlinpluginnoargpluginmarker` | 1 |
-| `orgjetbrainskotlinvisitorsgenerator` | 1 |
-| `orgspringframeworkspringcore` | 1 |
-| `orgtestngtestng` | 1 |
-| `combeustjcommander` | 1 |
+| Directory | Purpose |
+| ------ | ------ |
+| .idea | IDE support |
+| android-studio | IDE support | 
+| annotations   |   Compiler |
+| ant   | Building |
+| build-common | Building |
+| compiler | Compiler |
+| core | Standard library |
+| custom-dependencies | Building |
+| docs | Documentation |
+| eval4j | Java Interpreter |
+| Generators | Building |
+| gradle | Building |
+| idea | Functionalities and tests |
+| idea-runner | running |
+| include | compiling |
+| j2k | Conversion Java to Kotlin |
+| jps-plugin | Compiling Java |
+| js | Compiling Javascript |
+| Konan | Compiling Native Code |
+| Libraries |  Functionality |
+| license | Apache licensing |
+| plugins | Functionality |
+| prepare | Building |
+| resources | Building |
+| spec-docs | Documentation |
+| test-instrumenter | Test compiling |
+| third-party | Compiler |
+| ultimate | IDE Support |
