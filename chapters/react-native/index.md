@@ -16,7 +16,7 @@ chapter: true
 ## Table of Contents
 
 -   [Introduction](#introduction)
--   [Stakeholders](#stakeholders)
+-   [Stakeholders](#stakeholder-analysis)
 -   [Context View](#context-view)
 -   [Development View](#development-view)
 -   [Pull Request Analysis](#pull-request-analysis)
@@ -55,7 +55,7 @@ All contributors are required to sign the [Contributor License Agreement](https:
 
 To assess whether PRs are compliant with the project’s standards and expectations, React Native makes use of bots that perform preliminary checks (e.g., CLA compliance, code style), in addition to the automatic testing done by CI services.
 
-If there are no remarks from the bots and the automatic tests pass, the [integrators](#Integrators) are responsible for further checking of compliance. Legal compliance of PRs is further checked by the core team’s PR reviews, CI checks (both on GitHub and Facebook’s internal systems), and perhaps some internal checks behind the scenes.
+If there are no remarks from the bots and the automatic tests pass, the [integrators](#integrators) are responsible for further checking of compliance. Legal compliance of PRs is further checked by the core team’s PR reviews, CI checks (both on GitHub and Facebook’s internal systems), and perhaps some internal checks behind the scenes.
 
 #### Communicators
 
@@ -103,7 +103,7 @@ We see a similarity between these preliminary results and the results by Gousios
 
 #### Suppliers
 
-According to Rozanski and Woods [^1], suppliers “build and/or supply the hardware, software, or infrastructure on which the system will run.” We already mentioned [Expo](https://expo.io/) as an essential [ecosystem enhancer](#Ecosystem-enhancers). However, since it provides the default way of building and running a React Native application during development [^12], it is also a significant supplier. In the end, applications built with React Native run on iOS and Android. Changes to those operating systems will also influence the way React Native apps are generated.
+According to Rozanski and Woods [^1], suppliers “build and/or supply the hardware, software, or infrastructure on which the system will run.” We already mentioned [Expo](https://expo.io/) as an essential [ecosystem enhancer](#ecosystem-enhancers). However, since it provides the default way of building and running a React Native application during development [^12], it is also a significant supplier. In the end, applications built with React Native run on iOS and Android. Changes to those operating systems will also influence the way React Native apps are generated.
 
 #### Support Staff
 
@@ -129,9 +129,9 @@ As React Native is a framework for cross-platform mobile development, a key requ
 
 Going clockwise, users are the ones that use React Native to build their (mobile) applications (see [Stakeholder Analysis](#stakeholder-analysis)). React Native is deployed using the npm package manager [^12]. Development tools also make it easier to develop React Native applications. Such tools include Yoga, an open source tool which allows the creation of flexible layouts on multiple platforms [^16].
 
-Facebook is the creator and sponsor of the project, which has an MIT license. The developers of the project are described in the [Stakeholder Analysis](#stakeholders-analysis). These developers use several communication channels to communicate with one another and the core team. GitHub provides the infrastructure for open-source development, and it is also where issues are tracked. AppVeyor and CircleCI are used as the automatic continuous integration providers for early detection of problems.
+Facebook is the creator and sponsor of the project, which has an MIT license. The developers of the project are described in the [Stakeholder Analysis](#stakeholder-analysis). These developers use several communication channels to communicate with one another and the core team. GitHub provides the infrastructure for open-source development, and it is also where issues are tracked. AppVeyor and CircleCI are used as the automatic continuous integration providers for early detection of problems.
 
-There are many projects within the React Native ecosystem that provide extra functionality. The project also has several competitors, see [Stakeholder Analysis](#stakeholders-analysis). React Native apps run on Android and iOS devices, and for developers also using [Expo](https://expo.io).
+There are many projects within the React Native ecosystem that provide extra functionality. The project also has several competitors, see [Stakeholder Analysis](#stakeholder-analysis). React Native apps run on Android and iOS devices, and for developers also using [Expo](https://expo.io).
 
 ## Development View
 
@@ -208,7 +208,7 @@ Three members of our team proceeded to tag each comment and discussed disagreeme
 
 We observe that user [hramos](https://github.com/hramos) is heavily involved in many PRs and often refers people to other people, as seen in PRs [18522](https://github.com/facebook/react-native/pull/18522) and [17422](https://github.com/facebook/react-native/pull/17422), thereby functioning as a bridge.
 
-We also observed that the speed at which PRs are merged seems to rely heavily on how busy the team is. For instance, when analyzing PR [18300](https://github.com/facebook/react-native/pull/18300), we observe that the team often had to be pinged. In [18278](thttps://github.com/facebook/react-native/pull/18278) we even sensed some frustration, due to the problem being urgent and the core team being slow to reply. Furthermore, it took the team over a month to comment on [18534](https://github.com/facebook/react-native/pull/18534). At the time of this PR, it seemed that the team heavily focused on adding tests to master, indicating an internal agenda.
+We also observed that the speed at which PRs are merged seems to rely heavily on how busy the team is. For instance, when analyzing PR [18300](https://github.com/facebook/react-native/pull/18300), we observe that the team often had to be pinged. In [18278](https://github.com/facebook/react-native/pull/18278) we even sensed some frustration, due to the problem being urgent and the core team being slow to reply. Furthermore, it took the team over a month to comment on [18534](https://github.com/facebook/react-native/pull/18534). At the time of this PR, it seemed that the team heavily focused on adding tests to master, indicating an internal agenda.
 
 In general, we see that other developers do comment on PRs, but that the core team has the final say on whether something gets merged or not. PRs are predominantly merged when both the core developers, and occasionally core contributors, have given their stamp of approval.
 
@@ -427,7 +427,7 @@ Id    | Reason for getting merged
 [17751](https://github.com/facebook/react-native/pull/17752) | Simply added an error message, merged due to uncontroversial nature.
 [21492](https://github.com/facebook/react-native/pull/21492) | Small discussion, author implemented suggested fix.
 [18300](https://github.com/facebook/react-native/pull/18300) | Most comments were about comment style, eventually merged. **note:** A lot of pining, implying that the core team and/or maintainers was overloaded at the time. 
-[18278](thttps://github.com/facebook/react-native/pull/18278)| Problem was urgent. **note:** A lot of frustration sensed, due to slow replies and asking for information updates often.
+[18278](https://github.com/facebook/react-native/pull/18278)| Problem was urgent. **note:** A lot of frustration sensed, due to slow replies and asking for information updates often.
 [21702](https://github.com/facebook/react-native/pull/21702) | Dominated by bots. Short discussion followed by merge.
 [23318](https://github.com/facebook/react-native/pull/23318) | Maintainer was quick to point out that a lot of work had to be done. Author implemented changes and eventually large subset was merged.
 [18522](https://github.com/facebook/react-native/pull/18522) | Interesting technical discussion lead by [hramos](https://github.com/hramos). Stack trace of internal fb test was shared, before fix was implemented and merged.
