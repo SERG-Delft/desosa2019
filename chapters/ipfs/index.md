@@ -1,3 +1,10 @@
+---
+layout: default
+project: ipfs
+title: IPFS
+chapter: true
+---
+
 ![go-ipfs](images/ipfs/go-ipfs.png)
 
 # Index
