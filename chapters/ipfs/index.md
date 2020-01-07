@@ -5,9 +5,12 @@ title: IPFS
 chapter: true
 ---
 
+# IPFS
+
 ![go-ipfs](images/ipfs/go-ipfs.png)
 
-# Index
+## Contents
+
 1. [Introduction](#introduction)
 2. [Stakeholders](#stakeholders)
 4. [Context View](#context-view)
@@ -16,7 +19,7 @@ chapter: true
 7. [Conclusion](#conclusion)
 
 
-# Introduction
+## Introduction
 
 The Internet and The World Wide Web are considered to be some of the greatest
 inventions of the 20th century. However, while the Internet is built on the
@@ -56,7 +59,7 @@ to work in disconnected networks.
 
 [^interplanetary]: <https://discuss.ipfs.io/t/why-the-name-ipfs/307>
 
-# Structure of IPFS Project #
+## Structure of IPFS Project
 
 The IPFS project is well structured into teams to separate responsibilities.
 There are three project roles that are responsible for the long term vision and
@@ -75,7 +78,7 @@ is further explained in the power grid.
 
 ![ipfs_structure](images/ipfs/ipfs_structure.png)
 
-# Stakeholders #
+## Stakeholders
 
 In this chapter, we will identify stakeholders involved in the go-ipfs project
 using the categories according to Rozanski & Woods [^book], specify managing
@@ -84,7 +87,7 @@ roles in the overall IPFS project and its relation to the go-ipfs project.
 [^book]: Nick Rozanski and Eoin Woods. Software Systems Architecture: Working
 with Stakeholders Using Viewpoints and Perspectives, 2nd Edition. 2011.
 
-## Roles ##
+### Roles
 
 To properly define roles, we inspected the Protocol Labs profile on
 [Crunchbase](https://www.crunchbase.com/organization/protocol-labs#section-funding-rounds) and
@@ -143,7 +146,7 @@ Results obtained from these various sources can be found below.
 | Testers               | These stakeholders test if the system is working and ready to be deployed. These are developers and users using a designated [TestBed](https://github.com/ipfs/iptb).                                                                                                                     |
 | Users                 | This group of stakeholders uses the product and has concerns about its functionality. Representants of this group include: web developers who want to host static files, dapp developers, users who want to access data stored on IPFS, pinning services ([Eternum](https://www.eternum.io/), [Pinata](https://www.pinata.cloud/)), gateway providers ([Cloudflare](https://www.cloudflare.com/)), and hosting providers ([Neocities](https://neocities.org)).                                                                                                                     |
 
-## IPFS Roles  ##
+### IPFS Roles
 
 IPFS has some designated managing roles which are explained briefly in the table
 below. In the scope of this chapter we mainly focus on the Go implementation,
@@ -172,7 +175,7 @@ significant, higher instances are involved
 ([@daviddias](https://github.com/daviddias) - captain of captains or
 even [@jbenet](https://github.com/jbenet) - BDFL).
 
-## Power-Interest Grid ##
+### Power-Interest Grid
 
 ![Stakeholders power grid](images/ipfs/stakeholders_powergrid.png)
 
@@ -195,12 +198,12 @@ change won't affect them.
 In the bottom left quadrant, we have suppliers. The Go language has some
 influence on the project. If Go changes, the project will be affected.
 
-# Context View
+## Context View
 
 The context view describes relationships, dependencies, and behaviors between
 IPFS and external entities.
 
-## System Scope
+### System Scope
 
 IPFS is a protocol for a distributed file system whose goal is to make content
 delivery truly decentralized. Go-ipfs serves as its original and reference
@@ -218,7 +221,7 @@ usually use its [JavaScript implementation](https://github.com/ipfs/js-ipfs) as
 it is possible to run it in a web browser without any software installed on a
 client.
 
-## Context Model
+### Context Model
 
 To visualize relationships with external entities, a context model diagram has
 been designed.
@@ -270,7 +273,8 @@ competitor.
 
 The application is multiplatform and can be run on Windows, Linux, and macOS.
 
-# Technical Debt #
+## Technical Debt
+
 During our research, we found that the developers are constantly paying
 attention to code quality and try to maintain the quality of the software in
 various ways, but especially by detailed code reviews and discussions.
@@ -279,7 +283,7 @@ We analyzed the technical debt of go-ipfs in several ways. Firstly we used
 SonarQube, then we analyzed code manually and in the end, we decided to check if
 developers discuss technical debt in Pull Requests or in issues.
 
-## SonarQube Analysis ##
+### SonarQube Analysis
 
 We use SonarQube [^sonarqube] to analyze repository with regard to
 vulnerabilities, code smells and possible
@@ -303,7 +307,8 @@ smells consist of:
 - 124 remove unused parameters
 
 
-## SOLID Violations ##
+### SOLID Violations
+
 Generally it is not so easy to find violations of SOLID rules, however,
  function `getOrHeadHandler` in the file
 `go-ipfs/core/corehttp/gateway_handler.go` (226 lines) is great example of
@@ -314,7 +319,8 @@ In general case, as we noticed from analysis of Pull Requests and manual
 analysis of the code, developers try to follow SOLID rules and most of the
 function are well-written.
 
-## Documentation Debt ##
+### Documentation Debt
+
 The project has two types of documentation: the folder `/docs` is used to
 explain how to use the product, while the comments in the code are used to
 explain the implementation and can be used to generate documentation using
@@ -327,7 +333,7 @@ creating documentation in the contribution guide. The
 project has some substantial documentation debt that can lead to a decrease in
 development speed and especially make onboarding of new contributors slower.
 
-## Testing Debt ##
+### Testing Debt
 
 To manage testing of such a complex repository, developers have some tools to
 perform that:
@@ -365,7 +371,7 @@ however, by more detailed analysis of this module we observed that overall most
 classes have code coverage in the range of 60-70%. We think that this number
 could be improved to decrease the technical debt of the project.
 
-## Developer Discussions ##
+### Developer Discussions
 
 To investigate if developers discuss a lot about the possible technical debt we
 decided to look for a few keywords ("technical debt", "refactor") in Pull Requests and
@@ -380,7 +386,8 @@ focusing on testing and refactoring of the block exchange protocol.
 In terms of discussions in the code, we observed 78 TODO and 9 FIXME comments in
 the source code.
 
-## Technical Debt Evolution ##
+### Technical Debt Evolution
+
 To observe technical debt evolution, we decided to run SonarQube on the latest
 release version and a few older versions from the past three years.
 
@@ -400,7 +407,8 @@ significant loss in LOC between 0.4.17 and 0.4.19 versions.
 The number of TODOs, issues and duplications reduced throughout the versions,
 which indicates that the system is slowly getting more mature.
 
-## Conclusions to Technical Debt
+### Conclusions to Technical Debt
+
 From our research of technical debt we noticed that developers are trying their
 best to improve quality of the code, they discuss a lot on almost every GitHub
 issue before implementing the change, but also aim to increase code readability
@@ -421,14 +429,14 @@ to be covered by the tests. As our remedies for the code we would consider:
 - revisit duplicated blocks
 - remove unused parameters where it is possible to improve code readability
 
-# Development View
+## Development View
 
 In this section we explore the architecture of go-ipfs from the development
 viewpoint. We discuss mainly the package structure organization,
 responsibilities of different modules, dependency management, and testing
 approach.
 
-## Package Hierarchy
+### Package Hierarchy
 
 The whole project is separated into many reusable components. The following
 diagram gives an overview of the main
@@ -587,7 +595,7 @@ it is developed by an IPFS developer [@chriscool](https://github.com/chriscool).
 
 All tests are run automatically by CircleCI for every Pull Request.
 
-# Deployment View
+## Deployment View
 
 In this section we explore IPFS from the deployment perspective, specify
 supported platforms, hardware requirements and runtime dependencies.
@@ -601,7 +609,7 @@ the base node that communicates with other nodes using p2p protocols in order to
 participate in the global IPFS network. The daemon may add, aquire, and serve
 content for the network, or for the clients that are dependent on it.
 
-## Installation
+### Installation
 
 Release versions of go-ipfs come in prebuilt packages for all supported
 platforms and can be downloaded from the [distributions
@@ -613,7 +621,8 @@ convenient way to update the software and revert to the previous version in case
 the newly installed version has any issues.
 
 
-## System Requirements
+### System Requirements
+
 IPFS can run on macOS, FreeBSD, Linux and Windows. There are prebuilt packages
 for i386 and amd64 CPU architectures for all systems. On Linux, arm and arm64
 architecture is supported as well. The program requires at least 1 MB RAM for
@@ -621,7 +630,7 @@ stable runtime, though 2 MB RAM is recommended. [^requirements]
 
 [^requirements]: https://github.com/ipfs/ipfs-update
 
-## Network Requirements
+### Network Requirements
 
 The daemon uses port `4001` to communicate with other peers in the network. The
 gateway which is used to access the IPFS content is running on port `8080` by
@@ -632,7 +641,7 @@ There is also a REST API running on the port `5001`. However, that one should
 not be made accessible from the public network. This would be considered a
 vulnerability as anyone would be able to change the node configuration remotely.
 
-## FUSE
+### FUSE
 
 For daemon to be able to mount to `/ipfs` or `/ipns` namespaces, FUSE
 (Filesystem in Userspace) needs to be installed. FUSE support varies across
@@ -646,7 +655,7 @@ Windows. [^winfuse]
 [^winfuse]: https://github.com/ipfs/go-ipfs/issues/5003
 
 
-## IPFS Cluster
+### IPFS Cluster
 
 For large-scale IPFS deployments,
 [IPFS cluster](https://github.com/ipfs/ipfs-cluster), a pinset orchestration
@@ -655,7 +664,8 @@ the server along with go-ipfs, and a client CLI application which helps to
 manage pins across a large cluster of IPFS daemons.
 
 
-# Conclusion #
+## Conclusion
+
 This chapter gives an overview of the IPFS project and particularly the architecture of its
 Go implementation. Firstly, we identified different stakeholders interested in the project.
 To better understand the structure, relationships, and dependencies, we created
