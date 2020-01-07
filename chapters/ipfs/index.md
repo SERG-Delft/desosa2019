@@ -1,4 +1,4 @@
-![go-ipfs](img/go-ipfs.png)
+![go-ipfs](images/ipfs/go-ipfs.png)
 
 # Index
 1. [Introduction](#introduction)
@@ -66,7 +66,7 @@ focus on [go-ipfs](https://github.com/ipfs/go-ipfs), which serves as a reference
 implementation of the IPFS protocol. Go-ipfs being a working group of the IPFS project has multiple relations with groups and project roles that are not part of the go-ipfs working group. This
 is further explained in the power grid.
 
-![ipfs_structure](img/ipfs_structure.png)
+![ipfs_structure](images/ipfs/ipfs_structure.png)
 
 # Stakeholders #
 
@@ -167,7 +167,7 @@ even [@jbenet](https://github.com/jbenet) - BDFL).
 
 ## Power-Interest Grid ##
 
-![Stakeholders power grid](img/stakeholders_powergrid.png)
+![Stakeholders power grid](images/ipfs/stakeholders_powergrid.png)
 
 To visualize the power and interest of stakeholders, we created a power-interest
 grid. Stakeholders with the most power and interest are located in the top-right
@@ -216,7 +216,7 @@ client.
 To visualize relationships with external entities, a context model diagram has
 been designed.
 
-![Context Model Diagram](img/contextview.png)
+![Context Model Diagram](images/ipfs/contextview.png)
 
 IPFS is developed by [Protocol Labs](https://protocol.ai/), a research and
 development company. Its development team is globally distributed, just like the
@@ -349,7 +349,7 @@ While investigating the CI tool [codecov](https://codecov.io/gh/ipfs/go-ipfs)
 used by the go-ipfs team, we observed that code coverage is on the level of
 62.32%.
 
-![code-cov](img/code-cov.png)
+![code-cov](images/ipfs/code-cov.png)
 
 Some modules are tested more in depth, however, the most important module of the
 project, core, has only 63% of code coverage (codecov is calculating ratio
@@ -429,7 +429,7 @@ packages, shows dependencies between them, and groups packages by layers of the
 IPFS stack. The go-ipfs repository then serves as the main package which wires
 all components together, allows to run an IPFS node daemon, and implements the CLI.
 
-![Package Diagram](img/package-diagram.png)
+![Package Diagram](images/ipfs/package-diagram.png)
 
 ### Network
 
@@ -538,7 +538,7 @@ The structure of the daemon is quite similar, apart from the input handling, to
 the structure of the CLI. The HTTP-API server accept incoming calls, which are
 dispatched and called against the IPFS node.
 
-![CLI Architecture Diagram](img/cli_architecture.png)
+![CLI Architecture Diagram](images/ipfs/cli_architecture.png)
 
 
 ## Dependency Management
@@ -586,7 +586,7 @@ In this section we explore IPFS from the deployment perspective, specify
 supported platforms, hardware requirements and runtime dependencies.
 
 <!--
-![Deployment Model Diagram](img/DeploymentView_v2.png)
+![Deployment Model Diagram](images/ipfs/DeploymentView_v2.png)
 -->
 
 At the base of any IPFS deployment will be the IPFS daemon. The IPFS daemon is
