@@ -107,7 +107,7 @@ This session describes the scope and responsibilities of Pytorch and its relatio
 
 ### System Scope and Responsibilities
 
-Pytorch has its trace of development of its scope and responsibilties. In the <a href="https://pytorch.org/blog/the-road-to-1_0/">Roadmap to Pytorch 1.0</a>, the Pytorch team has described their thoughts on the scope of Pytorch 1.0 compared with Pytorch 0.2, 0.3 and 0.4. We can learn from their thoughts and define the scope and responsibilities of Pytorch as follows:
+Pytorch has its trace of development of its scope and responsibilties. In the [Roadmap to Pytorch 1.0](https://pytorch.org/blog/the-road-to-1_0/), the Pytorch team has described their thoughts on the scope of Pytorch 1.0 compared with Pytorch 0.2, 0.3 and 0.4. We can learn from their thoughts and define the scope and responsibilities of Pytorch as follows:
 1. Tensor computation (like NumPy) with strong GPU acceleration
 2. Deep neural networks built on a tape-based autograd system
 3. Support for wide AI uses
@@ -128,9 +128,9 @@ The context diagram shows interfaces of Pytorch with external entities. The exte
 ### External Entities
 
 External entities are examined in detail as follows:
-* Communication: Communications are mainly done in <a href="https://www.GitHub.com">GitHub</a>, <a href="https://discuss.pytorch.org/">PyTorchDiscuss</a> and <a href="https://slack.com/">Slack</a>. Communicators supply data to Pytorch in the form of conversational materials to be studied to help Pytorch improve.
+* Communication: Communications are mainly done in [GitHub](https://www.GitHub.com), [PyTorchDiscuss](https://discuss.pytorch.org/) and [Slack](https://slack.com/). Communicators supply data to Pytorch in the form of conversational materials to be studied to help Pytorch improve.
 
-* Storage: <a href="https://aws.amazon.com/">AWS</a>, <a href="https://www.google.cn/">Google</a> and <a href="https://www.microsoft.com/">Microsoft</a> all have provided support of their cloud platforms for data storage of PyTorch.
+* Storage: [AWS](https://aws.amazon.com/), [Google](https://www.google.cn/) and [Microsoft](https://www.microsoft.com/) all have provided support of their cloud platforms for data storage of PyTorch.
 
 * Tools: [Horovod](https://github.com/uber/horovod) is a distributed training framework that can be used by PyTorch. [Pytorch Geometry](https://github.com/arraiy/torchgeometry) is a library of PyTorch for geometric computer vision. [TensorBoardX](https://github.com/lanpa/tensorboardX) is a visulization tool that can log events happening e.g. during training of a neural network. [Translate](https://github.com/lanpa/tensorboardX) extends PyTorch functionality to train for machine translation models.
 
@@ -146,7 +146,7 @@ The development view of PyTorch describes its code structure and dependencies, b
 
 The main structure of PyTorch in a architectural view is shown in the figure below.
 
-![Pytorch Architecture. Inspired by <a href=#learning_pytorch_book>[3]</a>](images/pytorch/iGWbOXL.png)
+![Pytorch Architecture. Inspired by [[3]](#learning_pytorch_book)](images/pytorch/iGWbOXL.png)
 
 The top-level Python library of PyTorch (please refer to the following section) exposes easy-to-understand API for users to quickly perform operations on tersors, build and train a deep neural network. This library provides interface but doesn't really execute the computations. Instead, it delivers this job down to its efficient computation engines written in C++. 
 
@@ -346,7 +346,7 @@ Deployment view determines the related environment to run the system. We will di
 
 ### Third Party Library
 
-Pytorch uses different libraries to develop its system. Those third-party libraries have been specifically introduced in section [Development View](#dev_view). Those third parties including `Numpy`, `Sphinx`, `pyyaml`, `CuDNN`, `MKL` etc., form third-party system requirements for running Pytorch and support the daily operating of Pytorch.
+Pytorch uses different libraries to develop its system. Those third-party libraries have been specifically introduced in section [Development View](#development-view). Those third parties including `Numpy`, `Sphinx`, `pyyaml`, `CuDNN`, `MKL` etc., form third-party system requirements for running Pytorch and support the daily operating of Pytorch.
 
 ### Runtime platforms
 
