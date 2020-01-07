@@ -23,7 +23,7 @@ By [Timo van Asten](https://github.com/timovanasten/), [Sven van Hal](https://gi
 
 ## Introduction
 
-WordPress is a Content Management System that services approximately one third of the web \[1\]. Mid 2016, the decision was made to start developing a new page editor experience: Gutenberg. The then-used editor – a single rich-text field – had not been updated in a decade and WordPress’ competitors were rapidly catching up. Gutenberg is a visual page builder instead: all content elements are blocks and these can be arranged in any desired order. Gutenberg is shipped with WordPress since December 2018.
+WordPress is a Content Management System that services approximately one third of the web [^1]. Mid 2016, the decision was made to start developing a new page editor experience: Gutenberg. The then-used editor – a single rich-text field – had not been updated in a decade and WordPress’ competitors were rapidly catching up. Gutenberg is a visual page builder instead: all content elements are blocks and these can be arranged in any desired order. Gutenberg is shipped with WordPress since December 2018.
 
 In this chapter, we review multiple aspects of the software architecture of Gutenberg. We first look at the bigger picture by analyzing their stakeholders and project context. Then, we dive into the inner code structure and look at the module structure, common software design, testing methods and how the codeline is organized. We continue to analyze and critique the technical and testing debt of the project, and conclude with an analysis of the often-overlooked accessibility implications of the new editor.
 
@@ -33,7 +33,7 @@ This chapter is part of the Delft Students on Software Architecture Book 2019.
 
 ### Identifying stakeholders
 
-We identified stakeholders according to the Rozanski & Woods \[2\] classification, as well as additional types of stakeholders that followed from our research.
+We identified stakeholders according to the Rozanski & Woods [^2] classification, as well as additional types of stakeholders that followed from our research.
 
 #### Acquirers
 
@@ -83,7 +83,7 @@ The following parties are suppliers for the Gutenberg project:
 
 #### Support staff
 
-The best place to get help as a user is via the WordPress.org support forums\[3\], or via the Slack *\#help* channel.
+The best place to get help as a user is via the WordPress.org support forums[^3], or via the Slack *\#help* channel.
 
 #### Testers
 
@@ -121,7 +121,7 @@ Besides analyzing PRs, we asked about the decision making process in the *\#core
 
 ## Context View
 
-This section describes the context of the `WordPress/Gutenberg` project. A context view “describes the relationships, dependencies, and interactions between the system and its environment.” \[2\]
+This section describes the context of the `WordPress/Gutenberg` project. A context view “describes the relationships, dependencies, and interactions between the system and its environment.” [^2]
 
 The scope of Gutenberg is limited to the page editing experience within WordPress, enabling users to create complex posts and pages. Gutenberg is responsible for the interactive editing screen, converting content blocks to a suitable HTML representation and for communicating with WordPress to store posts and pages.
 
@@ -147,7 +147,7 @@ Gutenberg is licensed, as is WordPress, under the GPLv2+ license. All contributi
 
 ## Development View
 
-The development viewpoint is used to describe the architecture that supports the process of software development. In this section, we look at Gutenberg’s architecture using the definition from Rozanski & Woods \[2\].
+The development viewpoint is used to describe the architecture that supports the process of software development. In this section, we look at Gutenberg’s architecture using the definition from Rozanski & Woods [^2].
 
 ### Module Organization
 
@@ -181,7 +181,7 @@ The *codeline model* describes the organization of the system’s source code: h
 
 #### Code Management
 
-Gutenberg uses the Feature Branch Workflow \[4\]. Contributors need to fork the project, make changes on a separate branch and create a pull request to the upstream master branch. Code owners of the project review the code, optionally request changes and merge the branch when the work is satisfactory \[5\].
+Gutenberg uses the Feature Branch Workflow [^4]. Contributors need to fork the project, make changes on a separate branch and create a pull request to the upstream master branch. Code owners of the project review the code, optionally request changes and merge the branch when the work is satisfactory [^5].
 
 #### Source Code Structure
 
@@ -193,7 +193,7 @@ Tests are present at multiple different locations in the source code: PHP tests 
 
 #### Release Process
 
-A new build of Gutenberg is released every two weeks, after having matured as a release candidate first \[6\]. Continuous integration is in place to automatically test and lint any code that is to be merged into the master branch and by extension a release.
+A new build of Gutenberg is released every two weeks, after having matured as a release candidate first [^6]. Continuous integration is in place to automatically test and lint any code that is to be merged into the master branch and by extension a release.
 
 Gutenberg lives primarily in the [WordPress plug-in repository](https://nl.wordpress.org/plugins/gutenberg/), but is also bundled with WordPress. The most suitable Gutenberg release is cherry-picked for each WordPress release by the WordPress maintainers.
 
@@ -265,7 +265,14 @@ While writing this document, the Gutenberg team transitioned to [Phase 2](https:
 
 One indicator of technical debt are TODO comments. At the time of writing, the Gutenberg project has a total of 47 TODOs in the code base. These TODOs can be categorized in the following categories:
 
-<table><colgroup><col style="width: 23%" /><col style="width: 11%" /><col style="width: 64%" /></colgroup><thead><tr class="header"><th>Type</th><th>Occurrences</th><th>Example from the code base</th></tr></thead><tbody><tr class="odd"><td>Needed improvements</td><td>21</td><td>// TODO: Search input should be focused immediately. It shouldn’t be necessary to have ‘waitForFunction’.</td></tr><tr class="even"><td>Suggested improvements</td><td>8</td><td>// TODO: Future enhancement to add an upload indicator.</td></tr><tr class="odd"><td>Removal reminders</td><td>6</td><td>// TODO: The following is for back-compat with WP 4.9, not needed in WP 5.0. Remove it after the release.</td></tr><tr class="even"><td>Research reminders</td><td>5</td><td>// TODO: Figure out a way to generate docs for dynamic actions/selectors.</td></tr><tr class="odd"><td>Thoughts and questions</td><td>4</td><td>// TODO: Should we differentiate BACKSPACE and DELETE?</td></tr><tr class="even"><td>Refactor reminders</td><td>3</td><td>// TODO: Refactor click detection to use blur to stop propagation.</td></tr></tbody></table>
+|Type|Occurrences|Example from the code base|
+|--- |--- |--- |
+|Needed improvements|21|// TODO: Search input should be focused immediately. It shouldn’t be necessary to have ‘waitForFunction’.|
+|Suggested improvements|8|// TODO: Future enhancement to add an upload indicator.|
+|Removal reminders|6|// TODO: The following is for back-compat with WP 4.9, not needed in WP 5.0. Remove it after the release.|
+|Research reminders|5|// TODO: Figure out a way to generate docs for dynamic actions/selectors.|
+|Thoughts and questions|4|// TODO: Should we differentiate BACKSPACE and DELETE?|
+|Refactor reminders|3|// TODO: Refactor click detection to use blur to stop propagation.|
 
 Many of these TODOs also give some indication on why the TODO was introduced, some of which are not valid anymore. An example of this is shown in the figure below.
 
@@ -287,7 +294,7 @@ Issue [\#13812](https://github.com/WordPress/gutenberg/issues/13812) shows that 
 
 ### Technical debt mitigation
 
-To mitigate technical debt, Gutenberg employs a consistent workflow starting from the creation of an issue of GitHub. When this issue is picked by a developer he or she is guided by the extensive contributing guide including documentation on testing, workflow and package management \[5\].
+To mitigate technical debt, Gutenberg employs a consistent workflow starting from the creation of an issue of GitHub. When this issue is picked by a developer he or she is guided by the extensive contributing guide including documentation on testing, workflow and package management [^5].
 
 During development, technical debt is kept at a minimum by running several linters before allowing a developer to commit. Examples of these linters are JavaScript, JSON and PHP linters.
 
@@ -313,11 +320,11 @@ However, the rather large testing debt of Gutenberg is one of their major issues
 
 Software accessibility refers to the ability of users – regardless of any disability or impairment – to (fully) use the software. In order to create and maintain a WordPress website, people suffering from disabilities – ranging from e.g. motor impairments to (color) blindness – are dependent on an accessible editor. Because they may be unable to operate certain hardware like a mouse or use assistive technologies like screen readers, software has to adapt to this.
 
-Although accessibility is required by just a small percentage of users, the impact of inaccessibity is significant. Shipping an inaccessible editor might cost someone’s job, if that job depends on using WordPress with Gutenberg. Accessibility is also a legal requirement when software receives government funding \[7\].
+Although accessibility is required by just a small percentage of users, the impact of inaccessibity is significant. Shipping an inaccessible editor might cost someone’s job, if that job depends on using WordPress with Gutenberg. Accessibility is also a legal requirement when software receives government funding [^7].
 
-The Web Content Accessibility Guidelines (WCAG) is the most important collection of (web) accessibility standards. WCAG has a number of levels, of which “Level AA”, and is commonly enforced by governments \[8\]. WordPress has also committed to using WCAG Level 2.0, stating that:
+The Web Content Accessibility Guidelines (WCAG) is the most important collection of (web) accessibility standards. WCAG has a number of levels, of which “Level AA”, and is commonly enforced by governments [^8]. WordPress has also committed to using WCAG Level 2.0, stating that:
 
-> All new or updated code released in WordPress must conform with the WCAG 2.0 guidelines at level AA. \[10\]
+> All new or updated code released in WordPress must conform with the WCAG 2.0 guidelines at level AA. [^10]
 
 In the remainder of this chapter, we show that these guidelines are violated by Gutenberg regardless. We discuss why this happened, how this could have been prevented and what can be done in order to improve software accessibility.
 
@@ -357,7 +364,7 @@ To support developers and users, the core Accessibility team has its own [webpag
 
 #### Assistive Technologies
 
-A lot of work is being put into improving Gutenberg’s accessibility \[11\]. Currently, the following assistive technologies are present:
+A lot of work is being put into improving Gutenberg’s accessibility [^11]. Currently, the following assistive technologies are present:
 
 1.  Keyboard navigation: Gutenberg includes mechanisms for navigating through the editor, traversing blocks and other important actions while only using the keyboard.
 2.  Screen navigation: Gutenberg includes several drop down menus which enable the user to navigate through blocks without using the keyboard.
@@ -369,11 +376,11 @@ To ensure a consistency in these technologies throughout the whole WordPress pla
 
 ### Pressing Issues
 
-Two topics are repeatedly addressed during accessibility meetings: 1) updating the User Handbook and 2) automated accessibility testing. There had passed weeks without any update on the user handbook regarding documentation on accessibility for developers working on the Gutenberg Project. However, in a recent meeting, it was announced a draft would be submitted within a week (https://make.wordpress.org/accessibility/2019/03/29/accessibility-team-meeting-notes-for-3-29-2019/). Automated accessibility testing is currently being addressed with regards to WordPress themes \[12\], but is still not addressed for Gutenberg specifically.
+Two topics are repeatedly addressed during accessibility meetings: 1) updating the User Handbook and 2) automated accessibility testing. There had passed weeks without any update on the user handbook regarding documentation on accessibility for developers working on the Gutenberg Project. However, in a recent meeting, it was announced a draft would be submitted within a week (https://make.wordpress.org/accessibility/2019/03/29/accessibility-team-meeting-notes-for-3-29-2019/). Automated accessibility testing is currently being addressed with regards to WordPress themes [^12], but is still not addressed for Gutenberg specifically.
 
-All issues regarding accessibility are categorized by priority in the [ticket triage](https://docs.google.com/spreadsheets/d/1c7Xbb71waSl6AuzSZDDUmHR9EzinzuNShutviomxCA8/edit#gid=1818038617), ranging from ‘normal’ to ‘high’ to ‘omgbbq’. From this, we can see that keyboard navigation related issues are currently prioritized. As also stated in the accessibility meeting on 15 March, the issue [\#13663](https://github.com/WordPress/gutenberg/issues/13663) related to improving keyboard navigation between the block inspector and the block content, is one of the keystone items they want addressed \[13\]. Prioritization around focus management specifically regards focus management around the block toolbar ([\#6165](https://github.com/WordPress/gutenberg/issues/6165), [\#6336](https://github.com/WordPress/gutenberg/issues/6336), [\#11774](https://github.com/WordPress/gutenberg/issues/11774)).
+All issues regarding accessibility are categorized by priority in the [ticket triage](https://docs.google.com/spreadsheets/d/1c7Xbb71waSl6AuzSZDDUmHR9EzinzuNShutviomxCA8/edit#gid=1818038617), ranging from ‘normal’ to ‘high’ to ‘omgbbq’. From this, we can see that keyboard navigation related issues are currently prioritized. As also stated in the accessibility meeting on 15 March, the issue [\#13663](https://github.com/WordPress/gutenberg/issues/13663) related to improving keyboard navigation between the block inspector and the block content, is one of the keystone items they want addressed [^13]. Prioritization around focus management specifically regards focus management around the block toolbar ([\#6165](https://github.com/WordPress/gutenberg/issues/6165), [\#6336](https://github.com/WordPress/gutenberg/issues/6336), [\#11774](https://github.com/WordPress/gutenberg/issues/11774)).
 
-Conclusively, they are anticipating that the WP Campus accessibility audit of Gutenberg will be delivered soon, and may contain important information for them to absorb \[14\].
+Conclusively, they are anticipating that the WP Campus accessibility audit of Gutenberg will be delivered soon, and may contain important information for them to absorb [^14].
 
 ## Conclusion
 
@@ -387,32 +394,30 @@ Taking into consideration the rapid development of the project, Gutenberg has a 
 
 Lastly, the accessibility of Gutenberg was analyzed. We interviewed Rian Rietveld, former WordPress Accessibility Team lead, and found that accessibility was often overlooked during development and only fixed as an afterthought. Because accessibility is essential to so many of us, we feel that not only Gutenberg has to focus more strongly on this, but software developers in general.
 
-# References
+[^1]: Usage statistics and market share of wordpress for websites, (2019). <https://w3techs.com/technologies/details/cm-wordpress/all/all>.
 
-\[1\] Usage statistics and market share of wordpress for websites, (2019). <https://w3techs.com/technologies/details/cm-wordpress/all/all>.
+[^2]: N. Rozanski, E. Woods, Software systems architecture: Working with stakeholders using viewpoints and perspectives, Addison-Wesley, 2011.
 
-\[2\] N. Rozanski, E. Woods, Software systems architecture: Working with stakeholders using viewpoints and perspectives, Addison-Wesley, 2011.
+[^3]: WordPress.org, WordPress.org. (n.d.). <https://wordpress.org/support/plugin/gutenberg/>.
 
-\[3\] WordPress.org, WordPress.org. (n.d.). <https://wordpress.org/support/plugin/gutenberg/>.
+[^4]: Atlassian, Git feature branch workflow \| atlassian git tutorial, Git Feature Branch Workflow. (n.d.). <https://nl.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow>.
 
-\[4\] Atlassian, Git feature branch workflow | atlassian git tutorial, Git Feature Branch Workflow. (n.d.). <https://nl.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow>.
+[^5]: Gutenberg contributor handbook, (2019). <https://wordpress.org/gutenberg/handbook/contributors/>.
 
-\[5\] Gutenberg contributor handbook, (2019). <https://wordpress.org/gutenberg/handbook/contributors/>.
+[^6]: Gutenberg release process, (2019). <https://wordpress.org/gutenberg/handbook/contributors/develop/release/>.
 
-\[6\] Gutenberg release process, (2019). <https://wordpress.org/gutenberg/handbook/contributors/develop/release/>.
+[^7]: Designing software that is accessible to individuals with disabilities, (2019). <https://www.washington.edu/doit/designing-software-accessible-individuals-disabilities>.
 
-\[7\] Designing software that is accessible to individuals with disabilities, (2019). <https://www.washington.edu/doit/designing-software-accessible-individuals-disabilities>.
+[^8]: Making your service accessible: An introduction, GOV.UK. (n.d.). <https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction>.
 
-\[8\] Making your service accessible: An introduction, GOV.UK. (n.d.). <https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction>.
+[^9]: Wat is verplicht? – alle overheidsinstanties moeten toegankelijk zijn., Beleid in Nederland \| Digitoegankelijk.nl. (2019). <https://www.digitoegankelijk.nl/beleid/wat-is-verplicht>.
 
-\[9\] Wat is verplicht? – alle overheidsinstanties moeten toegankelijk zijn., Beleid in Nederland | Digitoegankelijk.nl. (2019). <https://www.digitoegankelijk.nl/beleid/wat-is-verplicht>.
+[^10]: WordPress coding standards, (2019). <https://make.wordpress.org/core/handbook/best-practices/coding-standards/accessibility-coding-standards/>.
 
-\[10\] WordPress coding standards, (2019). <https://make.wordpress.org/core/handbook/best-practices/coding-standards/accessibility-coding-standards/>.
+[^11]: Regarding accessibility in gutenberg, (2018). <https://make.wordpress.org/core/2018/10/18/regarding-accessibility-in-gutenberg/>.
 
-\[11\] Regarding accessibility in gutenberg, (2018). <https://make.wordpress.org/core/2018/10/18/regarding-accessibility-in-gutenberg/>.
+[^12]: Call for testing: Wp-theme-auditor, (2019). <https://make.wordpress.org/accessibility/2019/03/26/call-for-testing-wp-theme-auditor/>.
 
-\[12\] Call for testing: Wp-theme-auditor, (2019). <https://make.wordpress.org/accessibility/2019/03/26/call-for-testing-wp-theme-auditor/>.
+[^13]: Accessibility team meeting notes: 3/15/2019, (2019). <https://make.wordpress.org/accessibility/2019/03/21/accessibility-team-meeting-notes-3-15-2019/>.
 
-\[13\] Accessibility team meeting notes: 3/15/2019, (2019). <https://make.wordpress.org/accessibility/2019/03/21/accessibility-team-meeting-notes-3-15-2019/>.
-
-\[14\] Accessibility team meeting notes: 3/15/2019, (2019). <https://make.wordpress.org/accessibility/2019/03/26/accessibility-team-meeting-notes-3-22-2019/>.
+[^14]: Accessibility team meeting notes: 3/15/2019, (2019). <https://make.wordpress.org/accessibility/2019/03/26/accessibility-team-meeting-notes-3-22-2019/>.
