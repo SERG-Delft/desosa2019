@@ -1,6 +1,6 @@
 # Spring Boot - production-grade Spring-based Applications that you can "just run"
 
-![Logo](figures/logo.png)  
+![Logo](images/spring-boot/logo.png)  
 by [Andrei Simion-Constantinescu](https://github.com/simionAndrei) (top right), 
 [Hendrig Sellik](https://github.com/hsellik) (top left), [Milko Mitropolitsky](https://github.com/mmitropolitsky) (bottom left),
 [Viktoriya Kutsarova](https://github.com/viktoriya-kutsarova) (bottom right)
@@ -271,7 +271,7 @@ After identifying the stakeholders for the Spring Boot project, a power-interest
 The grid classifies the stakeholders according to their power over the project and their 
 interest in it.
 
-![Spring Boot Power-Interest Grid](figures/spring_boot_power_interest_grid.png)
+![Spring Boot Power-Interest Grid](images/spring-boot/spring_boot_power_interest_grid.png)
 
 ***Figure 1*** - Spring Boot Power-Interest Diagram
 
@@ -359,7 +359,7 @@ Spring applications with minimal effort while making it easy to create custom mo
 ## Context View Diagram
 Context View Diagram can be seen in *Figure 2* with the entities further detailed below.  
 
-![Context View](figures/context_view_new_new.jpg)
+![Context View](images/spring-boot/context_view_new_new.jpg)
 
 ***Figure 2*** - Spring Boot Context Diagram
 
@@ -428,7 +428,7 @@ the system interacts with its users and external entities. We try to present the
 in a way that people working with Java and the Spring ecosystem can get a general idea of 
 what it is about. 
 
- ![Functional Structure Model](figures/functional_model.PNG)
+ ![Functional Structure Model](images/spring-boot/functional_model.PNG)
  
  ***Figure 3*** - Functional Structure Model of Spring Boot
  
@@ -509,7 +509,7 @@ when using Spring Data).
 Spring Boot is comprised of several modules, each serving a different purpose. 
 A high-level overview of the module hierarchy is shown in *Figure 3*.
 
-![Module Structure](figures/module_structure.PNG)
+![Module Structure](images/spring-boot/module_structure.PNG)
 
 ***Figure 3*** - Spring Boot high-level module structure. Overlapping indicates a dependency between modules.
 
@@ -543,7 +543,7 @@ structure from the
 The overall code structure of Spring Boot can be seen in *Figure 4*, with the main 
 application folder `spring-boot-project` being further expanded.
 
-![Code Structure](figures/code_structure.PNG)
+![Code Structure](images/spring-boot/code_structure.PNG)
 
 ***Figure 4*** - Spring Boot Code Structure
 
@@ -657,7 +657,7 @@ are also available on Maven Central.
 A prime example of the release process is the release of the major version `2.0.0` 
 and can be seen in  *Figure 5*.
 
-![Spring Boot release process](figures/release_train.PNG)
+![Spring Boot release process](images/spring-boot/release_train.PNG)
 
 ***Figure 5*** - Spring Boot release process for the major version 2.0.0
 
@@ -699,7 +699,7 @@ There are four main elements that the static code analysis tool emphasizes on:
 the tool gives Spring Boot a Reliability Rating `E`, which stands for at least one blocker bug 
 in the code, shown in *Figure 6*.
 
-![Critical issue according to SonarQube](figures/critical_issues.png)
+![Critical issue according to SonarQube](images/spring-boot/critical_issues.png)
 
 ***Figure 6*** - Critical issue - Not closing an input stream can lead to memory leaks.
 
@@ -715,7 +715,7 @@ manual code inspection, we have identified several cases of high
 Cyclomatic complexity [3]. An example can be seen in *Figure 7* where the recommended 
 value is exceeded. 
 
-![Cyclomatic complexity in Spring Boot](figures/McCabe_complexity.png)
+![Cyclomatic complexity in Spring Boot](images/spring-boot/McCabe_complexity.png)
 
 ***Figure 7*** - High cyclomatic complexity (21) in Spring Boot
 
@@ -833,7 +833,7 @@ to [SpringSource](https://www.crunchbase.com/organization/springsource#section-o
 and finally [Pivotal](https://pivotal.io/) is displayed in *Figure 8*.
 
 
-![Spring History](figures/spring_versions.PNG)
+![Spring History](images/spring-boot/spring_versions.PNG)
 
 ***Figure 8*** - History of Spring Framework (adapted from [here](https://www.quora.com/What-is-the-history-of-The-Spring-Framework))
 
@@ -867,7 +867,7 @@ but it was a known fact to the developers and they took the effort to remove the
 From its conception until today Spring Boot has had steady growth in the code base (as seen in *Figure 9*) but we 
 did not manage to find any major technical debt issues.
 
-![Code Size Evolution](figures/code_size_evolution.png)
+![Code Size Evolution](images/spring-boot/code_size_evolution.png)
 
 ***Figure 9*** - Evolution of code size (Made using [git-of-theseus](https://github.com/erikbern/git-of-theseus))
 
