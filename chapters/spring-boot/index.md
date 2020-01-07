@@ -1,3 +1,10 @@
+---
+layout: default
+project: spring-boot
+title: Spring Boot
+chapter: true
+---
+
 # Spring Boot - production-grade Spring-based Applications that you can "just run"
 
 ![Logo](images/spring-boot/logo.png)  
