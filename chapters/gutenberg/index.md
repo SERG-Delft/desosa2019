@@ -1,3 +1,10 @@
+---
+layout: default
+project: gutenberg
+title: Gutenberg
+chapter: true
+---
+
 # Gutenberg
 
 ![Gutenberg Logo](../assets/gutenberg-logo.png)
@@ -363,9 +370,11 @@ She cited three main issues that caused Gutenberg’s poor accessability:
 
 -   The accessibility team had communication issues due to a **knowledge gap**. On the one hand you had the developers who did not know enough about accessibility to make the software accessible, and on the other hand the accessiblity team were not knowledgable enough in React to implement improvements themselves. Rian thinks this problem is partially caused by universities not putting enough focus on accessibiliy in their education programs.
 -   **Accessiblity was an afterthought** in the project:
-    <blockquote>
-    “We were kept at a distance by the developers until a big part of the project was already done. What was then presented turned out to have big accessibility issues. Making a project like this fully accessable in a late stage of development is almost undoable”
-    </blockquote>
+    > “We were kept at a distance by the developers until a big part of the project was already done. What was then presented turned out to have big accessibility issues. Making a project like this fully accessable in a late stage of development is almost undoable”
+
+    > “We were kept at a distance by the developers until a big part of the project was already done. What was then presented turned out to have big accessibility issues. Making a project like this fully accessable in a late stage of development is almost undoable”
+
+> “We were kept at a distance by the developers until a big part of the project was already done. What was then presented turned out to have big accessibility issues. Making a project like this fully accessable in a late stage of development is almost undoable”
 -   **The leadership of WordPress did not care enough about accessiblity**, causing Automattic developers to leave accessibilty issues to be fixed by volunteers, who cannot keep up with the pace of paid developers. Furthermore, Matt Mullenweg unexpectedly set a hard deadline for Gutenberg to be shipped as the main editor, while the software was not nearly accessible enough at that point.
 
 According to Rian the new Gutenberg editor is a big step back compared to the old classic editor:
