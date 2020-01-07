@@ -108,7 +108,7 @@ Pull Requests we used can be observed in the following table:
 The analysis of these Pull Requests provided us with knowledge which developers are
 actively taking part in the process of code review and also that almost all Pull
 Request have to be finally accepted and merged by the Captain of go-ipfs
-([@Stebalien](https://github.com/Stebalien)).
+(@[Stebalien](https://github.com/Stebalien)).
 
 It was also helpful to explore issues used for team discussion like
 [a reflection issue](https://github.com/ipfs/go-ipfs/issues/5781) or
@@ -125,9 +125,9 @@ As contact people, it would be the most helpful to contact developers which
 participate most actively in Pull Requests and also contribute a lot, as they
 would possibly have the most significant knowledge about the system structure
 and various issues they often have to overcome. We would choose
-[@Stebalien](https://github.com/Stebalien),
-[@Kubuxu](https://github.com/Kubuxu), and
-[@magik6k](https://github.com/magik6k).
+@[Stebalien](https://github.com/Stebalien),
+@[Kubuxu](https://github.com/Kubuxu), and
+@[magik6k](https://github.com/magik6k).
 
 Results obtained from these various sources can be found below.
 
@@ -137,11 +137,11 @@ Results obtained from these various sources can be found below.
 | Assessors             | These stakeholders are responsible for overseeing conformance to standards and legal regulations. Assessors in the go-ipfs project is Protocol Labs legal department.                                                                                                      |
 | Communicators         | The interest of this stakeholder is to explain the usage of the system via documentation and training. There are two recent and popular conferences: IPFS Conf 2019, MIT Bitcoin Expo 2018.                                                                                                              |
 | Competitors           | [ZeroNet](https://zeronet.io/), [Storj](https://storj.io/), [Burst](https://www.burst-coin.org), [Genaro](https://genaro.network/), [MaidStafe](https://maidsafe.net/), [Dat](https://datproject.org/)                                                                                                        |
-| Developers            | Most of the people involved in work on IPFS are employed by Protocol Labs. People responsible for developing new functionalities and maintaining the project are currently: [@Stebalien](https://github.com/Stebalien), [@magik6k](https://github.com/magik6k), [@Kubuxu](https://github.com/Kubuxu), [@hsanjuan](https://github.com/hsanjuan), [@kevina](https://github.com/kevina), [@hannahhoward](https://github.com/hannahhoward), [@eingenito](https://github.com/eingenito).                                 |                                                                                                                   |
+| Developers            | Most of the people involved in work on IPFS are employed by Protocol Labs. People responsible for developing new functionalities and maintaining the project are currently: @[Stebalien](https://github.com/Stebalien), @[magik6k](https://github.com/magik6k), @[Kubuxu](https://github.com/Kubuxu), @[hsanjuan](https://github.com/hsanjuan), @[kevina](https://github.com/kevina), @[hannahhoward](https://github.com/hannahhoward), @[eingenito](https://github.com/eingenito).                                 |                                                                                                                   |
 | Investors             | Investors are the stakeholders providing resources to make it possible to continue the development of the system. The main investor of the project is Protocol Labs (mostly sponsored by [Union Square Ventures](http://www.usv.com/blog/protocol-labs), [BlueYard](https://medium.com/@BlueYard/protocol-labs-35ceff61b031) and [YCombinator](https://www.crunchbase.com/organization/protocol-labs#section-recent-news-activity)), other investors of the IPFS project are FundersClub, Digital Currency Group.                                                                                                                 |
-| Maintainers           |These stakeholders are responsible for the evolution of the project. The software is in alpha version, however, people trying to maintain the long-distance vision are [@daviddias](https://github.com/daviddias), [@Stebalien](https://github.com/Stebalien).                                                                                                              |
+| Maintainers           |These stakeholders are responsible for the evolution of the project. The software is in alpha version, however, people trying to maintain the long-distance vision are @[daviddias](https://github.com/daviddias), @[Stebalien](https://github.com/Stebalien).                                                                                                              |
 | Suppliers             | Build or supply hardware and software on which system is working. In this project software used is mostly written in Go and Bash.                                                                                                                   |
-| Support staff         | IPFS has a designated [community project](https://github.com/ipfs/community) for educating about how the IPFS and its tools work and can be exploited. The Captain of the community project is [@mikeal](https://github.com/mikeal).                                                                                                                |
+| Support staff         | IPFS has a designated [community project](https://github.com/ipfs/community) for educating about how the IPFS and its tools work and can be exploited. The Captain of the community project is @[mikeal](https://github.com/mikeal).                                                                                                                |
 | System administrators | System administrators are people running the software once it has been deployed, and as an idea of IPFS is to be a P2P network, users are the most obvious stakeholders of this type. On the other hand, IPFS project has a designated team of engineers ([infra-team](https://github.com/protocol/infra-team)) in charge of deploying and maintaining core system infrastructure.                                                                                                                   |
 | Testers               | These stakeholders test if the system is working and ready to be deployed. These are developers and users using a designated [TestBed](https://github.com/ipfs/iptb).                                                                                                                     |
 | Users                 | This group of stakeholders uses the product and has concerns about its functionality. Representants of this group include: web developers who want to host static files, dapp developers, users who want to access data stored on IPFS, pinning services ([Eternum](https://www.eternum.io/), [Pinata](https://www.pinata.cloud/)), gateway providers ([Cloudflare](https://www.cloudflare.com/)), and hosting providers ([Neocities](https://neocities.org)).                                                                                                                     |
@@ -157,11 +157,11 @@ these projects collaborate with each other to produce the final product.
 
 | Type | Stakeholder | Description |
 |------|-------------|-------------|
-| IPFS BDFL   | [@jbenet](https://github.com/jbenet)  (the original creator of the IPFS Project)      | **Benevolent Dictator for Life**:    Lead the IPFS Project at a long term scale.  Represent the IPFS project to a multitude of communities. Take responsibility for setting the direction of the project. Set the key priorities for the project. |
-| IPFS Project Lead   | [@daviddias](https://github.com/daviddias)     | **Captain of the Captains**. Align teams to build solutions for technical challenges. The lead director of the implementation of the protocol.  |
-| IPFS Project Coordinator | [@momack2](https://github.com/momack2) |  Ensure that teams rely on a uniform structure with respective customizations as needed. Create and maintain the platform for resource allocation across teams and projects. Ensure that there is a steady communication flow between teams and individual contributors. |
-| Golang IPFS Captain | [@Stebalien](https://github.com/Stebalien) | The Captain takes the lead on writing or guiding the conversation specs, documentation, and other artifacts to support the team. The Captain is also the gatekeeper of the Working Group Roadmap and accumulator of the Working Group Knowledge, guiding the group to make good decisions. |
-| Golang IPFS  Technical Project Manager (TPM) | [@eingenito](https://github.com/eingenito) | The Technical Project Manager (sometimes referenced as Project Manager, Program Manager, and cat herder) is a team enabler. TPMs own the Quarterly Planning process including OKRs and Retrospectives. They ensure that the coordination strategy the WG selected is well executed. |
+| IPFS BDFL   | @[jbenet](https://github.com/jbenet)  (the original creator of the IPFS Project)      | **Benevolent Dictator for Life**:    Lead the IPFS Project at a long term scale.  Represent the IPFS project to a multitude of communities. Take responsibility for setting the direction of the project. Set the key priorities for the project. |
+| IPFS Project Lead   | @[daviddias](https://github.com/daviddias)     | **Captain of the Captains**. Align teams to build solutions for technical challenges. The lead director of the implementation of the protocol.  |
+| IPFS Project Coordinator | @[momack2](https://github.com/momack2) |  Ensure that teams rely on a uniform structure with respective customizations as needed. Create and maintain the platform for resource allocation across teams and projects. Ensure that there is a steady communication flow between teams and individual contributors. |
+| Golang IPFS Captain | @[Stebalien](https://github.com/Stebalien) | The Captain takes the lead on writing or guiding the conversation specs, documentation, and other artifacts to support the team. The Captain is also the gatekeeper of the Working Group Roadmap and accumulator of the Working Group Knowledge, guiding the group to make good decisions. |
+| Golang IPFS  Technical Project Manager (TPM) | @[eingenito](https://github.com/eingenito) | The Technical Project Manager (sometimes referenced as Project Manager, Program Manager, and cat herder) is a team enabler. TPMs own the Quarterly Planning process including OKRs and Retrospectives. They ensure that the coordination strategy the WG selected is well executed. |
 
 From the table above we can observe that important decisions related to IPFS are
 supervised by the **Benevolent Dictator for Life**, the IPFS Project Lead and
@@ -169,11 +169,11 @@ all Captains of all projects. The Project Captain and Technical Project Manager
 are enforcing and supervising the implementation of new features or changes in
 their project. Developers of go-ipfs propose changes using Pull Requests, but
 each of them has to be accepted by one of the project supervisors
-([@Stebalien](https://github.com/Stebalien) - Captain or
-[@eingenito](https://github.com/eingenito) - TPM). Or when changes are more
+(@[Stebalien](https://github.com/Stebalien) - Captain or
+@[eingenito](https://github.com/eingenito) - TPM). Or when changes are more
 significant, higher instances are involved
-([@daviddias](https://github.com/daviddias) - captain of captains or
-even [@jbenet](https://github.com/jbenet) - BDFL).
+(@[daviddias](https://github.com/daviddias) - captain of captains or
+even @[jbenet](https://github.com/jbenet) - BDFL).
 
 ### Power-Interest Grid
 
@@ -591,7 +591,7 @@ their respective packages.
 Integration tests located in the `/test` directory are bash scripts written with
 help of [Sharness](https://github.com/chriscool/sharness), a shell library for
 testing Unix programs. It is inspired by the test suite of the Git project, and
-it is developed by an IPFS developer [@chriscool](https://github.com/chriscool).
+it is developed by an IPFS developer @[chriscool](https://github.com/chriscool).
 
 All tests are run automatically by CircleCI for every Pull Request.
 
