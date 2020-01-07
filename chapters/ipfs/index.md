@@ -7,7 +7,7 @@ chapter: true
 
 # IPFS
 
-![go-ipfs](images/ipfs/go-ipfs.png)
+![GO-ipfs](images/ipfs/go-ipfs.png)
 
 ## Contents
 
@@ -76,7 +76,7 @@ focus on [go-ipfs](https://github.com/ipfs/go-ipfs), which serves as a reference
 implementation of the IPFS protocol. Go-ipfs being a working group of the IPFS project has multiple relations with groups and project roles that are not part of the go-ipfs working group. This
 is further explained in the power grid.
 
-![ipfs_structure](images/ipfs/ipfs_structure.png)
+![IPFS Structure](images/ipfs/ipfs_structure.png)
 
 ## Stakeholders
 
@@ -177,7 +177,7 @@ even @[jbenet](https://github.com/jbenet) - BDFL).
 
 ### Power-Interest Grid
 
-![Stakeholders power grid](images/ipfs/stakeholders_powergrid.png)
+![Stakeholders Power Grid](images/ipfs/stakeholders_powergrid.png)
 
 To visualize the power and interest of stakeholders, we created a power-interest
 grid. Stakeholders with the most power and interest are located in the top-right
@@ -362,7 +362,7 @@ While investigating the CI tool [codecov](https://codecov.io/gh/ipfs/go-ipfs)
 used by the go-ipfs team, we observed that code coverage is on the level of
 62.32%.
 
-![code-cov](images/ipfs/code-cov.png)
+![Code Coverage](images/ipfs/code-cov.png)
 
 Some modules are tested more in depth, however, the most important module of the
 project, core, has only 63% of code coverage (codecov is calculating ratio
