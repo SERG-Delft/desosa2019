@@ -63,7 +63,7 @@ is provided followed by the final conclusions of this project's complex architec
  
 [Spring Framework](https://spring.io/) for Java was born in February 2003 after 
 [Rod Johnson](https://twitter.com/springrod)'s 
-book Expert One-on-One J2EE Design and Development [1] was published. In his book, the author 
+book Expert One-on-One J2EE Design and Development [^1] was published. In his book, the author 
 described how a scalable high-quality application can be developed without Enterprise 
 JavaBeans (EJB) framework using dependency injection in addition to ordinary java classes. Over 
 the years, one of the most criticized aspects of the Spring Framework was the complex dependency 
@@ -91,7 +91,7 @@ Spring Boot's popularity grew faster. Spring Boot is being used by many large co
 [Mobile.de](http://www.technology-ebay.de/the-teams/mobile-de/blog/moving-from-war-to-jar-with-spring.html),
 [Wix.com](https://stackshare.io/wix/scaling-wix-to-60m-users-from-monolith-to-microservices)
 etc. To present a complete architectural description of Spring Boot, we follow the approach
-defined by Rozanski & Woods (2012) [2], starting with the 
+defined by Rozanski & Woods (2012) [^2], starting with the 
 [Stakeholders analysis](#stakeholders), followed by multiple architectural views such as 
 the [Context View](#context-view), the [Development View](#development-view),
 the [Functional View](#functional-view) and continue with 
@@ -105,7 +105,7 @@ the [Technical Debt analysis](#technical-debt) before drawing the final
 ## Stakeholders
 
 The stakeholders of Spring Boot are described in *Table 1*. Categories used correspond to 
-the stakeholder types described by Rozanski & Woods (2012) [2]. In the 
+the stakeholder types described by Rozanski & Woods (2012) [^2]. In the 
 [Other stakeholders](#other-stakeholders) section, we have identified additional people and
 organizations concerned with the Spring Boot project.
 
@@ -539,6 +539,7 @@ default configurations
 for Java Util Logging, Log4J2 and LogBack implementation of the API.
 
 The default format for Spring Boot log messages is the following:
+
 ```
 2014-03-05 10:57:51.112  INFO 45469 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/7.0.52
 2014-03-05 10:57:51.253  INFO 45469 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
@@ -627,7 +628,7 @@ hence it is not a big problem for the framework.
 
 - **Cyclomatic complexity** - Using [SonarLint](https://www.sonarlint.org/) and 
 manual code inspection, we have identified several cases of high 
-Cyclomatic complexity [3]. An example can be seen in *Figure 7* where the recommended 
+Cyclomatic complexity [^3]. An example can be seen in *Figure 7* where the recommended 
 value is exceeded. 
 
 ![Cyclomatic complexity in Spring Boot](images/spring-boot/McCabe_complexity.png)
@@ -706,7 +707,7 @@ on potential testing debt and make this information available to contributors.
 
 ## Evolution of technical debt
 
-In order to “calculate the trends of the technical debt time series” [4] for 
+In order to “calculate the trends of the technical debt time series” [^4] for 
 the Spring Boot project, we first need to take a look at the history of the whole 
 Spring Framework. The evolution of Spring Framework from 
 [interface21](https://spring.io/blog/2006/12/16/why-the-name-interface21)
@@ -738,7 +739,7 @@ Spring Boot’s and the platform’s dependency management. That is the reason w
 [Spring IO Platform end-of-life](https://spring.io/blog/2018/04/09/spring-io-platform-end-of-life-announcement)
 was announced with Cairo being the last maintained version.
 
-The fact that “software process evolution has a clear effect on technical debt” [5]
+The fact that “software process evolution has a clear effect on technical debt” [^5]
 was proved in Spring Boot project by a major switch. When Spring Boot
 decided to replace their CI platform from Bamboo
 to Concourse, they benefited from having a platform maintained by Pivotal. 
@@ -862,16 +863,16 @@ go-to choices for creating web and enterprise applications with Java.
 
 ## Bibliography
 
-[1] Johnson, Rod, and Juergen Hoeller. "Expert One-on-one J2EE Development without EJB." (2003).
+[^1]: Johnson, Rod, and Juergen Hoeller. "Expert One-on-one J2EE Development without EJB." (2003).
 
-[2] Rozanski, Nick, and Eóin Woods. Software systems architecture: working with stakeholders 
+[^2]: Rozanski, Nick, and Eóin Woods. Software systems architecture: working with stakeholders 
 using viewpoints and perspectives. Addison-Wesley, 2011.
 
-[3] McCabe, Thomas J. "A complexity measure." IEEE Transactions on software Engineering 4 (1976): 308-320.
+[^3]: McCabe, Thomas J. "A complexity measure." IEEE Transactions on software Engineering 4 (1976): 308-320.
 
-[4] Digkas, Georgios, et al. "The evolution of technical debt in the apache ecosystem." European Conference on Software Architecture. Springer, Cham, 2017.
+[^4]: Digkas, Georgios, et al. "The evolution of technical debt in the apache ecosystem." European Conference on Software Architecture. Springer, Cham, 2017.
 
-[5] Yli-Huumo, Jesse, Andrey Maglyas, and Kari Smolander. "The Effects of Software Process Evolution to Technical Debt—Perceptions from Three Large Software Projects." Managing Software Process Evolution. Springer, Cham, 2016. 305-327.
+[^5]: Yli-Huumo, Jesse, Andrey Maglyas, and Kari Smolander. "The Effects of Software Process Evolution to Technical Debt—Perceptions from Three Large Software Projects." Managing Software Process Evolution. Springer, Cham, 2016. 305-327.
 
 ## Appendix A
 
