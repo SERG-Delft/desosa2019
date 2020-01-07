@@ -12,11 +12,11 @@ By [Ziyu Bao](https://github.com/ZiyuBao), [Tian Tian](https://github.com/ttup77
 ![](https://i.imgur.com/ZcKU3XT.png)
 
 
-# Abstract
+## Abstract
 
 PyTorch is an open-source deep learning platform. In this report, we systematically analyzed it and obtained a structural view of its architecture. Analysis include its stakeholders, context view, development view, technical debt and deployment view.
 
-# Table of Contents
+## Table of Contents
 
 1. [Introduction](#introduction)
 2. [Stakeholder Analysis](#stakeholder-analysis)
@@ -28,15 +28,15 @@ PyTorch is an open-source deep learning platform. In this report, we systematica
 8. [References](#references)
 9. [Appendix](#appendix)
 
-# Introduction
+## Introduction
 
 PyTorch is created and developed primarily by Facebook's artificial intelligence group as an open-source deep learning architecture that provides a seamless path from research prototyping to production deployment. Everyone could use it to build its own customized neural networks or perform fast matrix operations on GPUs using the torch component. In this report, we want to systematically analyze its architecture.
 
-# Stakeholder Analysis
+## Stakeholder Analysis
 
 In this section, we will perform a PR analysis, identify the stakeholders and other kinds of stakeholders and identify integrators of Pytorch. We also present a Power vs. Interest grid and give an analysis of the figure.
 
-## PR Analysis
+### PR Analysis
 
 A codification process is in the appendix.
 
@@ -46,7 +46,7 @@ Looking over all the conversations during which the code base of the original pu
 
 After this kind of laborious analysis, we are quite sure what it is about and what is going on within this specific pull request. Besides, whether a pull request would be accepted depends a lot on the main developers' perspective and its external connection with the interest of the open source project.
 
-## Stakeholders
+### Stakeholders
 
 According to stakeholders in Chapter 9 of Rozanski and Woods[2], we classified stakeholders into 11 different types. Table below introduces each type of stakeholders in detail, including a short summary and description.
 
@@ -69,7 +69,7 @@ According to stakeholders in Chapter 9 of Rozanski and Woods[2], we classified s
 
 
 
-## Going beyond Rozanski and Woods classification
+### Going beyond Rozanski and Woods classification
 
 **Competitors**: Competitors can be one of the stakeholders that concern the development of Pytorch. In this case, TensorFlow is a competitor. It is based on Theano and developed by Google. Since Pytorch releases, Pytorch obtains lots of attention and is considered to be a better version than Tensorflow.
 <!--  that can create Deep Learning models
@@ -78,14 +78,14 @@ Objectively speaking，compare with Pytorch, Tensorflow has a larger community a
 **Founders**: Founders can be considered as the first developers of a software. In our project, PyTorch is created by an AI research team of Facebook. The original authors include Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan. They used the torch framework and implemented it on Python environment. 
 
 
-## Integrators/Reviewers in PyTorch
+### Integrators/Reviewers in PyTorch
 The core developers such as @apaszke @fmassa are integrators. They are architects of PyTorch. Their challenges in developing Pytorch are checking all the pull requests and make sure only the pull requests which pass the integration checks can be merged. In this way, the project can keep stable. The integrators almost involve in every pull requests. They use automatic code checking to reduce the review workload. If there are mistakes in the pull requests, they ask the contributors to explain and they discuss with other integrators. The integrators are also responsible for providing more context to a particular issue if people would like to implement a feature or bug-fix for an outstanding issue and need more information.
 
-## Contact Persons 
+### Contact Persons 
 
 Pytorch has many developers who are the main members of the team. We want to contact them to better understand Pytorch. We just went to their github pages and find their email addresses if they have provided them. We also chose to leave a comment in the discussion they involved to contact them. Here is a list that we contacted: Zeming Lin, Yuandong Tian and Edward Yang.
 
-## Power vs Interest Grid
+### Power vs Interest Grid
 
 Figure [1](#PIgrid) shows the Power & Interest grid.
 
@@ -103,15 +103,15 @@ Figure [1](#PIgrid) shows the Power & Interest grid.
 
 **Communicators and Support Staff**: Communicators mainly focus on creating documentation and training material to explain PyTorch. In general, they do not have other power. Support Staff help users to run the system. They have no decision power. Therefore, both of them are mildly interested in PyTorch with relatively low power. 
 
-## Stakeholder Analysis conclusion
+### Stakeholder Analysis conclusion
 
 In conclusion, we make a brief analysis on a pull request. We then introduce many types of stakeholders and specify what they concern and where they are involved in Pytorch. There are also two types of stakeholders beyond R&W's classification which are founders and competitors. They have different interest and power to the project. Integrators are identified above. Their challenges and merging strategy are discussed. At last, we prensent a Power&Interest of the stakeholders of Pytorch.
 
-# Context view
+## Context view
 
 This session describes the scope and responsibilities of Pytorch and its relationships with external entities. The interface with external entities will be described in detail in a diagram.
 
-## System Scope and Responsibilities
+### System Scope and Responsibilities
 
 Pytorch has its trace of development of its scope and responsibilties. In the <a href="https://pytorch.org/blog/the-road-to-1_0/">Roadmap to Pytorch 1.0</a>, the Pytorch team has described their thoughts on the scope of Pytorch 1.0 compared with Pytorch 0.2, 0.3 and 0.4. We can learn from their thoughts and define the scope and responsibilities of Pytorch as follows:
 1. Tensor computation (like NumPy) with strong GPU acceleration
@@ -125,7 +125,7 @@ Pytorch has its trace of development of its scope and responsibilties. In the <a
 9. Support for platforms of Caffe2 (iOS, Android, Raspbian, Tegra, etc) and will continue to expand various platforms support
 
 
-## Context Diagram
+### Context Diagram
 
 ![](https://i.imgur.com/weElGdo.png)
 
@@ -133,7 +133,7 @@ Pytorch has its trace of development of its scope and responsibilties. In the <a
 
 The context diagram shows interfaces of Pytorch with external entities. The external entity can be a person, an organization or a system that "implements, offers or uses services of Pytorch, or manages, provides or uses data of Pytorch" [[2]](#book). The diagram presents the data/services transferring between external entities and Pytorch.
 
-## External Entities
+### External Entities
 
 External entities are examined in detail as follows:
 * Communication: Communications are mainly done in <a href="https://www.GitHub.com">GitHub</a>, <a href="https://discuss.pytorch.org/">PyTorchDiscuss</a> and <a href="https://slack.com/">Slack</a>. Communicators supply data to Pytorch in the form of conversational materials to be studied to help Pytorch improve.
@@ -146,11 +146,11 @@ External entities are examined in detail as follows:
 
 
 
-# Development View
+## Development View
 
 The development view of PyTorch describes its code structure and dependencies, build and configuration of deliverables, system-wide design constraints and system-wide standards to ensure technical integrity [[2]](#book). We here analyze the module structure model, common design models and codeline model.
 
-## Module Structure Model
+### Module Structure Model
 
 The main structure of PyTorch in a architectural view is shown in Figure [3](#module_model).
 
@@ -166,7 +166,7 @@ The low-level C or CUDA library does almost all the intensive computations assig
 
 `ATen` wraps those low-level libraries in C++ and then exposes to the high-level Python API. Similarly, the neural network function libraries (low-level) are automatically wrapped towards the engine and Python API (see the two curved arrows). In other words, the low-level libraries can be utilized not only by its standard wrapper ATen but also top-level Python APIs and mid-level engines. This kind of connection keeps the code loosely coupled, decreasing the overall complexity of the system and encouraging further development [[3]](#learning_pytorch_book).
 
-## Component Overview
+### Component Overview
 
 PyTorch as a libary consists of the following components (also see Figure [3](#module_model) for the connection with the module structure):
 - **torch:** a Tensor library like `NumPy`, with strong GPU support [[1]](#pytorch_github). It contains data structures for multi-dimensional tensors, and defines many mathematical operations based on these tensors. Different from its analogue `NumPy`, all the data structures and tensor operations can be seamlessly performed from CPU to GPU which would accelerate the computation by a huge amount.
@@ -175,10 +175,10 @@ PyTorch as a libary consists of the following components (also see Figure [3](#m
 - **torch.multiprocessing:** Python multiprocessing, but with magical memory sharing of torch Tensors across processes. Useful for data loading and Hogwild training [[1]](#pytorch_github). This component wraps native Python multiprocessing module using shared memory to provide shared views on the same data in different processes.
 - **torch.utils:** DataLoader, Trainer and other utility functions for convenience [[1]](#pytorch_github). It consists of five submodules - `torch.utils.bottleneck` for debugging bottlenecks in the program, `torch.utils.checkpoint` for checkpointing a model or part of the model and etc.
 
-## Common Design Model
+### Common Design Model
 
 This section uses a common design model to analyze how PyTorch tries to achieve its developmental approach.
-### Common processing
+#### Common processing
 
 Common processing identifies tasks that benefit greatly from using a standard approach across all system elements.
 
@@ -194,7 +194,7 @@ Common processing identifies tasks that benefit greatly from using a standard ap
 **Documentation management.** Well documented code benefits code readability, practical implementation and issue tracing. PyTorch uses Google style for formatting docstrings. Length of line inside docstrings block must be limited to 80 characters to fit into Jupyter documentation popups. For C++ documentation it uses Doxygen and then convert it to Sphinx via Breathe and Exhale [[1]](#pytorch_github).
 
 
-### Standard design approaches
+#### Standard design approaches
 
 Standard design approaches identifies how to deal with situations where implementations of a certain aspect of an element will have a system-wide impact.
 
@@ -203,9 +203,9 @@ Standard design approaches identifies how to deal with situations where implemen
 
 **Contributing standardization.** As PyTorch is an open source, everyone is free to contribute to the repository. In order to keep maintainability, reliability, and technical cohesion of the system, the PyTorch Governance (consisting of code maintainers, core developers and some other contributors) composed a contributing tutorial to standardize the design process. The tutorial provides useful guidelines for coding, parameter configuration, testing, writing documentation and all other tips and rules for qualified contribution.
 
-## Codeline Model
+### Codeline Model
 
-### Source Code Structure
+#### Source Code Structure
 
 PyTorch has its code structure to make it easy for developers to locate the code they want to change. We show its main directory below while the full directory could be seen on [here](https://github.com/pytorch/pytorch/blob/master/CONTRIBUTING.md#codebase-structure).
 
@@ -253,19 +253,19 @@ PyTorch has its code structure to make it easy for developers to locate the code
     └── python - Python bindings to Caffe2. -->
 
 
-### Build approach
+#### Build approach
 
 For development build, PyTorch and its third-party frameworks are built using Python Setup tools. We need to specify the command parameters if only part of the components are required to rebuild Pytorch. For users build, both package managers - Anaconda and pip could be used to build the whole project.
 
-### Release process
+#### Release process
 
 PyTorch has released 21 versions since 2016. We divided them into three stages. At the beginning, Pytorch was busy with developing new functions, so it released a new version every month, or even twice a month. In the second stage, Pytorch tended to be stable, so it released nearly every two months. In the recent stage, Pytorch focused more on fixing existing bugs than developing new functions, so it released at a frequency lower than before.
 
 
-# Technical Debt
+## Technical Debt
 
 Technical debt reflects the implicit cost of choosing a simple solution instead of using a better method that takes a longer time. <!-- Identifying and repaiding the technical debt is important as can accumulate interest the difficulties in implementing changes later on [[16]](#tb).  -->In this section, we first identify different forms of technical debts which include the keywords/tags, the complexity trend of the hotspot, code smell(temporal coupling and duplicated code), and bugs. We also list the methods to reduce or avoid these technical debts. Then, we discuss the testing debt. In the end, the evolution of technical debt is explained.
-## Identifying Technical debt
+### Identifying Technical debt
 
 The tools we used to identify the technical debts are listed below:
 
@@ -281,7 +281,7 @@ The reasons we decided to use these tools are:
 3. **SonarQube** is a powerful code quality management tool. It detects the code quality in the following aspects: bugs, vulnerabilities, code smells, code coverage and duplications. Since some of those aspects we have used `codescene` to analyze, we mainly analyze the duplications and the bugs by using SonarQube. 
 
 
-### Keywords/tags
+#### Keywords/tags
 <!-- The reasons why we analyze the keywords are that all these tags indicate there are technical debts which the developer noticed but did not fix. -->
 Keywords/tags indicates the technical debts which the developer noticed but did not fix. As along with the accumulation of tags, some of them may be forgotten, or become bugs [[13]](#bug_anno). Furthermore, these keywords may clutter the code and have negative effects on code comprehension [[13]](#bug_anno). This large amount of technical debts may make developers difficult to comprehend the code.
 
@@ -290,7 +290,7 @@ We analyzed three kinds of keywords/tags "TODO"s, "FIXME"s and "XXX"s in PyTorch
 ![](https://i.imgur.com/pPOdcmj.png)
 
 
-### Complexity trend of hotspots
+#### Complexity trend of hotspots
 
 The reason why we analyze the hotspots is that the code with the high technical debt can be found by analyzing the 'hotspot' [[16]](#crystal). Hotspots are those large, complex code which the developers have to work often with. We used`Codescene` to analyze the hotspots.
 
@@ -314,7 +314,7 @@ As shown in Figure [[5]](#complexity), the complexity trend of hotspot `pytorch/
 <center>Figure 6. Complexity trends of pytorch/test/test_nn.py</center>
 
 -->
-### Temporal coupling
+#### Temporal coupling
 
 Temporal coupling is a kind of codesmell. The large codebases with multiple developers may lead to technical debt. Even though at the beginning of development, developers separate the modules on purpose, the couplings may still form during development. The couplings among different modules lead to rigid system design and the difficulty of extending the features [[17]](#coupling-ana). Temporal coupling indicates how two or more modules change together over time. It can be obtained by calculating how often a module changes together with other modules. We used `Codescene` to visualize the temporal coupling.
 
@@ -331,7 +331,7 @@ The coupling degrees of the pairs shown in the table in the right of the Figure 
 
 
 
-### Duplications and existing bugs
+#### Duplications and existing bugs
 
 To identify duplications and existing bugs, we utilized `SonarQube`. 
 
@@ -351,7 +351,7 @@ To identify duplications and existing bugs, we utilized `SonarQube`.
 
 <center>Figure 11. Specific bugs</center>
 
-### Overview of the solutions
+#### Overview of the solutions
 
 After the analysis, we came up with the solutions to reduce or solve the technical debts:
 
@@ -361,7 +361,7 @@ After the analysis, we came up with the solutions to reduce or solve the technic
 
 * The code smell such as the temporal coupling and the duplicated code should be track. Extract the common part into a module remove the duplications.
 
-## Identifying Testing Debt
+### Identifying Testing Debt
 
 
 ![](https://i.imgur.com/gDo5bw9.png)
@@ -375,7 +375,7 @@ By using a Python IDE - PyCharm, we get a detailed test coverage showing the fil
 Despite these exceptions, the test coverage is still not enough for such a widely used open source project. We can see that the torch module is coveraged due to it is the core module that currently being used frequently. Caffe2 and some other modules are not covered since they are rather complicated or too old, developers did not concern more on those modules. Thus, those files that not being test should be seen as test debt.
 
 
-## The evolution of Technical Debt
+### The evolution of Technical Debt
 
 <!-- Besides the technical debt that is currently present in Pytorch, we also looked at the evolution of this software. Pytorch was released in 2016 and developed by Facebook's artificial-intelligence research group. Originally considered Pytorch as a Python package for GPU-accelerated deep neural network programming, it could complement or partially replace existing Python packages and statistics packages such as NumPy. 
 
@@ -419,7 +419,7 @@ According to the releases showing on the Github, Pytorch has released several ve
 
 
 
-# Deployment View
+## Deployment View
 
 Deployment view determines the related environment to run the system. We will discuss the deployment view in the following passages and Figure [13](#deployment) is the overall figure of the deployment view of Pytorch.
 <!-- , such as the hardware support or hosting environment. Pytorch has clearly introduced its deployment for all interested stakeholders. It belongs to the situation that the system can be deployed into a different environment and the characteristic need to be clearly illustrated.  -->
@@ -428,19 +428,19 @@ Deployment view determines the related environment to run the system. We will di
 
 <center>Figure 14. Figure deployment view</center>
 
-## Third Party Library
+### Third Party Library
 
 Pytorch uses different libraries to develop its system. Those third-party libraries have been specifically introduced in section [Development View](#dev_view). Those third parties including `Numpy`, `Sphinx`, `pyyaml`, `CuDNN`, `MKL` etc., form third-party system requirements for running Pytorch and support the daily operating of Pytorch.
 <!-- NVIDIA CUDA Deep Neural Network library  -->
 <!-- the Intel® Math Kernel Library  -->
 
-## Runtime platforms
+### Runtime platforms
 
 Pytorch does not want to give up a Python frontend but a Python frontend cannot deal with, e.g., a multithreaded environment, so Pytorch employs a C++ frontend but it mimics a Python frontend closely. Pytorch has several backend modules intead of one. The modules rely heavily on linear algebra libraries like `MKL` for CPU and deep neural network libraries like `CuDNN` for GPU. Pytorch requires a 64-bit CPU. An Intel CPU is preferred because `MKL` is tuned for an Intel architecture. To benefit from GPU acceleration, Pytorch only works on NVIDIA GPUs, because it requires CUDA support. For high-demanding tasks in research or production, it is suggested to use an HPC platform or a cloud platform, e.g. AWS.
 
 <!-- The reason it uses the C++ frontend instead of the Python frontend is to counter several cases where the Python frontend is bad, such as a multithreaded environment. But it does not want to give up the good side of the Python frontend so the C++ frontend  -->
 
-## Operating systems
+### Operating systems
 
 PyTorch can be installed and used in many types of operating systems. 
 1. **Linux**: PyTorch 1.0 supports various Linux distributions that use glibc >= v2.17:
@@ -459,7 +459,7 @@ PyTorch can be installed and used in many types of operating systems.
     - Windows Server 2008 r2 and greater.
     
 
-## PyTorch on cloud
+### PyTorch on cloud
 
 Cloud platforms provide powerful hardware and infrastructure for training and testing the PyTorch models. PyTorch offers following cloud installation options:
     
@@ -473,11 +473,11 @@ Cloud platforms provide powerful hardware and infrastructure for training and te
 | IBM Cloud Kubernetes cluster     | On Kubernetes clusters on IBM Cloud    |
 | IBM Cloud data science and data management     | Python environment with Jupyter and Spark   |
 
-# Conclusion
+## Conclusion
 
 With two months of analysis of Pytorch, we gain more insights of the whole Pytorch architecture. We analyze different perspectives and viewpoints of the project to understand more about the inner workings. Even though Pytorch is a recently-developed software, it already has a well-organized architecture. And we believe it will keep developing and develop more functions for deep learning frameworks.
 
-# References
+## References
 
 1. <a name="pytorch_github">PyTorch github website,</a> https://github.com/pytorch/pytorch.
 2. <a name="book">William Del Ra, III. 2012. Software systems architecture: second edition by Nick Rozanski and Eoin Woods. SIGSOFT Softw. Eng. Notes 37, 2 (April 2012), 36-36. DOI: </a>https://doi.org/10.1145/2108144.2108171
@@ -515,11 +515,11 @@ fast feature embedding. <i>arXiv:1408.5093>arXiv:1408.5093</i>, 2014</a>
 
 
 
-# Appendix
+## Appendix
 
-## PR Analysis
+### PR Analysis
 
-### Pull requests which are accepted
+#### Pull requests which are accepted
 
 | Pull request | Lifetime| Components it touches | PR content and Related issues | Deprecate another pull request or not |
 | -------- | -------- | -------- | -------- | -------- |
@@ -530,7 +530,7 @@ fast feature embedding. <i>arXiv:1408.5093>arXiv:1408.5093</i>, 2014</a>
 | Fixed non-determinate preprocessing on DataLoader [#4640](https://github.com/pytorch/pytorch/pull/4640) by @AlexanderRadionov | After v0.3.1  | `torch.utils`	DataLoader(Trainer and other utility functions for convenience) | This pr adds ind_worker_queue parameter in DataLoader to solve the non-deterministic issue which happens when DataLoader is in multiprocessing mode| No|
 | Introduce scopes during tracing [#3016](https://github.com/pytorch/pytorch/pull/3016) by @lantiga | After v0.2.0 | `Scope`, `IR` (intermediate representation) and `Tracing` | This pr introduced the scopes for group operations in the tracing IR| No|
 
-### Pull requests which are rejected：
+#### Pull requests which are rejected：
 
 | Pull request | Lifetime| Components it touches| PR content and Related issues| Deprecate another pull request or not|
 | -------- | -------- | -------- | --------| --------|
@@ -541,7 +541,7 @@ fast feature embedding. <i>arXiv:1408.5093>arXiv:1408.5093</i>, 2014</a>
 |Adding katex rendering of equations [#8848](https://github.com/pytorch/pytorch/pull/8848)|After v0.4.0|Docs, `torch/functional` and `torch.nn`|This fixes issue #8529. 1. Adds Katex extension to `conf.py` and requirements.txt. 2. Fixes syntax differences in docs. 3. Should allow documentation pages to render faster|No|
 
 
-### Codify pull-request "Introduce scopes during tracing" [#3016](https://github.com/pytorch/pytorch/pull/3016)
+#### Codify pull-request "Introduce scopes during tracing" [#3016](https://github.com/pytorch/pytorch/pull/3016)
 
 **From Ziyu Bao:**
 
