@@ -9,7 +9,7 @@ chapter: true
 
 By [Ziyu Bao](https://github.com/ZiyuBao), [Tian Tian](https://github.com/ttup7777), [Yuanhao Xie](github.com/BARBAPAPA215), [Zhao Yin](https://github.com/zhaoyin666) from TU Delft.
 
-![](https://i.imgur.com/ZcKU3XT.png)
+![](images/pytorch/ZcKU3XT.png)
 
 
 ## Abstract
@@ -87,7 +87,7 @@ Pytorch has many developers who are the main members of the team. We want to con
 
 Figure [1](#PIgrid) shows the Power & Interest grid.
 
-![#PIgrid](https://i.imgur.com/H2zjEQj.png)
+![#PIgrid](images/pytorch/H2zjEQj.png)
 
 <center>Figure 1. Power & Interest grid</center>
 
@@ -125,7 +125,7 @@ Pytorch has its trace of development of its scope and responsibilties. In the <a
 
 ### Context Diagram
 
-![](https://i.imgur.com/weElGdo.png)
+![](images/pytorch/weElGdo.png)
 
 <center>Figure 2. Context view</center>
 
@@ -152,7 +152,7 @@ The development view of PyTorch describes its code structure and dependencies, b
 
 The main structure of PyTorch in a architectural view is shown in Figure [3](#module_model).
 
-![#module_model](https://i.imgur.com/iGWbOXL.png)
+![#module_model](images/pytorch/iGWbOXL.png)
 
 <center> Figure 3. Pytorch Architecture. Inspired by <a href=#learning_pytorch_book>[3]</a></center>
 
@@ -207,7 +207,7 @@ Standard design approaches identifies how to deal with situations where implemen
 
 PyTorch has its code structure to make it easy for developers to locate the code they want to change. We show its main directory below while the full directory could be seen on [here](https://github.com/pytorch/pytorch/blob/master/CONTRIBUTING.md#codebase-structure).
 
-![](https://i.imgur.com/HwFUQLM.png)
+![](images/pytorch/HwFUQLM.png)
 
 #### Build approach
 
@@ -242,7 +242,7 @@ Keywords/tags indicates the technical debts which the developer noticed but did 
 
 We analyzed three kinds of keywords/tags "TODO"s, "FIXME"s and "XXX"s in PyTorch. We found that even though the tags have different names, but their contents are quite similar. We found 1098 "TODO"s. They are almost everywhere in PyTorch. 432 "TODO"s are in caffe2. There are 118 "FIXME"s, they are mainly in aten, caffe2, test, torch. There are 119 "XXX"s identified, 72 of them are in the main PyTorch component-torch. Some of the tags mentions who will fix it, none of them mentions when they will be fixed. Following are the examples:
 
-![](https://i.imgur.com/pPOdcmj.png)
+![](images/pytorch/pPOdcmj.png)
 
 
 #### Complexity trend of hotspots
@@ -251,7 +251,7 @@ The reason why we analyze the hotspots is that the code with the high technical 
 
 As shown in Figure [[4]](#hotspot), each blue circle represents a package in the code, and the red dots are the hotspots [[16]](#crystal). 
 
-![#hotspot](https://i.imgur.com/2jnlywS.png)
+![#hotspot](images/pytorch/2jnlywS.png)
 <center>Figure 4. Hotspot</center>
 
 
@@ -259,7 +259,7 @@ Complexity trends denote how do the hotspots get more complicated over time. The
 
 As shown in Figure [[5]](#complexity), the complexity trend of hotspot `pytorch/test/test_jit.py` grows rapidly since June 2018. This accumulating complexity is a sign that the hotspot needs refactoring [[14]](#codescene) to reduce the risk of technical debt. 
 
-![#complexity](https://i.imgur.com/6mIn9eq.png)
+![#complexity](images/pytorch/6mIn9eq.png)
 <center>Figure 5. Complexity trends of pytorch/test/test_jit.py</center>
 
 #### Temporal coupling
@@ -268,12 +268,12 @@ Temporal coupling is a kind of codesmell. The large codebases with multiple deve
 
 In Figure [7](#coupling), the lines that the modules which are modified together. The thicker lines, the stronger of temporal coupling. 
 
-![#coupling](https://i.imgur.com/PvngF9g.png)
+![#coupling](images/pytorch/PvngF9g.png)
 <center>Figure 7. Temporal coupling</center>
 
 The coupling degrees of the pairs shown in the table in the right of the Figure are quite strong. For example, the coupling degrees of the third pairs are 95%. It means that 95% chance of changing one file results in a change in another file. The temporal coupling sometimes suggests a refactoring. As you can see the coupling degrees of the first pairs are 100%. Figure [8](#code) shows the code of `add_cpu.cc` and `mul_cpu.cc`. These two files are more like copy-paste work.
 
-![#code](https://i.imgur.com/aHnzbOE.png)
+![#code](images/pytorch/aHnzbOE.png)
 <center>Figure 8. Code of add_cpu.cc and mul_cpu.cc</center>
 
 
@@ -284,18 +284,18 @@ The coupling degrees of the pairs shown in the table in the right of the Figure 
 To identify duplications and existing bugs, we utilized `SonarQube`. 
 
 **Duplicates**: Duplicates illustrate those recurring code. It belongs to code smell which is the potential threat in software development. Developers should keep less duplicated code to make the code clean. Figure [7](#coupling) shows all the duplicates in PyTorch. There are overall 3.6% duplicates. It should be noticed that the test files contain the most duplicates. In our analysis, test files need to test different cell but theoretically use the same way, so the codes look like the same.
-![#duplication](https://i.imgur.com/VomQBGq.png)
+![#duplication](images/pytorch/VomQBGq.png)
 <center>Figure 9. duplications among all folders</center>
 
 
 
 **Bugs**: We also used `SonarQube` to find bugs in Pytorch. Bugs can lead to a really bad impact on system and developers should try their best to avoid creating bugs. In our cases, the tool detected 98 bugs in the current release. It is shown in Figure [8](#code). The bugs identifed by `SonarQube` indicate almost the same problem as shown in figure [9](#duplication): Those codes contain the identical sub-expressions on both sides of operator "or". This kind of codes were recognized as bugs. It should be noticed that those codes were written 2 years ago, which can be considered as a long-time debt. Those codes should be fixed for better developing.
 
-![](https://i.imgur.com/MDlEcqY.png)
+![](images/pytorch/MDlEcqY.png)
 
 <center>Figure 10. Bugs in documents</center>
 
-![](https://i.imgur.com/goUNA2R.png)
+![](images/pytorch/goUNA2R.png)
 
 <center>Figure 11. Specific bugs</center>
 
@@ -311,7 +311,7 @@ After the analysis, we came up with the solutions to reduce or solve the technic
 
 ### Identifying Testing Debt
 
-![](https://i.imgur.com/gDo5bw9.png)
+![](images/pytorch/gDo5bw9.png)
 <center>Figure 12. Testing coverage</center>
 
 Testing debt exists due to the lack of testing or poor quality of testing. In this section, we analyze the testing debt of PyTorch.
@@ -328,7 +328,7 @@ There are two variants of PyTorch. Originally, Pytorch was developed as a Python
 PyTorch redesigned and implemented Torch in Python while sharing the same core C library in the backend code. Torch was originally implemented in C, with a wrapper for the Lua scripting language, but PyTorch wraps the core Torch binaries in Python and provides GPU acceleration for many functions[[18]](#infoworld). PyTorch developers have tweaked their backend code to run Python efficiently. They also retained GPU-based hardware acceleration and the extensibility that made Lua-based Torch popular among researchers. -->
 Since Pytorch was the next generation products of torch, it was developed officially since 2016. Pytorch was mainly developed on Github to control its different releases. As shown in **Figure 9**, the contributions increased dramatically since 2016. 
 
-![](https://i.imgur.com/Zp6DKp8.png)
+![](images/pytorch/Zp6DKp8.png)
 
 <center>Figure 13. Contributions to master, excluding merge commits </center>
 
@@ -367,7 +367,7 @@ According to the releases showing on the Github, Pytorch has released several ve
 
 Deployment view determines the related environment to run the system. We will discuss the deployment view in the following passages and Figure [13](#deployment) is the overall figure of the deployment view of Pytorch.
 
-![#deployment](https://i.imgur.com/AxTbBm0.png)
+![#deployment](images/pytorch/AxTbBm0.png)
 
 <center>Figure 14. Figure deployment view</center>
 
