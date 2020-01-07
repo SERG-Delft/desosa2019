@@ -7,7 +7,7 @@ chapter: true
 
 # Gutenberg
 
-![Gutenberg Logo](../assets/gutenberg-logo.png)
+![Gutenberg Logo](images/gutenberg/gutenberg-logo.png)
 
 By [Timo van Asten](https://github.com/timovanasten/), [Sven van Hal](https://github.com/svenvanhal/), [Niek van der Laan](https://github.com/niekvanderlaan) en [Daphne van Tetering](https://github.com/dvantetering).
 
@@ -105,7 +105,7 @@ Before the rise of Gutenberg, other page-builders were built to replace the old 
 
 Using Mendelow’s power vs. interest grid, stakeholders can be divided into four categories. These categories are: satisfy, key stakeholders, minimal effort and inform and are shown in the figure below.
 
-![Power Interest Grid](../assets/power-interest-grid-new.png)
+![Power Interest Grid](images/gutenberg/power-interest-grid-new.png)
 <center>
 <i>Figure 1: Power vs. Interest Grid</i>
 </center>
@@ -130,7 +130,7 @@ The scope of Gutenberg is limited to the page editing experience within WordPres
 
 ### Context model
 
-![context-view](../assets/context-view.png)
+![context-view](images/gutenberg/context-view.png)
 
 <center>
 <i>Figure 2: Gutenberg context model</i>
@@ -162,7 +162,7 @@ The Gutenberg repository consists mainly of packages developed for the Gutenberg
 
 Although the packages folder has a flat structure, we identified the responsibility of each package with respect to the logic flow of the editor. The image below, found on the Gutenberg repository, illustrates this flow.
 
-![Editor Logic Flow](../assets/editor_logic.png)
+![Editor Logic Flow](images/gutenberg/editor_logic.png)
 <center>
 <i>Figure 3: Editor logic flow</i>
 </center>
@@ -183,7 +183,7 @@ Most packages serve as utility for the implementation of blocks, to support the 
 
 **Figure 4** displays the relations between these packages.
 
-![Package structure of Gutenberg](../assets/Module_organisation.PNG)
+![Package structure of Gutenberg](images/gutenberg/Module_organisation.PNG)
 <center>
 <i>Figure 4: Package structure of Gutenberg</i>
 </center>
@@ -200,7 +200,7 @@ Gutenberg uses the Feature Branch Workflow \[4\]. Contributors need to fork the 
 
 The directory structure of Gutenberg is shown in **Table 1**. Every directory has a single responsibility and different types of source code based are grouped based on their purpose. The project consists of multiple modules (in the `packages` folder), which also take up the majority of the project size.
 
-![Source Code Structure](../assets/source_code_structure.png)
+![Source Code Structure](images/gutenberg/source_code_structure.png)
 
 <center>
 <i>Table 1: Directory structure</i>
@@ -237,7 +237,7 @@ Within Gutenberg, all content has the same internal structure called a `block`. 
 
 The new block is connected with Gutenberg using the `registerBlockType`-function from the [Block API](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/), which is called in `src/block.js`. This function takes two arguments: the block name, which has to be unique and is used to identify a block, and a block configuration object. The block configuration object contains properties such as a display title and category, these properties have to be defined to allow registration of a block.
 
-![New block file structure](../assets/new_block.png)
+![New block file structure](images/gutenberg/new_block.png)
 
 <center>
 <i>Figure 5: Block file structure</i>
@@ -272,7 +272,7 @@ We used [SonarQube](https://www.sonarqube.org/) to detect code smells and potent
 
 When using SonarQube’s default quality profile, a technical debt of 10 *man-days* (80 hours) is reported, representing only 5% of the total project size. Manual inspection of the detected code smells reveals that the most frequently violated rules are violated because of common practice and design choices and do not present actual technical debt. An example of this is shown in Figure 6.
 
-![Rules violation](../assets/Rules_violation.png)
+![Rules violation](images/gutenberg/Rules_violation.png)
 
 <center>
 <i>Figure 6: Example of violated rules due to design decisions</i>
@@ -294,7 +294,7 @@ One indicator of technical debt are TODO comments. At the time of writing, the G
 
 Many of these TODOs also give some indication on why the TODO was introduced, some of which are not valid anymore. An example of this is shown in Figure 7.
 
-![TODO\_example](../assets/ToDo_example.png)
+![TODO\_example](images/gutenberg/ToDo_example.png)
 
 <center>
 <i>Figure 7: Example of an invalid TODO comment</i>
@@ -302,7 +302,7 @@ Many of these TODOs also give some indication on why the TODO was introduced, so
 
 When looking at this issue, we see that the issue itself was closed in October 2018, but the TODO is still present in the code base, which indicates that these TODOs can linger for quite a while. This is shown in Figure 8.
 
-![TODO\_screenshot](../assets/Testing_debt_example2.png)
+![TODO\_screenshot](images/gutenberg/Testing_debt_example2.png)
 
 <center>
 <i>Figure 8: Example of a lingering TODO</i>
@@ -312,7 +312,7 @@ When looking at this issue, we see that the issue itself was closed in October 2
 
 To identify testing debt, issues labeled [Needs Tests](https://github.com/WordPress/gutenberg/labels/Needs%20Tests) were reviewed. Even though this label is only used on 4/1630 open issues, they have been open for quite a while. The `--coverage` option in Jest was used to generate a coverage report for each folder, file and line. This shows that the code coverage of Gutenberg is about 50%. A snapshot of this webpage is shown in Figure 9.
 
-![Coverage](../assets/Coverage.png)
+![Coverage](images/gutenberg/Coverage.png)
 
 <center>
 <i>Figure 9: Snapshot of the HTML-page generated by Jest</i>
@@ -320,7 +320,7 @@ To identify testing debt, issues labeled [Needs Tests](https://github.com/WordPr
 
 Issue [\#13812](https://github.com/WordPress/gutenberg/issues/13812) shows that the developers are aware of the need for tests. Since this issue was opened recently, it also shows that the developers are trying to improve coverage. However, PR [\#14420](https://github.com/WordPress/gutenberg/pull/14420) shows one of the reasons why the test coverage of Gutenberg is fairly low: two code owners, @aduth and @youknowriad decide to merge a PR with failing end-to-end test. This is visible in Figure 10.
 
-![Testing debt example 1](../assets/Testing_debt_example1.png)
+![Testing debt example 1](images/gutenberg/Testing_debt_example1.png)
 
 <center>
 <i>Figure 10: Example of a decision causing testing debt</i>
