@@ -105,10 +105,7 @@ Before the rise of Gutenberg, other page-builders were built to replace the old 
 
 Using Mendelow’s power vs. interest grid, stakeholders can be divided into four categories. These categories are: satisfy, key stakeholders, minimal effort and inform and are shown in the figure below.
 
-![Power Interest Grid](images/gutenberg/power-interest-grid-new.png)
-<center>
-<i>Figure 1: Power vs. Interest Grid</i>
-</center>
+![Power vs. Interest Grid](images/gutenberg/power-interest-grid-new.png)
 
 ### Integrators
 
@@ -130,11 +127,7 @@ The scope of Gutenberg is limited to the page editing experience within WordPres
 
 ### Context model
 
-![context-view](images/gutenberg/context-view.png)
-
-<center>
-<i>Figure 2: Gutenberg context model</i>
-</center>
+![Gutenberg context model](images/gutenberg/context-view.png)
 
 WordPress is used by a wide variety of users and so is, by extension, Gutenberg.
 
@@ -163,9 +156,6 @@ The Gutenberg repository consists mainly of packages developed for the Gutenberg
 Although the packages folder has a flat structure, we identified the responsibility of each package with respect to the logic flow of the editor. The image below, found on the Gutenberg repository, illustrates this flow.
 
 ![Editor Logic Flow](images/gutenberg/editor_logic.png)
-<center>
-<i>Figure 3: Editor logic flow</i>
-</center>
 
 The editor has several responsibilities: parsing, visual representation, editing and serialization. Other packages are responsible for tooling, utilities, data management, the user interface and retrieving reusable blocks. We briefly highlight most important packages and their contributions.
 
@@ -181,12 +171,9 @@ All blocks must be registered before they can be used in the editor. The `elemen
 
 Most packages serve as utility for the implementation of blocks, to support the editor,or simply provide reusable functionalities that can be used by developers when creating new blocks. Several tooling packages concern several responsibilities including config, plugins and testing.
 
-**Figure 4** displays the relations between these packages.
+The figure below displays the relations between these packages.
 
 ![Package structure of Gutenberg](images/gutenberg/Module_organisation.PNG)
-<center>
-<i>Figure 4: Package structure of Gutenberg</i>
-</center>
 
 ### Codeline Model
 
@@ -198,13 +185,9 @@ Gutenberg uses the Feature Branch Workflow \[4\]. Contributors need to fork the 
 
 #### Source Code Structure
 
-The directory structure of Gutenberg is shown in **Table 1**. Every directory has a single responsibility and different types of source code based are grouped based on their purpose. The project consists of multiple modules (in the `packages` folder), which also take up the majority of the project size.
+The directory structure of Gutenberg is shown in the table below Every directory has a single responsibility and different types of source code based are grouped based on their purpose. The project consists of multiple modules (in the `packages` folder), which also take up the majority of the project size.
 
-![Source Code Structure](images/gutenberg/source_code_structure.png)
-
-<center>
-<i>Table 1: Directory structure</i>
-</center>
+![Directory Structure](images/gutenberg/source_code_structure.png)
 
 Tests are present at multiple different locations in the source code: PHP tests in the `phpunit` folder, integration tests in the `test` directory and for each package separately (optionally) a number of unit tests, as well as end-to-end tests in the `packages/e2e-test` folder.
 
@@ -229,7 +212,7 @@ For logging information about the system the native JavaScript methods `console.
 
 ### Standardization of Design
 
-Within Gutenberg, all content has the same internal structure called a `block`. Blocks are hierarchical units, meaning that each block can be a parent or child to another block. Within Gutenberg, it is possible to create custom blocks. To ensure the compatibility of these blocks with the parser and serializer, each block needs to have the same software design. Below, we briefly discuss the most important parts of this design, a complete overview of the internal block structure is shown in Figure 5.
+Within Gutenberg, all content has the same internal structure called a `block`. Blocks are hierarchical units, meaning that each block can be a parent or child to another block. Within Gutenberg, it is possible to create custom blocks. To ensure the compatibility of these blocks with the parser and serializer, each block needs to have the same software design. Below, we briefly discuss the most important parts of this design, a complete overview of the internal block structure is shown in the figure below.
 
 1.  `plugin.php`: this file contains the plugin information needed to retrieve a block and list it as an available plugin in the plugin library of Gutenberg.
 2.  `init.php` this file is use to enqueue all JavaScript and CSS files. To achieve this, Gutenberg has two hooks: `enqueue_block_assets` on the frontend and `enqueue_block_editor_assets` on the backend.
@@ -238,10 +221,6 @@ Within Gutenberg, all content has the same internal structure called a `block`. 
 The new block is connected with Gutenberg using the `registerBlockType`-function from the [Block API](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/), which is called in `src/block.js`. This function takes two arguments: the block name, which has to be unique and is used to identify a block, and a block configuration object. The block configuration object contains properties such as a display title and category, these properties have to be defined to allow registration of a block.
 
 ![New block file structure](images/gutenberg/new_block.png)
-
-<center>
-<i>Figure 5: Block file structure</i>
-</center>
 
 To aid developers, several tutorials and guidelines exist, which can be found in the Gutenberg handbook. Gutenberg documents its [block API](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/) and a list of [block grammar](https://github.com/WordPress/gutenberg/blob/master/docs/grammar.md) containing code snippets for creating blocks. [Coding guidelines](https://github.com/WordPress/gutenberg/blob/master/docs/contributors/coding-guidelines.md) are also provided to inform each developer about coding guidelines specific to Gutenberg.
 
@@ -270,15 +249,11 @@ Technical debt is a metaphor that reflects overdue or additional programming wor
 
 We used [SonarQube](https://www.sonarqube.org/) to detect code smells and potential bugs. Only the `lib/` and `packages/` directories have been considered, to prevent analyzing test code and tooling.
 
-When using SonarQube’s default quality profile, a technical debt of 10 *man-days* (80 hours) is reported, representing only 5% of the total project size. Manual inspection of the detected code smells reveals that the most frequently violated rules are violated because of common practice and design choices and do not present actual technical debt. An example of this is shown in Figure 6.
+When using SonarQube’s default quality profile, a technical debt of 10 *man-days* (80 hours) is reported, representing only 5% of the total project size. Manual inspection of the detected code smells reveals that the most frequently violated rules are violated because of common practice and design choices and do not present actual technical debt. An example of this is shown in the figure below.
 
-![Rules violation](images/gutenberg/Rules_violation.png)
+![Example of violated rules due to design decisions](images/gutenberg/Rules_violation.png)
 
-<center>
-<i>Figure 6: Example of violated rules due to design decisions</i>
-</center>
-
-Since the default quality profile is very strict and it penalizes very common practices, we decided to exclude the rules in Figure 6 from the profile. This result in a technical debt of only **7** *man-days*
+Since the default quality profile is very strict and it penalizes very common practices, we decided to exclude the rules in the figure from the profile. This result in a technical debt of only **7** *man-days*.
 
 Other clear examples of technical debt are empty `if`-statements (accompanied by a TODO-statement), functioning as a scaffold to be filled in later, dead code after a wrong refactoring or duplicate CSS rules. Efforts have been made to reduce the latter in [\#14520](https://github.com/WordPress/gutenberg/pull/14520) and [\#14546](https://github.com/WordPress/gutenberg/pull/14546).
 
@@ -292,39 +267,23 @@ One indicator of technical debt are TODO comments. At the time of writing, the G
 
 <table><colgroup><col style="width: 23%" /><col style="width: 11%" /><col style="width: 64%" /></colgroup><thead><tr class="header"><th>Type</th><th>Occurrences</th><th>Example from the code base</th></tr></thead><tbody><tr class="odd"><td>Needed improvements</td><td>21</td><td>// TODO: Search input should be focused immediately. It shouldn’t be necessary to have ‘waitForFunction’.</td></tr><tr class="even"><td>Suggested improvements</td><td>8</td><td>// TODO: Future enhancement to add an upload indicator.</td></tr><tr class="odd"><td>Removal reminders</td><td>6</td><td>// TODO: The following is for back-compat with WP 4.9, not needed in WP 5.0. Remove it after the release.</td></tr><tr class="even"><td>Research reminders</td><td>5</td><td>// TODO: Figure out a way to generate docs for dynamic actions/selectors.</td></tr><tr class="odd"><td>Thoughts and questions</td><td>4</td><td>// TODO: Should we differentiate BACKSPACE and DELETE?</td></tr><tr class="even"><td>Refactor reminders</td><td>3</td><td>// TODO: Refactor click detection to use blur to stop propagation.</td></tr></tbody></table>
 
-Many of these TODOs also give some indication on why the TODO was introduced, some of which are not valid anymore. An example of this is shown in Figure 7.
+Many of these TODOs also give some indication on why the TODO was introduced, some of which are not valid anymore. An example of this is shown in the figure below.
 
-![TODO\_example](images/gutenberg/ToDo_example.png)
+![Example of an invalid TODO comment](images/gutenberg/ToDo_example.png)
 
-<center>
-<i>Figure 7: Example of an invalid TODO comment</i>
-</center>
+When looking at this issue, we see that the issue itself was closed in October 2018, but the TODO is still present in the code base, which indicates that these TODOs can linger for quite a while. This is shown in the figure below.
 
-When looking at this issue, we see that the issue itself was closed in October 2018, but the TODO is still present in the code base, which indicates that these TODOs can linger for quite a while. This is shown in Figure 8.
-
-![TODO\_screenshot](images/gutenberg/Testing_debt_example2.png)
-
-<center>
-<i>Figure 8: Example of a lingering TODO</i>
-</center>
+![Example of a lingering TODO](images/gutenberg/Testing_debt_example2.png)
 
 ### Testing debt
 
-To identify testing debt, issues labeled [Needs Tests](https://github.com/WordPress/gutenberg/labels/Needs%20Tests) were reviewed. Even though this label is only used on 4/1630 open issues, they have been open for quite a while. The `--coverage` option in Jest was used to generate a coverage report for each folder, file and line. This shows that the code coverage of Gutenberg is about 50%. A snapshot of this webpage is shown in Figure 9.
+To identify testing debt, issues labeled [Needs Tests](https://github.com/WordPress/gutenberg/labels/Needs%20Tests) were reviewed. Even though this label is only used on 4/1630 open issues, they have been open for quite a while. The `--coverage` option in Jest was used to generate a coverage report for each folder, file and line. This shows that the code coverage of Gutenberg is about 50%. A snapshot of this webpage is shown in the figure below.
 
-![Coverage](images/gutenberg/Coverage.png)
+![Snapshot of the HTML-page generated by Jest](images/gutenberg/Coverage.png)
 
-<center>
-<i>Figure 9: Snapshot of the HTML-page generated by Jest</i>
-</center>
+Issue [\#13812](https://github.com/WordPress/gutenberg/issues/13812) shows that the developers are aware of the need for tests. Since this issue was opened recently, it also shows that the developers are trying to improve coverage. However, PR [\#14420](https://github.com/WordPress/gutenberg/pull/14420) shows one of the reasons why the test coverage of Gutenberg is fairly low: two code owners, @aduth and @youknowriad decide to merge a PR with failing end-to-end test. This is visible in the figure below.
 
-Issue [\#13812](https://github.com/WordPress/gutenberg/issues/13812) shows that the developers are aware of the need for tests. Since this issue was opened recently, it also shows that the developers are trying to improve coverage. However, PR [\#14420](https://github.com/WordPress/gutenberg/pull/14420) shows one of the reasons why the test coverage of Gutenberg is fairly low: two code owners, @aduth and @youknowriad decide to merge a PR with failing end-to-end test. This is visible in Figure 10.
-
-![Testing debt example 1](images/gutenberg/Testing_debt_example1.png)
-
-<center>
-<i>Figure 10: Example of a decision causing testing debt</i>
-</center>
+![Example of a decision causing testing debt](images/gutenberg/Testing_debt_example1.png)
 
 ### Technical debt mitigation
 
