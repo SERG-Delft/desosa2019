@@ -12,7 +12,7 @@ by [Andrei Simion-Constantinescu](https://github.com/simionAndrei) (top right),
 [Hendrig Sellik](https://github.com/hsellik) (top left), [Milko Mitropolitsky](https://github.com/mmitropolitsky) (bottom left),
 [Viktoriya Kutsarova](https://github.com/viktoriya-kutsarova) (bottom right)
 
-# Abstract
+## Abstract
 
 [Spring Boot](https://spring.io/projects/spring-boot) 
 is an open source project part of the Java [Spring Framework](https://spring.io/)
@@ -27,7 +27,8 @@ process to looking at the project from multiple perspectives like the Context Vi
 Development View and Functional View. Finally, a research of the impact of Technical Debt
 is provided followed by the final conclusions of this project's complex architectural analysis.
 
-# Table of Contents
+## Table of Contents
+
 1.  [Introduction](#introduction)
 2.  [Stakeholders](#stakeholders)
     * [Integrators and Decision-making process](#integrators-and-decision-making-process)  
@@ -58,7 +59,7 @@ is provided followed by the final conclusions of this project's complex architec
 
 
 
-# Introduction
+## Introduction
  
 [Spring Framework](https://spring.io/) for Java was born in February 2003 after 
 [Rod Johnson](https://twitter.com/springrod)'s 
@@ -101,7 +102,7 @@ the [Technical Debt analysis](#technical-debt) before drawing the final
 
 
 
-# Stakeholders
+## Stakeholders
 
 The stakeholders of Spring Boot are described in *Table 1*. Categories used correspond to 
 the stakeholder types described by Rozanski & Woods (2012) [2]. In the 
@@ -237,6 +238,7 @@ dependent on the development of Spring Boot. Some examples are [JHipster](https:
 [here](https://www.javaguides.net/2018/10/free-open-source-projects-using-spring-boot.html).
 
 ## Integrators and Decision-making process
+
 Spring Boot is an avid example of an open-source system. It is backed up by a company 
 (Pivotal) and is accepting contributions from anyone who complies with their 
 code of conduct and signs a release form. All of the work is done in GitHub, and the 
@@ -274,6 +276,7 @@ partake in the discussions.
 
 
 ## Power-interest grid
+
 After identifying the stakeholders for the Spring Boot project, a power-interest matrix was created. 
 The grid classifies the stakeholders according to their power over the project and their 
 interest in it.
@@ -283,6 +286,7 @@ interest in it.
 ***Figure 1*** - Spring Boot Power-Interest Diagram
 
 ## People to contact
+
 After going through various sources of information regarding Spring Boot, our team came to the 
 conclusion that the following three people would be the most interesting to contact:
 
@@ -316,7 +320,8 @@ conclusion that the following three people would be the most interesting to cont
 
 ***Table 2*** - People to contact regarding Spring Boot
 
-# Context view
+## Context view
+
 In this section, the context view of Spring Boot will be discussed. 
 According to Rozanski and Wood, "Context View describes the relationships, dependencies, 
 and interactions between the system and its environment 
@@ -324,7 +329,8 @@ and interactions between the system and its environment
 are the system's capabilities and constraints and should be understandable to all 
 stakeholders.
 
-## System Scope & Responsibilities
+### System Scope & Responsibilities
+
 Spring Boot is a framework running on the Java Virtual Machine (JVM) and meant to ease the 
 configuration process of Spring-based applications. It also addresses the learning curve 
 of using the Spring ecosystem, 
@@ -363,7 +369,8 @@ to existing SQL database such as [PostgreSQL](https://www.postgresql.org/),
 All this makes Spring Boot a good starting point to develop production-ready 
 Spring applications with minimal effort while making it easy to create custom modifications.
 
-## Context View Diagram
+### Context View Diagram
+
 Context View Diagram can be seen in *Figure 2* with the entities further detailed below.  
 
 ![Context View](images/spring-boot/context_view_new_new.jpg)
@@ -427,7 +434,7 @@ more lightweight but may not have all the enterprise solutions Spring Boot offer
 Other competitors include [Flask](http://flask.pocoo.org/) (Python) and 
 [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.2) (C#).
 
-# Functional View
+## Functional View
 
 In the [System Scope & Responsibilities](#system-scope-responsibilities) section, we discussed 
 what features and capabilities Spring Boot has. In this part, an overview is given of how 
@@ -449,7 +456,7 @@ what it is about.
  framework which allows for swift setup of a new project while 
  allowing for customizations.
  
- ## Functional Capabilities
+ ### Functional Capabilities
  
 A short walk through the initial parts of an application's lifecycle will explain where 
 Spring Boot is positioned in the development process and how the project helps it. For the purpose 
@@ -492,7 +499,7 @@ Spring Boot offers a solution to that as well with the
 [Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html).
 The Actuator provides endpoints such as `healthcheck` and `auditevents` to ease that process.
   
-## External Interfaces
+### External Interfaces
 
 Spring Boot makes it easier to start up and run a production-ready software quickly. 
 However, most of the features (except the Actuator) it has, are provided by external sources. 
@@ -509,9 +516,9 @@ As such, its external interfaces are connected with the various Spring projects 
 indirectly with the service providers that some projects work with (e.g. different databases 
 when using Spring Data).
 
-# Development View
+## Development View
 
-## Module Structure
+### Module Structure
 
 Spring Boot is comprised of several modules, each serving a different purpose. 
 A high-level overview of the module hierarchy is shown in *Figure 3*.
@@ -542,7 +549,7 @@ tool to quickly script and get an application up and running.
 - `spring-boot-starters` are a set of modules providing prepackaged dependency descriptors 
 so that developers need to manage only a single dependency.
 
-## Codeline Organization Model
+### Codeline Organization Model
 
 For creating the Codeline Organization Model, we analyzed the project directory 
 structure from the 
@@ -582,10 +589,12 @@ how to get support and so on. The repository root also contains the
 `mvnw`, the reference documentation in HTML format can be built. The generated documentation 
 can be found at `spring-boot-project/spring-boot-docs/target/generated-docs/reference/html`.
 
-## Common Design Model
+### Common Design Model
+
 In this section, part of the common design model is identified and discussed.
 
 #### Standardization of Codeline
+
 As previously mentioned in [Codeline Organization Model](#codeline-organization-model),
 the actual program code and the unit test code are structured as follows:
 
@@ -599,6 +608,7 @@ written separately from the mainline code, but still have
 access to package protected classes, methods, etc. 
 
 #### Object-Oriented Programming (OOP)
+
 As most big Java projects, Spring Boot project uses the 
 [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming)
 paradigm. This has well-known
@@ -607,6 +617,7 @@ interview with Stéphane Nicoll, he explicitly stated that the Spring Boot team 
 keep classes and classes contents as private as possible. 
 
 #### Dependency injection
+
 Spring Boot uses the
 [dependency injection](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
 technique. This allows enforcing the Inversion of Control principle which helps to increase the 
@@ -615,6 +626,7 @@ modularity of the project and make it more extensible. The Spring Boot project u
 annotation in most cases for dependency injection which was introduced by the Spring Framework. 
 
 #### Modularity
+
 When discussing with Stéphane Nicoll from the Spring Boot team, he stated that the Spring Boot 
 project aims to have stand-alone modules which are not interdependent. The goal of this is to 
 minimize coupling which increases maintainability of the code. While they make the code
@@ -623,6 +635,7 @@ to avoid making
 [split packages](https://www.logicbig.com/tutorials/core-java-tutorial/modules/split-packages.html). 
 
 #### Message logging
+
 [Spring Boot's logging](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-logging) 
 relies on 
 [Commons Logging](https://commons.apache.org/proper/commons-logging/)
@@ -680,13 +693,13 @@ by release notes which can be found in the
 section of the GitHub repository. Release notes contain information on how to upgrade 
 from a previous version, new noteworthy features, as well as various deprecations.
 
-# Technical debt
+## Technical debt
 
 [Technical debt](https://www.techopedia.com/definition/27913/technical-debt) is a concept 
 in programming that reflects the extra development work that arises when code that is 
 easy to implement in the short run is used instead of applying the best overall solution.
 
-## Identifying technical debt
+### Identifying technical debt
 
 Identifying technical debt in a project is an extremely challenging task. We used
 automated code inspection tools, but they can only support the identification process. 
@@ -763,6 +776,7 @@ and is heavily influenced by the Spring community. In his words:
 > If we do something wrong, the community will kick our asses anyway.
 
 ## Testing Debt
+
 Issue analysis ([#13526](https://github.com/spring-projects/spring-boot/issues/13526) and
 [#14684](https://github.com/spring-projects/spring-boot/issues/14689)) prior to interview
 with Stéphane Nicoll made us believe that there are no code coverage reports in CI tools. 
@@ -906,6 +920,7 @@ code style guidelines and schemes for IntelliJ IDEA and Eclipse, which disallow
 comments in the code, as well as other polluting elements like unused imports.
 
 ## Possible Improvements
+
 We chose to propose two improvements to the
 [Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config)
 functionality, which now allows expressions instead of a fixed list of profiles defined by the users. 
@@ -957,6 +972,7 @@ technical debt to avoid future complications regarding profiles in Spring Boot.
 Our team has also actively contributed to the Spring Boot project as shown in [Appendix B](#appendix-b).
 
 ## Conclusions
+
 This chapter provides an overview of the Spring Boot project whose purpose 
 is to simplify the work with Spring Framework. We analyzed Spring Boot's
 [Stakeholders](#stakeholders), [Context View](#context-view),
@@ -984,7 +1000,8 @@ the design decisions are taken with great care. Therefore Spring Boot will
 undoubtedly remain as one of the 
 go-to choices for creating web and enterprise applications with Java.
 
-# Bibliography
+## Bibliography
+
 [1] Johnson, Rod, and Juergen Hoeller. "Expert One-on-one J2EE Development without EJB." (2003).
 
 [2] Rozanski, Nick, and Eóin Woods. Software systems architecture: working with stakeholders 
@@ -996,7 +1013,8 @@ using viewpoints and perspectives. Addison-Wesley, 2011.
 
 [5] Yli-Huumo, Jesse, Andrey Maglyas, and Kari Smolander. "The Effects of Software Process Evolution to Technical Debt—Perceptions from Three Large Software Projects." Managing Software Process Evolution. Springer, Cham, 2016. 305-327.
 
-# Appendix A
+## Appendix A
+
 A compilation of researched issues and pull requests from the Spring Boot repository is 
 presented below.
 <table>
@@ -1330,7 +1348,8 @@ Release: v1.3.0.RC1
     </tr>
 </table>
 
-# Appendix B
+## Appendix B
+
 Our team's contribution to the Spring Boot project is presented in the table below.
 <table>
   <tr>
