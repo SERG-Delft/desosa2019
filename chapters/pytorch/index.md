@@ -1,3 +1,10 @@
+---
+layout: default
+project: pytorch
+title: PyTorch
+chapter: true
+---
+
 # PyTorch
 By [Ziyu Bao](https://github.com/ZiyuBao), [Tian Tian](https://github.com/ttup7777), [Yuanhao Xie](github.com/BARBAPAPA215), [Zhao Yin](https://github.com/zhaoyin666) from TU Delft.
 
@@ -5,7 +12,7 @@ By [Ziyu Bao](https://github.com/ZiyuBao), [Tian Tian](https://github.com/ttup77
 
 
 # <a id="abstract">Abstract</a>
-Pytorch is an open-source deep learning platform. In this report, we systematically analyzed it and obtained a structural view of its architecture. Analysis include its stakeholders, context view, development view, technical debt and deployment view.
+PyTorch is an open-source deep learning platform. In this report, we systematically analyzed it and obtained a structural view of its architecture. Analysis include its stakeholders, context view, development view, technical debt and deployment view.
 
 # <a id="toc">Table of Contents</a>
 1. [Introduction](#intro)
