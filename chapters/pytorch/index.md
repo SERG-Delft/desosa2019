@@ -72,8 +72,6 @@ According to stakeholders in Chapter 9 of Rozanski and Woods[2], we classified s
 ### Going beyond Rozanski and Woods classification
 
 **Competitors**: Competitors can be one of the stakeholders that concern the development of Pytorch. In this case, TensorFlow is a competitor. It is based on Theano and developed by Google. Since Pytorch releases, Pytorch obtains lots of attention and is considered to be a better version than Tensorflow.
-<!--  that can create Deep Learning models
-Objectively speaking，compare with Pytorch, Tensorflow has a larger community and it creates a static graph instead of a dynamic graph. However, Pytorch is more pythonic and building ML models feels more intuitive. Thus, the two softwares form a confrontational relationship which can help each other to be better. -->
 
 **Founders**: Founders can be considered as the first developers of a software. In our project, PyTorch is created by an AI research team of Facebook. The original authors include Adam Paszke, Sam Gross, Soumith Chintala, Gregory Chanan. They used the torch framework and implemented it on Python environment. 
 
@@ -211,48 +209,6 @@ PyTorch has its code structure to make it easy for developers to locate the code
 
 ![](https://i.imgur.com/HwFUQLM.png)
 
-<!-- Pytorch Code Structure
-├── c10/ - Core library files that work everywhere.
-├── aten/ - C++ tensor library for PyTorch (no autograd support).
-|   └── src/
-|       ├── TH/ THC/ THNN/ THCUNN/ - Legacy library code from the 
-|       |   original Torch.
-|       └── ATen/
-|           ├── core/ - Core functionality of ATen.
-|           └── native/ - Modern implementations of operators.
-|               ├── cpu/ - CPU implementations (compiled with processor
-|               |   -specific instructions) of operators.
-|               ├── cuda/ - CUDA implementations of operators.
-|               ├── sparse/ - CPU and CUDA implementations of COO sparse 
-|               |   tensor operations.
-|               └── mkl/ mkldnn/ miopen/ cudnn/ - Implementations of 
-|                   operators which simply bind to some backend library.
-├── torch/ - The actual PyTorch library.
-|   └── csrc/ - C++ files composing the PyTorch library.
-|       ├── jit/ - Compiler and frontend for TorchScript JIT frontend.
-|       ├── autograd/ - Implementation of reverse-mode automatic 
-|       |   differentiation.
-|       ├── api/ - The PyTorch C++ frontend.
-|       └── distributed/ - Distributed training support for PyTorch.
-├── tools/ - Code generation scripts for the PyTorch library.
-├── test/ - Python unit tests for PyTorch Python frontend.
-|   ├── test_torch.py - Basic tests for PyTorch functionality.
-|   ├── test_autograd.py - Tests for non-NN automatic differentiation 
-|   |   support.
-|   ├── test_nn.py - Tests for NN operators and their automatic 
-|   |   differentiation.
-|   ├── test_jit.py - Tests for the JIT compiler and TorchScript.
-|   ├── cpp/ - C++ unit tests for PyTorch C++ frontend.
-|   ├── expect/ - Automatically generated "expect" files which are used 
-|   |   to compare against expected output.
-|   └── onnx/ - Tests for ONNX export functionality, using both PyTorch 
-|       and Caffe2.
-└── caffe2/ - The Caffe2 library.
-    ├── core - Core files of Caffe2, e.g., tensor, workspace, blobs, etc.
-    ├── operators - Operators of Caffe2.
-    └── python - Python bindings to Caffe2. -->
-
-
 #### Build approach
 
 For development build, PyTorch and its third-party frameworks are built using Python Setup tools. We need to specify the command parameters if only part of the components are required to rebuild Pytorch. For users build, both package managers - Anaconda and pip could be used to build the whole project.
@@ -264,7 +220,7 @@ PyTorch has released 21 versions since 2016. We divided them into three stages. 
 
 ## Technical Debt
 
-Technical debt reflects the implicit cost of choosing a simple solution instead of using a better method that takes a longer time. <!-- Identifying and repaiding the technical debt is important as can accumulate interest the difficulties in implementing changes later on [[16]](#tb).  -->In this section, we first identify different forms of technical debts which include the keywords/tags, the complexity trend of the hotspot, code smell(temporal coupling and duplicated code), and bugs. We also list the methods to reduce or avoid these technical debts. Then, we discuss the testing debt. In the end, the evolution of technical debt is explained.
+Technical debt reflects the implicit cost of choosing a simple solution instead of using a better method that takes a longer time. In this section, we first identify different forms of technical debts which include the keywords/tags, the complexity trend of the hotspot, code smell(temporal coupling and duplicated code), and bugs. We also list the methods to reduce or avoid these technical debts. Then, we discuss the testing debt. In the end, the evolution of technical debt is explained.
 ### Identifying Technical debt
 
 The tools we used to identify the technical debts are listed below:
@@ -282,7 +238,6 @@ The reasons we decided to use these tools are:
 
 
 #### Keywords/tags
-<!-- The reasons why we analyze the keywords are that all these tags indicate there are technical debts which the developer noticed but did not fix. -->
 Keywords/tags indicates the technical debts which the developer noticed but did not fix. As along with the accumulation of tags, some of them may be forgotten, or become bugs [[13]](#bug_anno). Furthermore, these keywords may clutter the code and have negative effects on code comprehension [[13]](#bug_anno). This large amount of technical debts may make developers difficult to comprehend the code.
 
 We analyzed three kinds of keywords/tags "TODO"s, "FIXME"s and "XXX"s in PyTorch. We found that even though the tags have different names, but their contents are quite similar. We found 1098 "TODO"s. They are almost everywhere in PyTorch. 432 "TODO"s are in caffe2. There are 118 "FIXME"s, they are mainly in aten, caffe2, test, torch. There are 119 "XXX"s identified, 72 of them are in the main PyTorch component-torch. Some of the tags mentions who will fix it, none of them mentions when they will be fixed. Following are the examples:
@@ -307,13 +262,6 @@ As shown in Figure [[5]](#complexity), the complexity trend of hotspot `pytorch/
 ![#complexity](https://i.imgur.com/6mIn9eq.png)
 <center>Figure 5. Complexity trends of pytorch/test/test_jit.py</center>
 
-
-<!--The refactoring of the hotspot will lead to decrease in complexity. An example is shown in Figure [6](#complexity2). There is a downward slope in the complexity trend of the hotspot `pytorch/test/test_nn.py`. This is due the commit [#814b571](https://github.com/pytorch/pytorch/commit/814b5715ba42449f2231a40cdd93273ec6f7e76c#diff-d89baec73022f5f511c5beb5ce6498df) which moves the `new_module_tests` from `test_nn.py` to `common_nn.py`. 
-
-![#complexity2](https://i.imgur.com/V578i5d.png)
-<center>Figure 6. Complexity trends of pytorch/test/test_nn.py</center>
-
--->
 #### Temporal coupling
 
 Temporal coupling is a kind of codesmell. The large codebases with multiple developers may lead to technical debt. Even though at the beginning of development, developers separate the modules on purpose, the couplings may still form during development. The couplings among different modules lead to rigid system design and the difficulty of extending the features [[17]](#coupling-ana). Temporal coupling indicates how two or more modules change together over time. It can be obtained by calculating how often a module changes together with other modules. We used `Codescene` to visualize the temporal coupling.
@@ -363,11 +311,9 @@ After the analysis, we came up with the solutions to reduce or solve the technic
 
 ### Identifying Testing Debt
 
-
 ![](https://i.imgur.com/gDo5bw9.png)
 <center>Figure 12. Testing coverage</center>
 
-<!-- Testing is an essential component of a large and complicated project to keep every single functionality fully usable.  -->
 Testing debt exists due to the lack of testing or poor quality of testing. In this section, we analyze the testing debt of PyTorch.
 
 By using a Python IDE - PyCharm, we get a detailed test coverage showing the files coverage of the whole project and lines coverage of every single Python file (see **Figure 12**). Only 5% files and 32% lines are covered which are quite low. The reasons are two folds. One is that the tests (such as GPU test and distribution test) we run are not complete and the other one is that files in directories (e.g., `aten`, `c10`) are in C/C++ which could not be included.
@@ -376,8 +322,6 @@ Despite these exceptions, the test coverage is still not enough for such a widel
 
 
 ### The evolution of Technical Debt
-
-<!-- Besides the technical debt that is currently present in Pytorch, we also looked at the evolution of this software. Pytorch was released in 2016 and developed by Facebook's artificial-intelligence research group. Originally considered Pytorch as a Python package for GPU-accelerated deep neural network programming, it could complement or partially replace existing Python packages and statistics packages such as NumPy. 
 
 There are two variants of PyTorch. Originally, Pytorch was developed as a Python wrapper for the LuaJIT-based Torch framework[[19]](#1). Then, Pytorch became a completely new development. Unlike the old variant, PyTorch no longer uses the Lua language and LuaJIT. Instead, it's a native Python package.
 
@@ -422,7 +366,6 @@ According to the releases showing on the Github, Pytorch has released several ve
 ## Deployment View
 
 Deployment view determines the related environment to run the system. We will discuss the deployment view in the following passages and Figure [13](#deployment) is the overall figure of the deployment view of Pytorch.
-<!-- , such as the hardware support or hosting environment. Pytorch has clearly introduced its deployment for all interested stakeholders. It belongs to the situation that the system can be deployed into a different environment and the characteristic need to be clearly illustrated.  -->
 
 ![#deployment](https://i.imgur.com/AxTbBm0.png)
 
@@ -431,14 +374,10 @@ Deployment view determines the related environment to run the system. We will di
 ### Third Party Library
 
 Pytorch uses different libraries to develop its system. Those third-party libraries have been specifically introduced in section [Development View](#dev_view). Those third parties including `Numpy`, `Sphinx`, `pyyaml`, `CuDNN`, `MKL` etc., form third-party system requirements for running Pytorch and support the daily operating of Pytorch.
-<!-- NVIDIA CUDA Deep Neural Network library  -->
-<!-- the Intel® Math Kernel Library  -->
 
 ### Runtime platforms
 
 Pytorch does not want to give up a Python frontend but a Python frontend cannot deal with, e.g., a multithreaded environment, so Pytorch employs a C++ frontend but it mimics a Python frontend closely. Pytorch has several backend modules intead of one. The modules rely heavily on linear algebra libraries like `MKL` for CPU and deep neural network libraries like `CuDNN` for GPU. Pytorch requires a 64-bit CPU. An Intel CPU is preferred because `MKL` is tuned for an Intel architecture. To benefit from GPU acceleration, Pytorch only works on NVIDIA GPUs, because it requires CUDA support. For high-demanding tasks in research or production, it is suggested to use an HPC platform or a cloud platform, e.g. AWS.
-
-<!-- The reason it uses the C++ frontend instead of the Python frontend is to counter several cases where the Python frontend is bad, such as a multithreaded environment. But it does not want to give up the good side of the Python frontend so the C++ frontend  -->
 
 ### Operating systems
 
@@ -453,7 +392,6 @@ PyTorch can be installed and used in many types of operating systems.
     - Slackware, minimum version 14.2
     - Ubuntu, minimum version 13.04
 2. **MacOS**: PyTorch is supported on macOS 10.10 (Yosemite) or above. As MacOS does not has CUDA support building from binaries, it will not benefit from GPU accelaration.
-<!-- 3. Installation from source is required if users want to harness the full power of PyTorch’s CUDA support. -->
 3. **Windows**: PyTorch is supported on the following Windows distributions:
     - Windows 7 and greater; Recommended: Windows 10 and greater.
     - Windows Server 2008 r2 and greater.
@@ -489,21 +427,13 @@ Jeffrey Dean, Matthieu Devin, Sanjay Ghemawat, Ian Goodfellow, Andrew Harp, Geof
 S. Guadarrama, and T. Darrell. Caffe: Convolutional architecture for
 fast feature embedding. <i>arXiv:1408.5093>arXiv:1408.5093</i>, 2014</a>
 6. <a name="cntk">Seide, Frank & Agarwal, Amit. (2016). CNTK: Microsoft's Open-Source Deep-Learning Toolkit. 2135-2135. 10.1145/2939672.2945397. </a>
-<!--7. <a name="dlpack">DLPack github website, </a>https://github.com/dmlc/dlpack-->
 7. <a name="python-future">Python-future github website. </a>https://github.com/PythonCharmers/python-future
 8. <a name="numpy">Numpy github website. </a>https://github.com/numpy/numpy
 9. <a name="pyyaml">Pyyaml github website. </a>https://github.com/yaml/pyyaml
 10. <a name="setuptools">Setuptools documentation. </a>https://setuptools.readthedocs.io/en/latest/
 11. <a name="six">Six github website. </a>https://github.com/benjaminp/six
 12. <a name="matplotlib">Matplotlib github website. </a>https://github.com/matplotlib/matplotlib
-<!--14. <a name="sphinx">Sphinx github website. </a>https://github.com/sphinx-doc/sphinx
-15. <a name="breathe">Breathe github website. </a>https://github.com/michaeljones/breathe
-16. <a name="def_of_term">"Definition of the term "Technical Debt" (plus, some background information and an "explanation")". Techopedia. Retrieved August 11, 2016.
-</a>-->
 13. <a name="bug_anno">Margaret-Anne Storey, Jody Ryall, R. Ian Bull, Del Myers, Janice Singer, “TODO or To Bug:Exploring How Task Annotations Play a Role in the Work Practices of Software Developers”, InProceedings of the 30th Int’l. Conf. Software Engineering (ICSE ’08), pp. 251-260, 2008.</a>
-<!--18. <a name="inforworld">Facebook brings GPU-powered machine learning to Python </a>https://www.infoworld.com/article/3159120/facebook-brings-gpu-powered-machine-learning-to-python.html
-19. <a name="1">Getting started with Pytorch. </a>https://www.ibm.com/developerworks/cn/cognitive/library/cc-get-started-pytorch/index.html 
-20. <a name="debt-prone">XUAN, Jifeng; HU, Yan; JIANG, He. Debt-prone bugs: technical debt in software maintenance. arXiv preprint arXiv:1704.04766, 2017.</a>-->
 14. <a name="codescene">Codescene Guides-COMPLEXITY TRENDS </a>https://codescene.io/docs/guides/technical/complexity-trends.html
 15. <a name="blog">PyTorch blog.</a> https://pytorch.org/blog/a-tour-of-pytorch-internals-1/
 16. <a name="crystal">A Crystal Ball to Prioritise Technical Debt in Monoliths or Microservices: Adam Tornhill's Thoughts. </a>https://www.infoq.com/news/2017/04/tornhill-prioritise-tech-debt 
