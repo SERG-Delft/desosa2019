@@ -11,7 +11,7 @@ _Max de Krieger, David van der Leij, Sharon Grundmann, and Thomas Kolenbrander_
 ## Table of Contents
 
 -   [Introduction](#introduction)
--   [Stakeholders](#stakeholders)
+-   [Stakeholders](#stakeholder-influence)
 -   [Context View](#context-view)
 -   [Development View](#development-view)
 -   [Technical Debt](#technical-debt)
@@ -29,47 +29,47 @@ From there, we present two architectural views introduced by Rozanksi and Woods.
 
 We present the stakeholders of the Polymer project according to the stakeholder classes defined by Rozanski and Woods [^36]. In addition, we identify other stakeholder classes that are relevant to this project.
 
-#### Acquirer
+### Acquirer
 
 The acquirer of Polymer is Google as they oversee the project with their team.
 
-#### Assessors
+### Assessors
 
 Besides being the acquirer, Google can also be seen as the assessor of the project. Legal complications of the project are covered by a Contributor License Agreement (CLA) stating that contributors do not own any of the code they provided. Furthermore, the Polymer team also decides what standards to support, as stated in a blog post [^23].
 
-#### Communicators
+### Communicators
 
 The communicators consist of both the Polymer team and the Github contributors. External communication like contact with other stakeholders and marketing is done by the Polymer team while internal communication such as code reviews and documentation is done by both the Polymer team and Github contributors.
 
-#### Developers
+### Developers
 
 Polymer is developed by the Polymer team and Github contributors from the open-source community.
 
-#### Maintainers
+### Maintainers
 
 All developers can be considered maintainers as well. However, the Github contributors do not have any say in the future of Polymer as decisions like releases and roadmaps are made by the Polymer team. The members of the Google Polymer team that integrate new content (merge or close pull requests) are [Steve Orvell](https://github.com/sorvell) (lead engineer, project coordinator) [^13], [Kevin Schaaf](https://github.com/kevinpschaaf) (lead engineer, project coordinator) [^14], and [Daniel Freedman](https://github.com/azakus) [^15].
 
-#### Suppliers
+### Suppliers
 
 As a development and communication platform, Polymer makes use of Github. For distribution, the project relies on the npm package manager [^42]. As the Polymer core team is paid and maintained by Google, Google can be seen as a supplier of the project as well.
 
-#### Support staff
+### Support staff
 
 The actual staff consists of the Polymer core team and Github contributors. Communication channels between developers and users are available on Github, Twitter, Slack and Google Groups.
 
-#### Testers
+### Testers
 
 As all code committed should be tested, the developers (the Polymer team and Github contributors) are testers in the classical sense: They write tests for their code. Besides the developers, the users (mentioned below) can be seen as testers as well. They have the ability to report bugs on the Github page of Polymer.
 
-#### Users
+### Users
 
 Polymer is used in many applications world-wide and in many of Google's products as well. This includes YouTube, Google Earth and Google Music. Besides Google, other notable users are: [Netflix](https://netflix.com/), [ING](https://www.ing.com), [Coca-Cola](https://www.coca-cola.com/), [McDonald's](https://www.mcdonalds.com/) and [IBM](https://www.ibm.com) [^22].
 
-#### Regulatory structures
+### Regulatory structures
 
 The World Wide Web Consortium (W3C) is a regulatory stakeholder of the Polymer project. As the Polymer project directly involves creating and using web components, it is necessary that the team adheres to the web development standards maintained by W3C.
 
-#### Competitors
+### Competitors
 
 Another group of stakeholders are competitors. Although they are not directly involved with the project and its management, they have an interest in it and can indirectly influence the design of products and success of the project as a whole. Some competitors of the Polymer Project include [Angular](https://angular.io/) [^2], [Vue.js](https://vuejs.org/) [^40] and [React](https://reactjs.org/) [^20].
 
@@ -446,7 +446,7 @@ The analyzed pull requests below are the most commented pull requests from the w
 - __GF__ - Google employee makes a comment regarding the impact of the pull request on the current state of the project.
 - __GT__ - Google employee makes a technical comment.
 
-#### Approved - [#2642](https://github.com/Polymer/polymer/pull/2642/)
+### Approved - [#2642](https://github.com/Polymer/polymer/pull/2642/)
 
 _Created - 25-10-2015, merged - 04-12-2015, first included in Polymer v1.2.4_
 
@@ -465,7 +465,7 @@ The first Polymer team member to respond was [azakus](https://github.com/azakus)
 |  GF   | 2         |
 |  GT   | 0         |
 
-#### Approved - [#5000](https://github.com/Polymer/polymer/pull/5000)
+### Approved - [#5000](https://github.com/Polymer/polymer/pull/5000)
 
 _Created - 19-12-2017, merged - 10-12-2018, first included in Polymer v2.4.0_
 
@@ -484,7 +484,7 @@ The large amount of time merging took was partly due to the pull request only be
 |  GF   | 2         |
 |  GT   | 8         |
 
-#### Rejected - [#3954](https://github.com/Polymer/polymer/pull/3954)
+### Rejected - [#3954](https://github.com/Polymer/polymer/pull/3954)
 
 _Created - 14-09-2016, closed - 16-09-2017_
 
@@ -503,7 +503,7 @@ The code was reviewed extensively and approved by Google employee [rictic](https
 |  GF   | 1         |
 |  GT   | 2         |
 
-#### Approved - [#2689](https://github.com/Polymer/polymer/pull/2689)
+### Approved - [#2689](https://github.com/Polymer/polymer/pull/2689)
 
 _Created - 05-11-2015, merged - 04-12-2015, first included in Polymer v1.2.4_
 
