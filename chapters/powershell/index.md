@@ -6,6 +6,7 @@ chapter: true
 ---
 
 # PowerShell
+
 By [Sytze Andringa](https://github.com/SytzeAndr), [Youri Arkesteijn](https://github.com/Exclaminator), [Bram Crielaard](https://github.com/Geweldig), and [Luka Miljak](https://github.com/LMiljak)  
 _Delft University of Technology, 2019_  
 ![PowerShell Logo](images/powershell/PowerShellLogo.png)  
@@ -14,36 +15,15 @@ _Official PowerShell Core logo ([on GitHub](https://github.com/PowerShell/PowerS
 ## Table of Contents
 
 -   [Introduction](#introduction)
--   [1 Stakeholder Analysis](#stakeholder-analysis)
-    -   [1.1 Stakeholder Types](#stakeholder-types)
-    -   [1.2 Types Not Mentioned by Rozanski and Woods.](#types-not-mentioned-by-rozanski-and-woods.)
-    -   [1.3 Integrators For PowerShell](#integrators-for-powershell)
-    -   [1.4 Relevant People We Would Like To Contact](#relevant-people-we-would-like-to-contact)
-    -   [1.5 Pull Request Analysis](#pull-request-analysis)
-    -   [1.6 Power/Interest Grid](#powerinterest-grid)
--   [2 Context View](#context-view)
-    -   [2.1 System Scope](#system-scope)
-    -   [2.2 Context Diagram](#context-diagram)
--   [3 Development View](#development-view)
-    -   [3.1 Module Structure](#module-structure)
-    -   [3.2 Common Design](#common-design)
-    -   [3.3 Codeline Overview](#codeline-overview)
--   [4 Technical Debt](#technical-debt)
-    -   [4.1 Code Quality Debt](#code-quality-debt)
-    -   [4.2 Testing Debt](#testing-debt)
-    -   [4.3 Usage of Tools by The Community](#usage-of-tools-by-the-community)
-    -   [4.4 Recommendations](#recommendations)
--   [5 Functional Debt](#functional-debt)
-    -   [5.1 Defining Functional Debt](#defining-functional-debt)
-    -   [5.2 Backwards Compatibility](#backwards-compatibility)
-    -   [5.3 PowerShell’s Breaking Changes Contract](#powershells-breaking-changes-contract)
-    -   [5.4 Example](#example)
-    -   [5.5 Concluding Remarks](#concluding-remarks)
+-   [Stakeholder Analysis](#stakeholder-analysis)
+-   [Context View](#context-view)
+-   [Development View](#development-view)
+-   [Technical Debt](#technical-debt)
+-   [Functional Debt](#functional-debt)
 -   [Conclusion](#conclusion)
 -   [References](#references)
 
-Introduction
-------------
+## Introduction
 
 This chapter aims to describe and evaluate the architecture of [PowerShell](https://github.com/PowerShell/PowerShell). To quote their own description:
 
@@ -59,10 +39,9 @@ The Google Trends figure shows that PowerShell is slightly gaining in popularity
 
 The first section of this chapter showcases all the related stakeholders of PowerShell. The second section contains the context view, which describes the scope of the project and also its relation to external entities. The development view can be found in the third section, which dissects the system into multiple modules, describes some common design patterns in the code and also contains a short description of the build practices. This chapter also analyzes two types of debt in PowerShell: The technical debt in section four and the functional debt in section five. The final section gives a short conclusion on the architecture as a whole.
 
-1 Stakeholder Analysis
-----------------------
+## Stakeholder Analysis
 
-### 1.1 Stakeholder Types
+### Stakeholder Types
 
 Rozanski and Woods\[3\] define numerous types of stakeholders. This section contains an analysis of the different types mentioned and how they apply to the PowerShell project.
 
@@ -102,7 +81,7 @@ The testers make sure that PowerShell is fit for use. There are Microsoft employ
 
 There are many companies that use PowerShell in their working environment and as such they can be seen as major stakeholders. A good example is Michael Klement ([@mklement0 on GitHub](https://github.com/mklement0)), who has worked with PowerShell in a few different external professional environments\[5\]. These users influence which functionality needs to be added to the language, as well as possible changes which need to be introduced. However, the PowerShell committee still has the final say over any decision made.
 
-### 1.2 Types Not Mentioned by Rozanski and Woods.
+### Types Not Mentioned by Rozanski and Woods.
 
 #### Dependents
 
@@ -116,7 +95,7 @@ Tools which target PowerShell are –among others– ISESteroids\[6\], Visual St
 
 Competitors of PowerShell include shells such as Bash, Zsh, and Fish. They need to actively monitor each other’s evolution to see if they need to adapt their own system to stay competitive.
 
-### 1.3 Integrators For PowerShell
+### Integrators For PowerShell
 
 To decide which pull requests get merged the PowerShell project has two sets of members. Namely the PowerShell Committee and the Repository maintainers. If architectural changes are made to the system, or if new parameters are introduced to existing functions, they need to be approved by the PowerShell Committee. The committee maintains an overview of the project. They also make sure that all design changes fit the project and stay consistent with the rest of the codebase.\[9\]
 
@@ -124,7 +103,7 @@ For all other pull requests, the maintainers can take the decision to merge. The
 
 When analyzing the pull requests created for PowerShell we concluded that this is not just a guideline, but is actually used in practice.
 
-### 1.4 Relevant People We Would Like To Contact
+### Relevant People We Would Like To Contact
 
 We have concluded there are three people who we believe are interesting to contact. These people are [@iSazonov](https://github.com/iSazonov), [@mklement0](https://github.com/mklement0), and [@SteveL-MSFT](https://github.com/SteveL-MSFT).
 
@@ -134,7 +113,7 @@ mklement0 is extremely active in the community and has been using PowerShell in 
 
 SteveL-MSFT is a member of the PowerShell Committee and actively participates in discussion on most pull requests. Hearing the input of one of the core team members would shine light on the decisions made when designing the PowerShell architecture.
 
-### 1.5 Pull Request Analysis
+### Pull Request Analysis
 
 We analyzed 10 open and 10 closed pull requests. From analyzing these we conclude the following:
 
@@ -149,19 +128,18 @@ We analyzed 10 open and 10 closed pull requests. From analyzing these we conclud
 9.  People who have opened the issue are contacted to see if an issue is actually resolved by a pull request, and not just believed to be solved by the author.\[19\]
 10. Community members are contacted by the core team for their input, not just the seniors make every decision without talking to the rest of the community.\[20\]
 
-### 1.6 Power/Interest Grid
+### Power/Interest Grid
 
 Figure 1.1 shows how the stakeholders mentioned in section 1.2 and 1.3 can be classified in terms of power and interest.
 
 ![Power/Interest Grid](images/powershell/power-interest_grid.png)  
 **Figure 1.1**. A power/interest grid of several entities that have a relation with the system.
 
-2 Context View
---------------
+## Context View
 
 This section describes the Context view of the system. The view defines what PowerShell does, which is described in section 2.1 using a scope definition. Furthermore, the view also describes the relation between the system and external entities. These relations can be found in Section 2.2, where are Context diagram was used as the method of modeling these relations.
 
-### 2.1 System Scope
+### System Scope
 
 The scope definition of PowerShell is described as a list of **key** requirements of the systems. These requirements are as follows:
 
@@ -174,19 +152,18 @@ The scope definition of PowerShell is described as a list of **key** requirement
 -   It should be easy to learn by users even when coming from a similar tool (like Bash).\[32\]
 -   Updates should be backward compatible.\[33\]
 
-### 2.2 Context Diagram
+### Context Diagram
 
 The Context diagram (Figure 2.1) showcases the most important external entities of PowerShell and indicates what the relation between them and the system is.
 
 ![Context Diagram](images/powershell/context_diagram.png)  
 **Figure 2.1**. A Context diagram for PowerShell. It consists of mostly of the stakeholders mentioned in chapter 1, but also the development language `C#`, Azure continuous integration\[34\], and several other resources (books, package manager, …) for PowerShell users\[35\]. PowerShell is licensed under the MIT license\[36\]. All entities inside the blue area are owned by Microsoft.
 
-3 Development View
-------------------
+## Development View
 
 This section describes the Development Viewpoint of the system. Section 3.1 dissects PowerShell into multiple modules and shows the dependencies between them. 3.2 describes some design choices made for repeating problems. A short description of the build process is found in 3.3.
 
-### 3.1 Module Structure
+### Module Structure
 
 This section provides an overview of the module structure of PowerShell and what the dependencies between these modules are.
 
@@ -206,7 +183,7 @@ Lastly, the folder structure of the project does not correspond one-to-one with 
 
 This analysis of the modules within PowerShell and the dependencies between them was done using [code maps in Visual Studio Enterprise](https://docs.microsoft.com/en-us/visualstudio/modeling/map-dependencies-across-your-solutions?view=vs-2017). The actual description of each individual module was done by manually reviewing the code, as there is no larger document on the PowerShell repository mentioning the namespace overview or the folder structure.
 
-### 3.2 Common Design
+### Common Design
 
 This section identifies several commonalities in the code across different implementations. While PowerShell only imposes some minor design constraints in [their coding guidelines](https://github.com/PowerShell/PowerShell/blob/master/docs/dev-process/coding-guidelines.md), looking at the code one finds that there are some choices made that reflect some designs that the PowerShell developers prefer.
 
@@ -231,16 +208,15 @@ However, the code guidelines mention that runtime checks are acceptable if it gr
 
 **Interface Extension**. Sometimes interfaces need to be extended with new behavior. An example is the `ICommandRuntime` interface in the `Automation` namespace, which defines the set of functionality that must be implemented to directly execute an instance of `Cmdlet`. Later in the development process, the need arose to add functionality to this interface to add support writing an informational record to the host or user. Rather than adding this to the interface itself, PowerShell chooses to extends the `ICommandRuntime` interface with a new interface, appropriately named `ICommandRuntime2`. Note that this mostly only applies to interfaces and not classes.
 
-### 3.3 Codeline Overview
+### Codeline Overview
 
 PowerShell has build instructions for each mayor operating system\[37\]. Using Azure Pipelines, they run nightly builds for each operating system\[38\]. As per their [Testing Guidelines](https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md), contributors are expected to write automated tests for their code, which are actively checked in Pull Requests.
 
-4 Technical Debt
-----------------
+## Technical Debt
 
 Technical debt builds when development teams decide to implement an easy solution to their problem without thinking about extendability, either because of time constraints or inexperience. These “easy” solutions can take the shape of code which can not be extended without major refactors, or entire projects which are no longer worthwhile to maintain.
 
-### 4.1 Code Quality Debt
+### Code Quality Debt
 
 The repository was analyzed using CodeFactor and SonarQube\[39\]. The main issues found took the form of overly complex methods and style errors. Both of these hinder the extensibility and readability of the code. Ignoring auto-generated files, there are methods with a cyclomatic complexity [up to 405](https://www.codefactor.io/repository/github/powershell/powershell/issues?category=Complexity&groupId=54), and classes with a complexity [up to 1743](https://www.codefactor.io/repository/github/powershell/powershell/issues?category=Complexity&groupId=54&page=1). There also are many exceptions which are ignored without explanation, making it difficult to understand the intentional behavior.
 
@@ -258,7 +234,7 @@ By analyzing the historic data provided by CodeFactor we can see the number of i
 ![CodeFactor History](images/powershell/codefactor_history.png)  
 **Figure 4.2**. Code issue history.
 
-### 4.2 Testing Debt
+### Testing Debt
 
 Because of the high complexity of the codebase it is infeasible to write exhaustive tests. For example [this file](https://www.codefactor.io/repository/github/powershell/powershell/source/master/src/System.Management.Automation/engine/Modules/ModuleCmdletBase.cs#L1452) contains a method with a complexity of 405, meaning there should be 2<sup>405</sup> (~8x10<sup>121</sup>) test cases to test *this single method* exhaustively. Refactoring this method would improve testability and readability, as it has already been informally split by using comments.
 
@@ -279,7 +255,7 @@ Historically the coverage jumps between 40% and 60%. There are single commits wh
 ![Coverage Jumping 18%](images/powershell/coverage_jump.png)  
 **Figure 4.5**. The coverage jumping 18% between commits.
 
-### 4.3 Usage of Tools by The Community
+### Usage of Tools by The Community
 
 As is best practice PowerShell makes use of automated tools which aid the developer in writing code according to the standards defined by the development team. However, the development team does not take these rules to heart and disagrees with the results. [There are pull requests](https://github.com/PowerShell/PowerShell/pull/8500) to tweak these tools and better align them with the views of the development team. Unfortunately, these pull requests are often left open for months as no decision can be reached.
 
@@ -287,16 +263,15 @@ As a result of the development team not agreeing with their tools there are many
 
 A major issue which arose because of the decision to ignore the metrics is that old code suffers from technical debt which can not be resolved. For example, hard-coded version numbers can not be resolved, as PowerShell prioritizes backwards compatibility which would be broken by resolving the issue. This means if the analysis tools continue to be ignored, the codebase will continue to get worse over time with no way to fix it. As such, the tools should be configured correctly and their results should be used as suggestions for improvements, instead of being treated as annoyances.
 
-### 4.4 Recommendations
+### Recommendations
 
 The development team should prioritize paying their technical debt. The issues raised by CodeFactor should either be resolved, or rules should be adapted to accurately reflect the intentions of the development team. Files and methods should be split up to make the flow of code through the system easier to understand and to reduce the cyclomatic complexity. Also, the test coverage should be accurately reported, as well as more tests added, as there is uncommon intended behavior which is not covered by tests. All of these changes would result in a more newcomer friendly project, while also making it easier to spot mistakes early on in the process.
 
-5 Functional Debt
------------------
+## Functional Debt
 
 Functional debt is not a widely used term in software development. [Roman Predein](https://dzone.com/articles/functional-debt-vs-technical-debt-in-software-deve) mentioned that there are only a few references to this phenomenon and that they do not match how he sees it. We therefore conclude that, at the moment, functional debt has no “real” definition. Therefore, we explain in 5.1 what we regard as functional debt. 5.2 explains the relation between this debt and backwards compatibility. The rest of the subsections explain how it relates to PowerShell.
 
-### 5.1 Defining Functional Debt
+### Defining Functional Debt
 
 We consider functional debt to be *the amount of mismatches between expected and actual functionality*.
 
@@ -308,7 +283,7 @@ By *expected functionality* we mean what functionality the user would expect. Th
 
 As shown, usually functional debt can be prevented by having proper documentation and low technical debt. However, it is impossible to protect a project from every form of functional debt. A system should therefore acknowledge that functional debt can be introduced into the system, and should come up with a strategy to tackle it.
 
-### 5.2 Backwards Compatibility
+### Backwards Compatibility
 
 Functional debt can become an even bigger issue when considering backwards compatibility. If following backwards compatibility in the most strict sense possible, it would not be possible to fix any functional debt introduced earlier from the second or third categories as discussed earlier, since that would change the functionality of some already existing feature. If being less strict, it is possible to fix functional debt by allowing some forms of breaking changes. A policy for solving technical debt can be considered an important architectural design choice for systems where backwards compatibility plays a role.
 
@@ -319,7 +294,7 @@ To any contribution, we can assign a backwards compatibility cost and an amount 
 ![xkcd\_workflow](images/powershell/xkcd_workflow.png)  
 **Figure 5.1**. Strong backwards compatibility commitment makes it harder to fix functional bugs
 
-### 5.3 PowerShell’s Breaking Changes Contract
+### PowerShell’s Breaking Changes Contract
 
 PowerShell’s [breaking changes contract](https://github.com/PowerShell/PowerShell/blob/master/docs/dev-process/breaking-change-contract.md) explains how PowerShell handles backwards compatibility. We will view this contract from a functional debt perspective, which follows the rules defined earlier.
 
@@ -331,7 +306,7 @@ For the two grey areas, the backwards compatibility cost has to be determined by
 
 As explained earlier, when dealing with backwards compatibility we should think about how to handle bugs. PowerShell allows this under some circumstances, by allowing the change of *“any existing behavior that results in an error message”*. On the other hand, *“It doesn’t matter if the existing behavior is ‘wrong’”* and *“we must be extremely sensitive to breaking existing users and scripts”*. This shows that PowerShell has thought of this, by providing some kind of upper and lower bound of when the fix is allowed.
 
-### 5.4 Example
+### Example
 
 [Pull request \#1901](https://github.com/PowerShell/PowerShell/pull/1901) is a nice example where commitment towards backwards compatibility shows how functional debt grows over time.
 
@@ -341,7 +316,7 @@ As explained earlier, when dealing with backwards compatibility we should think 
 
 This showed that commitment towards backwards compatibility can lead to functional debt, which can be very hard or impossible to fix over time. If, at the time of implementing, one would have noticed it would increase functional debt, the issue could have been provoked and resolved, since it would not have introduced breaking compatibility cost.
 
-### 5.5 Concluding Remarks
+### Concluding Remarks
 
 There are numerous ways to prevent functional debt being introduced. Preventing functional debt is important when considering backwards compatibility. We think PowerShell can improve on this debt by focusing on the following:
 
@@ -350,8 +325,7 @@ There are numerous ways to prevent functional debt being introduced. Preventing 
 -   Provide indications how to measure backwards compatibility cost and functional debt to help in the decision making.
 -   Reduce technical debt so bugs are less likely to occur.
 
-Conclusion
-----------
+## Conclusion
 
 To quote the user [@mklement0](https://github.com/mklement0):
 
@@ -369,8 +343,7 @@ PowerShell has:
 
 All things considered, PowerShell does a relatively good job on their architecture. We hope that the future shows that it is possible to overcome the challenges which are currently present in the project.
 
-References
-----------
+## References
 
 \[1\] Wikipedia, “PowerShell: Versions.” \[Online\]. Available: <https://en.wikipedia.org/wiki/PowerShell#Versions>. \[Accessed: 10-Apr-2019\]
 
