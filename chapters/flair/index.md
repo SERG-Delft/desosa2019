@@ -11,54 +11,18 @@ chapter: true
 
 ## Table of contents
 
-- [Flair](#flair)
-  - [Table of contents](#table-of-contents)
-  - [1 Introduction](#1-introduction)
-  - [2 Stakeholders](#2-stakeholders)
-    - [2.1 Main stakeholders](#21-main-stakeholders)
-    - [2.2 Other stakeholders](#22-other-stakeholders)
-    - [2.3 Stakeholder analysis: Power vs Interest Grid](#23-stakeholder-analysis-power-vs-interest-grid)
-    - [2.4 Relevant people to contact](#24-relevant-people-to-contact)
-  - [3 Context View](#3-context-view)
-    - [3.1 System scope](#31-system-scope)
-    - [3.2 External entities and interfaces](#32-external-entities-and-interfaces)
-  - [4 Development View](#4-development-view)
-    - [4.1 Module structure and organization](#41-module-structure-and-organization)
-    - [4.2 Common design model](#42-common-design-model)
-      - [4.2.1 Common processing](#421-common-processing)
-      - [4.2.2 Standardization of design](#422-standardization-of-design)
-      - [4.2.3 Standardization of Testing](#423-standardization-of-testing)
-      - [4.2.4 Standard software components](#424-standard-software-components)
-    - [4.3 Codeline models](#43-codeline-models)
-  - [5 Technical Debt](#5-technical-debt)
-    - [5.1 Pylint](#51-pylint)
-    - [5.2 SonarQube](#52-sonarqube)
-      - [5.2.1 Bugs](#521-bugs)
-      - [5.2.2 Vulnerabilities](#522-vulnerabilities)
-      - [5.2.3 Code smells](#523-code-smells)
-      - [5.2.4 Duplications](#524-duplications)
-    - [5.3 Dependencies on developers](#53-dependencies-on-developers)
-    - [5.4 TODO and FIXME comments](#54-todo-and-fixme-comments)
-    - [5.5 Testing debt](#55-testing-debt)
-      - [5.5.1 Testing procedure](#551-testing-procedure)
-      - [5.5.2 Code coverage](#552-code-coverage)
-      - [5.5.2 Actions to improve testing](#552-actions-to-improve-testing)
-    - [5.6 Discussions about technical debt](#56-discussions-about-technical-debt)
-    - [5.7 Payment of technical debt](#57-payment-of-technical-debt)
-    - [5.8 Evolution perspective](#58-evolution-perspective)
-  - [6 Functional View](#6-functional-view)
-    - [6.1 Functional capabilities](#61-functional-capabilities)
-    - [6.2 Functional structure model](#62-functional-structure-model)
-  - [7 Performance and scalability perspective](#7-performance-and-scalability-perspective)
-    - [7.1 Performance](#71-performance)
-    - [7.2 Scalability](#72-scalability)
-  - [8 Conclusion](#8-conclusion)
+  - [Introduction](#introduction)
+  - [Stakeholders](#stakeholders)
+  - [Context View](#context-view)
+  - [Development View](#development-view)
+  - [Technical Debt](#technical-debt)
+  - [Functional View](#functional-view)
+  - [Performance and scalability perspective](#performance-and-scalability-perspective)
+  - [Conclusion](#conclusion)
   - [Appendix](#appendix)
-    - [A. Pull requests analysis](#a-pull-requests-analysis)
-    - [B. Contact persons](#b-contact-persons)
   - [References](#references)
 
-## 1 Introduction
+## Introduction
 
 [Flair](https://github.com/zalandoresearch/flair/) is a state-of-the-art open source natural language processing framework 
 developed by [Zalando Research](https://research.zalando.com/). Zalando Research is part of the fashion platform
@@ -80,7 +44,7 @@ combination of different word and document embeddings including the proposed
 Flair embeddings, BERT and ELMo  embeddings. It is built directly on PyTorch
 which allows for ease of use in training and experimenting with models.
 
-## 2 Stakeholders
+## Stakeholders
 
 Stakeholders in a software system refers to the individual, team or organisation that have interest in said system being realized. Each of these stakeholders have their vested
 interests and needs from the system. A myriad of stakeholders are involved in activites such as 
@@ -92,7 +56,7 @@ We use the description of stakeholders obtained from Rozanski and Woods [^1] to 
 These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not part of the Rozanski and Woods classification, are described as
 **Other Stakeholders**.
 
-### 2.1  Main stakeholders
+### Main stakeholders
 
 | Type                    | Description  |
 | ----------------------- | ------------|
@@ -112,7 +76,7 @@ These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not 
 
 ![Flair's Stakeholders](images/flair/stakeholder-diagram_resized.png)
 
-### 2.2 Other stakeholders
+### Other stakeholders
 
 **Researchers and Scientists**:
 They use the system to research and present 
@@ -167,7 +131,7 @@ required changes or other contributors have a chance to solve the
 issue as well. After reviewing the code and 
 checking for errors, the PR that meet their requirements are merged. 
 
-### 2.3 Stakeholder analysis: Power vs Interest Grid
+### Stakeholder analysis: Power vs Interest Grid
 
 Based on Mendelow's Power vs Interest Grid [^2], the groups of stakeholders necessary to be managed closely 
 are classified.  
@@ -182,13 +146,13 @@ suppliers do not. Suppliers have more power and should they decide to stop suppl
 will have to adapt their products accordingly. The contributors, maintainers and developers need to be managed closely because of their inherent interest in the product
 and the power they hold in influencing design and development. 
 
-### 2.4 Relevant people to contact
+### Relevant people to contact
 
 By analyzing the online community around Flair we found that the following people 
 are the most involved in the project. The relevant people and persons of interests 
 were identified and can be found in [Appendix B](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#b-contact-persons).
 
-## 3 Context View
+## Context View
 
 Context view describes a software's dependencies, integrations, scope, 
 responsibilities and interface with external entities. In Flair's context, 
@@ -196,7 +160,7 @@ we will show a context view diagram, discuss the system scope and analyze the in
 
 ![Context View diagram](images/flair/context-view.png)
 
-### 3.1 System scope
+### System scope
 
 Flair is a research project of Zalando Research, in the area of NLP. Flair is a 
 cutting edge NLP framework, advancing over all the other existing methodologies. 
@@ -212,7 +176,7 @@ capabilities [^3].
 * Supports 36 word embeddings for 31 different languages, character embeddings, Byte Pair embeddings (275 languages supported) and stacked embeddings.
 * There were 7 different releases till now and the current version is `Version 0.4.1`.
 
-### 3.2 External entities and interfaces
+### External entities and interfaces
 
 *  Flair is licensed under the following MIT License (MIT) Copyright 2018 [Zalando SE](https://tech.zalando.com).
 *  It is written in Python 3.6, which provides the framework and programming language.
@@ -223,7 +187,7 @@ capabilities [^3].
 *  It has interfaces that allows to combine different word and document embeddings, including BERT embeddings, Flair embeddings and ELMo embeddings.
 *  Flair [hosts](https://github.com/zalandoresearch/flair/blob/master/SECURITY.md) their bug bounty program privately on [HackerOne](https://www.hackerone.com/).
 
-## 4 Development View
+## Development View
 
 Through the theory of development view, we address several aspects of the system development process. Due to the associated 
 complexity of the framework being built, the expertise of the core developers 
@@ -242,7 +206,7 @@ extracting the first and last character cell states.
 This word embedding is then passed into a sequence labeler, such as a vanilla BiLSTM-CRF, 
 achieving robust state-of-the-art results on downstream tasks.
 
-### 4.1 Module structure and organization
+### Module structure and organization
  
 In this section, we detail Flair's module organization, as well as important 
 dependencies between modules, in order to obtain a good understanding of 
@@ -269,13 +233,13 @@ in order to determine the classification algorithm.
 document length, batch size, or weights. The results are tested by 
 visualizing plots and training curves.
 
-### 4.2 Common design model
+### Common design model
 
 This section covers Flair's **Common Design Model**. Commonality 
 across different versions of Flair is done by defining a set of strict design
 constraints.
 
-#### 4.2.1 Common processing
+#### Common processing
 
 In Flair there is common processing among different elements 
 in order to simplify the integration of code units and scripts. We discuss the
@@ -330,7 +294,7 @@ using this [form](https://corporate.zalando.com/en/services-and-contact#security
 are first tested. Once they pass the tests, the datasets are added to the available corpora 
 and the resultant embeddings trained are added. 
 
-#### 4.2.2 Standardization of design
+#### Standardization of design
 
 The Flair repository has the 
 [Contributor Covenant Code of Conduct and Contribution](https://www.contributor-covenant.org/) guidelines.
@@ -378,7 +342,7 @@ contributors rather than what is mandated by the developers. It makes it more di
 to the project because the developers might want to see particular code patterns, but these patterns are not communicated 
 to contributors.
 
-#### 4.2.3 Standardization of Testing
+#### Standardization of Testing
 
 The standards of testing in Flair are mainly dependent upon integration checks and verification of pull requests that developers make. In this section, the tools used for testing purposes are discussed.
 
@@ -400,7 +364,7 @@ necessary conditions. The *.zappr.yaml* file contains other details on how to de
 
 
 
-#### 4.2.4 Standard software components
+#### Standard software components
 
 * The dependencies on which Flair depends are standard components required for 
 the funcitoning of the Flair Model. This can be seen in the 
@@ -418,7 +382,7 @@ they're merged into the master branch.
 
 
 
-### 4.3 Codeline models
+### Codeline models
 
 
 * **Source code structure**: The complete directory organization of Flair can be seen in *Figure 4.4*.
@@ -469,7 +433,7 @@ authorization.
 
 ![Directory organization of Flair and simplified version of the directory strcuture with added explanation](images/flair/Codestructure2_resized.png)
 
-## 5 Technical Debt
+## Technical Debt
 
 Technical debt is a metaphor that describes the immature artifact in the process of software 
 development, that causes an additional rework because of choosing an easy solution over a better approach that would
@@ -479,7 +443,7 @@ In this section, we will discuss the technical debt and its handling by the comm
 For this purpose, we used two tools, Pylint and SonarQube to analyze the code quality of Flair.
  
 
-### 5.1 Pylint
+### Pylint
 
 [Pylint](https://www.pylint.org/) is a bug and quality checker for Python which follows the style
 recommended by Python style guide PEP 8.
@@ -503,7 +467,7 @@ and might end up causing unnecessary dependencies when extended.
 
 ![Top 15 violations detected by pylint](images/flair/pylint_resized.PNG)
 
-### 5.2 SonarQube
+### SonarQube
 
 [SonarQube](https://www.sonarqube.org/) is a framework that detect bugs, code smells, duplicate code,
 and security vulnerabilities of a program in many languages, including
@@ -511,7 +475,7 @@ Python.
 
 ![Technical debt of each module](images/flair/technical-debt_resized.PNG)
 
-#### 5.2.1 Bugs 
+#### Bugs 
 
 SonarQube detected 18 bugs in Flair codebase. All the 18 bugs are major issues,
 and hence the code quality has been graded as C. All the bugs are related to the
@@ -520,14 +484,14 @@ These can be fixed by either removing the redundant variable or by assigning it 
 
 ![Detected bugs](images/flair/SQResults_resized.PNG)
 
-#### 5.2.2 Vulnerabilities
+#### Vulnerabilities
 
 Vulnerability detected by SonarQube is 0%, that means code quality is very good 
 from security point of view. The code quality has been graded as A.
 
 ![Code quality](images/flair/SecurityResults_resized.PNG)
 
-#### 5.2.3 Code smells
+#### Code smells
 
 Code smells are one of the major contributors to technical debts, and indicates 
 the weakness of the code, and may cause the increased risk of failures or bugs. 
@@ -539,7 +503,7 @@ These code smells therefore makes the program slower as well as increases the ch
 
 ![Code smells](images/flair/Code_Smells_resized.PNG)
 
-#### 5.2.4 Duplications
+#### Duplications
 
 One of the worst coding practices is duplication. Duplicating a block of code not 
 only replicates the potential issues but also breaches the coding standards. 
@@ -551,7 +515,7 @@ in the abstract base class that could be used by the different child classes.
 
 ![Line duplications](images/flair/Duplication_resized.PNG)
 
-### 5.3 Dependencies on developers
+### Dependencies on developers
 
 It is noticeable that the product development is highly dependent on two of the 
 core developers, Akbik and Bergmann. A huge difference between the 
@@ -563,7 +527,7 @@ must be equally contributing.
 
 ![Main developers](images/flair/developerDependency_resized.PNG)
 
-### 5.4 TODO and FIXME comments
+### TODO and FIXME comments
 
 TODO or FIXME are 
 the special type of comments that can be added inside the line or block comments
@@ -581,7 +545,7 @@ creating techincal debt.
 The small number of TODO comments is actually an indication of good coding practice, but 
 still these remaining ones needs to be fixed.
 
-### 5.5 Testing debt
+### Testing debt
 
 A part of technical debt is to measure how thoroughly the software is tested. 
 This is also called the **testing debt** of the system. 
@@ -589,7 +553,7 @@ Even though a program may be tested regularly after a change is made in the code
 it is important that all modules of the program are covered by the tests. 
 In other words, we need to ensure that the **code coverage** is high.
 
-#### 5.5.1 Testing procedure
+#### Testing procedure
 
 Flair uses [Travis CI](https://travis-ci.org/zalandoresearch/flair) to test 
 their product. Each commit to the git repository 
@@ -599,7 +563,7 @@ virtual environment, then the test modules under the `tests/` directory will be
 run in this virtual environment. The code must pass all the tests. 
 There are 12 tests in total.
 
-#### 5.5.2 Code coverage
+#### Code coverage
 
 [Pytest](http://pytest.org) is a framework that can be used to both test and 
 report the code coverage of a Python program. We used this tool to find Flair’s 
@@ -621,14 +585,14 @@ code coverage would be rather low.
 
 ![Code coverage of each module](images/flair/code-coverage_resized.PNG)
 
-#### 5.5.2 Actions to improve testing
+#### Actions to improve testing
 
 As discussed earlier that many conditions are not hit due to the separated
 conditions for each language, the testing could then be improved by 
 augmenting the test resources. Although, we also note that this could
 drastically improve the testing time.
 
-### 5.6 Discussions about technical debt
+### Discussions about technical debt
 
 There are no discussions about the technical debt between the developers, which 
 is quite shocking. It seems like they are not using any code quality tools. 
@@ -636,7 +600,7 @@ Regardless, the code quality is of the highest level, which actually is a
 good thing. However, its highly recommended to use one so as to avoid having any 
 future technical debts.
 
-### 5.7 Payment of technical debt
+### Payment of technical debt
 
 We tried to pay the technical debt by improving the code quality from Grade C to 
 Grade A. This is done by fixing all the 18 major bugs that are detected in
@@ -651,7 +615,7 @@ merged. Also, the code build was verified and passed in Travis CI.
 
 ![Pull request](images/flair/pullRequestCreated_resized.PNG)
 
-### 5.8 Evolution perspective
+### Evolution perspective
 
 Development of Flair was started in the summers of 2018 by Zalando Research and is licensed under MIT [^3]. It was made an open source Python project by Zalando SE in June, 2018 [^3].
 Its based on the research done by Akbik et al. Akbik is the main developer since the start of the project and still is the head developer.
@@ -668,11 +632,11 @@ which must also be taken into consideration.
 
 ![Flair's releases](images/flair/flair-timeline_new_resized.png)
 
-## 6 Functional View
+## Functional View
 
 Functional view mainly describes systems architectural elements. It explains about primary interactions between the functional elements, their exposed interfaces and their responsibilities [^1].
 
-### 6.1 Functional capabilities 
+### Functional capabilities 
 
 Functional capabilities define what the system is required to do and what it is not required to do [^1]. 
 Flair has many capabilities and some of the most vital ones are listed in the table
@@ -694,7 +658,7 @@ below.
 
 *Table 6.1: Some of Flair's most vital modules*
 
-### 6.2 Functional structure model
+### Functional structure model
 
 Flair has three major functional elements: embeddings, model trainer, and
 train and file utitilies. Flair uses its train and file utilities to read
@@ -707,9 +671,9 @@ tagging, and sequence tagging using one of these embeddings.
 ![Flair's functional structure model diagram](images/flair/features_overviewfinal_resized.png)
 
 
-## 7 Performance and scalability perspective
+## Performance and scalability perspective
 
-### 7.1 Performance
+### Performance
 
 | Task | Language | Dataset | Flair | Previous best |
 | -------------------------------  | ---  | ----------- | ---------------- | ------------- |
@@ -736,7 +700,7 @@ improvement in the training speed compared to the previous versions of Flair (2x
 Flair achieved optimal results in text classification outperforming `Facebook's FastText` in accuracy & `Google’s AutoML Natural Language` in training speed on `Kaggle’s SMS Spam Detection Dataset` [^6].
  Flair model achieved an f1-score of 0.973 after 10 epochs while `FastText` achieved f1-score of 0.883 [^6]. It beats `AutoML` in terms of training speed and achieved slightly better accuracy than it [^5].
 
-### 7.2 Scalability
+### Scalability
 
 Scalabiity with regards to Flair involves handling larger corpus of text in a quick manner with appropriately scaled usage of hardware.
 It is difficult to gauge the growth of Flair considering the increase in data set size. Although, until now it has been able to handle
@@ -761,7 +725,7 @@ addition of such features is made easy. Multiple-tasks learning can be included
 along with multi-GPU support with the changes to the new CUDA semantics. 
 These features while make scaling of Flair easier. 
 
-## 8 Conclusion
+## Conclusion
 
 Flair provides an innovative framework for natural language processing. Within a short period of time, 
 Flair has grown fast and challenges existing NLP frameworks. This growth has been 
