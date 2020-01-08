@@ -18,6 +18,7 @@ Welcome to the markdown file for Cataclysm Dark Days Ahead
 -->
 
 # Cataclysm: Dark Days Ahead _(CDDA)_
+
 [Aniket Samant](https://github.com/asamant), [Gerardo Moyers](https://github.com/gerardomoyers), [Joan Marce Igual](https://github.com/jmigual), [Naveen Chakravarthy](https://github.com/naveenspace7)
 
 ## Table of contents
@@ -43,6 +44,7 @@ It is now the property of an organization called [CleverRaven](https://github.co
     - Project evolution during time
 
 ## Stakeholders
+
 <!-- github link:[Cataclysm: Dark Days Ahead](https://github.com/CleverRaven/Cataclysm-DDA/graphs/contributors) -->
 
 By looking at the [github contributions](https://github.com/CleverRaven/Cataclysm-DDA/graphs/contributors) the most active stakeholders in CDDA project are [_BevapDin_](https://github.com/BevapDin), [_Kevingranade_](https://github.com/Kevingranade), [_Mugling_](https://github.com/Mugling), [_Rivet-The-Zombie_](https://github.com/Rivet-The-Zombie), [_Coolthulhu_](https://github.com/Coolthulhu) and [_KA101_](https://github.com/KA101). Using the definitions of Rozanski and Woods, the _stakeholders_ can be classified into:
@@ -98,6 +100,7 @@ Three stakeholders manage the changes made in the project. These are [_BevapDin_
 Solving an issue is not a trivial task. Even thought the issue is solved in terms of programming, there are some factors that have to be taken into account like the writing style and not adding more bugs instead.  
 
 ### Relevant people to contact
+
 After analyzing the project's stakeholders, four contributors have been found to have the biggest understanding of the project code and its goal. These are:
 
 1. [Kevingranade](https://github.com/kevingranade)
@@ -119,6 +122,7 @@ C:DDA is a video game designed to run on a laptop or a desktop computer. C:DDA g
 ![Context schema](images/ContextView_CataclysmDDA_2.png)
 
 ### Distributions
+
 The game is available in the form of:
 - *Stable Releases* (Windows and Linux platforms)
 - *Experimental Builds* (Windows, Linux, and OSX platforms)
@@ -137,6 +141,7 @@ The game is mainly written in C++, and most of the data (mods, items, NPCs, etc.
 [SDL](https://www.libsdl.org/) and [ncurses](https://www.gnu.org/software/ncurses/ncurses.html) are also used.
 
 #### Compilers
+
 The game can be compiled using the following:
 - GCC
 - Clang
@@ -172,6 +177,7 @@ The project is licensed under the [Creative Commons Attribution-ShareAlike 3.0 U
 ## Development Viewpoint
 
 ### Introduction
+
 CDDA is a vast project with approximately 251k lines of code (as reported by SonarQube). The structure of the files is not considered to be the best given the way everything is structured (more depth analysis done in the later sections). All the source files are contained at a single level making the code management very difficult. To get a clear understanding for the development view, efforts were put to segregate the monolithic module into components to enable clear visualization of the underlying functionality.
 
 ### Module Organization
@@ -247,7 +253,6 @@ The releases of the game are automatically created and uploaded into the release
 
 Another way that the developers use to know how the game is behaving is through instrumentation. This is done through debug builds that print messages to the console that later can be used to understand how the code was behaving when an error ocurred. This is the default build method of Cataclysm-DDA and to disable it the flag `RELEASE=1` has to be added when calling `make`.
 
-
 ## Functional Viewpoint
 
 As part of a new perspective, we chose to add this viewpoint as it is more relevant in terms of the game structure. The game is [turn-based](https://en.wikipedia.org/wiki/Turn-based_strategy) in which the player makes a move (turn), the NPCs subsequently make their own moves, and then the control is returned to the player ad infinitum. This sequence goes on till the user decides to quit the game (or is killed). 
@@ -288,24 +293,19 @@ The `game` module's `do_turn()` function is called in every `while` loop iterati
 - (Re-) drawing the visible map
 - Processing sounds
 
-
 #### player and NPC
 
 The player of the game is modelled as a `user` object with which interactions occur. Player actions are accumulated in a data structure and then the `game` objects processes the actions one at a time. The user can quit the game at any point, or can be killed - each of which causes the game loop to be broken and the game to end. The game polls for player's input in the `while` loop under the function `do_turn()`.
 
 The NPCs are modelled similar to the user object and their interactions are with the `game` object. Sounds and actions are processed in every `do_turn()` iteration.
 
-
 #### Event_manager
 
 Each components during the their initialization, register their events that should occur periodically. Few such events could be changing the daylight in the game every thirty minutes, healing wounds of the character (player or NPC) by a certain amount every one hour, changing the season in the game every three months. During every iteration of `do_turn()`, the registered events are checks for triggering them individually to change their state and later update their effect on other components.
 
-
-
 ### Summary of functional viewpoint
 
 Since this is a single-threaded game in which everything (game actions, sounds, graphics) gets processed in one loop, the interactions between the various elements are simple and can be understood by going through the code step by step (there's no scope for race conditions). The inter-element interactions are mainly the ones between the character objects and the main game object instance, and the rest of the interactions are miscellaneous functions related to game startup, load/save, etc.
-
 
 ## Technical Debt
 
@@ -395,7 +395,6 @@ Though the project suffers from a lot of issues related to technical debt, it ca
 
 A project like Cataclysm:DDA runs on ideas provided by developers and non-developers alike for new features (weapons, food, etc.), and it is only expected that a good volume of defect debt will persist. Those features may require a lot of rework to be backward compatible, and adding them with the "TODO"s would probably be the fastest way to roll them out. This is a structural issue that cannot really have a solution in a project of such a dynamic nature, and it can only be managed, not eliminated.
 
-
 ## Conclusion
 
 This chapter was a result of analysis of the project Cataclysm:DDA. The game could be appreciated for its complexiety, which is obvious based on the fact that it doesn't use any external game engines. The game is fully written in C++11. Unlike other open source projects where sometimes there are big companies supporting them, as this game is mainly for entertainment, the stakeholders are mostly players that play the game and also take multiple roles at developing it.
@@ -409,6 +408,7 @@ With roughly 200 components in a flat structure in the game, it is onerous for o
 Upon analyzing, we suggest that it is high time that the architecture be split into modules before the maintainability goes off hand.
 
 ## References
+
 1. Nick Rozanski and Eoin Woods. Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives. Addison-Wesley, 2012.
 2. Cataclysm-DDA rules for contributors, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md
 3. Cataclysm-DDA git commit message template, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage
