@@ -11,43 +11,52 @@ chapter: true
 
 ## Table of contents
 
-* [1 Introduction](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#1-introduction)
-* [2 Stakeholders](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#2-stakeholders)
-    * [2.1 Main stakeholders](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#21-main-stakeholders)
-    * [2.2 Other stakeholders](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#22-other-stakeholders)
-    * [2.3 Stakeholder analysis: Power vs Interest Grid](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#23-stakeholder-analysis-power-vs-interest-grid)
-    * [2.4 Relevant people to contact](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#24-relevant-people-to-contact)
-* [3 Context view](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#3-context-view)
-    * [3.1 System scope](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/edit/master/report.md#31-system-scope)
-    * [3.2 External entities and interfaces](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/edit/master/report.md#32-external-entities-and-interfaces)
-* [4 Development view](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#4-development-view)
-    * [4.1 Module structure and organization](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#41-module-structure-and-organization)
-    * [4.2 Common Design Model](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#42-common-design-model)
-        * [4.2.1 Common Processing](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#421-common-processing)
-        * [4.2.2 Standardization of Design](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#422-standardization-of-design)
-        * [4.2.3 Standardization of Testing](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#423-standardization-of-testing)
-        * [4.2.4 Standard Software Components](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#424-standard-software-components)
-    * [4.3 Codeline models](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#45-codeline-model)
-* [5 Technical debt](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#5-technical-debt)
-    * [5.1 Pylint](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#51-pylint)
-    * [5.2 SonarQube](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#52-sonarqube)
-    * [5.3 Dependencies on developers](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#53-dependencies-on-developers)
-    * [5.4 TODO and FIXME comments](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#54-todo-and-fixme-comments)
-    * [5.5 Testing debt](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#55-testing-debt)
-    * [5.6 Discussions about technical debt](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#56-discussions-about-technical-debt)
-    * [5.7 Payment of technical debt](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#57-payment-of-technical-debt)
-    * [5.8 Evolution perspective](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#58-evolution-perspective)
-* [6 Functional View](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#6-functional-view)
-    * [6.1 Functional capabilities](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#61-functional-capabilities)
-    * [6.2 Functional structure model](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#61-functional-structure-model)
-* [7 Performance and scalability perspective](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#7-performance-and-scalability-perspective)
-    * [7.1 Performance](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#71-performance)
-    * [7.2 Scalability](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#72-scalability)
-* [8 Conclusion](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#8-conclusion)
-* [Appendix](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#appendix)
-    * [A. Pull requests](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#a-pull-requests-analysis)
-    * [B. Contact persons](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#b-contact-persons)
-* [References](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#references)
+- [Flair](#flair)
+  - [Table of contents](#table-of-contents)
+  - [1 Introduction](#1-introduction)
+  - [2 Stakeholders](#2-stakeholders)
+    - [2.1 Main stakeholders](#21-main-stakeholders)
+    - [2.2 Other stakeholders](#22-other-stakeholders)
+    - [2.3 Stakeholder analysis: Power vs Interest Grid](#23-stakeholder-analysis-power-vs-interest-grid)
+    - [2.4 Relevant people to contact](#24-relevant-people-to-contact)
+  - [3 Context View](#3-context-view)
+    - [3.1 System scope](#31-system-scope)
+    - [3.2 External entities and interfaces](#32-external-entities-and-interfaces)
+  - [4 Development View](#4-development-view)
+    - [4.1 Module structure and organization](#41-module-structure-and-organization)
+    - [4.2 Common design model](#42-common-design-model)
+      - [4.2.1 Common processing](#421-common-processing)
+      - [4.2.2 Standardization of design](#422-standardization-of-design)
+      - [4.2.3 Standardization of Testing](#423-standardization-of-testing)
+      - [4.2.4 Standard software components](#424-standard-software-components)
+    - [4.3 Codeline models](#43-codeline-models)
+  - [5 Technical Debt](#5-technical-debt)
+    - [5.1 Pylint](#51-pylint)
+    - [5.2 SonarQube](#52-sonarqube)
+      - [5.2.1 Bugs](#521-bugs)
+      - [5.2.2 Vulnerabilities](#522-vulnerabilities)
+      - [5.2.3 Code smells](#523-code-smells)
+      - [5.2.4 Duplications](#524-duplications)
+    - [5.3 Dependencies on developers](#53-dependencies-on-developers)
+    - [5.4 TODO and FIXME comments](#54-todo-and-fixme-comments)
+    - [5.5 Testing debt](#55-testing-debt)
+      - [5.5.1 Testing procedure](#551-testing-procedure)
+      - [5.5.2 Code coverage](#552-code-coverage)
+      - [5.5.2 Actions to improve testing](#552-actions-to-improve-testing)
+    - [5.6 Discussions about technical debt](#56-discussions-about-technical-debt)
+    - [5.7 Payment of technical debt](#57-payment-of-technical-debt)
+    - [5.8 Evolution perspective](#58-evolution-perspective)
+  - [6 Functional View](#6-functional-view)
+    - [6.1 Functional capabilities](#61-functional-capabilities)
+    - [6.2 Functional structure model](#62-functional-structure-model)
+  - [7 Performance and scalability perspective](#7-performance-and-scalability-perspective)
+    - [7.1 Performance](#71-performance)
+    - [7.2 Scalability](#72-scalability)
+  - [8 Conclusion](#8-conclusion)
+  - [Appendix](#appendix)
+    - [A. Pull requests analysis](#a-pull-requests-analysis)
+    - [B. Contact persons](#b-contact-persons)
+  - [References](#references)
 
 ## 1 Introduction
 
@@ -71,7 +80,7 @@ combination of different word and document embeddings including the proposed
 Flair embeddings, BERT and ELMo  embeddings. It is built directly on PyTorch
 which allows for ease of use in training and experimenting with models.
 
-## 2  Stakeholders
+## 2 Stakeholders
 
 Stakeholders in a software system refers to the individual, team or organisation that have interest in said system being realized. Each of these stakeholders have their vested
 interests and needs from the system. A myriad of stakeholders are involved in activites such as 
@@ -685,7 +694,7 @@ below.
 
 *Table 6.1: Some of Flair's most vital modules*
 
-### 6.1 Functional structure model
+### 6.2 Functional structure model
 
 Flair has three major functional elements: embeddings, model trainer, and
 train and file utitilies. Flair uses its train and file utilities to read
