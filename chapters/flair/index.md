@@ -79,7 +79,7 @@ building, testing, debugging, etc. It is imperative to identify individuals or g
 likely to affect or be affected by a proposed action and sorting them according to their interactions. 
 Stakeholder analysis is done so as to identify and prioritize the role of the stakeholders. 
 
-We use the description of stakeholders obtained from Rozanski and Woods [[1]](#ref1) to classify stakeholders.
+We use the description of stakeholders obtained from Rozanski and Woods [^1] to classify stakeholders.
 These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not part of the Rozanski and Woods classification, are described as
 **Other Stakeholders**.
 
@@ -160,7 +160,7 @@ checking for errors, the PR that meet their requirements are merged.
 
 ### 2.3 Stakeholder analysis: Power vs Interest Grid
 
-Based on Mendelow's Power vs Interest Grid [[2]](#ref2), the groups of stakeholders necessary to be managed closely 
+Based on Mendelow's Power vs Interest Grid [^2], the groups of stakeholders necessary to be managed closely 
 are classified.  
 
 
@@ -192,7 +192,7 @@ we will show a context view diagram, discuss the system scope and analyze the in
 Flair is a research project of Zalando Research, in the area of NLP. Flair is a 
 cutting edge NLP framework, advancing over all the other existing methodologies. 
 The scope of Flair is well defined and its current version includes the following 
-capabilities [[3]](#ref3).
+capabilities [^3].
   
 * Built upon Pytorch 0.4+ which is compatible on all operating systems: Windows, MacOS and other Unix-based OSs, and that helps in training your own models.
 * Can be easily installed using a [pip command](https://github.com/zalandoresearch/flair#requirements-and-installation).
@@ -237,7 +237,7 @@ achieving robust state-of-the-art results on downstream tasks.
  
 In this section, we detail Flair's module organization, as well as important 
 dependencies between modules, in order to obtain a good understanding of 
-Flair's code structure, based on [[1]](#ref1). The inter dependency of the modules are shown in *Figure 4.2*.
+Flair's code structure, based on [^1]. The inter dependency of the modules are shown in *Figure 4.2*.
 
 
 ![Module Organization of Flair](images/flair/Module_Organization_1_resized.png)
@@ -644,15 +644,15 @@ merged. Also, the code build was verified and passed in Travis CI.
 
 ### 5.8 Evolution perspective
 
-Development of Flair was started in the summers of 2018 by Zalando Research and is licensed under MIT [[3]](#ref3). It was made an open source Python project by Zalando SE in June, 2018 [[3]](#ref3).
+Development of Flair was started in the summers of 2018 by Zalando Research and is licensed under MIT [^3]. It was made an open source Python project by Zalando SE in June, 2018 [^3].
 Its based on the research done by Akbik et al. Akbik is the main developer since the start of the project and still is the head developer.
 
-The first draft of the project `Version 0.1.0` was released on Jul 13, 2018 [[3]](#ref3). Since then, 998 commits have been done to the master and 7 different versions have been released, 
-with `Version 0.4.1` being the latest [[3]](#ref3). Technical debt is paid in every release by timely fixing bugs. Also, code is being reorganized if needed, which helps in reducing 
+The first draft of the project `Version 0.1.0` was released on Jul 13, 2018 [^3]. Since then, 998 commits have been done to the master and 7 different versions have been released, 
+with `Version 0.4.1` being the latest [^3]. Technical debt is paid in every release by timely fixing bugs. Also, code is being reorganized if needed, which helps in reducing 
 technical debt like duplications. Documentation is done for every new feature add or for any updation. Different new features were added and improvements were done over the period 
 of time in different releases. Some of the key features of different releases are shown in *Figure 5.12*.
 
-There are 93 issues still open, and 294 are closed [[3]](#ref3). Most of the open issues are of `question` label, but the bug count must be kept zero. Also, there are 6 pending pull requests, 
+There are 93 issues still open, and 294 are closed [^3]. Most of the open issues are of `question` label, but the bug count must be kept zero. Also, there are 6 pending pull requests, 
 which must also be taken into consideration.
 
 ![Code frequency](images/flair/codeFrequencyDiagram_resized.PNG)
@@ -661,11 +661,11 @@ which must also be taken into consideration.
 
 ## 6 Functional View
 
-Functional view mainly describes systems architectural elements. It explains about primary interactions between the functional elements, their exposed interfaces and their responsibilities [1].
+Functional view mainly describes systems architectural elements. It explains about primary interactions between the functional elements, their exposed interfaces and their responsibilities [^1].
 
 ### 6.1 Functional capabilities 
 
-Functional capabilities define what the system is required to do and what it is not required to do [1]. 
+Functional capabilities define what the system is required to do and what it is not required to do [^1]. 
 Flair has many capabilities and some of the most vital ones are listed in the table
 below.
 
@@ -721,11 +721,11 @@ different range of NLP tasks like Chunking, Named Entity Recognition, Part-of-Sp
 tagging. It supports best embedding configurations for each task. The performance 
 is measured over evaluation datasets, and the F1 score for each dataset is 
 calculated by averaging over five runs 
-[[3]](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#ref3). In the latest release `Version 0.4.1`, there is a huge 
-improvement in the training speed compared to the previous versions of Flair (2x training speed for language models)[[3]](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#ref3).
+[^7]. In the latest release `Version 0.4.1`, there is a huge 
+improvement in the training speed compared to the previous versions of Flair (2x training speed for language models)[^7].
 
-Flair achieved optimal results in text classification outperforming `Facebook's FastText` in accuracy & `Google’s AutoML Natural Language` in training speed on `Kaggle’s SMS Spam Detection Dataset` [[6]](#ref6).
- Flair model achieved an f1-score of 0.973 after 10 epochs while `FastText` achieved f1-score of 0.883 [[6]](#ref6). It beats `AutoML` in terms of training speed and achieved slightly better accuracy than it [[5]](#ref5).
+Flair achieved optimal results in text classification outperforming `Facebook's FastText` in accuracy & `Google’s AutoML Natural Language` in training speed on `Kaggle’s SMS Spam Detection Dataset` [^6].
+ Flair model achieved an f1-score of 0.973 after 10 epochs while `FastText` achieved f1-score of 0.883 [^6]. It beats `AutoML` in terms of training speed and achieved slightly better accuracy than it [^5].
 
 ### 7.2 Scalability
 
@@ -773,7 +773,7 @@ The pull requests made through github are analysed using standard code of conduc
 
 | ID   | Pull Request | Status | Details |
 | ---- | ------------ | ------ |-------- |
-| [#399](https://github.com/zalandoresearch/flair/pull/399) | Add new ELMoTransformerEmbeddings class | merged | In this pull request, the contributor adds new class named ‘ELMoTransformerEmbeddings’ for Parts of speech tagging. In NLP, PoS tagging is an important step towards processing. The new class gets embeddings from a transformer-based ELMo model from another contributor [@brendan-ai2](https://github.com/brendan-ai2) which one uses for training. The allennlp library is used for PoS tagging. Though the version of allennlp used was not yet updated in the flair main system, so testing was separately done and this successful testing outside the main system with latest version of allennlp suggested a good merge. So, it is merged but as experimental.|
+| [#399](https://github.com/zalandoresearch/flair/pull/399) | Add new ELMoTransformerEmbeddings class | merged | In this pull request, the contributor adds new class named ‘ELMoTransformerEmbeddings’ for Parts of speech tagging. In NLP, PoS tagging is an important step towards processing. The new class gets embeddings from a transformer-based ELMo model from another contributor @[brendan-ai2](https://github.com/brendan-ai2) which one uses for training. The allennlp library is used for PoS tagging. Though the version of allennlp used was not yet updated in the flair main system, so testing was separately done and this successful testing outside the main system with latest version of allennlp suggested a good merge. So, it is merged but as experimental.|
 | [#523](https://github.com/zalandoresearch/flair/pull/523) | GH-522: Transformer-XL embeddings | merged | This PR adds a new embedding class for _Transformer-XL_ model. Initially the tokens from a sentence were returned with tokens tag only bur this also included enumerated token tags. Also, the F-score of the tests increases a lot with the new embedding and the PR was accepted. |
 | [#473](https://github.com/zalandoresearch/flair/pull/473) | GH-438: added byte pair embeddings | merged | It embeds BPEmb library for for sequential tagging. It adds the _BPEmbSerializable_ (BPEmb) class which embeds sequential tagging using torch library in tensors. It was accepted because the sequential tagging can also be deserialized when required like updating the cache_dir variable. The changes are merged after the development of the software and launch. |
 | [#164](https://github.com/zalandoresearch/flair/pull/164) | Added class-based metrics | merged | This basically improves the metric class through updating the `TextClassifierTrainer` function and removing `calculate_class_metrics` and the `calculate_micro_avg_metric`. The changes are merged after the development of the software and launch.  |
@@ -782,10 +782,10 @@ The pull requests made through github are analysed using standard code of conduc
 | [#551](https://github.com/zalandoresearch/flair/pull/551) | GH-550: Fix bert model check | merged | This PR fixes an #550  which occurred due to a code fix mistake from the [#523](https://github.com/zalandoresearch/flair/pull/523). The issue raised becaused the code did not include bert_model in BERT_PRETRAINED_MODEL_ARCHIVE_MAP.keys(). The inclusion of the model was tested successfully and merged. |
 | [#555](https://github.com/zalandoresearch/flair/pull/555) | Remove BERT_PRETRAINED_MODEL_ARCHIVE_MAP check to support Custom models | merged | This issue was due to version change of pytorch-pretrained-bert. This issue was also raised at [#554](https://github.com/zalandoresearch/flair/pull/554). the BERT_PRETRAINED_MODEL_ARCHIVE_MAP was removed from the model as solution. |
 | [#71](https://github.com/zalandoresearch/flair/pull/71) | GH-38: Add label class for sentences to hold label name and confidence value | merged | It introduces a new class `lebel` which creates new label for the sentence. Each label has name and confidence value (between 0 and 1). It is used to predict return label/tag plus confidence value. It was merged after the development and launch of the system.|
-| [#519](https://github.com/zalandoresearch/flair/pull/519) | Added PubMed embeddings computed by @jessepeng | merged | A character LM over PubMed abstracts was calculated by [@jessepeng](https://github.com/jessepeng). This PR embeds the `PubMed` to the system with `FlairEmbeddings` model. Additionally, it needed a few details like batch size, layers, hidden size, train size etc for the documentation which was added by this PR. It was merged after the development and launch of the system.|
-| [#88](https://github.com/zalandoresearch/flair/pull/88) | embeddings.py 213 214 a warning | closed | GitHub user [@wuwingzhou828](https:/github.com/wuwingzhou828) proposed a change to certain lines of code in the section where the standard static word embeddings are defined including GloVe or FastText. It pertained to an if statement, where in case a certain precomputed word embedding already existed that particular embedding is fetched using the `token.test` parameter. Initially the change is accepted by Alan Akbik but merging is held on until all test were completed.  However, the user made some errors in the correction as well and therefore the request was closed by Tanja Bergmann.|
+| [#519](https://github.com/zalandoresearch/flair/pull/519) | Added PubMed embeddings computed by @jessepeng | merged | A character LM over PubMed abstracts was calculated by @[jessepeng](https://github.com/jessepeng). This PR embeds the `PubMed` to the system with `FlairEmbeddings` model. Additionally, it needed a few details like batch size, layers, hidden size, train size etc for the documentation which was added by this PR. It was merged after the development and launch of the system.|
+| [#88](https://github.com/zalandoresearch/flair/pull/88) | embeddings.py 213 214 a warning | closed | GitHub user @[wuwingzhou828](https:/github.com/wuwingzhou828) proposed a change to certain lines of code in the section where the standard static word embeddings are defined including GloVe or FastText. It pertained to an if statement, where in case a certain precomputed word embedding already existed that particular embedding is fetched using the `token.test` parameter. Initially the change is accepted by Alan Akbik but merging is held on until all test were completed.  However, the user made some errors in the correction as well and therefore the request was closed by Tanja Bergmann.|
 | [#490](https://github.com/zalandoresearch/flair/pull/490) | GH-68 Bert update | closed | Pull request was made to clear issue [#68](https://github.com/zalandoresearch/flair/pull/68) regarding the implementation of a pipeline by a transformer based model implemented by OpenAI. The issues pertaining to addition of transformer models are discussed. They added Bert embeddings to the library. As a result the pull request refers to changes in the files setup.py and pytorch, thereby updating the BERT version. However, a newer version updated by user stefan-it was released with the updates made in Flair version 0.6.1. |
-| [#22](https://github.com/zalandoresearch/flair/pull/22) | GH-226: add safeguard for non-tokenized input | closed | User [@jfilter](https://github.com/jfliter) opened a request to address the issue of a `ValueError` if the input is not whitespace tokenized and no tokenizer is used and therefore causes an infinite loop. However, the issue was already fixed in GH-232: multi dataset training [#236](https://github.com/zalandoresearch/flair/pull/236)  |
+| [#22](https://github.com/zalandoresearch/flair/pull/22) | GH-226: add safeguard for non-tokenized input | closed | User @[jfilter](https://github.com/jfliter) opened a request to address the issue of a `ValueError` if the input is not whitespace tokenized and no tokenizer is used and therefore causes an infinite loop. However, the issue was already fixed in GH-232: multi dataset training [#236](https://github.com/zalandoresearch/flair/pull/236)  |
 | [#494](https://github.com/zalandoresearch/flair/pull/494) | calculate macro-f-score as average of class f scores | closed | There was probably an error in calculation of macro F1. Flair is taking average of class precisions and recalls and then calculates F1. As far as is known, it should be F1 calculated over classes and then averaged. This issue is fixed in [#521](https://github.com/zalandoresearch/flair/pull/521). Hence the pull request is closed by Alan Akbik. This pertains to the initial fix not working in updated version which was then fixed in a later pull request. Therefore this pull request is deprecated by the fixes made in the newer pull request. |
 | [#246](https://github.com/zalandoresearch/flair/pull/246) | GH-243: dataset downloader | closed | This refers to the dataset downloader and updates made to the dependencies and corpora. The DataFetcher would now download corpora by checking its availability. However, the updated library did not pass one of two tests to check for validity and the request was closed. |
 | [#13](https://github.com/zalandoresearch/flair/pull/13) | GH-12: naming conventions | closed | Request made by Alan Akbik to update the naming conventions associated with module imports, training classes and embedding classes. Changes were deprecated with new pull request that was merged - GH-12 naming conventions [#14](https://github.com/zalandoresearch/flair/pull/14). This allowed for better class and file matchings and easier imports of embeddings. |
@@ -800,13 +800,13 @@ The pull requests made through github are analysed using standard code of conduc
 
 | Name | GitHub | Role | Twitter |
 | ---- | ------ | ---- | ------- | 
-| Alan Akbik |  [@alanakbik](https://github.com/alanakbik)| Zalando, Developer and Maintainer | [@alan_akbik](https://twitter.com/alan_akbik) |
-| Duncan Blythe | [@blythed](https://github.com/blythed) | Zalando, Developer |    - |
-| Henning Jacobs | [@hjacobs](https://github.com/hjacobs) | Zalando, Head of Developer Productivity  | [@try_except_](https://twitter.com/try_except_) |
-| Tanja Bergmann | [@tabergma](https://github.com/tabergma)  | Zalando, Developer and Maintainer |    - |
-| Per Ploug | [@perploug](https://github.com/perploug)  | Zalando, Open Source Manager | [@pploug](https://twitter.com/pploug) |
-| Kashiv Rasul | [@kashif](https://github.com/kashif)  | Zalando, Developer | [@krasul](https://twitter.com/krasul) |
-| Stefan Schweter | [@stefan-it](https://github.com/stefan-it) | Munich Digitization Centre at the Bavarian State Library, Developer|    - |
+| Alan Akbik |  @[alanakbik](https://github.com/alanakbik)| Zalando, Developer and Maintainer | @[alan_akbik](https://twitter.com/alan_akbik) |
+| Duncan Blythe | @[blythed](https://github.com/blythed) | Zalando, Developer |    - |
+| Henning Jacobs | @[hjacobs](https://github.com/hjacobs) | Zalando, Head of Developer Productivity  | @[try_except_](https://twitter.com/try_except_) |
+| Tanja Bergmann | @[tabergma](https://github.com/tabergma)  | Zalando, Developer and Maintainer |    - |
+| Per Ploug | @[perploug](https://github.com/perploug)  | Zalando, Open Source Manager | @[pploug](https://twitter.com/pploug) |
+| Kashiv Rasul | @[kashif](https://github.com/kashif)  | Zalando, Developer | @[krasul](https://twitter.com/krasul) |
+| Stefan Schweter | @[stefan-it](https://github.com/stefan-it) | Munich Digitization Centre at the Bavarian State Library, Developer|    - |
 
 *Table B.1: People most involved in Flair's development*
 
@@ -814,9 +814,10 @@ The pull requests made through github are analysed using standard code of conduc
 
 ## References
 
-* <a name="ref1">[1]</a> Rozanski, N. & Woods, E. (2011). Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. Addison-Wesley.
-* <a name="ref2">[2]</a> Mendelow, A. L. (1981, December). Environmental Scanning-The Impact of the Stakeholder Concept. In ICIS (p. 20).
-* <a name="ref3">[3]</a> Flair. (2019, February). [zalandoresearch/flair: A very simple framework for state-of-the-art Natural Language Processing (NLP)](https://github.com/zalandoresearch/flair).
-* <a name="ref3">[4]</a> Akbik, A., Blythe, D., & Vollgraf, R. (2018). [Contextual string embeddings for sequence labeling](https://aclanthology.coli.uni-saarland.de/papers/C18-1139/c18-1139). In Proceedings of the 27th International Conference on Computational Linguistics (pp. 1638-1649).
-* <a name="ref4">[5]</a> Magajna, T. (2019). [How to Beat Google’s AutoML - Hyperparameter Optimisation with Flair](https://towardsdatascience.com/how-to-beat-automl-hyperparameter-optimisation-with-flair-3b2f5092d9f5).
-* <a name="ref4">[6]</a> Magajna, T. (2018). [Text Classification with State of the Art NLP Library — Flair](https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f).
+[^1]: Rozanski, N. & Woods, E. (2011). Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. Addison-Wesley.
+[^2]: Mendelow, A. L. (1981, December). Environmental Scanning-The Impact of the Stakeholder Concept. In ICIS (p. 20).
+[^3]: Flair. (2019, February). [zalandoresearch/flair: A very simple framework for state-of-the-art Natural Language Processing (NLP)](https://github.com/zalandoresearch/flair).
+[^4]: Akbik, A., Blythe, D., & Vollgraf, R. (2018). [Contextual string embeddings for sequence labeling](https://aclanthology.coli.uni-saarland.de/papers/C18-1139/c18-1139). In Proceedings of the 27th International Conference on Computational Linguistics (pp. 1638-1649).
+[^5]: Magajna, T. (2019). [How to Beat Google’s AutoML - Hyperparameter Optimisation with Flair](https://towardsdatascience.com/how-to-beat-automl-hyperparameter-optimisation-with-flair-3b2f5092d9f5).
+[^6]: Magajna, T. (2018). [Text Classification with State of the Art NLP Library — Flair](https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f).
+[^7]: https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#ref3
