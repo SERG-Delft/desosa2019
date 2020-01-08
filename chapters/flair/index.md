@@ -1,3 +1,11 @@
+---
+layout: default
+project: flair
+title: "Flair"
+chapter: true
+---
+# Flair
+
 ![](images/flair/Capture_resized.PNG)
 
 ## Table of contents
