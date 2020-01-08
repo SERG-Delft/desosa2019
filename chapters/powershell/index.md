@@ -1,3 +1,10 @@
+---
+layout: default
+project: powershell
+title: PowerShell
+chapter: true
+---
+
 # PowerShell
 By [Sytze Andringa](https://github.com/SytzeAndr), [Youri Arkesteijn](https://github.com/Exclaminator), [Bram Crielaard](https://github.com/Geweldig), and [Luka Miljak](https://github.com/LMiljak)  
 _Delft University of Technology, 2019_  
