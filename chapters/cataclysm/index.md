@@ -119,7 +119,7 @@ Apart from the stakeholders described in the previous section, the project relie
 
 C:DDA is a video game designed to run on a laptop or a desktop computer. C:DDA gives the users an uncompromising survival scenario, and it also helps gamers in developing problem-solving abilities. This game only has the responsibility of entertainment for users, with the highest quality achievable. 
 
-![Context schema](images/ContextView_CataclysmDDA_2.png)
+![Context schema](images/cataclysm/ContextView_CataclysmDDA_2.png)
 
 ### Distributions
 
@@ -182,7 +182,7 @@ CDDA is a vast project with approximately 251k lines of code (as reported by Son
 
 ### Module Organization
 
-![Module Structure](images/components.png)
+![Module Structure](images/cataclysm/components.png)
 
 Most of the information is taken from the documentation [^6]. Each component defined in the following diagram is presented in the code in the form of classes. These components are categorized into layers with respect to their functionality and level of operation.
 
@@ -235,7 +235,7 @@ Continuos integration is a development technique used when many developers work 
 
 Through the CI, they make sure that the code compiles properly and then they execute the tests to check that the new changes do not break any existing code. There's also an additional test that builds the code and deploys a new build if it is merged, it also checks for a properly formed pull request message. They use [Jenkins](https://ci.narc.ro/) in this last check.
 
-![Continuous integration](images/ci.png)
+![Continuous integration](images/cataclysm/ci.png)
 
 #### Building
 
@@ -247,7 +247,7 @@ The building process is done through GNU make. The makefile defined has differen
 
 The releases of the game are automatically created and uploaded into the release website [^7] every time that a pull request is merged by using a Jenkins script.
 
-![Releases](images/Release_Cataclysm.png)
+![Releases](images/cataclysm/Release_Cataclysm.png)
 
 #### Instrumentation
 
@@ -259,7 +259,7 @@ As part of a new perspective, we chose to add this viewpoint as it is more relev
 
 Based on this idea, the game is run in the form of a single `while` loop which calls several functions related to each character's turn and their interactions related to other components. From a high-level perspective, the functioning of the game can be represented graphically as seen below
 
-![Context schema](images/functional_viewpoint_img.png)
+![Context schema](images/cataclysm/functional_viewpoint_img.png)
 
 <!-- Is "modules" the right title? -->
 ### Modules 
@@ -323,7 +323,7 @@ Though the project's repository provides a direct Visual Studio solution consist
 
 SonarQube was attempted to be used to analyze the project for metrics, but using the standard SonarScanner installation (through SonarCloud) for C++ failed to work, and hence an open source SonarQube plugin, [Sonar-cxx](https://github.com/SonarOpenCommunity/sonar-cxx) was used instead. The following analysis is provided:
 
-![SonarQube analysis](images/sonar_analysis.PNG)
+![SonarQube analysis](images/cataclysm/sonar_analysis.PNG)
 
 CppCheck provides more insights about the code, as seen below.
 
@@ -331,13 +331,13 @@ CppCheck provides more insights about the code, as seen below.
 (Special thanks to [Matthias Endler](https://matthias-endler.de/awesome-static-analysis/) for providing a comprehensive list of tools available for code analysis of C/C++ source code.)
 -->
 
-![Types of problems](images/Types_of_problems.png)
+![Types of problems](images/cataclysm/Types_of_problems.png)
 
 We see that there are very few *errors* in the code, and most of the reported [problems](http://cppcheck.net/manual.html#idm100) pertain to styling issues and warnings (which must not be overlooked, ideally). 
 
 In order to understand the issues related to code smells, performing an in-depth analysis yields the following data:
 
-![Code smells](images/Code_smells.png)
+![Code smells](images/cataclysm/Code_smells.png)
 
 A pattern is observed in the 251k lines of code calculated using the tools - some code smells stand out more than others, and the following set of code smells shows up prominently:
 - A lot of lines of code start with a string constant - error prone in terms of assigning string values while writing code
@@ -378,7 +378,7 @@ On going through the commit history of the source code, it can be seen that righ
 
 Defect debt has also risen over the years, as can be seen below. These numbers are from commits made at some points in the years mentioned.
 
-![Evolution of defect](images/todo-evolution.png)
+![Evolution of defect](images/cataclysm/todo-evolution.png)
 
 Given that the game runs on ideas for new features like weapons, food, abilities, etc. (for instance, see [PR #29366](https://github.com/CleverRaven/Cataclysm-DDA/pull/29366)), defect debt is expected to increase with the increasing popularity of the game.
 
