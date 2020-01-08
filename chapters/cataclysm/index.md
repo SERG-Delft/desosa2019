@@ -407,21 +407,6 @@ With roughly 200 components in a flat structure in the game, it is onerous for o
 
 Upon analyzing, we suggest that it is high time that the architecture be split into modules before the maintainability goes off hand.
 
-## References
-
-[^1]: Nick Rozanski and Eoin Woods. Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives. Addison-Wesley, 2012.
-[^2]: Cataclysm-DDA rules for contributors, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md
-[^3]: Cataclysm-DDA git commit message template, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage
-[^4]: Cataclysm-DDA code style rules, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/CODE_STYLE.md
-[^5]: Cataclysm-DDA JSON file contents, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_INFO.md
-[^6]: Module documentation, http://dev.narc.ro/cataclysm/doxygen/pages.html
-[^7]: Cataclysm-DDA Linux Tiles releases, http://dev.narc.ro/cataclysm/jenkins-latest/Linux_x64/Tiles/
-
-[cataclysmGithub]: https://github.com/CleverRaven/Cataclysm-DDA
-[cataclysmURL]: https://cataclysmdda.org/
-[cataclysmOriginalGithub]: https://github.com/Whales/Cataclysm
-
-
 ***
 ## Annex A - PR Analysis
 
@@ -500,3 +485,17 @@ Was meant for fixing an [issue](https://github.com/CleverRaven/Cataclysm-DDA/iss
 
 #### 10. [Increases blocking ability of smaller shields - #21503](https://github.com/CleverRaven/Cataclysm-DDA/pull/21503) - (July 2017)
 Wanted to increase the blocking capability of smaller shields and included changes to JSON files related to the shield component. The author found the idea of increasing blocking ability for smaller shields not right in its essence. As the owner was ignoring the changes the author himself closed the PR.
+
+## References
+
+[^1]: Nick Rozanski and Eoin Woods. Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives. Addison-Wesley, 2012.
+[^2]: Cataclysm-DDA rules for contributors, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md
+[^3]: Cataclysm-DDA git commit message template, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage
+[^4]: Cataclysm-DDA code style rules, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/CODE_STYLE.md
+[^5]: Cataclysm-DDA JSON file contents, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_INFO.md
+[^6]: Module documentation, http://dev.narc.ro/cataclysm/doxygen/pages.html
+[^7]: Cataclysm-DDA Linux Tiles releases, http://dev.narc.ro/cataclysm/jenkins-latest/Linux_x64/Tiles/
+
+[cataclysmGithub]: https://github.com/CleverRaven/Cataclysm-DDA
+[cataclysmURL]: https://cataclysmdda.org/
+[cataclysmOriginalGithub]: https://github.com/Whales/Cataclysm
