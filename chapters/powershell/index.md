@@ -29,9 +29,9 @@ This chapter aims to describe and evaluate the architecture of [PowerShell](http
 
 > PowerShell Core is a cross-platform (Windows, Linux, and macOS) automation and configuration tool/framework that works well with your existing tools and is optimized for dealing with structured data (e.g. JSON, CSV, XML, etc.), REST APIs, and object models. It includes a command-line shell, an associated scripting language and a framework for processing cmdlets.
 
-The framework was initially released in 2006 for Windows\[1\]. A decade later, in 2016, PowerShell went open-source and became available for Linux and macOS platforms as well. It now has the benefit of an entire community contributing to the system. Figure 0.1 shows a simple overview of the history.
+The framework was initially released in 2006 for Windows[^1]. A decade later, in 2016, PowerShell went open-source and became available for Linux and macOS platforms as well. It now has the benefit of an entire community contributing to the system. Figure 0.1 shows a simple overview of the history.
 
-![History of PowerShell](images/powershell/history.png) **Figure 0.1** History of PowerShell\[2\].
+![History of PowerShell](images/powershell/history.png) **Figure 0.1** History of PowerShell[^2].
 
 ![Google Trends of PowerShell and competitors](images/powershell/trends.png) **Figure 0.2** Google Trends of PowerShell and two of its competitors: cmd.exe and Bash.
 
@@ -43,7 +43,7 @@ The first section of this chapter showcases all the related stakeholders of Powe
 
 ### Stakeholder Types
 
-Rozanski and Woods\[3\] define numerous types of stakeholders. This section contains an analysis of the different types mentioned and how they apply to the PowerShell project.
+Rozanski and Woods[^3] define numerous types of stakeholders. This section contains an analysis of the different types mentioned and how they apply to the PowerShell project.
 
 #### Acquirers
 
@@ -75,11 +75,11 @@ Microsoft themselves handle the support for PowerShell. It is possible for end u
 
 #### Testers
 
-The testers make sure that PowerShell is fit for use. There are Microsoft employees who focus specifically on testing and continuous integration, such as [@JamesWTruher](https://github.com/JamesWTruher). Tests need to be created or adapted with every pull requests that introduces new functionality, and developers are encouraged to write their own tests. There is a rigorous testing policy for contributions to PowerShell\[4\].
+The testers make sure that PowerShell is fit for use. There are Microsoft employees who focus specifically on testing and continuous integration, such as [@JamesWTruher](https://github.com/JamesWTruher). Tests need to be created or adapted with every pull requests that introduces new functionality, and developers are encouraged to write their own tests. There is a rigorous testing policy for contributions to PowerShell [^4].
 
 #### Users
 
-There are many companies that use PowerShell in their working environment and as such they can be seen as major stakeholders. A good example is Michael Klement ([@mklement0 on GitHub](https://github.com/mklement0)), who has worked with PowerShell in a few different external professional environments\[5\]. These users influence which functionality needs to be added to the language, as well as possible changes which need to be introduced. However, the PowerShell committee still has the final say over any decision made.
+There are many companies that use PowerShell in their working environment and as such they can be seen as major stakeholders. A good example is Michael Klement ([@mklement0 on GitHub](https://github.com/mklement0)), who has worked with PowerShell in a few different external professional environments[^5]. These users influence which functionality needs to be added to the language, as well as possible changes which need to be introduced. However, the PowerShell committee still has the final say over any decision made.
 
 ### Types Not Mentioned by Rozanski and Woods.
 
@@ -89,7 +89,7 @@ Dependents are users of PowerShell who do not necessarily know they are using Po
 
 #### Development Tools
 
-Tools which target PowerShell are –among others– ISESteroids\[6\], Visual Studio Code\[7\], and PowerShell Studio\[8\]. These systems provide tools for easy writing and editing PowerShell scripts.
+Tools which target PowerShell are –among others– ISESteroids[^6], Visual Studio Code[^7], and PowerShell Studio[^8]. These systems provide tools for easy writing and editing PowerShell scripts.
 
 #### Competitors
 
@@ -97,9 +97,9 @@ Competitors of PowerShell include shells such as Bash, Zsh, and Fish. They need 
 
 ### Integrators For PowerShell
 
-To decide which pull requests get merged the PowerShell project has two sets of members. Namely the PowerShell Committee and the Repository maintainers. If architectural changes are made to the system, or if new parameters are introduced to existing functions, they need to be approved by the PowerShell Committee. The committee maintains an overview of the project. They also make sure that all design changes fit the project and stay consistent with the rest of the codebase.\[9\]
+To decide which pull requests get merged the PowerShell project has two sets of members. Namely the PowerShell Committee and the Repository maintainers. If architectural changes are made to the system, or if new parameters are introduced to existing functions, they need to be approved by the PowerShell Committee. The committee maintains an overview of the project. They also make sure that all design changes fit the project and stay consistent with the rest of the codebase.[^9]
 
-For all other pull requests, the maintainers can take the decision to merge. The maintainers make sure the code style is consistent and the code is of high quality. This means they have to make sure details such as variable names, design patterns, and function names are consistent when introducing new code.\[10\]
+For all other pull requests, the maintainers can take the decision to merge. The maintainers make sure the code style is consistent and the code is of high quality. This means they have to make sure details such as variable names, design patterns, and function names are consistent when introducing new code.[^10]
 
 When analyzing the pull requests created for PowerShell we concluded that this is not just a guideline, but is actually used in practice.
 
@@ -117,16 +117,16 @@ SteveL-MSFT is a member of the PowerShell Committee and actively participates in
 
 We analyzed 10 open and 10 closed pull requests. From analyzing these we conclude the following:
 
-1.  The main focus is that pull request actually solve an issue (an issue should be referenced from a pull request).\[11\]–\[23\]
-2.  All changes should be tested (to ensure a high coverage and minimize the amount of unexpected behavior).\[11\], \[12\], \[14\]–\[17\], \[19\]–\[22\], \[24\]–\[26\]
-3.  There should not be backwards compatibility changes, PowerShell **must** be backwards compatible.\[21\], \[22\], \[26\], \[27\]
-4.  Comments should be correct, or removed if not needed.\[15\]–\[17\], \[19\], \[22\]–\[26\]
-5.  Code should be consistent, the naming of parameters and default values of parameters give way to many discussions.\[15\]–\[17\], \[19\], \[22\]–\[24\], \[26\], \[28\]
-6.  If a pull request becomes too complex, it is closed and split up into multiple pull requests.\[14\], \[21\], \[24\], \[26\], \[29\]
-7.  Design changes and improvements can be discussed through the RFC (Request For Comments) process, which provides the community with a way to leave feedback on documents instead of written code.\[24\], \[27\], \[28\]
-8.  The PowerShell team is open to outsiders challenging their calls. Even if you have never contributed any code, if you disagree with their decisions and can explain why, they will reconsider.\[16\], \[17\], \[20\], \[22\]
-9.  People who have opened the issue are contacted to see if an issue is actually resolved by a pull request, and not just believed to be solved by the author.\[19\]
-10. Community members are contacted by the core team for their input, not just the seniors make every decision without talking to the rest of the community.\[20\]
+1.  The main focus is that pull request actually solve an issue (an issue should be referenced from a pull request).[^11]–[^23]
+2.  All changes should be tested (to ensure a high coverage and minimize the amount of unexpected behavior).[^11], [^12], [^14]–[^17], [^19]–[^22],\^[4\]–[^26]
+3.  There should not be backwards compatibility changes, PowerShell **must** be backwards compatible.[^21], [^22], [^26], [^27]
+4.  Comments should be correct, or removed if not needed.[^15]–[^17], [^19], [^22]–[^26]
+5.  Code should be consistent, the naming of parameters and default values of parameters give way to many discussions.[^15]–[^17], [^19], [^22]–[^24], [^26], [^28]
+6.  If a pull request becomes too complex, it is closed and split up into multiple pull requests.[^14], [^21], [^24], [^26], [^29]
+7.  Design changes and improvements can be discussed through the RFC (Request For Comments) process, which provides the community with a way to leave feedback on documents instead of written code.[^24], [^27], [^28]
+8.  The PowerShell team is open to outsiders challenging their calls. Even if you have never contributed any code, if you disagree with their decisions and can explain why, they will reconsider.[^16], [^17], [^20], [^22]
+9.  People who have opened the issue are contacted to see if an issue is actually resolved by a pull request, and not just believed to be solved by the author.[^19]
+10. Community members are contacted by the core team for their input, not just the seniors make every decision without talking to the rest of the community.[^20]
 
 ### Power/Interest Grid
 
@@ -143,21 +143,21 @@ This section describes the Context view of the system. The view defines what Pow
 
 The scope definition of PowerShell is described as a list of **key** requirements of the systems. These requirements are as follows:
 
--   Provide a task automation and configuration management framework.\[30\]
--   Provide availability on multiple platforms (Windows, Linux, and macOS).\[30\]
--   Include a command-line shell.\[30\]
--   Allow users to easily extend PowerShell with their own commands and frameworks.\[31\]
--   Work with structured data (as opposed to plain text, as used by other traditional Shells).\[30\]
--   Include a scripting language.\[30\]
--   It should be easy to learn by users even when coming from a similar tool (like Bash).\[32\]
--   Updates should be backward compatible.\[33\]
+-   Provide a task automation and configuration management framework.[^30]
+-   Provide availability on multiple platforms (Windows, Linux, and macOS).[^30]
+-   Include a command-line shell.[^30]
+-   Allow users to easily extend PowerShell with their own commands and frameworks.[^31]
+-   Work with structured data (as opposed to plain text, as used by other traditional Shells).[^30]
+-   Include a scripting language.[^30]
+-   It should be easy to learn by users even when coming from a similar tool (like Bash).[^32]
+-   Updates should be backward compatible.[^33]
 
 ### Context Diagram
 
 The Context diagram (Figure 2.1) showcases the most important external entities of PowerShell and indicates what the relation between them and the system is.
 
 ![Context Diagram](images/powershell/context_diagram.png)  
-**Figure 2.1**. A Context diagram for PowerShell. It consists of mostly of the stakeholders mentioned in chapter 1, but also the development language `C#`, Azure continuous integration\[34\], and several other resources (books, package manager, …) for PowerShell users\[35\]. PowerShell is licensed under the MIT license\[36\]. All entities inside the blue area are owned by Microsoft.
+**Figure 2.1**. A Context diagram for PowerShell. It consists of mostly of the stakeholders mentioned in chapter 1, but also the development language `C#`, Azure continuous integration[^34], and several other resources (books, package manager, …) for PowerShell users[^35]. PowerShell is licensed under the MIT license[^36]. All entities inside the blue area are owned by Microsoft.
 
 ## Development View
 
@@ -210,7 +210,7 @@ However, the code guidelines mention that runtime checks are acceptable if it gr
 
 ### Codeline Overview
 
-PowerShell has build instructions for each mayor operating system\[37\]. Using Azure Pipelines, they run nightly builds for each operating system\[38\]. As per their [Testing Guidelines](https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md), contributors are expected to write automated tests for their code, which are actively checked in Pull Requests.
+PowerShell has build instructions for each mayor operating system[^37]. Using Azure Pipelines, they run nightly builds for each operating system[^38]. As per their [Testing Guidelines](https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md), contributors are expected to write automated tests for their code, which are actively checked in Pull Requests.
 
 ## Technical Debt
 
@@ -218,7 +218,7 @@ Technical debt builds when development teams decide to implement an easy solutio
 
 ### Code Quality Debt
 
-The repository was analyzed using CodeFactor and SonarQube\[39\]. The main issues found took the form of overly complex methods and style errors. Both of these hinder the extensibility and readability of the code. Ignoring auto-generated files, there are methods with a cyclomatic complexity [up to 405](https://www.codefactor.io/repository/github/powershell/powershell/issues?category=Complexity&groupId=54), and classes with a complexity [up to 1743](https://www.codefactor.io/repository/github/powershell/powershell/issues?category=Complexity&groupId=54&page=1). There also are many exceptions which are ignored without explanation, making it difficult to understand the intentional behavior.
+The repository was analyzed using CodeFactor and SonarQube[^39]. The main issues found took the form of overly complex methods and style errors. Both of these hinder the extensibility and readability of the code. Ignoring auto-generated files, there are methods with a cyclomatic complexity [up to 405](https://www.codefactor.io/repository/github/powershell/powershell/issues?category=Complexity&groupId=54), and classes with a complexity [up to 1743](https://www.codefactor.io/repository/github/powershell/powershell/issues?category=Complexity&groupId=54&page=1). There also are many exceptions which are ignored without explanation, making it difficult to understand the intentional behavior.
 
 An example of a specific file which contains multiple critical errors [can be found here](https://sonarcloud.io/project/issues?id=Geweldig_PowerShell&open=AWmGjwGfqQlSul0krTwZ&resolved=false&severities=CRITICAL&types=BUG). Among other issues it contains getters which do not return the expected value (either different fields or null), as well as setters which set unrelated fields to their name. This is bug prone and should be refactored.
 
@@ -345,80 +345,80 @@ All things considered, PowerShell does a relatively good job on their architectu
 
 ## References
 
-\[1\] Wikipedia, “PowerShell: Versions.” \[Online\]. Available: <https://en.wikipedia.org/wiki/PowerShell#Versions>. \[Accessed: 10-Apr-2019\]
+[^1]: Wikipedia, “PowerShell: Versions.” \[Online\]. Available: <https://en.wikipedia.org/wiki/PowerShell#Versions>. \[Accessed: 10-Apr-2019\]
 
-\[2\] Microsoft, “Microsoft Technet Blogs.” \[Online\]. Available: <https://blogs.technet.microsoft.com/>. \[Accessed: 10-Apr-2019\]
+[^2]: Microsoft, “Microsoft Technet Blogs.” \[Online\]. Available: <https://blogs.technet.microsoft.com/>. \[Accessed: 10-Apr-2019\]
 
-\[3\] N. Rozanski and E. Woods, *Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives*, 2nd ed. Addison-Wesley Professional, 2011.
+[^3]: N. Rozanski and E. Woods, *Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives*, 2nd ed. Addison-Wesley Professional, 2011.
 
-\[4\] Microsoft, “PowerShell testing guidelines.” 2018 \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md>
+[^4]: Microsoft, “PowerShell testing guidelines.” 2018 \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md>
 
-\[5\] M. Klement, “LinkedIn profile.” 2019 \[Online\]. Available: <https://www.linkedin.com/in/mklement0/>
+[^5]: M. Klement, “LinkedIn profile.” 2019 \[Online\]. Available: <https://www.linkedin.com/in/mklement0/>
 
-\[6\] PowerTheShell, “ISESteroids.” \[Online\]. Available: <http://www.powertheshell.com/isesteroids/>. \[Accessed: 28-Mar-2019\]
+[^6]: PowerTheShell, “ISESteroids.” \[Online\]. Available: <http://www.powertheshell.com/isesteroids/>. \[Accessed: 28-Mar-2019\]
 
-\[7\] Microsoft, “Visual Studio Code.” \[Online\]. Available: <https://code.visualstudio.com/>. \[Accessed: 28-Mar-2019\]
+[^7]: Microsoft, “Visual Studio Code.” \[Online\]. Available: <https://code.visualstudio.com/>. \[Accessed: 28-Mar-2019\]
 
-\[8\] Sapien Technologies, Inc., “PowerShell Studio 2019.” \[Online\]. Available: <https://www.sapien.com/software/powershell_studio>. \[Accessed: 28-Mar-2019\]
+[^8]: Sapien Technologies, Inc., “PowerShell Studio 2019.” \[Online\]. Available: <https://www.sapien.com/software/powershell_studio>. \[Accessed: 28-Mar-2019\]
 
-\[9\] Microsoft, “PowerShell Governance.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/community/governance.md#powershell-committee>. \[Accessed: 28-Mar-2019\]
+[^9]: Microsoft, “PowerShell Governance.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/community/governance.md#powershell-committee>. \[Accessed: 28-Mar-2019\]
 
-\[10\] Microsoft, “Repository Maintainers.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/maintainers/README.md>. \[Accessed: 28-Mar-2019\]
+[^10]: Microsoft, “Repository Maintainers.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/maintainers/README.md>. \[Accessed: 28-Mar-2019\]
 
-\[11\] I. Sazonov, “PowerShell pull request \#3690.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/3690>. \[Accessed: 27-Mar-2019\]
+[^11]: I. Sazonov, “PowerShell pull request \#3690.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/3690>. \[Accessed: 27-Mar-2019\]
 
-\[12\] C. Bergmeister, “PowerShell pull request \#4612.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/4612>. \[Accessed: 27-Mar-2019\]
+[^12]: C. Bergmeister, “PowerShell pull request \#4612.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/4612>. \[Accessed: 27-Mar-2019\]
 
-\[13\] S. Vorobev, “PowerShell pull request \#4618.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/4618>. \[Accessed: 27-Mar-2019\]
+[^13]: S. Vorobev, “PowerShell pull request \#4618.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/4618>. \[Accessed: 27-Mar-2019\]
 
-\[14\] M. Klement, “PowerShell pull request \#4761.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/4761>. \[Accessed: 27-Mar-2019\]
+[^14]: M. Klement, “PowerShell pull request \#4761.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/4761>. \[Accessed: 27-Mar-2019\]
 
-\[15\] C. Bergmeister, “PowerShell pull request \#5051.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/5051>. \[Accessed: 27-Mar-2019\]
+[^15]: C. Bergmeister, “PowerShell pull request \#5051.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/5051>. \[Accessed: 27-Mar-2019\]
 
-\[16\] GitHub user @zhenggu, “PowerShell pull request \#5525.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/5525>. \[Accessed: 27-Mar-2019\]
+[^16]: GitHub user @zhenggu, “PowerShell pull request \#5525.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/5525>. \[Accessed: 27-Mar-2019\]
 
-\[17\] A. patwardhan, “PowerShell pull request \#5760.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/5760>. \[Accessed: 27-Mar-2019\]
+[^17]: A. patwardhan, “PowerShell pull request \#5760.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/5760>. \[Accessed: 27-Mar-2019\]
 
-\[18\] M. Kraus, “PowerShell pull request \#6782.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/6782>. \[Accessed: 27-Mar-2019\]
+[^18]: M. Kraus, “PowerShell pull request \#6782.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/6782>. \[Accessed: 27-Mar-2019\]
 
-\[19\] I. Sazonov, “PowerShell pull request \#7702.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/7702>. \[Accessed: 27-Mar-2019\]
+[^19]: I. Sazonov, “PowerShell pull request \#7702.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/7702>. \[Accessed: 27-Mar-2019\]
 
-\[20\] P. Braathen, “PowerShell pull request \#8131.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8131>. \[Accessed: 27-Mar-2019\]
+[^20]: P. Braathen, “PowerShell pull request \#8131.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8131>. \[Accessed: 27-Mar-2019\]
 
-\[21\] R. Holt, “PowerShell pull request \#8142.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8142>. \[Accessed: 27-Mar-2019\]
+[^21]: R. Holt, “PowerShell pull request \#8142.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8142>. \[Accessed: 27-Mar-2019\]
 
-\[22\] A. Gauthier, “PowerShell pull request \#8199.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8199>. \[Accessed: 27-Mar-2019\]
+[^22]: A. Gauthier, “PowerShell pull request \#8199.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8199>. \[Accessed: 27-Mar-2019\]
 
-\[23\] S. Barizien, “PowerShell pull request \#8745.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8745>. \[Accessed: 27-Mar-2019\]
+[^23]: S. Barizien, “PowerShell pull request \#8745.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8745>. \[Accessed: 27-Mar-2019\]
 
-\[24\] R. Holt, “PowerShell pull request \#3169.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/3169>. \[Accessed: 27-Mar-2019\]
+[^24]: R. Holt, “PowerShell pull request \#3169.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/3169>. \[Accessed: 27-Mar-2019\]
 
-\[25\] I. Sazonov, “PowerShell pull request \#6718.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/6718>. \[Accessed: 27-Mar-2019\]
+[^25]: I. Sazonov, “PowerShell pull request \#6718.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/6718>. \[Accessed: 27-Mar-2019\]
 
-\[26\] J. Swallow, “PowerShell pull request \#7509.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/7509>. \[Accessed: 27-Mar-2019\]
+[^26]: J. Swallow, “PowerShell pull request \#7509.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/7509>. \[Accessed: 27-Mar-2019\]
 
-\[27\] D. Stenberg, “PowerShell pull request \#1901.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/1901>. \[Accessed: 27-Mar-2019\]
+[^27]: D. Stenberg, “PowerShell pull request \#1901.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/1901>. \[Accessed: 27-Mar-2019\]
 
-\[28\] J. L. Whitlock, “PowerShell pull request \#3125.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/3125>. \[Accessed: 27-Mar-2019\]
+[^28]: J. L. Whitlock, “PowerShell pull request \#3125.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/3125>. \[Accessed: 27-Mar-2019\]
 
-\[29\] R. Dunham, “PowerShell pull request \#8886.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8886>. \[Accessed: 27-Mar-2019\]
+[^29]: R. Dunham, “PowerShell pull request \#8886.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/pull/8886>. \[Accessed: 27-Mar-2019\]
 
-\[30\] Microsoft, “PowerShell README.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/README.md#-powershell>. \[Accessed: 08-Apr-2019\]
+[^30]: Microsoft, “PowerShell README.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/README.md#-powershell>. \[Accessed: 08-Apr-2019\]
 
-\[31\] Microsoft, “Cmdlet Example.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md>. \[Accessed: 08-Apr-2019\]
+[^31]: Microsoft, “Cmdlet Example.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md>. \[Accessed: 08-Apr-2019\]
 
-\[32\] Microsoft, “Map Book for Experienced Bash users.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell#map-book-for-experienced-bash-users>. \[Accessed: 08-Apr-2019\]
+[^32]: Microsoft, “Map Book for Experienced Bash users.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/tree/master/docs/learning-powershell#map-book-for-experienced-bash-users>. \[Accessed: 08-Apr-2019\]
 
-\[33\] Microsoft, “Breaking Change Contract.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/dev-process/breaking-change-contract.md>. \[Accessed: 08-Apr-2019\]
+[^33]: Microsoft, “Breaking Change Contract.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/dev-process/breaking-change-contract.md>. \[Accessed: 08-Apr-2019\]
 
-\[34\] Microsoft, “Testing Guidelines.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md#ci-system>. \[Accessed: 08-Apr-2019\]
+[^34]: Microsoft, “Testing Guidelines.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/docs/testing-guidelines/testing-guidelines.md#ci-system>. \[Accessed: 08-Apr-2019\]
 
-\[35\] Janik von Rotz, “Awesome PowerShell.” \[Online\]. Available: <https://github.com/janikvonrotz/awesome-powershell>. \[Accessed: 08-Apr-2019\]
+[^35]: Janik von Rotz, “Awesome PowerShell.” \[Online\]. Available: <https://github.com/janikvonrotz/awesome-powershell>. \[Accessed: 08-Apr-2019\]
 
-\[36\] Microsoft, “MIT license.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt>. \[Accessed: 08-Apr-2019\]
+[^36]: Microsoft, “MIT license.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt>. \[Accessed: 08-Apr-2019\]
 
-\[37\] Microsoft, “Build Instructions.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell#building-the-repository>. \[Accessed: 10-Apr-2019\]
+[^37]: Microsoft, “Build Instructions.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell#building-the-repository>. \[Accessed: 10-Apr-2019\]
 
-\[38\] Microsoft, “Build Status.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell#build-status-of-nightly-builds>. \[Accessed: 10-Apr-2019\]
+[^38]: Microsoft, “Build Status.” \[Online\]. Available: <https://github.com/PowerShell/PowerShell#build-status-of-nightly-builds>. \[Accessed: 10-Apr-2019\]
 
-\[39\] SonarQube, “PowerShell SonarQube report.” \[Online\]. Available: <https://sonarcloud.io/dashboard?id=Geweldig_PowerShell>. \[Accessed: 17-Mar-2019\]
+[^39]: SonarQube, “PowerShell SonarQube report.” \[Online\]. Available: <https://sonarcloud.io/dashboard?id=Geweldig_PowerShell>. \[Accessed: 17-Mar-2019\]
