@@ -184,7 +184,7 @@ CDDA is a vast project with approximately 251k lines of code (as reported by Son
 
 ![Module Structure](images/components.png)
 
-Most of the information is taken from the documentation [[6]](#references) . Each component defined in the following diagram is presented in the code in the form of classes. These components are categorized into layers with respect to their functionality and level of operation.
+Most of the information is taken from the documentation [^6]. Each component defined in the following diagram is presented in the code in the form of classes. These components are categorized into layers with respect to their functionality and level of operation.
 
 *core*: This layer is mainly responsible for setting up the environment of the game, initializing all the components that are required, and orchestrating the complete game. Every single layer given in this diagram either directly or indirectly communicates with the core layer. The core layer also in turn communicates with another layer called common layer which is mainly responsible for other supplementary functionalities.
 
@@ -210,11 +210,11 @@ As a way of reusing code, Cataclysm-DDA uses a library in order to render the ga
 
 Cataclysm-DDA accepts all types of contributors. However, they have to respect some rules when contributing in order to be accepted.
 
-There is a [`CONTRIBUTING.md`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md) file  [[2]](#references) that states the rules that have to be followed. When contributing there is a commit template that is specified in the [`.gitmessage`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage) file [[3]](#references) and that all the developers must follow. Moreover, when creating a pull request the first line of the description needs to be a summary line with a specific format that will be later used to create the release changelog.
+There is a [`CONTRIBUTING.md`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md) file  [^2] that states the rules that have to be followed. When contributing there is a commit template that is specified in the [`.gitmessage`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage) file [^3] and that all the developers must follow. Moreover, when creating a pull request the first line of the description needs to be a summary line with a specific format that will be later used to create the release changelog.
 
-Also, to ensure that all the code has the same style there are some styling rules for C++ defined in the [`CODE_STYLE.md`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/CODE_STYLE.md) document [[4]](#references).
+Also, to ensure that all the code has the same style there are some styling rules for C++ defined in the [`CODE_STYLE.md`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/CODE_STYLE.md) document [^4].
 
-In the [`JSON_INFO.md`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_INFO.md) document [[5]](#references) the contents for all the JSON files are described and the syntax that should be used in the files, there's a total of 96 JSON files specified. The files are classified into general files describing some game messages and basic items, item files adding objects to the game, requirement files that set the required items for crafting some objects and vehicle files that describe different types of vehicles and how they are used.
+In the [`JSON_INFO.md`](https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_INFO.md) document [^5] the contents for all the JSON files are described and the syntax that should be used in the files, there's a total of 96 JSON files specified. The files are classified into general files describing some game messages and basic items, item files adding objects to the game, requirement files that set the required items for crafting some objects and vehicle files that describe different types of vehicles and how they are used.
 
 ### Codeline Organization
 In this section it is explained how the code is managed, tested and built.
@@ -245,7 +245,7 @@ The building process is done through GNU make. The makefile defined has differen
 
 #### Release
 
-The releases of the game are automatically created and uploaded into the release website [[7]](#references) every time that a pull request is merged by using a Jenkins script.
+The releases of the game are automatically created and uploaded into the release website [^7] every time that a pull request is merged by using a Jenkins script.
 
 ![Releases](images/Release_Cataclysm.png)
 
@@ -409,13 +409,13 @@ Upon analyzing, we suggest that it is high time that the architecture be split i
 
 ## References
 
-1. Nick Rozanski and Eoin Woods. Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives. Addison-Wesley, 2012.
-2. Cataclysm-DDA rules for contributors, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md
-3. Cataclysm-DDA git commit message template, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage
-4. Cataclysm-DDA code style rules, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/CODE_STYLE.md
-5. Cataclysm-DDA JSON file contents, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_INFO.md
-6. Module documentation, http://dev.narc.ro/cataclysm/doxygen/pages.html
-7. Cataclysm-DDA Linux Tiles releases, http://dev.narc.ro/cataclysm/jenkins-latest/Linux_x64/Tiles/
+[^1]: Nick Rozanski and Eoin Woods. Software Systems Architecture: Working with Stakeholders using Viewpoints and Perspectives. Addison-Wesley, 2012.
+[^2]: Cataclysm-DDA rules for contributors, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.github/CONTRIBUTING.md
+[^3]: Cataclysm-DDA git commit message template, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/.gitmessage
+[^4]: Cataclysm-DDA code style rules, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/CODE_STYLE.md
+[^5]: Cataclysm-DDA JSON file contents, https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/JSON_INFO.md
+[^6]: Module documentation, http://dev.narc.ro/cataclysm/doxygen/pages.html
+[^7]: Cataclysm-DDA Linux Tiles releases, http://dev.narc.ro/cataclysm/jenkins-latest/Linux_x64/Tiles/
 
 [cataclysmGithub]: https://github.com/CleverRaven/Cataclysm-DDA
 [cataclysmURL]: https://cataclysmdda.org/
