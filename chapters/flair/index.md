@@ -1,4 +1,4 @@
-<img src="images/Capture.PNG" alt="drawing" width="1000"/>
+<img src="images/flair/Capture.PNG" alt="drawing" width="1000"/>
 
 ## Table of contents
 * [1 Introduction](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#1-introduction)
@@ -94,7 +94,7 @@ These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not 
 
 *Table 2.1: Main stakeholders of Flair*
 
-<img src="images/stakeholder-diagram.png" alt="drawing" width="600"/>
+<img src="images/flair/stakeholder-diagram.png" alt="drawing" width="600"/>
 
 *Figure 2.1: Flair's stakeholders*
 
@@ -164,7 +164,7 @@ are classified.
 
 
 
-![alt text](images/PowerInterestGridwhite.png)
+![alt text](images/flair/PowerInterestGridwhite.png)
 
 *Figure 2.2: Power-Interest grid*
 
@@ -187,7 +187,7 @@ Context view describes a software's dependencies, integrations, scope,
 responsibilities and interface with external entities. In Flair's context, 
 we will show a context view diagram, discuss the system scope and analyze the interfaces with all its external entities.
 
-![alt text](images/context-view.png)
+![alt text](images/flair/context-view.png)
 
 *Figure 3.1: Context view diagram*
 
@@ -229,7 +229,7 @@ Common Design models and Codeline models are discussed.
 
 
 
-<img src="images/Flair_Tagging_Embedding.png" alt="drawing" width="600"/>
+<img src="images/flair/Flair_Tagging_Embedding.png" alt="drawing" width="600"/>
 
 *Figure 4.1: Architecture of language model esed in Flair*
 
@@ -253,7 +253,7 @@ dependencies between modules, in order to obtain a good understanding of
 Flair's code structure, based on [[1]](#ref1). The inter dependency of the modules are shown in *Figure 4.2*.
 
 
-<img src="images/Module_Organization_1_.png" alt="drawing" width="600"/>
+<img src="images/flair/Module_Organization_1_.png" alt="drawing" width="600"/>
 
 *Figure 4.2: Module Organization of Flair*
 
@@ -476,7 +476,7 @@ request approval checks per repository, with the simple flip of a toggle,  confi
 doesn't and can provide a configurations file that overrides Github's default settings and endows users with PR approval 
 authorization.
 
-<img src="images/Codestructure2.png" alt="drawing" width="500px" /> 
+<img src="images/flair/Codestructure2.png" alt="drawing" width="500px" /> 
 
 *Figure 4.4: Directory organization of Flair and simplified version of the directory strcuture with added explanation*
 
@@ -512,7 +512,7 @@ contain 1939 lines, which is almost double the recommended 1000 lines. This also
 affects maintainability of the code as a very big module is harder to maintain
 and might end up causing unnecessary dependencies when extended.
 
-<img src="images/pylint.PNG" alt="drawing" width="600"/>
+<img src="images/flair/pylint.PNG" alt="drawing" width="600"/>
 
 *Figure 5.1: Top 15 violations detected by pylint*
 
@@ -522,7 +522,7 @@ and might end up causing unnecessary dependencies when extended.
 and security vulnerabilities of a program in many languages, including
 Python.
 
-<img src="images/technical-debt.PNG" alt="drawing" width="800"/>
+<img src="images/flair/technical-debt.PNG" alt="drawing" width="800"/>
 
 *Figure 5.2: Technical debt of each module*
 
@@ -534,7 +534,7 @@ and hence the code quality has been graded as C. All the bugs are related to the
 useless assignment to variables. They have no such impact on program functioning but useless variables consume the CPU memory which reduces the performance while training heavy data in Flair.
 These can be fixed by either removing the redundant variable or by assigning it some different value that was intended for the assignment instead.
 
-<img src="images/SQResults.PNG" alt="drawing" width="600"/>
+<img src="images/flair/SQResults.PNG" alt="drawing" width="600"/>
 
 *Figure 5.3: Detected bugs*
 
@@ -544,7 +544,7 @@ These can be fixed by either removing the redundant variable or by assigning it 
 Vulnerability detected by SonarQube is 0%, that means code quality is very good 
 from security point of view. The code quality has been graded as A.
 
-<img src="images/SecurityResults.PNG" alt="drawing" width="800"/>
+<img src="images/flair/SecurityResults.PNG" alt="drawing" width="800"/>
 
 *Figure 5.4: Code quality*
  
@@ -559,7 +559,7 @@ complexity, that asks for changing the logic of the program because of inclusion
 of nested loops or conditional statements. As Flair is an NLP library and needs to train large amount of data. So it takes a lot of time to train.
 These code smells therefore makes the program slower as well as increases the chance of failure or bugs in future. So, fixing these will bolster the performance of Flair.
 
-<img src="images/Code_Smells.PNG" alt="drawing" width="600"/>
+<img src="images/flair/Code_Smells.PNG" alt="drawing" width="600"/>
 
 *Figure 5.5: Code smells*
 
@@ -574,7 +574,7 @@ are due to similar functions performed for counting the embedding length of diff
 embedding classes. This could be removed by implementing a base function
 in the abstract base class that could be used by the different child classes.
 
-<img src="images/Duplication.PNG" alt="drawing" width="600"/>
+<img src="images/flair/Duplication.PNG" alt="drawing" width="600"/>
 
 *Figure 5.6: Line duplications*
 
@@ -588,7 +588,7 @@ or both core developers leave the team. Ideally, there must not be too much
 dependency on a single developer, instead majority of the developer community 
 must be equally contributing.
 
-<img src="images/developerDependency.PNG" alt="drawing" width="600"/>
+<img src="images/flair/developerDependency.PNG" alt="drawing" width="600"/>
 
 *Figure 5.7: Main developers*
 
@@ -651,7 +651,7 @@ that needs to have different processes for different languages and the fact
 that the tests only use resources in English, it makes total sense that the 
 code coverage would be rather low.
 
-<img src="images/code-coverage.PNG" alt="drawing" width="600"/>
+<img src="images/flair/code-coverage.PNG" alt="drawing" width="600"/>
 
 *Figure 5.8: Code coverage of each module*
 
@@ -684,11 +684,11 @@ has been created in the master branch of the project
 Flair, which is still pending and needs to be approved by the owner and then 
 merged. Also, the code build was verified and passed in Travis CI.
 
-<img src="images/resultComparision.PNG" alt="drawing" width="600"/>
+<img src="images/flair/resultComparision.PNG" alt="drawing" width="600"/>
 
 *Figure 5.9: Detected bugs after change*
 
-<img src="images/pullRequestCreated.PNG" alt="drawing" width="600"/>
+<img src="images/flair/pullRequestCreated.PNG" alt="drawing" width="600"/>
 
 *Figure 5.10: Pull request*
 
@@ -706,11 +706,11 @@ of time in different releases. Some of the key features of different releases ar
 There are 93 issues still open, and 294 are closed [[3]](#ref3). Most of the open issues are of `question` label, but the bug count must be kept zero. Also, there are 6 pending pull requests, 
 which must also be taken into consideration.
 
-<img src="images/codeFrequencyDiagram.PNG" alt="drawing" width="600"/>
+<img src="images/flair/codeFrequencyDiagram.PNG" alt="drawing" width="600"/>
 
 *Figure 5.11: Code frequency*
 
-<img src="images/flair-timeline-new.png" alt="drawing" width="600"/>
+<img src="images/flair/flair-timeline-new.png" alt="drawing" width="600"/>
 
 *Figure 5.12: Flair's releases*
 
@@ -754,7 +754,7 @@ The user can choose to perform a named entity recognition, part-of-speech
 tagging, and sequence tagging using one of these embeddings.
 
 
-<img src="images/features_overviewfinal.png" alt="drawing" width="600"/>
+<img src="images/flair/features_overviewfinal.png" alt="drawing" width="600"/>
 
 *Figure 6.1: Flair's functional structure model diagram*
 
