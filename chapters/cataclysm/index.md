@@ -1,3 +1,10 @@
+---
+layout: default
+project: cataclysm
+title: Cataclysm
+chapter: true
+---
+
 <!--- 
 Welcome to the markdown file for Cataclysm Dark Days Ahead
 
