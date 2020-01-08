@@ -63,7 +63,7 @@ The developers of PowerShell consist of both Microsoft employees who focus on Po
 
 #### Maintainers
 
-The maintainers of the repository make sure the code evolves in a structured manner. In the case of PowerShell these maintainers consist of both the PowerShell committee (who make the final decision on whether or not design changes can occur) and the repository maintainers. The repository maintainers are (at the time of writing this report): [@daxian-dbw](https://github.com/daxian-dbw), [@TravisEz13](https://github.com/TravisEz13), [@adityapatwardhan](https://github.com/adityapatwardhan), [@iSazonov](https://github.com/iSazonov), and [@anmenaga](https://github.com/anmenaga).
+The maintainers of the repository make sure the code evolves in a structured manner. In the case of PowerShell these maintainers consist of both the PowerShell committee (who make the final decision on whether or not design changes can occur) and the repository maintainers. The repository maintainers are (at the time of writing this report): @[daxian-dbw](https://github.com/daxian-dbw), @[TravisEz13](https://github.com/TravisEz13), @[adityapatwardhan](https://github.com/adityapatwardhan), @[iSazonov](https://github.com/iSazonov), and @[anmenaga](https://github.com/anmenaga).
 
 #### Suppliers
 
@@ -75,11 +75,11 @@ Microsoft themselves handle the support for PowerShell. It is possible for end u
 
 #### Testers
 
-The testers make sure that PowerShell is fit for use. There are Microsoft employees who focus specifically on testing and continuous integration, such as [@JamesWTruher](https://github.com/JamesWTruher). Tests need to be created or adapted with every pull requests that introduces new functionality, and developers are encouraged to write their own tests. There is a rigorous testing policy for contributions to PowerShell [^4].
+The testers make sure that PowerShell is fit for use. There are Microsoft employees who focus specifically on testing and continuous integration, such as @[JamesWTruher](https://github.com/JamesWTruher). Tests need to be created or adapted with every pull requests that introduces new functionality, and developers are encouraged to write their own tests. There is a rigorous testing policy for contributions to PowerShell [^4].
 
 #### Users
 
-There are many companies that use PowerShell in their working environment and as such they can be seen as major stakeholders. A good example is Michael Klement ([@mklement0 on GitHub](https://github.com/mklement0)), who has worked with PowerShell in a few different external professional environments[^5]. These users influence which functionality needs to be added to the language, as well as possible changes which need to be introduced. However, the PowerShell committee still has the final say over any decision made.
+There are many companies that use PowerShell in their working environment and as such they can be seen as major stakeholders. A good example is Michael Klement (@[mklement0 on GitHub](https://github.com/mklement0)), who has worked with PowerShell in a few different external professional environments[^5]. These users influence which functionality needs to be added to the language, as well as possible changes which need to be introduced. However, the PowerShell committee still has the final say over any decision made.
 
 ### Types Not Mentioned by Rozanski and Woods.
 
@@ -105,7 +105,7 @@ When analyzing the pull requests created for PowerShell we concluded that this i
 
 ### Relevant People We Would Like To Contact
 
-We have concluded there are three people who we believe are interesting to contact. These people are [@iSazonov](https://github.com/iSazonov), [@mklement0](https://github.com/mklement0), and [@SteveL-MSFT](https://github.com/SteveL-MSFT).
+We have concluded there are three people who we believe are interesting to contact. These people are @[iSazonov](https://github.com/iSazonov), @[mklement0](https://github.com/mklement0), and @[SteveL-MSFT](https://github.com/SteveL-MSFT).
 
 iSazonov is currently a maintainer of the PowerShell project on GitHub, however he is not an employee of Microsoft. For every pull request we have read it was difficult to find one in which he had not participated.
 
@@ -310,9 +310,9 @@ As explained earlier, when dealing with backwards compatibility we should think 
 
 [Pull request \#1901](https://github.com/PowerShell/PowerShell/pull/1901) is a nice example where commitment towards backwards compatibility shows how functional debt grows over time.
 
-[@bagder](https://github.com/bagder) thinks adding `curl` and `wget` was a *“breaking change”* and should therefore be removed. If we would map [@bagder](https://github.com/bagder)’s view to ours, the expected functionality is that PowerShell should never overwrite commonly used commands. He received a lot of support from others and thus it is reasonable to think the contribution would reduce functional debt.
+@[bagder](https://github.com/bagder) thinks adding `curl` and `wget` was a *“breaking change”* and should therefore be removed. If we would map @[bagder](https://github.com/bagder)’s view to ours, the expected functionality is that PowerShell should never overwrite commonly used commands. He received a lot of support from others and thus it is reasonable to think the contribution would reduce functional debt.
 
-[@lzybkr](https://github.com/lzybkr) says that at the time of adding the alias, *“the design decision was consistent”*. At the time, [@lzybkr](https://github.com/lzybkr) had a different interpretation of expected functionality. However, he also says that it may have been misguided to add the aliases in the first place. Due to it being a breaking change, the pull request got closed. However, we think that if backwards compatibility was of less importance, the discussion would be pointed towards removing as much functional debt as possible.
+@[lzybkr](https://github.com/lzybkr) says that at the time of adding the alias, *“the design decision was consistent”*. At the time, @[lzybkr](https://github.com/lzybkr) had a different interpretation of expected functionality. However, he also says that it may have been misguided to add the aliases in the first place. Due to it being a breaking change, the pull request got closed. However, we think that if backwards compatibility was of less importance, the discussion would be pointed towards removing as much functional debt as possible.
 
 This showed that commitment towards backwards compatibility can lead to functional debt, which can be very hard or impossible to fix over time. If, at the time of implementing, one would have noticed it would increase functional debt, the issue could have been provoked and resolved, since it would not have introduced breaking compatibility cost.
 
@@ -327,7 +327,7 @@ There are numerous ways to prevent functional debt being introduced. Preventing 
 
 ## Conclusion
 
-To quote the user [@mklement0](https://github.com/mklement0):
+To quote the user @[mklement0](https://github.com/mklement0):
 
 > PowerShell has the potential to become the lingua franca of the shell world.
 
