@@ -4,11 +4,13 @@ project: flair
 title: "Flair"
 chapter: true
 ---
+
 # Flair
 
 ![](images/flair/Capture_resized.PNG)
 
 ## Table of contents
+
 * [1 Introduction](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#1-introduction)
 * [2 Stakeholders](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#2-stakeholders)
     * [2.1 Main stakeholders](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#21-main-stakeholders)
@@ -69,7 +71,6 @@ combination of different word and document embeddings including the proposed
 Flair embeddings, BERT and ELMo  embeddings. It is built directly on PyTorch
 which allows for ease of use in training and experimenting with models.
 
-
 ## 2  Stakeholders
 
 Stakeholders in a software system refers to the individual, team or organisation that have interest in said system being realized. Each of these stakeholders have their vested
@@ -82,9 +83,7 @@ We use the description of stakeholders obtained from Rozanski and Woods [[1]](#r
 These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not part of the Rozanski and Woods classification, are described as
 **Other Stakeholders**.
 
-
 ### 2.1  Main stakeholders
-
 
 | Type                    | Description  |
 | ----------------------- | ------------|
@@ -105,8 +104,6 @@ These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not 
 ![Flair's Stakeholders](images/flair/stakeholder-diagram_resized.png)
 
 ### 2.2 Other stakeholders
-
-
 
 **Researchers and Scientists**:
 They use the system to research and present 
@@ -161,7 +158,6 @@ required changes or other contributors have a chance to solve the
 issue as well. After reviewing the code and 
 checking for errors, the PR that meet their requirements are merged. 
 
-
 ### 2.3 Stakeholder analysis: Power vs Interest Grid
 
 Based on Mendelow's Power vs Interest Grid [[2]](#ref2), the groups of stakeholders necessary to be managed closely 
@@ -182,7 +178,6 @@ and the power they hold in influencing design and development.
 By analyzing the online community around Flair we found that the following people 
 are the most involved in the project. The relevant people and persons of interests 
 were identified and can be found in [Appendix B](https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#b-contact-persons).
-
 
 ## 3 Context View
 
@@ -219,7 +214,6 @@ capabilities [[3]](#ref3).
 *  It has interfaces that allows to combine different word and document embeddings, including BERT embeddings, Flair embeddings and ELMo embeddings.
 *  Flair [hosts](https://github.com/zalandoresearch/flair/blob/master/SECURITY.md) their bug bounty program privately on [HackerOne](https://www.hackerone.com/).
 
-
 ## 4 Development View
 
 Through the theory of development view, we address several aspects of the system development process. Due to the associated 
@@ -239,11 +233,7 @@ extracting the first and last character cell states.
 This word embedding is then passed into a sequence labeler, such as a vanilla BiLSTM-CRF, 
 achieving robust state-of-the-art results on downstream tasks.
 
-
-
-
 ### 4.1 Module structure and organization
-
  
 In this section, we detail Flair's module organization, as well as important 
 dependencies between modules, in order to obtain a good understanding of 
@@ -269,8 +259,6 @@ in order to determine the classification algorithm.
 * `Parameter Optimization` helps select parameters such as 
 document length, batch size, or weights. The results are tested by 
 visualizing plots and training curves.
-
-
 
 ### 4.2 Common design model
 
@@ -333,8 +321,6 @@ using this [form](https://corporate.zalando.com/en/services-and-contact#security
 are first tested. Once they pass the tests, the datasets are added to the available corpora 
 and the resultant embeddings trained are added. 
 
-
-
 #### 4.2.2 Standardization of design
 
 The Flair repository has the 
@@ -384,6 +370,7 @@ to the project because the developers might want to see particular code patterns
 to contributors.
 
 #### 4.2.3 Standardization of Testing
+
 The standards of testing in Flair are mainly dependent upon integration checks and verification of pull requests that developers make. In this section, the tools used for testing purposes are discussed.
 
  
@@ -474,6 +461,7 @@ authorization.
 ![Directory organization of Flair and simplified version of the directory strcuture with added explanation](images/flair/Codestructure2_resized.png)
 
 ## 5 Technical Debt
+
 Technical debt is a metaphor that describes the immature artifact in the process of software 
 development, that causes an additional rework because of choosing an easy solution over a better approach that would
 take a longer time to implement. Main reasons for technical debt are leaving the tasks undone, copying and
@@ -483,6 +471,7 @@ For this purpose, we used two tools, Pylint and SonarQube to analyze the code qu
  
 
 ### 5.1 Pylint
+
 [Pylint](https://www.pylint.org/) is a bug and quality checker for Python which follows the style
 recommended by Python style guide PEP 8.
 Pylint gave the package an overall rating of 7.08 and detected 1168 violations.
@@ -506,6 +495,7 @@ and might end up causing unnecessary dependencies when extended.
 ![Top 15 violations detected by pylint](images/flair/pylint_resized.PNG)
 
 ### 5.2 SonarQube
+
 [SonarQube](https://www.sonarqube.org/) is a framework that detect bugs, code smells, duplicate code,
 and security vulnerabilities of a program in many languages, including
 Python.
@@ -600,7 +590,6 @@ virtual environment, then the test modules under the `tests/` directory will be
 run in this virtual environment. The code must pass all the tests. 
 There are 12 tests in total.
 
-
 #### 5.5.2 Code coverage
 
 [Pytest](http://pytest.org) is a framework that can be used to both test and 
@@ -630,7 +619,6 @@ conditions for each language, the testing could then be improved by
 augmenting the test resources. Although, we also note that this could
 drastically improve the testing time.
 
-
 ### 5.6 Discussions about technical debt
 
 There are no discussions about the technical debt between the developers, which 
@@ -638,7 +626,6 @@ is quite shocking. It seems like they are not using any code quality tools.
 Regardless, the code quality is of the highest level, which actually is a 
 good thing. However, its highly recommended to use one so as to avoid having any 
 future technical debts.
-
 
 ### 5.7 Payment of technical debt
 
@@ -656,7 +643,6 @@ merged. Also, the code build was verified and passed in Travis CI.
 ![Pull request](images/flair/pullRequestCreated_resized.PNG)
 
 ### 5.8 Evolution perspective
-
 
 Development of Flair was started in the summers of 2018 by Zalando Research and is licensed under MIT [[3]](#ref3). It was made an open source Python project by Zalando SE in June, 2018 [[3]](#ref3).
 Its based on the research done by Akbik et al. Akbik is the main developer since the start of the project and still is the head developer.
@@ -698,7 +684,6 @@ below.
 | **models.SequenceTagger** | Contains several pre-trained English and Multilingual models, which include Named Entity Recognition (NER) and Part-of-Speech Tagging (POS). The function `load()` can be called with the appropriate string to load a model. |
 
 *Table 6.1: Some of Flair's most vital modules*
-
 
 ### 6.1 Functional structure model
 
@@ -767,9 +752,8 @@ addition of such features is made easy. Multiple-tasks learning can be included
 along with multi-GPU support with the changes to the new CUDA semantics. 
 These features while make scaling of Flair easier. 
 
-
-
 ## 8 Conclusion
+
 Flair provides an innovative framework for natural language processing. Within a short period of time, 
 Flair has grown fast and challenges existing NLP frameworks. This growth has been 
 possible through their specific code of conduct for code writing and analysis, constant 
@@ -783,6 +767,7 @@ testing has helped Flair to provide a good performance.
 ## Appendix
 
 ### A. Pull requests analysis
+
 The pull requests made through github are analysed using standard code of conduct. The code of conduct includes naming conventions, way of codes, standard of code and versions of sources used. This strict follow up of the conduct makes the original code and merged codes quite readable and easily understandable also. Whenever new modules are added, emphasis is given in order to update the documentation as well. As mentioned earlier, integrators check for code standard and versions of PR before the merge. On the other hand, the opened issues that are solved by other contributors in separate PR are closed. This does lead to less confusion about PRs. The closed PRs are sometimes those who are considered to be not at all matching their base mark and also totally unstructured. Also, naming conventions sometimes become a major reason for closed PRs.
 
 
@@ -828,6 +813,7 @@ The pull requests made through github are analysed using standard code of conduc
 
 
 ## References
+
 * <a name="ref1">[1]</a> Rozanski, N. & Woods, E. (2011). Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. Addison-Wesley.
 * <a name="ref2">[2]</a> Mendelow, A. L. (1981, December). Environmental Scanning-The Impact of the Stakeholder Concept. In ICIS (p. 20).
 * <a name="ref3">[3]</a> Flair. (2019, February). [zalandoresearch/flair: A very simple framework for state-of-the-art Natural Language Processing (NLP)](https://github.com/zalandoresearch/flair).
