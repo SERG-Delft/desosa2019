@@ -40,7 +40,7 @@ Since Kotlin is open source, it is possible to contribute to it. Anyone is able 
 
 There are different components in the Kotlin project. Of course there is a compiler and parser, which handle the code itself. However, there are also multiple extensions for IntelliJ IDEA, which handles autocompletions or inspections. Most of the *easy* issues on YouTrack focus on the latter. Kotlin is also tested, having over 50,000 thoroughly developed tests. When contributing, one of the requirements is to create some tests for your contribution.
 
-In this chapter, Kotlin will be researched in more detail by first giving an overview of the different stakeholders, before expanding this to a broader context view. This is to properly define the different actors and environment interacting with Kotlin. Then, a more detailed description of the development view is given. This section will contain aspects like standarization and instrumentation. Having looked at the development view, it is then possible to analyze the technical debt of Kotlin. This is important to know since it gives an idea of the current *health* of the Kotlin project. Finally, a new and unique view will be given. This will focus on how developers experience contributing to Kotlin. Over the course of the project, contributions were made to Kotlin. The experiences that occured while making these contributions will be used to enhance this section.
+In this chapter, Kotlin will be researched in more detail by first giving an overview of the different stakeholders, before expanding this to a broader context view. This is to properly define the different actors and environment interacting with Kotlin. Then, a more detailed description of the development view is given. This section will contain aspects like standardization and instrumentation. Having looked at the development view, it is then possible to analyze the technical debt of Kotlin. This is important to know since it gives an idea of the current *health* of the Kotlin project. Finally, a new and unique view will be given. This will focus on how developers experience contributing to Kotlin. Over the course of the project, contributions were made to Kotlin. The experiences that occured while making these contributions will be used to enhance this section.
 
  
 
@@ -252,11 +252,11 @@ The current state of testing in Kotlin is difficult to assess, because analyzing
 
 TeamCity and IntelliJ IDEA do not support code coverage for the Kotlin language [^35]. Since JetBrains likely does not track test coverage, they have a presumably high potential of test debt. Furthermore, the high amount of TODOs and their slow decline suggests JetBrains is aware of their testing debt, but is not prioritizing it.
 
-To improve testing standards (see section [Standardization of testing](#Standardization%20of%20Testing)) JetBrains could create quality requirements and guidelines for open source developers. Furthermore, test reviews should be mandatory for pull requests, because testing is not checked in pull request reviews (see section Pull Request Analysis).
+To improve testing standards (see section [Standardization of testing](#standardization-of-testing)) JetBrains could create quality requirements and guidelines for open source developers. Furthermore, test reviews should be mandatory for pull requests, because testing is not checked in pull request reviews (see section Pull Request Analysis).
 
 ### Design Debt
 
-Since Kotlin is a large project, the internal dependencies are difficult to evaluate (see in section [Module Organization](#Modules)). It is evident that the internal structure is quite complex with many intertwined modules. This is an indicator of high coupling, and thus large code debt. Meaning it is tough to add changes to the system.
+Since Kotlin is a large project, the internal dependencies are difficult to evaluate (see in section [Module Organization](#modules)). It is evident that the internal structure is quite complex with many intertwined modules. This is an indicator of high coupling, and thus large code debt. Meaning it is tough to add changes to the system.
 
 While analyzing the dependencies of Kotlin, older version of libraries were found. For instance, it appears that JUnit 4 is still used, which has been out-of-date for over a year.
 
@@ -380,7 +380,7 @@ Because KEEP is can be slow and very time consuming JetBrains should add further
 
 In this section, the development and testing experience for an open source contributor for Kotlin after an issue was chosen will be explored. This involves understanding the project organization, documentation, requirements, and implementation of the selected issue.
 
-Starting to contribute to Kotlin can be difficult for developers, because the project structure is unclear and very difficult to assess (see section [Module Organization](#Modules)). Additionally, many functions especially used for inspections are uncommented and can be difficult to understand for a new contributor.
+Starting to contribute to Kotlin can be difficult for developers, because the project structure is unclear and very difficult to assess (see section [Module Organization](#modules)). Additionally, many functions especially used for inspections are uncommented and can be difficult to understand for a new contributor.
 
 Since the 23th of March 2019, documentation especially for inspections and quickfixes has been added [^54], teaching new contributors how to start with intentions and in which directories to look. This is a major improvement on the user experience, as a majority of Kotlin’s easy issues are related to Inspections and Intentions [^55].
 
@@ -470,7 +470,7 @@ Summarizing the results, Kotlin is a language that is starting to mature, and th
 
 [^24]: Kotlin Twitter, Kotlin twitter, (2019). <https://kotlinlang.org/foundation/kotlin-foundation.html#lead-designer>.
 
-[^25]: Community, Kotlin reddit, (2019). [www.reddit.com/r/kotlin](www.reddit.com/r/kotlin).
+[^25]: Community, Kotlin reddit, (2019). [www.reddit.com/r/kotlin](https://www.reddit.com/r/kotlin).
 
 [^26]: Kotlin Lang, Kotlin homepage, (2019). <https://kotlinlang.org/>.
 
