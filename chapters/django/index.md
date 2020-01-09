@@ -56,7 +56,9 @@ This chapter aims to describe the high-level architecture starting with an analy
 
 According to Rozanski and Woods \[1\], a stakehold is a person, a group or an entity that has interest and concerns about the realization of the architecture. According to their classification based on the roles and concerns, 10 types of stakeholders are identified: acquirers, assessors, communicators, developers, maintainers, suppliers, support staff, system administrators, testers and users. In Django, the non-profit organization **Django Software Foundation** (DSF), the **Core Members** and the **Technical Board** have a major impact in the administration of the project. Thus, special attention is required in order to fully understand their responsibilities and how they integrate with the RW categorization.
 
-**Django Software Foundation** Based on the Django [organization](https://docs.djangoproject.com/en/2.1/internals/organization/), the Django Software Foundation handles the financial and legal aspects of the project. The goal of the [foundation](https://www.djangoproject.com/foundation/) is to promote, support and advance the project. Therefore, they support the development by organising meetups and community events, by promoting the use of Django in the online development community, protecting the intellectual property and advancing the state of the art in Web development. The foundation is composed of **corporate members**, **individual members** and the **board of directors**.
+### Django Software Foundation
+
+Based on the Django [organization](https://docs.djangoproject.com/en/2.1/internals/organization/), the Django Software Foundation handles the financial and legal aspects of the project. The goal of the [foundation](https://www.djangoproject.com/foundation/) is to promote, support and advance the project. Therefore, they support the development by organising meetups and community events, by promoting the use of Django in the online development community, protecting the intellectual property and advancing the state of the art in Web development. The foundation is composed of **corporate members**, **individual members** and the **board of directors**.
 
 The [corporate members](https://www.djangoproject.com/foundation/corporate-members/) offer the financial support in the form of one year subscription based packages. The packages are formed based on the number of people from the organization and the payment amount, ranging from organizations with up to 10 people and a dues of 2000$ (Bronze package) to organizations with more than 500 people and dues of 100,000$ (Platinum package).
 
@@ -64,7 +66,9 @@ The [individual members](https://www.djangoproject.com/foundation/individual-mem
 
 The board of directors is formed of Frank Wiles - President, [Anna Makarudze](http://blog.djangogirls.org/post/146535801439/your-django-story-meet-anna-makarudze) - Vice President, James Bennett - Secretary, [Jessica Deaton](https://www.linkedin.com/in/jessica-deaton/) - Treasurer, [Katie McLaughlin](https://www.linkedin.com/in/glasnt/) and Ola Tarkowska. Most of the members of the board of directors are public speakers, who help with Django events and conferences organization or are very experienced developers.
 
-**Core Members** The [core team members](https://docs.djangoproject.com/en/2.1/internals/organization/#core-team) are a group of volunteers that have shown dedication over time and became trustworthy to manage the Django Project. Some of the attributions of the core members are:
+### Core Members
+
+The [core team members](https://docs.djangoproject.com/en/2.1/internals/organization/#core-team) are a group of volunteers that have shown dedication over time and became trustworthy to manage the Django Project. Some of the attributions of the core members are:
 
 -   triaging tickets;
 -   writing, reviewing and merging patches;
@@ -82,7 +86,9 @@ They also have authority over the Django Project infrastructure, the webite, the
 -   Technical board
 -   Technical team - Veterans contributors who are active in the day to day development
 
-**Technical Board** The Technical Board is a special category of core members. Their role is to steer the technical choices and to mantain the quality and stabilty of Django. The members are chosen on every release and the current board of the 2.2 release is: Adam Johnson, Andrew Godwin, Aymeric Augustin, Carl Meyer, James Bennett. The main attributes of the technical board is to grant or remove commit access and make decisions when no consensus is found.
+### Technical Board
+
+The Technical Board is a special category of core members. Their role is to steer the technical choices and to mantain the quality and stabilty of Django. The members are chosen on every release and the current board of the 2.2 release is: Adam Johnson, Andrew Godwin, Aymeric Augustin, Carl Meyer, James Bennett. The main attributes of the technical board is to grant or remove commit access and make decisions when no consensus is found.
 
 Based on the three major categories idetified and their roles in the organization, the RW stakeholder categorization of Django is as follows:
 
