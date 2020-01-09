@@ -7,7 +7,7 @@ chapter: true
 
 # PyTorch
 
-By [Ziyu Bao](https://github.com/ZiyuBao), [Tian Tian](https://github.com/ttup7777), [Yuanhao Xie](github.com/BARBAPAPA215), [Zhao Yin](https://github.com/zhaoyin666) from TU Delft.
+By [Ziyu Bao](https://github.com/ZiyuBao), [Tian Tian](https://github.com/ttup7777), [Yuanhao Xie](https://github.com/BARBAPAPA215), [Zhao Yin](https://github.com/zhaoyin666) from TU Delft.
 
 ![](images/pytorch/ZcKU3XT.png)
 
@@ -138,6 +138,7 @@ The main structure of PyTorch in a architectural view is shown in the figure bel
 
 ![](images/pytorch/iGWbOXL.png)
 _Pytorch Architecture. Inspired by [^3]_
+<a id="module_model"></a>
 
 The top-level Python library of PyTorch (please refer to the following section) exposes easy-to-understand API for users to quickly perform operations on tersors, build and train a deep neural network. This library provides interface but doesn't really execute the computations. Instead, it delivers this job down to its efficient computation engines written in C++. 
 
