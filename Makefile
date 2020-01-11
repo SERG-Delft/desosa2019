@@ -45,8 +45,11 @@ clean:
 	rm -rf images $(EXTRACTDIR) $(TARGET_DIR)
 
 # Create the full book.
+#
 # To create single chapter use:
-# $ make pdf CHAPTERS=chapters/scipy/
+#
+# To create tex source for debugging, use:
+# $ make pdf CHAPTERS=chapters/scipy/ PDF_OUT=target/desosa.tex
 pdf:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
