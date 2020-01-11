@@ -300,11 +300,11 @@ During development, technical debt is kept at a minimum by running several linte
 
 After resolving an issue or when in need of help, a pull request (PR) is opened. Each PR has to include the checklist shown below:
 
--   ☒ My code is tested.
--   ☒ My code follows the [WordPress code style](https://github.com/WordPress/gutenberg/blob/master/docs/contributors/coding-guidelines.md).
--   ☒ My code follows the [accessibility standards](https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/accessibility.md).
--   ☒ My code has proper [inline documentation](https://github.com/WordPress/gutenberg/blob/master/docs/contributors/document.md).
--   ☒ I’ve included developer documentation if appropriate.
+- My code is tested.
+- My code follows the [WordPress code style](https://github.com/WordPress/gutenberg/blob/master/docs/contributors/coding-guidelines.md).
+- My code follows the [accessibility standards](https://github.com/WordPress/gutenberg/blob/master/docs/designers-developers/developers/accessibility.md).
+- My code has proper [inline documentation](https://github.com/WordPress/gutenberg/blob/master/docs/contributors/document.md).
+- I’ve included developer documentation if appropriate.
 
 In addition to automated tests, each pull request is reviewed manually by at least one of the code owners. Additionally, PRs can only be merged with approval of at least one code owner.
 
