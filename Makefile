@@ -68,3 +68,5 @@ docker:
 serve:
 	cd _site && python -m SimpleHTTPServer 4000
 
+bib:
+	perl -pi.bak -e 's/\[\^(\d+)\]/[^flair-$$1]/g' chapters/flair/index.md 
