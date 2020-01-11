@@ -21,6 +21,7 @@ all:
 epub:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
+	 --file-scope \
 	 --toc \
 	 --number-sections \
 	 --toc-depth=2 \
@@ -53,6 +54,7 @@ clean:
 pdf:
 	mkdir -p $(TARGET_DIR)
 	pandoc \
+	 --file-scope \
 	 --include-in-header=preamble.tex \
      --variable urlcolor=cyan \
 	 --toc \
