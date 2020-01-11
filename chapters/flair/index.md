@@ -52,7 +52,7 @@ building, testing, debugging, etc. It is imperative to identify individuals or g
 likely to affect or be affected by a proposed action and sorting them according to their interactions. 
 Stakeholder analysis is done so as to identify and prioritize the role of the stakeholders. 
 
-We use the description of stakeholders obtained from Rozanski and Woods [^flair-1] to classify stakeholders.
+We use the description of stakeholders obtained from Rozanski and Woods [^1] to classify stakeholders.
 These stakeholders will be mentioned as **Main Stakeholders**. Stakeholders not part of the Rozanski and Woods classification, are described as
 **Other Stakeholders**.
 
@@ -133,7 +133,7 @@ checking for errors, the PR that meet their requirements are merged.
 
 ### Stakeholder analysis: Power vs Interest Grid
 
-Based on Mendelow's Power vs Interest Grid [^flair-2], the groups of stakeholders necessary to be managed closely 
+Based on Mendelow's Power vs Interest Grid [^2], the groups of stakeholders necessary to be managed closely 
 are classified.  
 
 
@@ -165,7 +165,7 @@ we will show a context view diagram, discuss the system scope and analyze the in
 Flair is a research project of Zalando Research, in the area of NLP. Flair is a 
 cutting edge NLP framework, advancing over all the other existing methodologies. 
 The scope of Flair is well defined and its current version includes the following 
-capabilities [^flair-3].
+capabilities [^3].
   
 * Built upon Pytorch 0.4+ which is compatible on all operating systems: Windows, MacOS and other Unix-based OSs, and that helps in training your own models.
 * Can be easily installed using a [pip command](https://github.com/zalandoresearch/flair#requirements-and-installation).
@@ -210,7 +210,7 @@ achieving robust state-of-the-art results on downstream tasks.
  
 In this section, we detail Flair's module organization, as well as important 
 dependencies between modules, in order to obtain a good understanding of 
-Flair's code structure, based on [^flair-1]. The inter dependency of the modules are shown in *Figure 4.2*.
+Flair's code structure, based on [^1]. The inter dependency of the modules are shown in *Figure 4.2*.
 
 
 ![Module Organization of Flair](images/flair/Module_Organization_1_resized.png)
@@ -617,15 +617,15 @@ merged. Also, the code build was verified and passed in Travis CI.
 
 ### Evolution perspective
 
-Development of Flair was started in the summers of 2018 by Zalando Research and is licensed under MIT [^flair-3]. It was made an open source Python project by Zalando SE in June, 2018 [^flair-3].
+Development of Flair was started in the summers of 2018 by Zalando Research and is licensed under MIT [^3]. It was made an open source Python project by Zalando SE in June, 2018 [^3].
 Its based on the research done by Akbik et al. Akbik is the main developer since the start of the project and still is the head developer.
 
-The first draft of the project `Version 0.1.0` was released on Jul 13, 2018 [^flair-3]. Since then, 998 commits have been done to the master and 7 different versions have been released, 
-with `Version 0.4.1` being the latest [^flair-3]. Technical debt is paid in every release by timely fixing bugs. Also, code is being reorganized if needed, which helps in reducing 
+The first draft of the project `Version 0.1.0` was released on Jul 13, 2018 [^3]. Since then, 998 commits have been done to the master and 7 different versions have been released, 
+with `Version 0.4.1` being the latest [^3]. Technical debt is paid in every release by timely fixing bugs. Also, code is being reorganized if needed, which helps in reducing 
 technical debt like duplications. Documentation is done for every new feature add or for any updation. Different new features were added and improvements were done over the period 
 of time in different releases. Some of the key features of different releases are shown in *Figure 5.12*.
 
-There are 93 issues still open, and 294 are closed [^flair-3]. Most of the open issues are of `question` label, but the bug count must be kept zero. Also, there are 6 pending pull requests, 
+There are 93 issues still open, and 294 are closed [^3]. Most of the open issues are of `question` label, but the bug count must be kept zero. Also, there are 6 pending pull requests, 
 which must also be taken into consideration.
 
 ![Code frequency](images/flair/codeFrequencyDiagram_resized.PNG)
@@ -634,11 +634,11 @@ which must also be taken into consideration.
 
 ## Functional View
 
-Functional view mainly describes systems architectural elements. It explains about primary interactions between the functional elements, their exposed interfaces and their responsibilities [^flair-1].
+Functional view mainly describes systems architectural elements. It explains about primary interactions between the functional elements, their exposed interfaces and their responsibilities [^1].
 
 ### Functional capabilities 
 
-Functional capabilities define what the system is required to do and what it is not required to do [^flair-1]. 
+Functional capabilities define what the system is required to do and what it is not required to do [^1]. 
 Flair has many capabilities and some of the most vital ones are listed in the table
 below.
 
@@ -694,11 +694,11 @@ different range of NLP tasks like Chunking, Named Entity Recognition, Part-of-Sp
 tagging. It supports best embedding configurations for each task. The performance 
 is measured over evaluation datasets, and the F1 score for each dataset is 
 calculated by averaging over five runs 
-[^flair-7]. In the latest release `Version 0.4.1`, there is a huge 
-improvement in the training speed compared to the previous versions of Flair (2x training speed for language models)[^flair-7].
+[^7]. In the latest release `Version 0.4.1`, there is a huge 
+improvement in the training speed compared to the previous versions of Flair (2x training speed for language models)[^7].
 
-Flair achieved optimal results in text classification outperforming `Facebook's FastText` in accuracy & `Google’s AutoML Natural Language` in training speed on `Kaggle’s SMS Spam Detection Dataset` [^flair-6].
- Flair model achieved an f1-score of 0.973 after 10 epochs while `FastText` achieved f1-score of 0.883 [^flair-6]. It beats `AutoML` in terms of training speed and achieved slightly better accuracy than it [^flair-5].
+Flair achieved optimal results in text classification outperforming `Facebook's FastText` in accuracy & `Google’s AutoML Natural Language` in training speed on `Kaggle’s SMS Spam Detection Dataset` [^6].
+ Flair model achieved an f1-score of 0.973 after 10 epochs while `FastText` achieved f1-score of 0.883 [^6]. It beats `AutoML` in terms of training speed and achieved slightly better accuracy than it [^5].
 
 ### Scalability
 
@@ -787,10 +787,10 @@ The pull requests made through github are analysed using standard code of conduc
 
 ## References
 
-[^flair-1]: Rozanski, N. & Woods, E. (2011). Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. Addison-Wesley.
-[^flair-2]: Mendelow, A. L. (1981, December). Environmental Scanning-The Impact of the Stakeholder Concept. In ICIS (p. 20).
-[^flair-3]: Flair. (2019, February). [zalandoresearch/flair: A very simple framework for state-of-the-art Natural Language Processing (NLP)](https://github.com/zalandoresearch/flair).
-[^flair-4]: Akbik, A., Blythe, D., & Vollgraf, R. (2018). [Contextual string embeddings for sequence labeling](https://aclanthology.coli.uni-saarland.de/papers/C18-1139/c18-1139). In Proceedings of the 27th International Conference on Computational Linguistics (pp. 1638-1649).
-[^flair-5]: Magajna, T. (2019). [How to Beat Google’s AutoML - Hyperparameter Optimisation with Flair](https://towardsdatascience.com/how-to-beat-automl-hyperparameter-optimisation-with-flair-3b2f5092d9f5).
-[^flair-6]: Magajna, T. (2018). [Text Classification with State of the Art NLP Library — Flair](https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f).
-[^flair-7]: https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#ref3
+[^1]: Rozanski, N. & Woods, E. (2011). Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. Addison-Wesley.
+[^2]: Mendelow, A. L. (1981, December). Environmental Scanning-The Impact of the Stakeholder Concept. In ICIS (p. 20).
+[^3]: Flair. (2019, February). [zalandoresearch/flair: A very simple framework for state-of-the-art Natural Language Processing (NLP)](https://github.com/zalandoresearch/flair).
+[^4]: Akbik, A., Blythe, D., & Vollgraf, R. (2018). [Contextual string embeddings for sequence labeling](https://aclanthology.coli.uni-saarland.de/papers/C18-1139/c18-1139). In Proceedings of the 27th International Conference on Computational Linguistics (pp. 1638-1649).
+[^5]: Magajna, T. (2019). [How to Beat Google’s AutoML - Hyperparameter Optimisation with Flair](https://towardsdatascience.com/how-to-beat-automl-hyperparameter-optimisation-with-flair-3b2f5092d9f5).
+[^6]: Magajna, T. (2018). [Text Classification with State of the Art NLP Library — Flair](https://towardsdatascience.com/text-classification-with-state-of-the-art-nlp-library-flair-b541d7add21f).
+[^7]: https://gitlab.ewi.tudelft.nl/in4315/2018-2019/TI3125TU-swa-12-flair/swa-12-flair/blob/master/report.md#ref3
