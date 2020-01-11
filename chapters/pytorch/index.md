@@ -397,7 +397,7 @@ With two months of analysis of Pytorch, we gain more insights of the whole Pytor
 | Fixed non-determinate preprocessing on DataLoader [#4640](https://github.com/pytorch/pytorch/pull/4640) by @AlexanderRadionov | After v0.3.1  | `torch.utils`	DataLoader(Trainer and other utility functions for convenience) | This pr adds ind_worker_queue parameter in DataLoader to solve the non-deterministic issue which happens when DataLoader is in multiprocessing mode| No|
 | Introduce scopes during tracing [#3016](https://github.com/pytorch/pytorch/pull/3016) by @lantiga | After v0.2.0 | `Scope`, `IR` (intermediate representation) and `Tracing` | This pr introduced the scopes for group operations in the tracing IR| No|
 
-#### Pull requests which are rejected：
+#### Pull requests which are rejected
 
 | Pull request | Lifetime| Components it touches| PR content and Related issues| Deprecate another pull request or not|
 | -------- | -------- | -------- | --------| --------|
