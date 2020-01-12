@@ -6,7 +6,7 @@
         <h3>Delft Students On Software Architecture</h3>
       </a>
       <ol>
-      {% assign pages = site.pages | sort_by: "project" %}
+      {% assign pages = site.pages | sort: "project" %}
       {% for page in pages %}
         {% if page.chapter == true %}
         <li><a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a></li>
