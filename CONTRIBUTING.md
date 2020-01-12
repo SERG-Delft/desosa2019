@@ -20,4 +20,4 @@ chapter: true
 - Ensure `pandoc` is able to produce proper `pdf` and `epub` from your index file
 
 
-If you want to try out building the full book and see your chapter in html, consult the make file
+If you want to try out building the full book and see your chapter in html, consult the Makefile
