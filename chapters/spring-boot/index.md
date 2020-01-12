@@ -914,7 +914,7 @@ Our team's contribution to the Spring Boot project is presented in the table bel
 | [#16326: Add Spring-specific styling to Actuator's API documentation](https://github.com/spring-projects/spring-boot/pull/16326) | Merged | [2.2.0.M2](https://github.com/spring-projects/spring-boot/milestone/134) |
 | [#16174: Replace ${sys:PID} with %pid in log4j2 configuration](https://github.com/spring-projects/spring-boot/pull/16174) | Merged | [2.2.0.M2](https://github.com/spring-projects/spring-boot/milestone/134) |
 | [#16166: Update ambiguous documentation about ConfigurationProperties](https://github.com/spring-projects/spring-boot/pull/16166) | Merged | [2.1.4](https://github.com/spring-projects/spring-boot/milestone/138) |
-| [#16182: Determine Spring Boot version on startup correctly when using Jigsaw](https://github.com/spring-projects/spring-boot/pull/16182) | Waiting for merge | Not yet scheduled |
+| [#16182: Determine Spring Boot version on startup correctly when using Jigsaw](https://github.com/spring-projects/spring-boot/pull/16182) | Merged | [2.2.0.M3](https://github.com/spring-projects/spring-boot/milestone/135) |
 
 Our team is represented in the [Spring Boot 2.1.4](https://github.com/spring-projects/spring-boot/releases/tag/v2.1.4.RELEASE)
 release with 
