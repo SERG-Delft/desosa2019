@@ -1,7 +1,7 @@
 ---
 layout: default
 project: pandas
-title: "Pandas: The Python Data Analysis Library"
+title: "Pandas"
 chapter: true
 ---
 
