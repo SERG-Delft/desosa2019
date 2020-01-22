@@ -54,23 +54,23 @@ By Jure Vidmar, Eghonghon Eigbe, Oxana Oosterlee, Suryansh Sharma
     10.1 [Pull Request Analysis](#PRAnalysis)    
     10.2 [Key Contact Persons](#contact)    
 
-## 1. Introduction <a name="introduction"></a>
+## 1. Introduction
 The Zephyr Project is an open source collaboration project hosted by the Linux Foundation. It is a small, scalable, real-time operating system (RTOS) built for embedded platforms with diverse hardware architectures. It is aimed at Internet of Things (IoT) devices, which often have stringent resource constraints. Therefore, the Zephyr Project’s goal is to design a modular operating system that has a small footprint and low power consumption. Furthermore, it places a high importance on network security to protect devices connected to the internet from potential harm. Because of its modularity, the software can be developed easily for different platforms with different specifications. It contains a lot of tools such as sensor and device drivers and a networking stack to make it easy for developers to fit the software to their specific application. It is an open-source project that has a large network of contributors, including a number of industry partners, and the community can evolve the project to support new hardware, developer tools and drivers.
 
 
-## 2. Stakeholder Analysis <a name="stakeholders"></a>
+## 2. Stakeholder Analysis <a id="stakeholders"></a>
 Different people have different interests in the Zephyr Project. To identify these different stakeholders, an analysis was done using the stakeholder classes as defined by Rozanski and Woods [[1](#ref1)] as a guideline. 
 
 Type | Description
 --|--
 Acquirers | The Zephyr Project is acquired by the Linux Foundation, which provides a legal and administrative framework for the project. Funding comes from companies that can become a '[member](https://www.zephyrproject.org/#members)' by paying an annual fee.
-Assessors | The project's [governing board](https://www.zephyrproject.org/about/organization/) sets project goals, makes marketing and legal decisions and oversees the budget. 
+Assessors | The project's [governing board](https://www.zephyrproject.org/governance/) sets project goals, makes marketing and legal decisions and oversees the budget. 
 Developers | There is a large community of regular contributors. The core developers are mainly employees of the member companies. They manage the system and make major contributions to it. Key developers identified are presented in [Table 1](#table1) below.
-Communicators | A [community sub-group](https://www.zephyrproject.org/about/organization/) is responsible for the management and coordination of community activities and communication. There are weekly [group meetings](https://github.com/zephyrproject-rtos/zephyr/wiki/Zephyr-Committee-and-Working-Group-Meetings) for the different working groups and committees that are open to the public, except for the security working group. All user and developer documentation is provided through the [Zephyr Docs](https://docs.zephyrproject.org/) page. 
-Maintainers | The [technical steering committee](https://www.zephyrproject.org/about/organization/) sets the direction for the project, sets up new projects, coordinates releases, enforces development processes and moderates other working groups within the project. It is chaired by Anas Nashif (Intel). A system of codeowners exists, in which the core developers of the project are responsible for their parts of the system and review every code change that affects these parts. One of their main challenges is maintaining code quality, which is necessary in order to provide secure and functionally safe, certifiable RTOS. 
+Communicators | A [community sub-group](https://www.zephyrproject.org/governance/) is responsible for the management and coordination of community activities and communication. There are weekly [group meetings](https://github.com/zephyrproject-rtos/zephyr/wiki/Zephyr-Committee-and-Working-Group-Meetings) for the different working groups and committees that are open to the public, except for the security working group. All user and developer documentation is provided through the [Zephyr Docs](https://docs.zephyrproject.org/) page. 
+Maintainers | The [technical steering committee](https://www.zephyrproject.org/governance/) sets the direction for the project, sets up new projects, coordinates releases, enforces development processes and moderates other working groups within the project. It is chaired by Anas Nashif (Intel). A system of codeowners exists, in which the core developers of the project are responsible for their parts of the system and review every code change that affects these parts. One of their main challenges is maintaining code quality, which is necessary in order to provide secure and functionally safe, certifiable RTOS. 
 Suppliers | Manufacturers of hardware platforms provide an environment on which the Zephyr RTOS can be deployed. The Zephyr kernel itself has been derived from Wind River’s commercial VxWorks Microkernel Profile made for VxWorks. The Linux Foundation also currently provides some servers and infrastructure to the project. 
-Support Staff | An administrative [advocacy sub-group](https://www.zephyrproject.org/about/organization/) focuses on managing public relations, the website as well as training and materials management and other outreach activities. Technical support comes directly from the project's active contributors, who can be contacted through different communication channels (e.g., Slack).
-Testers | A [Testing Working Group]((https://www.zephyrproject.org/about/organization/)) oversees the testing procedure and tools. These tools include the testing framework available ([Ztest](https://docs.zephyrproject.org/latest/guides/test/ztest.html)) and the Continuous Integration.
+Support Staff | An administrative [advocacy sub-group](https://www.zephyrproject.org/governance/) focuses on managing public relations, the website as well as training and materials management and other outreach activities. Technical support comes directly from the project's active contributors, who can be contacted through different communication channels (e.g., Slack).
+Testers | A [Testing Working Group]((https://www.zephyrproject.org/governance/)) oversees the testing procedure and tools. These tools include the testing framework available ([Ztest](https://docs.zephyrproject.org/latest/guides/test/ztest.html)) and the Continuous Integration.
 Users | Zephyr is built for embedded programmers building real-time and connected (IoT) systems on resource constrained devices. These can be both individual users as well as commercial organizations that can use the software under the Apache v2.0 License. 
 Competitors | Direct competition comes from other IoT targeted RTOSes, such as Riot OS and ARM Mbed OS. To a lesser extent it competes with projects as freeRTOS and commercial OSes such as µC/OS and VxWorks, which provide IoT support as part of a larger system.
 External Regulators | The Zephyr Project is subject to export compliance set by the US Export Administration Regulations and other U.S. and foreign laws and may not be exported, re-exported or transferred to a list of countries set by the US government. 
@@ -78,13 +78,10 @@ Security Evaluators | One of the distinguishing features of Zephyr is the securi
 
 Figure 1 shows the most important stakeholders in a power-interest graph. The project's organisational bodies clearly have the largest power within the project, where the member companies play a big role in providing the manpower. These are mainly internal stakeholders. External stakeholders have less power, and their interest in the project is mainly based on their usage of Zephyr. 
 
-<figure>
-    <img src="Figures/power_interest.png" alt="Power-interest graph" 
-    id="fig8" title="Power-interest graph" width = "700px" align="center">
-    <figcaption>Figure 1 - Power-interest graph</figcaption>
-</figure>
+![](Figures/power_interest.png)  
+Figure 1 - Power-interest graph
 
-Table 1 - Key Contributors to the Zephyr Project<a name="table1"></a>
+Table 1 - Key Contributors to the Zephyr Project<a id="table1"></a>
 
 Github ID| Affiliation| Contribution (out of 8025 closed pull requests)| Role
 --|--|--|--
@@ -94,10 +91,10 @@ Github ID| Affiliation| Contribution (out of 8025 closed pull requests)| Role
 [@mike-scott](https://github.com/mike-scott) |Independent |122 |Reviewer, Developer
 [@SebastianBoe](https://github.com/SebastianBoe)|Nordic Semiconductors Employee|285 |Reviewer, Developer
 
-## 3. Context view <a name="context"></a>
+## 3. Context view <a id="context"></a>
 From the stakeholders discussed in the previous section, it is clear that a lot of internal and external entities are involved in the Zephyr Project. To provide context on who/what these entities are and how they are connected, the context view in Figure 2 presents an overview of the most important entities.
 
-The project is [well-organised](https://www.zephyrproject.org/about/organization/) by its **host** the Linux Foundation. Its **governance** consists of two main bodies: a governing board that makes project management decisions and a technical steering committee (TSC) that manages the development. The TSC chair sits in both boards and provides a link between the two. Specialized committees such as the security working group fall under the responsibility of the governance. Members of the boards are provided by the **project member** companies, who pay a yearly contribution. The [membership](https://www.zephyrproject.org/#members) is awarded in tiers which are based on the contribution amount. A higher tier means more influence in the project’s governance. 
+The project is [well-organised](https://www.zephyrproject.org/governance/) by its **host** the Linux Foundation. Its **governance** consists of two main bodies: a governing board that makes project management decisions and a technical steering committee (TSC) that manages the development. The TSC chair sits in both boards and provides a link between the two. Specialized committees such as the security working group fall under the responsibility of the governance. Members of the boards are provided by the **project member** companies, who pay a yearly contribution. The [membership](https://www.zephyrproject.org/#members) is awarded in tiers which are based on the contribution amount. A higher tier means more influence in the project’s governance. 
 
 Zephyr is **developed** by a community that consists of 400+ contributors. Most of the main contributors are employed by member companies. For **communication** [Github](https://github.com/zephyrproject-rtos/zephyr) and the [mailing lists](https://lists.zephyrproject.org/g/main) are used, and to a lesser extent the [Slack](https://zephyrproject.slack.com/messages/C18PLHN8H/) and the [IRC chat channel](irc://irc.freenode.net/zephyrproject).
 
@@ -106,25 +103,19 @@ As **development tools**, Zephyr relies mainly on GitHub, using Shippable for [C
 Zephyr runs on multiple different **architectures**, and is ported to a continuously increasing list of [150+ boards](https://docs.zephyrproject.org/latest/boards/index.html). **Boards** that are supported are for example from manufactures as STM (Nucleo boards), Arduino, Espressif, NXP and Nordic Semiconductor. **Competitors** that also provide support for (a subset of) these platforms are for example Riot OS and ARM Mbed OS. Users can use any of the supported boards in their project. Commercial users can use Zephyr under the Apache v2.0 **license**. Current examples of users include CommSolis, an ultra-low power solutions company for the Internet of Things (IoT) and the Philae and the accompanying Rosetta Orbiter which landed on Comet Churyumov–Gerasimenko.
 
 
-<div style="width:200px; height:100px">
-<figure>
-    <img src="Figures/context_view.png" alt="This is the figure caption" 
-    id="fig1" title="Context View" style="height:75px;width:120px;" align="center">
-    <figcaption>Figure 2 - Context view</figcaption>
-</figure>
-</div>
+![](Figures/context_view.png)  
+Figure 2 - Context view
 
-## 4. Decision Making Process <a name="DecisionMakingProcess"></a>
+
+## 4. Decision Making Process <a id="DecisionMakingProcess"></a>
 This section discusses how pull requests are handled within the Zephyr Project. The analysis was done by first clustering issues into different classes, followed by an analysis on a number of pull requests, which are listed in the [Appendix](#appendix).
 
 Figure 3 shows the groups of issues, the concerns they address and the stakeholders who influence these issues the most.
-<figure>
-    <img src="Figures/IssueClusters.png" alt="Issue Clusters" 
-    id="fig2" title="Issue Clusters" width="900px" align="center">
-    <figcaption>Figure 3 - Issue Clusters</figcaption>
-</figure>
 
-#### 4.1 Decision Making Process  <a name="DecisionMakingTheory"></a>
+![](Figures/IssueClusters.png)  
+Figure 3 - Issue Clusters
+
+#### 4.1 Decision Making Process  <a id="DecisionMakingTheory"></a>
 
 When a pull request is made, an automatic tool _Codecov_ analyzes it for code coverage and comments with the percentage of the code the requested pull attempts to change. The Continuous Integration also performs different analysis and sanity checks after which it is reviewed by the designated reviewers. Following their approval or otherwise, a decision is reached by the integrators whether to merge or decline the request. In the process of making this decision there is an option to request changes from the developer which can change the decision of a reviewer. There is also a back and forth that gives the developer a chance to justify or clarify aspects of the request before a decision is made.
 To merge a request, all the assigned reviewers must approve the changes made. This process of approval was noted to be influenced by the following factors:
@@ -139,42 +130,31 @@ To merge a request, all the assigned reviewers must approve the changes made. Th
 
 The flow is shown in Figure 4.
 
-<figure>
-    <img src="Figures/Flow_Chart_Decision_Making.png" alt="This is the figure caption" 
-    id="fig2" title="Decision Making Process" width="450px" align="center">
-    <figcaption>Figure 4 - Pull request flow</figcaption>
-</figure>
+![](Figures/Flow_Chart_Decision_Making.png)  
+Figure 4 - Pull request flow
 
-## 5. Development View <a name="DevelopmentView"></a>
+## 5. Development View <a id="DevelopmentView"></a>
 The Development View provides an overview for the developer on how the codebase is organized, what standard design practices are in place, and how the codebase is managed for different build configurations.
 
-#### 5.1 Codeline Organization <a name="CodelineOrganization"></a>
+#### 5.1 Codeline Organization <a id="CodelineOrganization"></a>
 The Zephyr Project aims to provide all required building blocks needed to deploy complex IoT applications. It organizes itself across multiple Git repositories, separating the RTOS code from external libraries and development tools. This improves modularity, avoids conflicts in licensing and certification, and enables out-of tree development. Dedicated multi-purpose command line tool called '[west](https://docs.zephyrproject.org/latest/guides/west/index.html#west)' was developed, for easier managment of repositories and development. Figure 5 shows a typical (west) installation directory structure.
 
-<figure>
-    <img src="Figures/ZephyrProjectTree.png" alt="Zephyr Project Tree Structure" 
-    id="fig3" title="Codeline Organisation_1" width = "550px" align="center">
-    <figcaption>Figure 5 - Zephyr project tree structure</figcaption>
-</figure>
+![](Figures/ZephyrProjectTree.png)  
+Figure 5 - Zephyr project tree structure
 
 The layout of the base directory which hosts Zephyr’s own source code, its [kernel configuration (Kconfig) options](https://docs.zephyrproject.org/latest/application/index.html#kconfig-configuration) and its build definitions is shown in Figure 6. 
 
-<figure>
-    <img src="Figures/ZephyrSourceTreeStructure4.png" alt="Zephyr Source Tree Structure" 
-    id="fig4" title="Codeline Organisation_2" width = "710px" align="center">
-    <figcaption>Figure 6 - Zephyr source directory tree structure</figcaption>
-</figure>
+![](Figures/ZephyrSourceTreeStructure4.png)  
+Figure 6 - Zephyr source directory tree structure
 
 A Zephyr application in its simplest form has the following contents:
 
-<figure>
-    <img src="Figures/ZephyrAppTreeStructure.png" alt="Zephyr App Tree Structure" 
-    id="fig5" title="Codeline Organisation_3" width = "900px" align="center">
-    <figcaption>Figure 7 - Zephyr app directory tree structure</figcaption>
-</figure>
+
+![](Figures/ZephyrAppTreeStructure.png)  
+Figure 7 - Zephyr app directory tree structure
 
 
-#### 5.2 Module Organization <a name="ModuleOrganization"></a>
+#### 5.2 Module Organization <a id="ModuleOrganization"></a>
 On an architectural level, the source code can be divided into modules - a collection of code serving a specific purpose. The modules can be divided into three layers based on how close a module is to the hardware: 
 
 * **Kernel Layer**: The backbone of the OS. Includes modules for managing low-level processes directly related to the hardware and scheduling of tasks.
@@ -183,13 +163,10 @@ On an architectural level, the source code can be divided into modules - a colle
 
 In each layer, a module can use modules from the same and each lower-level layer. Figure 8 shows an overview of the three layers and a subset of the modules in each layer.
 
-<figure>
-    <img src="Figures/Module_organization.png" alt="Module Organization" 
-    id="fig6" title="Module Organization" width = "800px" align="center">
-    <figcaption>Figure 8 - Organization of Modules within the Zephyr source code. Kconfig files are used for managing variability of different architectures and boards. - note: for clarity only a subset of the modules is listed.</figcaption>
-</figure>
+![](Figures/Module_organization.png)  
+Figure 8 - Organization of Modules within the Zephyr source code. Kconfig files are used for managing variability of different architectures and boards. - note: for clarity only a subset of the modules is listed.
 
-#### 5.3 Build Configuration <a name="BuildConfig"></a>
+#### 5.3 Build Configuration <a id="BuildConfig"></a>
 
 The Zephyr build system is application-centric, as applications configure and initiate the build process. The kernel and application are compiled into a single binary using Zephyr SDK toolchains. Developers can also use their own toolchains for compilation, however. [CMake](https://docs.zephyrproject.org/latest/application/index.html?#id4) build system is used, allowing two different formats: 
 
@@ -198,19 +175,21 @@ The Zephyr build system is application-centric, as applications configure and in
 
 One of the advantages of Zephyr's distributed configuration system is separation of application-specific kernel settings from board-specific settings. At build-time, configuration (Kconfig) files from all layers are combined into a single kernel configuration.
 
-#### 5.4 Variability Management <a name="VarMang"></a>
+#### 5.4 Variability Management <a id="VarMang"></a>
 Variabiity is managed in the project by maintaining board specific code for each platform the operating system supports. Aplication developers make use of configuration files to specify what versions of code is compiled for a project. These files are shown in Figure 7 above under _prj.conf_. 
 
-#### 5.5 Instrumentation <a name="Instrumentation"></a>
+#### 5.5 Instrumentation <a id="Instrumentation"></a>
 For aiding developers in the process of debugging and testing, the Zephyr Project provides the following standardized tools:
 
 * **Debugging** - Debugging can be done using the GNU Debugger in [QEMU](https://wiki.qemu.org/Main_Page), which is an open-source machine emulator and virtualization software. When building an application, the build system automatically generates an ELF file that can be used for debugging purposes. 
 
 * **Logging** - Logging can be done using the [Logger API](https://docs.zephyrproject.org/latest/reference/logging/index.html#logger-api). It provides logging functions with four different [severity levels](https://github.com/zephyrproject-rtos/zephyr/blob/master/include/logging/log.h) (error, warning, info and debug) that can be used for debugging RTOS modules. It is configurable via Kconfig files.
 
-* **Testing** - The Zephyr Test Framework (Ztest) provides two methods of testing to the developer: [unit testing](https://docs.zephyrproject.org/latest/guides/test/ztest.html#quick-start-unit-testing) for testing specific modules and [sanitycheck](https://docs.zephyrproject.org/latest/contribute/index.html?highlight=shippable#sanitycheck) for testing the full software stack. The latter runs a number of different tests (which can be extended by developers) for different architectures using the QEMU emulator. On a daily basis, tests are automatically built and run on the whole project codebase to verify its operation as part of their CI process (using shippable). <img src="https://api.shippable.com/projects/58ffb2b8baa5e307002e1d79/badge?branch=master">
+* **Testing** - The Zephyr Test Framework (Ztest) provides two methods of testing to the developer: [unit testing](https://docs.zephyrproject.org/latest/guides/test/ztest.html#quick-start-unit-testing) for testing specific modules and [sanitycheck](https://docs.zephyrproject.org/latest/contribute/index.html?highlight=shippable#sanitycheck) for testing the full software stack. The latter runs a number of different tests (which can be extended by developers) for different architectures using the QEMU emulator. On a daily basis, tests are automatically built and run on the whole project codebase to verify its operation as part of their CI process (using shippable). 
 
-#### 5.6 Standardization of Design <a name="StandDesign"></a>
+![](https://api.shippable.com/projects/58ffb2b8baa5e307002e1d79/badge?branch=master)
+
+#### 5.6 Standardization of Design <a id="StandDesign"></a>
 The success of Zephyr's architecture can be attributed to it's standardization of development. Following the philosophy of "*standing on the shoulders of giants*", the project adopted development patterns and practices that were proven to work well in the industry:
 
 * **Release model** -  The project's [release model] follows the Linux kernel's model with several adaptations. Releases are time-based (rather than feature-based), following roughly three-month cycles. Each release period consists of a *merge window*, where new features and changes can be added, and a *stabilization phase* where only bug fixes and documentation improvements are allowed to be merged into the master branch.
@@ -224,7 +203,7 @@ The success of Zephyr's architecture can be attributed to it's standardization o
 [naming conventions]: https://github.com/zephyrproject-rtos/zephyr/wiki/Naming-Conventions 
 
 
-#### 5.7 Git workflow <a name="Gitworkflow"></a>
+#### 5.7 Git workflow <a id="Gitworkflow"></a>
 
 The [Git workflow] is well defined and documented, enabling developers to communicate about the code quality and bugs. This is crucial for resolving and avoiding technical debt, discussed in the next section. The majority of the communication about the source code is done through GitHub issues, which are used for reporting bugs as well as proposing features or enhancements. In the latter case, the proposal is expected to include elaborate description of the problem and the proposed implementation. Before the feature is agreed upon, developers discuss if the proposal fits into the current architecture and give advice on its implementation and maintenance. Large changes are discussed within the Technical Steering Committee meetings.
 
@@ -234,21 +213,18 @@ This open review system works very well for the Zephyr Project, ensuring that no
 
 [Git workflow]: https://docs.zephyrproject.org/latest/contribute/index.html#commit-guidelines
 
-## 6. Technical Debt <a name="TechnicalDebt"></a>
+## 6. Technical Debt <a id="TechnicalDebt"></a>
 In this section the performance of the Zephyr Project in regards of technical debt is analyzed. First, we take a look at what measures are taken now to avoid technical debt. Then, using tools we analyze what the state of the codebase actually is and how the project evolved over time.
 
-#### 6.1 Communication of Technical Debt <a name="CommTechDebt"></a>
+#### 6.1 Communication of Technical Debt <a id="CommTechDebt"></a>
 As already mentioned in [Git Workflow](#Gitworkflow), Zephyr requires all issues to be tagged properly. This combined with their extensive communication process is essential to avoid and resolve technical debt.  For technical debt related issues, the following tags are used explicitly:
 
-<figure>
-    <img src="Figures/CommTechDebt.png" alt="Tags Overview" 
-    id="fig7" title="Tags Overview" width = "700 px" align="center">
-    <figcaption>Figure 9 - Tags used for technical debt-related issues</figcaption>
-</figure>
+![](Figures/CommTechDebt.png)  
+Figure 9 - Tags used for technical debt-related issues
 
 Issues about improving the quality of the code or refactoring do not have a specific tag and can be found under `enhancement`. There exists a tag for this purpose, `area::Code Style`, but this tag is not used often. We find that Zephyr developers fix code issues as part of the tightly controlled development process rather than as an afterthought. 
 
-#### 6.2 Automatic Tools for Avoiding Technical Debt <a name="Autotools"></a>
+#### 6.2 Automatic Tools for Avoiding Technical Debt <a id="Autotools"></a>
 The Zephyr Project uses some automated tools that are run at every pull request as part of the Continuous Integration. These tools contribute to reducing the risk of (future) technical debt. If a pull request does not pass the tests all automated tools run, the pull request will not be merged. 
 
 Avoiding technical debt related to the source code: 
@@ -265,16 +241,16 @@ Avoiding technical debt related to documentation and traceability:
 
 * *Documentation style check* - Checks if added documentation adheres the [documentation style guidelines](https://docs.zephyrproject.org/latest/documentation/doc-guidelines.html).
 
-They follow some of the best CI practices as can be seen from their gold badge and this process goes a long way in avoiding technical debt. <a href="https://bestpractices.coreinfrastructure.org/projects/74"><img src="https://bestpractices.coreinfrastructure.org/projects/74/badge"></a>
+They follow some of the best CI practices as can be seen from their gold badge and this process goes a long way in avoiding technical debt. 
 
-#### 6.3 Automated Analysis <a name="AutoAnalysis"></a>
+[![](https://bestpractices.coreinfrastructure.org/projects/74/badge)](https://bestpractices.coreinfrastructure.org/projects/74)
+
+
+#### 6.3 Automated Analysis <a id="AutoAnalysis"></a>
 This section presents the results of running the Zephyr repository through [Sonarqube](https://www.sonarqube.org/), which is an automated analysis tool for code quality. Results are presented for code reliability, maintainability, duplication, coverage, complexity and size as these are deemed the most relevant to the project. These metrics are specifically relevant because of the hard real time use cases of Zephyr (and other RTOSes) which require predictable and easy to analyze code. 
 
-<figure>
-    <img src="Figures/sonar_qube_results_overview.png" alt="Analysis Overview" 
-    id="fig8" title="Analysis Overview" width = "1000px" align="center">
-    <figcaption>Figure 10 - Sonarqube analysis overview</figcaption>
-</figure>
+![](Figures/sonar_qube_results_overview.png)  
+Figure 10 - Sonarqube analysis overview
 
 ##### 6.3.1 Duplication
 The analysis gave a passing grade but raised 3400 code smells. Upon looking into these, it was clear that they were mostly from duplicated blocks of code. Putting this in context, we are reluctant to brand this a debt because it has a lot to do with how Zephyr manages variability. The largest contributors to the count are files from _ext_, _include_ and _build_ shown in Figure 6. It is an operating system that supports a large variety of boards and build files are maintained for different boards with multiple boards using the same dependencies. Upon building an application based on Zephyr, only board-related code is ported to the hardware.
@@ -284,36 +260,27 @@ The analysis gave a passing grade but raised 3400 code smells. Upon looking into
 The code base is 6 million lines of code large, 30% of which are comments. It has a cyclomatic complexity of 3,299 of which 80% of the independent paths are in the _scripts_ folder which houses the tests and sanity checks. The cognitive complexity results also bear the same ratio with the bulk of the complexity lying in the tests. Hence, we conclude that the bulk of code complexity is not in executing core functions of the operating system but in testing and building. Therefore, this complexity is not transferred to a user that ports Zephyr to their system and should satisfy hard real time complexity requirements.
 
 
-#### 6.4 Evolution Analysis <a name="EvolutionAnalysis"></a>
+#### 6.4 Evolution Analysis <a id="EvolutionAnalysis"></a>
 Zephyr was first released in May 2016 and by the time of writing, there are 14 releases. Despite steady and steep growth of the projects (from only supporting 15 boards in the first release, to 150+ boards in the 1.13 release), technical debt is being avoided rather than cured.
 
-<figure>
-    <img src="Figures/LOCWithExt.png" alt="LOC Evolution" 
-    id="fig9" title="Line of Code Evolution" width = "650 px" align="center">
-    <figcaption>Figure 11a - Lines of Code evolution Chart</figcaption>
-</figure>
+![](Figures/LOCWithExt.png)  
+Figure 11a - Lines of Code evolution Chart
 
 We analyzed the evolution of Zephyr by inspecting the growth of several components across releases. This was achieved using the tool `cloc`, counting the lines of code in selected top-level directories of the project: kernel, boards, arch, misc, tests, drivers, include, lib, subsys, ext. While C is not an object oriented language, we adopt terminology from [[2](#ref2)] in describing its evolution.
 
-<figure>
-    <img src="Figures/EvolutionMat.png" alt="Evolution Matrix" 
-    id="fig9" title="Lines of Code Evolution" width="600px;" align="center">
-    <figcaption>Figure 11b - Evolution Matrix </figcaption>
-</figure>
+![](Figures/EvolutionMat.png)
+Figure 11b - Evolution Matrix
 
 
 The results, shown in Figure 11b, show _arch_, _boards_, _drivers_ and _tests_ as 'supernova' directories. Test code is seen to grow with core functionality and this is a good counter-measure against technical debt. We also observe the _misc_ folder might be a technical debt indicator, as it contains code that does not fit into the folder organization otherwise. This is however a 'DayFly' directory which spiked once and was reduced in subsequent versions.
 
-<figure>
-    <img src="Figures/PercentageExternalCodeAcrossReleases.png" alt="External Code" 
-    id="fig10" title="External Code" width = "600 px" align="center">
-    <figcaption>Figure 12 - Evolution of external code within the code base</figcaption>
-</figure>
+![](Figures/PercentageExternalCodeAcrossReleases.png)
+Figure 12 - Evolution of external code within the code base
 
 The _ext_ folder, while not a 'Persisitent' directory, has grown disproportionately with the rest of the project as shown in Figure 12. This contains external code integrated into the project and is currently the heaviest folder by the chosen LOC metric. Code contained is not in sync with changes and upgrades made by the original developers of these systems and thus, we identify this as technical debt. In the [documentation](https://docs.zephyrproject.org/latest/guides/west/repo-tool.html), there are plans to move such code to separate repositories to keep externally maintained code away from the core Zephyr code. This will also ensure that such code remains in sync with the original systems.
 
 
-#### 6.5 Testing Debt <a name="TestDebt"></a>
+#### 6.5 Testing Debt <a id="TestDebt"></a>
 Technical debt in testing was evaluated by providing a measure of how much of the code is exercised in test scenarios. The Zephyr repository is linked to _Codecov_, an automated coverage tool that provides such results whenever continuous integration tests are run. This tool give the statistics as shown in Figure 13.
 
 
@@ -327,7 +294,7 @@ Figure 14 - Test Coverage by File
 
 Further investigation into tested aspects of the code show that this deficit exists because in normal use, the tests only runs for boards marked as default. As such, passing the sanity check only implies that the build works for a subset of the boards supported by the operating system. This is acknowledged in the [docs](https://docs.zephyrproject.org/latest/subsystems/test/sanitycheck.html) and an option to run a more extensive test is provided, i.e., running the sanity check with an `--all` tag. To fix the possible loopholes in such a low test coverage, this should be made the default testing scenario.
 
-<a name="SecurityPerspective"></a>
+<a id="SecurityPerspective"></a>
 
 ## 7. Security Perspective 
 
@@ -336,7 +303,7 @@ Security is an essential part of the Zephyr ecosystem. Aimed at IoT developers, 
 ![](Figures/security.png)  
 Figure 15 - Security Components
 
- <a name="ThreatModel"></a>
+ <a id="ThreatModel"></a>
 
 #### 7.1 Threat Model
 
@@ -347,7 +314,7 @@ It is essential to first discuss an overview of the possible threats in the Zeph
 Figure 16 - Simplified Threat Model
 
 
-<a name="SecureDesign"></a>
+<a id="SecureDesign"></a>
 
 #### 7.2 Secure Development and Design 
 
@@ -359,25 +326,22 @@ Security bugs, issue tracking and management is performed separately using JIRA 
 
 The security architecture is based on a monolithic design and the Zephyr kernel and all of the applications are compiled into a single static binary which can be tailored during build-time. This static linking eliminates the potential for dynamically loading malicious code. It also provides *Stack protection* mechanisms to protect against stack overruns. In addition, applications can leverage *Thread separation* features which split the system into privileged and unprivileged execution environments. *Memory protection* features enable partitioning of system resources (memory, peripheral address space, etc) again as a provision for secure design.
 
-#### 7.3 Security Certification <a name="SecurityCertification"></a>
+#### 7.3 Security Certification <a id="SecurityCertification"></a>
 For certain stakeholders, certification of the code regarding safety and security is critical. Some users can only use certified software in their products and for developers and acquirers this means that certification can result in more widespread adoption.
 
 The Zephyr project has [announced](https://www.zephyrproject.org/zephyr-project-rtos-first-functional-safety-certification-submission-for-an-open-source-real-time-operating-system/) that they plan to be the first open source RTOS to be (partly) certified. As certification of large projects is complex and costly, they aim for a step-by-step approach wherein first the core functionalities shall be certified. This includes the kernel, and some entities of the OS Services (mostly system services), as indicated in [Module Organization](#ModuleOrganization). Selecting which parts of the code will be certified, and how the code needs to be adjusted for certification is the responsibility of the Security Working Group in collaboration with the Technical Steering Committee.
 
 To make this possible, the release model will be adapted. This process is shown in Figure 17. The certified code-base will be a branch of the bi-annual long-term stable release (LTS). This branch will only contain a subset of the code base. This so-called auditable code base will be reviewed and adjusted to comply to certification standards, and then be submitted for certification. Important fixes for the master branch will be merged with the LTS and auditable code. The master, LTS and auditable code will be kept in sync, meaning that fixes for one branch will also be integrated in the other branches. One exception being new features, which will not be merged into the LTS and auditable code.
 
-<figure>
-    <img src="Figures/licensing.png" alt="External Code" 
-    id="fig10" title="External Code" width = "600px" align="center">
-    <figcaption>Figure 17 - Certification process</figcaption>
-</figure>
+![](Figures/licensing.png)  
+Figure 17 - Certification process
 
 
 With this process, the Zephyr Project makes it possible for the OS to be (partly) certified in the future, making it more attractive for different types of users including those from industry. The project aims to acquire the following certifications: MISRA C:2012 (for safety, security, portability and reliability of embedded systems), IEC 61508 SIL 3 (for safety integrity) and ISO 26262 (for automotive certification).
 
 
 
-## 8. Conclusion <a name="conclusion"></a>
+## 8. Conclusion
 
 Zephyr is one of the most promising open-source RTOSes available today. Despite being a relatively young player on the RTOS market, it is succesfull due to its well-defined organisational and development structure while also having a good understanding of what is important for IoT applications. Code quality is maintained by governing bodies overviewing the development process and reviewing the contributions thouroughly, which benefits not only Zephyr but also its community of developers.
 
@@ -386,19 +350,19 @@ By giving an insight into the project's codeline and module organization, it bec
 
 In conclusion, Zephyr could serve as a role model not only for Real-time Operating Systems, but also for open-source software projects in general. It is a good example of how successful management of open-source contributions and a well defined and documented architecture can ensure and retain the software's quality.
 
-## 9. References <a name="references"></a>
+## 9. References
 
-[1] N. Rozanski and E. Woods, *Software Systems Architecture Working with Stakeholders Using Viewpoints and Perspectives*. Addison-Wesley, 2012. <a name="ref1"></a>  
-[2] Lanza, Michele, *The evolution matrix: Recovering software evolution using software visualization techniques*. Proceedings of the 4th international workshop on principles of software evolution. ACM, 2001. <a name="ref2"></a>  
-[3] Icons used in Figure 16 are made by [Freepik](https://www.freepik.com/) from [Flat Icon](www.flaticon.com) 
+[1] N. Rozanski and E. Woods, *Software Systems Architecture Working with Stakeholders Using Viewpoints and Perspectives*. Addison-Wesley, 2012. <a id="ref1"></a>  
+[2] Lanza, Michele, *The evolution matrix: Recovering software evolution using software visualization techniques*. Proceedings of the 4th international workshop on principles of software evolution. ACM, 2001. <a id="ref2"></a>  
+[3] Icons used in Figure 16 are made by [Freepik](https://www.freepik.com/) from [Flat Icon](https://www.flaticon.com) 
 
 
 ----
 
 
-## 10. Appendix <a name="appendix"></a>
+## 10. Appendix
 
-#### 10.1 Pull Request Analysis <a name="PRAnalysis"></a>
+#### 10.1 Pull Request Analysis <a id="PRAnalysis"></a>
 
 Pull Request | Status |Summary of Events
 --------------------------------------------|--|--
@@ -424,7 +388,7 @@ Pull Request | Status |Summary of Events
 [Request 20: Remove link layer reserve concept from network stack](https://github.com/zephyrproject-rtos/zephyr/pull/11374)  |Merged | This separates levels 2 and 3 of the network stack as implemented by the operating system. This change provided a 68% code coverage difference. Minor issues were noted and a merge was implemented after all the tests were passed.
 
 
-#### 10.2 Key Contact Persons <a name="contact"></a>
+#### 10.2 Key Contact Persons <a id="contact"></a>
 
 Name| Email Address|Role| Contact Made
 --|--|--|--
