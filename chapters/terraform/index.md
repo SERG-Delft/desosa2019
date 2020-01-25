@@ -80,7 +80,7 @@ After looking into the different types of stakeholders identified by Rozanski an
 
 |Class|Stakeholder|Description|
 |----------------------|------------------------------------|---------------------------------|
-|Cloud-specific competitors|AWS Cloud​Formation, Azure Resource Manager, Google Cloud Deployment Manager, etc.|Many suppliers we identified in the previous table offer Infrastructure as Code tooling similar to Terraform specifically for their infrastructure products. This leads to interesting dynamics since these companies now are both suppliers and offer a competing product.|
+|Cloud-specific competitors|AWS Cloud Formation, Azure Resource Manager, Google Cloud Deployment Manager, etc.|Many suppliers we identified in the previous table offer Infrastructure as Code tooling similar to Terraform specifically for their infrastructure products. This leads to interesting dynamics since these companies now are both suppliers and offer a competing product.|
 |Cloud-agnostic competitors|Chef, Puppet, Saltstack, etc.|Even though these products work differently from Terraform (and can even be used together), we still list them since they offer companies different methods to create 'Infrastructure as Code'. The main difference is between Configuration Management (e.g. Terraform and CloudFormation) and Orchestration Management (e.g. Chef, Puppet and Saltstack).|
 |Partners|List of [companies](https://www.hashicorp.com/partners)|Different companies partner up with HashiCorp to 'expand their technical skills and go-to-market initiatives around DevOps principles, cloud technologies, and data centre management by leveraging the differentiated offerings of the HashiCorp product suite.' [^AboutHashiCorp]|
 
@@ -385,6 +385,6 @@ References
 [^GoCty]: Atkins, Martin. 2019. “Zclconf/Go-Cty.” 2019. https://github.com/zclconf/go-cty.
 [^Reflectwalk]: mitchellh. “Mitchellh/Reflectwalk.” 2019. https://github.com/mitchellh /ref lectwalk.
 [^Hcl2]: HashiCorp. 2019. “Hashicorp/Hcl2.” 2019. https://github.com/hashicorp/hcl2.
-[^lanza2002understanding]: Lanza, Michele, and Stéphane Ducasse.  “Understanding Software Evolution Using a Combination of Software Visualization and Software Metrics.” Springer Verlag, 2002.
+[^lanza2002understanding]: Lanza, Michele, and Stéphane Ducasse.  “Understanding Software Evolution Using a Combination of Software Visualization and Software Metrics.” Springer Verlag, 2002.
 [^Copystructure]: mitchellh. “Mitchellh/Copystructure.” 2019. https://github.com/mitch ellh/copystructure.
 
