@@ -6,7 +6,7 @@ author:
 - Arie van Deursen
 - Maurício Aniche
 - Andy Zaidman
-date: December 2019, version 0.1
+date: December 2019, version 1.0
 ---
 
 # Delft Students on Software Architecture: DESOSA 2019
