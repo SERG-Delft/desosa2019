@@ -8,3 +8,21 @@
 \usepackage{pslatex}
 \usepackage{a4wide}
 \setlength{\textheight}{200mm}
+
+% https://tex.stackexchange.com/questions/217610/renew-title-command-to-include-an-image-right-before-the-text
+\usepackage{filecontents}
+\begin{filecontents*}{company_style.sty}
+\ProvidesPackage{company_style}
+\RequirePackage{graphicx}
+
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{%
+  \vspace{-3\bigskipamount}
+  \includegraphics[width=\hsize]{img/cover.jpg} \\[4\bigskipamount]
+  Delft Students on Software Architecture \\[1.5\bigskipamount]
+  DESOSA 2019
+  }}
+
+\end{filecontents*}
+
+\usepackage{company_style}
