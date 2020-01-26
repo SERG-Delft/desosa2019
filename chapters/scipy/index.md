@@ -187,7 +187,8 @@ In this section we explore the code structure of SciPy. The code of SciPy is org
   
 - **Tools**
   This folder contains code for CI (continuous integration), build scripts for Windows, installer file for MacOS, code to generate C files of python files and other helper files that are used in running tests and installation. It also includes scripts for GitHub like getting author names who contributed to the release.
-![Code structure of SciPy. The code is organized on github in folders. The sub directories are shown for only one level.](https://paper-attachments.dropbox.com/s_584D17B9D317C442BE774B5C19C845C6E9102DF4A38C1EBB4994D433302E3E5E_1554981332928_codestructure.PNG) <br/>
+
+![Code structure of SciPy. The code is organized on github in folders. The sub directories are shown for only one level.](images/s_584D17B9D317C442BE774B5C19C845C6E9102DF4A38C1EBB4994D433302E3E5E_1554981332928_codestructure.PNG)  
 *Figure: Code structure of SciPy. The code is organized on github in folders. The sub directories are shown for only one level.*
 
 
@@ -199,7 +200,7 @@ In this section we focus on the organization of the Scipy source code and group 
  
  
 
-![Diagram of module structure of SciPy. It can be described by a 4 layer structure based on the functionality of modules.](https://paper-attachments.dropbox.com/s_584D17B9D317C442BE774B5C19C845C6E9102DF4A38C1EBB4994D433302E3E5E_1554313976847_modulestructure.png) <br/>
+![Diagram of module structure of SciPy. It can be described by a 4 layer structure based on the functionality of modules.](images/s_584D17B9D317C442BE774B5C19C845C6E9102DF4A38C1EBB4994D433302E3E5E_1554313976847_modulestructure.png)  
 *Figure: Diagram of module structure of SciPy. It can be described by a 4 layer structure based on the functionality of modules*
 
 - **Core Layer:**
@@ -225,7 +226,7 @@ In this section we focus on the organization of the Scipy source code and group 
 
 The modules in core folder are dependent on each other and every modules uses functionality implemented as part of other module(s) . The module level dependency has been analyzed and shown as a graph. Modules lib and build_tools contain utility and helper functions and are therefore imported by almost all other modules.
 
-![The module level dependencies in SciPy. It can be observed that the modules are heavily dependent on each other. We have only shown the internal dependencies of modules here and ignored the standard python libraries that are imported within the files.](https://paper-attachments.dropbox.com/s_584D17B9D317C442BE774B5C19C845C6E9102DF4A38C1EBB4994D433302E3E5E_1555081369120_lalalalala.PNG)<br/>
+![The module level dependencies in SciPy. It can be observed that the modules are heavily dependent on each other. We have only shown the internal dependencies of modules here and ignored the standard python libraries that are imported within the files.](images/s_584D17B9D317C442BE774B5C19C845C6E9102DF4A38C1EBB4994D433302E3E5E_1555081369120_lalalalala.PNG)  
 *Figure: The module level dependencies in SciPy. It can be observed that the modules are heavily dependent on each other. We have only shown the internal dependencies of modules here and ignored the standard python libraries that are imported within the files.*
 
 
@@ -370,7 +371,7 @@ Maintainability is focused on code smells, which is a maintainability-related is
 
 The figure below depicts the results obtained from the test using [SonarQube](https://www.sonarqube.org/). 
 
-![Maintainability Rating Overview](https://lh6.googleusercontent.com/yVsSiMzEPoLoBs0cpLndqFbqZg5NwRZ_g98QjSbN1CNx32krFtBe_F6N3QIaYRNEq1dDPu-txMRW0P8mozY2R_ZdxAWCKtIg1Qi4Uf2KCPF1bKQ78VJs-D2bAfSaL81newjUWYblxw) <br/>
+![Maintainability Rating Overview](images/maintainability.png)  
 *Figure: Maintainability Overiew*
 
 ### 2. Code Complexity
@@ -382,7 +383,7 @@ Code Complexity or Cyclomatic complexity is a quantitative measure of the number
 
 This section describes the amount of code blocks that were found to be duplicated during the static code analysis. [[4]](https://paper.dropbox.com/doc/SciPy--AbEU4jG5pjXuP4DIafNH7fgAAg-CvRFpiALgp8sgDBjaXdO0#:uid=825143202751942454825198&h2=Appendix-C:-Technical-Debt-Glo)  In Scipy, we observed 280 code blocks that were copied, which amounted to roughly 1.3 % of the total code base. The Code Duplication was performed using [SonarQube.](https://www.sonarqube.org/) The results of code duplication is represented in the figure below where the size of the bubbles represent the duplication blocks of code. 
 
-![Visual representation of Duplication](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1553184062400_image.png) <br/>
+![Visual representation of Duplication](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1553184062400_image.png)  
 *Figure: Visual representation of Duplication*
 
 ### 4. Reliability & Security 
@@ -393,13 +394,14 @@ This section describes the amount of code blocks that were found to be duplicate
   The source of reliability in code is the ability to produce a predictable outcome given wildly varying inputs. [[5]](https://paper.dropbox.com/doc/SciPy--AbEU4jG5pjXuP4DIafNH7fgAAg-CvRFpiALgp8sgDBjaXdO0#:uid=825143202751942454825198&h2=Appendix-C:-Technical-Debt-Glo) For Scipy, the Reliability Ratings graph is represented with a bubble graph. Additionally, the graph showcase the number of bugs reported while performing the code analysis. We have used [SonarQube](https://www.sonarqube.org/) for reliability reporting
 
 
-![Visual Representation of Code Reliability](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1553184131987_image.png)<br/>
+![Visual Representation of Code Reliability](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1553184131987_image.png)  
 *Figure: Visual Representation of Code Reliability*
 
   b. **Security**
   Static analysis looks for security vulnerabilities in source code by referencing the most common vulnerabilities as defined by [OWASP](https://www.owasp.org/index.php/Main_Page). [[6]](https://paper.dropbox.com/doc/SciPy--AbEU4jG5pjXuP4DIafNH7fgAAg-CvRFpiALgp8sgDBjaXdO0#:uid=825143202751942454825198&h2=Appendix-C:-Technical-Debt-Glo)
   The Figure below depicts the Security related vulnerabilities obtained as part of our analysis. We note that there are no security vulnerabilities for SciPy. We have used [SonarQube](https://www.sonarqube.org/) for security vulnerability reporting
-![Visual Representation of Security Analysis](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1553184822279_image.png)<br/>
+
+![Visual Representation of Security Analysis](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1553184822279_image.png)<br/>
 *Figure: Visual Representation of Security Analysis*
 
 ### 5. Code Coverage Tests
@@ -409,7 +411,7 @@ Code coverage describes the degree to which the source code of a program is exec
 A visualization has been made from our results below. 
 
 
-![Results of Coverage Tests](https://lh4.googleusercontent.com/4DrDiZ1vf-zUMMeLInp6EJXWxmq2Jhhv7WgxAatKFWwVLfSV04hGpTNF_LVNPP5kBpuIa1IrSwpq72g2Qq3xa7CGMSH-9BdYD1w6iKLoAHI8WtjRCtkTRttCJqzQCRlxYYxcFHRqOA)<br/>
+![Results of Coverage Tests](images/coverage.png)  
 *Figure: Results of Coverage Tests* 
 
 
@@ -422,15 +424,15 @@ In this section, we analyse the dependencies of individual contributors of Scipy
 
 The figure below reports the overall activities of the contributors from the start of SciPy. 
 
-![Dependency graph of all the activities of contributors from inception of Scipy](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283024858_image.png)<br/>
+![Dependency graph of all the activities of contributors from inception of Scipy](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283024858_image.png)  
 *Dependency graph of all the activities of contributors from inception of Scipy*
 
 
 The figure below shows the top 10/100 contributors of Scipy. The contributions to master, excluding merge commits are depicted here. With the contributors being: 
 
-![](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283064066_image.png)
+![](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283064066_image.png)
 
-![Top 10 contributor activity for Scipy](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283101218_image.png) <br/>
+![Top 10 contributor activity for Scipy](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283101218_image.png)  
 *Figure: Top 10 contributors to SciPy*
 
 
@@ -449,7 +451,8 @@ In this section we discuss, the evolutionary perspective of SciPy, its past and 
   **b. Evolutionary Diagram - Code Frequency**
   As part of reporting the Historical Analysis of Technical Debt we have used the Evolution diagram which showcases the code additions and deletions of Scipy over a time stamp as per 1 year. The reporting is done every year in the graph below since the inception of SciPy in 2001.  
   The below figure is the code frequency of Scipy activity. 
-![Code Frequency](https://paper-attachments.dropbox.com/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283575533_image.png) <br/>
+
+![Code Frequency](images/s_69036443DAC52F69B017E550A60909D49A5C31ECBA3D725173EF3BCB382E89CD_1554283575533_image.png)  
 *Figure: Code Frequency*
 
 
