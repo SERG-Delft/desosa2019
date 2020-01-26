@@ -561,105 +561,17 @@ Elephas implements a class of data-parallel algorithms on top of Keras, using Sp
 
 We created a summary of the historical evolution of Keras, presented in the table below, by analyzing the release notes for each new version release on the GitHub page [23]. We did not include each single version release, but we aggregated them in larger version releases (i.e. we aggregated versions 2.2.0, 2.2.1, 2.2.2, 2.2.3, 2.2.4 in version 2.2).
 
-<table>
-    <tbody>
-        <tr>
-            <th>Keras Version</th>
-            <th>Changes</th>
-            <th>Release period</th>
-        </tr>
-        <tr>
-            <td>0.1</td>
-            <td>Preparations for Pypi release and Pypi release</td>
-            <td>June 2015 - August 2015</td>
-        </tr>
-        <tr>
-            <td>0.2</td>
-            <td>New Pypi release</td>
-            <td>October 2015</td>
-        </tr>
-        <tr>
-            <td>0.3</td>
-            <td>
-                <ul>
-                    <li>Modular Backends Introduction</li>
-                    <li>New Pypi release</li>
-                </ul>
-            </td>
-            <td>December 2015 - March 2016</td>
-        </tr>
-        <tr>
-            <td>1.0</td>
-            <td>
-                <ul>
-                    <li>Bug fixes and improvements on functionalities</li>
-                    <li>New Pypi release</li>
-                </ul>
-            </td>
-            <td>April 2016 - August 2016</td>
-        </tr>
-        <tr>
-            <td>1.1</td>
-            <td>New Pypi release</td>
-            <td>October 2016 - November 2016</td>
-        </tr>
-        <tr>
-            <td>1.2</td>
-            <td>New Pypi release</td>
-            <td>December 2016 - February 2017</td>
-        </tr>
-        <tr>
-            <td>2.0</td>
-            <td>
-                <ul>
-                    <li>API changes</li>
-                    <li>Deprecated layers removal (both convolutional layers and recurrent layers)</li>
-                    <li>New layers compatibilities</li>
-                    <li>Variable name changes</li>
-                    <li>Bug fixes and functionality improvements</li>
-                    <li>Documentation improvements</li>
-                    <li>CNTK backend addition</li>
-                    <li>TensorBoard improvements</li>
-                    <li>Coding style improvement</li>
-                    <li>New features addition</li>
-                    <li>Test coverage improvements</li>
-                    <li>Incompatibilities solutions</li>
-                    <li>Performances improvements</li>
-                    <li>New Pypi release</li>
-                </ul>
-            </td>
-            <td>May 2017- November 2017</td>
-        </tr>
-        <tr>
-            <td>2.1</td>
-            <td>
-                <ul>
-                    <li>New APIs</li>
-                    <li>Improvements to unit tests/CI.API</li>
-                    <li>Performance and usability improvements</li>
-                    <li>New models added in the ‘applications’ module</li>
-                    <li>Improvements to example scripts</li>
-                    <li>Documentation improvements</li>
-                    <li>Bug fixes</li>
-                </ul>
-            </td>
-            <td>November 2017 - April 2018</td>
-        </tr>
-        <tr>
-            <td>2.2</td>
-            <td>
-                <ul>
-                    <li>Large refactors improving code structure and test time</li>
-                    <li>Improvements to the documentation</li>
-                    <li>API changes and improvements regarding usability</li>
-                    <li>Performance improvements</li>
-                    <li>Bug fixes</li>
-                </ul>
-            </td>
-            <td>June 2018 - October 2018</td>
-        </tr>
-    </tbody>
-</table>
+Keras Version | Changes | Release Period
+-|-----|--
+0.1 | Preparations for Pypi release and Pypi release | June 2015 - August 2015
+0.2 | New Pypi release | October 2015
+0.3 | Modular Backends Introduction, New Pypi release | December 2015 - March 2016
+1.0 | Bug fixes and improvements on functionalities, New Pypi release | April 2016 - August 2016
+1.1 | New Pypi release | October 2016 - November 2016
+1.2 | New Pypi release | December 2016 - February 2017
+2.0 | API changes; Deprecated layers removal (both convolutional layers and recurrent layers); New layers compatibilities; Variable name changes; Bug fixes and functionality improvements; Documentation improvements; CNTK backend addition; TensorBoard improvements; Coding style improvement; New features addition; Test coverage improvements; Incompatibilities solutions; Performances improvements; New Pypi release | May 2017- November 2017
+2.1 | New APIs; Improvements to unit tests/CI.API; Performance and usability improvements; New models added in the ‘applications’ module; Improvements to example scripts; Documentation improvements; Bug fixes | November 2017 - April 2018</td>
+2.2 | Large refactors improving code structure and test time; Improvements to the documentation; API changes and improvements regarding usability; Performance improvements; Bug fixes | June 2018 - October 2018
 
 
 ## Conclusions
