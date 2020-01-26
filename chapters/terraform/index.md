@@ -56,11 +56,10 @@ left out of the report to allow the report to focus on the most important
 aspects. These appendices can be found in the appendices folder on GitLab.
 
 
-Stakeholders
-============
+## Stakeholders
 
-Stakeholder identification
---------------------------
+### Stakeholder identification
+
 Firstly, the stakeholders will be identified. Rozanski and Woods identified 11 classes of stakeholders [^Rozanski]. The table below presents these classes and describes the corresponding stakeholders for the Terraform project. Three classes, which are less interesting, are left out and can be found in appendix A.
 
 |Class    |Stakeholder|Description|
@@ -74,8 +73,8 @@ Firstly, the stakeholders will be identified. Rozanski and Woods identified 11 c
 |Testers|Core team and contributors|HashiCorp requires contributers to write [their own tests](https://github.com/hashicorp/terraform/blob/master/.github/CONTRIBUTING.md#checklists-for-contribution) when they add features with a new pull request, however because many contributions are made by the core team, they can be classified as testers themselves as well.|
 |Users|Variety of companies|The system is used by different companies, including: Barclays, ITV and SAP Ariba. Barclays even proudly writes they value acting as customer advisor and contributors to Terraform.|
 
-Additional stakeholder type identification
---------------------------
+### Additional stakeholder type identification
+
 After looking into the different types of stakeholders identified by Rozanski and Woods, additional stakeholder types which are specific to the Terraform project are identified. These stakeholder types are presented and described in the following table:
 
 |Class|Stakeholder|Description|
@@ -84,8 +83,8 @@ After looking into the different types of stakeholders identified by Rozanski an
 |Cloud-agnostic competitors|Chef, Puppet, Saltstack, etc.|Even though these products work differently from Terraform (and can even be used together), we still list them since they offer companies different methods to create 'Infrastructure as Code'. The main difference is between Configuration Management (e.g. Terraform and CloudFormation) and Orchestration Management (e.g. Chef, Puppet and Saltstack).|
 |Partners|List of [companies](https://www.hashicorp.com/partners)|Different companies partner up with HashiCorp to 'expand their technical skills and go-to-market initiatives around DevOps principles, cloud technologies, and data centre management by leveraging the differentiated offerings of the HashiCorp product suite.' [^AboutHashiCorp]|
 
-Stakeholder identification summary
---------------------------
+### Stakeholder identification summary
+
 To sum up the identification of the stakeholders involved in this project we present a table which shows the involved actors and the different roles they fulfil in the project.
 
 |Nr.|Stakeholder|Roles|
@@ -102,14 +101,14 @@ To sum up the identification of the stakeholders involved in this project we pre
 
 Stakeholders 1 through 6 will be analysed in the stakeholder analysis. The stakeholders 7 through 9 will be left out since they are not as relevant to the decision-making processes.
 
-Stakeholder interests
---------------------------
+### Stakeholder interests
+
 In this part the interests of the different stakeholders in Terraform are identified. A table containing the interests per stakeholder can be found in the appendix B.  
 
 The main conclusion is that it is important for HashiCorp and the core team to correctly identify what it is their users want. Different companies (AWS, GCP, Azure, etc. but also Chef, Puppet, etc.) want to work with them and combine their products to create cool solutions. However, HashiCorp needs to focus on what it is their users want and spend their resources on making that happen rather than satisfying these other stakeholders, since that is their own goal. This also aligns with their vision of being cloud agnostic.
 
-Power-interest grid
---------------------------
+### Power-interest grid
+
 In the following diagram we show the power and the interest the different stakeholder have in the project.
 
 ![power-interest](images/power-interest.png)
@@ -118,9 +117,7 @@ It can be concluded that HashiCorp and the Terraform team have a lot of power in
 
 After identifying the interests of the involved organization involved we try to identify people who actually make the day-to-day decisions and look at how they argue their decisions. After this we identify interesting people to contact.
 
-Identifying integrators
---------------------------
-
+### Identifying integrators
 
 Members of the core team of Terraform are also the integrators on the GitHub project. Some of the most active integrators at the moment (March 2019) are the following: [apparentlymart](https://github.com/apparentlymart), [jbardin](https://github.com/jbardin), [radeksimko](https://github.com/radeksimko), [paddycarver](https://github.com/paddycarver), [mitchellh](https://github.com/mitchellh), [catsby](https://github.com/catsby), [stack72](https://github.com/stack72) and [svanharmelen](https://github.com/svanharmelen). Whenever contributors fix an issue or bug they quickly check and confirm that it works and merge the pull request, however when they find a contributor adds a feature that would change workflows or requires decision-making in a different way they add a `thinking` label and comment that this will be discussed in the team. They write a comment mentioning the reasons why this requires further discussion. Reasons often mentioned are the following:
 
@@ -134,7 +131,8 @@ Members of the core team of Terraform are also the integrators on the GitHub pro
 
 We can recognize the user-centered approach we identified before in this reasoning.
 
-###### Pull request analysis
+#### Pull request analysis
+
 To derive a general theory on the way contributions evolve and are discussed, pull request containing important features, long discussion or that were created by Hashicorp themselves were analysed. 
 
 There's notably a strong community, as the bigger part of PRs are finished, tested thoroughly and merged. There are some cases were an author starts working on new features, implements them to the point it is usable for their own use case but neglects to finish it to the point it works in all possible cases, or to adhere to the requested quality standards. Usually however these partial implementations are picked up by someone else in a new branch.
@@ -144,18 +142,16 @@ The general flow of a contribution starts with a user already having implemented
 Sometimes a small bug is ignored in favour of adding the new functionality, and a new issue is generated for this bug to be solved after merging.
 
 
-Context View
-============
+## Context View
 
-System scope and responsibilities
----------------------------------
+### System scope and responsibilities
+
 Terraform is an open source project by HashiCorp. It is an Infrastructure as Code (IaC) tool; with Terraform it is possible to manage and provision IT infrastructure without having to configure physical hardware. Using IaC, the infrastructure can be managed under version control. This allows comparison of configurations, e.g. for discovering bugs. Aside from version control, it also allows for consistent deployments [^TerraIntro]. 
 
 The responsibilities of Terraform are to describe a certain infrastructure and the desired configurations for it. With Terraform, the user can more easily see which changes were made in the configuration. The program knows what has changed and can create incremental execution plans [^TerraIntro].
 
 
-Context model
--------------
+### Context model
 
 ![Context model illustration ](images/context-model-illustration.png)
 
@@ -171,12 +167,11 @@ The figure shows a context model of entities Terraform deals with in some way. A
 * **Competition:** Interestingly, some of Terraforms partners also have their own Infrastructure as Code services. AWS Cloud Formation, Azure Resource Manager, Google Cloud Deployment Manager offer IaC tooling similar to Terraform. These tools only support their own platform, whereas Terraform is cloud agnostic.
 
 
-Development view
-================
+## Development view
+
 The development view describes the system in such a way that stakeholders who build, test, maintain or enhance the system are supported [^Rozanski]. Below the development view is subdivided into the module composition describing the different modules and their relation to the core, the state of the system, testing methods and the standardized practices of contributing. 
 
-Module composition
-------------------
+### Module composition
 
 Terraform is written in Go, where package management by convention is done using a directory structure. Hence, for the following paragraph the top level directories will be denoted as 'modules' while their subdirectories will be denoted as 'packages'. This will make it easier to understand the module organisation of Terraform. 
 
@@ -217,18 +212,16 @@ Other (external) entities used by Terraform are:
 - **hcl2**:  toolkit for writing structured configuration languages [^Hcl2]
 - **hil**: Module for configuration interpolation originally written in Terraform but extracted as a general purpose module [^Hil]
 
-Providers / Provisioners
--------------------------
+### Providers / Provisioners
 
 The providers and provisioners mechanism is an interesting component to highlight. During the graph traversal Terraform only sees the interface that all providers / provisioners should conform to. The providers start a gRPC server which is compliant with the protobuf files in `internal/tfplugin5`. This creates an 'airgap' between the actual provider (e.g. AWS, Azure, etc..). 
 
-State
-----------------------
+### State
 
 Terraform stores it's state in a `.tfstate`. Access to the state file is managed through the `statemgr` (state manager). Schemas of the state are stored in the `terraform/states` package. Writing, reading and migrating the actual state file itself is done using the `terraform/states/statefile` package. 
 
-Testing and Static Analysis
-----------------------
+### Testing and Static Analysis
+
 Terraform uses (by Go convention) files with `*_test.go` to denote tests. Additional data used in the tests are stored in `fixture/*` directories. There is also one package related to `e2e` testing which is conveniently called `e2e`. 
 
 #### Static Analysis
@@ -239,8 +232,7 @@ The terraform repository code formatting is analysed using `gofmt`. This is inte
 
 Travis is used for CI/CD. It uses the `Makefile` and checks if the formatting is correct (prerequisite of `make test`), runs the unit tests and runs the e2e tests. After all tests have completed a `go build` job is executed to test if a binary can be created.
 
-Standardized practices
-----------------------
+### Standardized practices
 
 There are a few guidelines for contributing to Terraform, described on their GitHub page. First of all, one must sign the CLA. Furthermore the community guidelines must be adhered. These cover being respectful in communication, harassment policy and incident handling. Hashicorp remains the right to perform punitive actions. 
 
@@ -248,13 +240,11 @@ In contributing to Terraform, the community emphasizes that any sort of contribu
 Finally acceptance tests are required for each new or updated feature.
 All of this is described in detail, including all descriptions and checklist, in appendix C. 
 
-Technical Debt
-==============
+## Technical Debt
 
 To analyse Terraform's technical debt, SonarQube, BetterCodeHub and an analysis tool of the GoLand IDE were used. More information on the results of the tools can be found in appendix D.
 
-Types of Technical Debt
------------------------
+### Types of Technical Debt
 
 There are several types of technical debt, for example: code debt, testing debt, defect debt and documentation debt. It was decided to discuss code debt and testing debt, since documentation debt and defect debt are scarce in the project.
 
@@ -266,27 +256,28 @@ BetterCodeHub found a fair amount of classes do not have short units of code wri
 As was also seen in the SonarQube analysis, the code also has some duplication. Several classes have between 13 and 18 LoC duplicated. 
 Lastly, unit interfaces were not kept small, the worst functions had 5 parameters. 
 
-##### SOLID
+#### SOLID
+
 The code was also checked manually to see if there are violations of the SOLID design principle. Since the project is so large, we focused on the terraform core package. The *single responsibility* principle was met. For example, the package structure is very extensive; this is because all different responsibilities are split over different packages. We also saw various structures that had very specific tasks such as 'destroy edge'. The *open-closed principle* was met in certain instances. A good example is the refactoring of the providers/provisioners in which they removed much duplicate code and replaced it with a plugin system containing an interface. This is open for extension but closed for modification. However, in other structures we saw many complicated switch and if-structures, which can be an indicator of bad design according to this principle. We found that, concerning the *dependency inversion principle*, Terraform does quite well. They have interfaces all subtypes must comply with.
 
 
 #### Testing Debt
+
 SonarQube gave a test coverage of 59.8% on the current master branch. However, these numbers do not accurately reflect how well the system is tested, because Terraform uses a unique testing system, some packages were left out as the SonarGo could not process these results. When manually looking at the code, it can be estimated the coverage is a lot higher.
 Terraform has unit tests for most structures and an end-to-end test structure that takes commands. There has been quite extensive testing and many test fixtures were written. We did find 25 functions with a testing TODO in the core package. These were all in their evaluate modules.
 
-Discussion about Technical Debt
--------------------------------
+### Discussion about Technical Debt
 
 With GoLand's TODO utility, the code was checked for remarks in comments that indicate code needs to be refactored or iterated upon. The terraform/terraform package had the most markers: 61. As of 17-3-19, the code has 157 open TODOS.
 The developers communicate in pull requests on GitHub as well. When examining some pull request, no direct mention to technical debt was found. However, many pull requests do relate to fixing bugs, testing or code improvements. 
 
 
-Historical Analysis Technical Debt
-----------------------------------
+### Historical Analysis Technical Debt
 
 The history of the technical debt will be discussed by going into the evolution of Terraform's modules and the evolution of technical debt.
 
 #### Evolution of Modules
+
 Terraform is split into modules according to Go conventions. We looked at both the evolution of the LoC and of the file count. The metrics showed exactly the same trends, so it was decided to include the figure of the evolution of the LoC shown below.
 
 ![Evolution LoC](images/loc_over_time.png)
@@ -300,6 +291,7 @@ The evolution of software components can be described using astronomical termino
 * **configs**: this module has remained constant (as an idle, or even sleeper, module) from v0.1.0 to v0.11.0, however due to the refactoring and launching of the plugin system this module suddenly exploded to contain many more configurations. Therefor this can be classified as a *supernova*.
 
 #### Evolution of Technical Debt
+
 We combine this data with the metrics we gathered by using SonarQube for different releases. The diagram below shows the technical debt in days of work over the last few releases. It was not possible to run SonarQube for versions before v0.7.0 as dependencies were no longer available.
 
 ![Technical debt in days](images/technical_debt_days.png)
@@ -307,46 +299,51 @@ We combine this data with the metrics we gathered by using SonarQube for differe
 In version v0.9.0, 1925 of the 2045 code block duplications are in the terraform/builtin/providers package. This package was moved to github.com/terraform-providers in v0.10.0 and in v0.12.0 moved to the new plugin system. This also accounts for 109d of the debt and therefore greatly decreases the technical debt. They did introduce some technical debt in this migration by postponing the implementation of the plugin system to v0.12.0 instead of directly implementing this. The introduction of many new modules over the last couple of versions is a promising sign that the core team tries to manage technical debt as the system grows larger.
 
 
-Usability Perspective 
-=====================
+## Usability Perspective 
+
 In this chapter the usability of Terraform will be discussed. In order to gain insights in how users experience working we Terraform the team interviewed an enthusiastic developer who recently introduced his company to Terraform and is working with it in a professional environment.
 
-User Interaction 
-----------------
+### User Interaction 
+
 User interaction is an important part of the usability of the software. Great software can have a very non-intuitive user interface and therefore be of no good to anyone. In this section, the interface of terraform is analysed. Terraform uses a command line interface, which will be described below.
 
 #### Command Line Interface
+
 Terraform is used via a CLI. This CLI should be installed and can be executed in any directory containing `*.tf` (Terraform configuration) files. The commands contain a synopsis which can be found by executing `terraform` or `terraform --help`. Every command also contains a larger documentation using `terraform <command> --help`, which will output a larger summary and possible arguments that can be supplied to the command. 
 
 The most common commands to use are `terraform init` (which initializes a new or existing directory), `terraform plan` (which generates an execution plan for later use) and `terraform apply` (which applies the current configuration to a provider).
 
-Learnability
-----------------
+### Learnability
+
 How easy is it to learn Terraform? That depends on what would be considered 'learning Terraform'. According to the interviewee, learning to write Terraform's configuration language is not that difficult. However, one could also consider learning about infrastructure and cloud services of specific providers as part of learning Terraform. Including this makes the learning curve steeper. Infrastructure can become very complicated, especially as it gets larger. Cloud services of specific providers can be very complex, and working with Terraform to create infrastructure on them does require knowledge of how they work. Also infrastructure coded with Terraform for provider x, is not interchangeable with code for similar infrastructure on provider y.
 
-Effectiveness
--------------
+### Effectiveness
+
 The goal of Terraform is to provide an easy, cloud-agnostic way to write infrastructure as code (IaC). This allows infrastructure to be managed and deployed more consistently and allows for faster provisioning of resources. Also, software development best practice (e.g. use of Git) can be applied to infrastructure and its development can be viewed over time. These benefits will differ between companies, e.g. companies which have to spin up the same infrastructure in different situations (for example to create systems for their clients) will experience way bigger advantages compared to a company which just has to host their relatively simple webserver. 
 
 #### Migration to Terraform
+
 Migrating to Terraform requires at least some employees in an organization to familiarize themselves with the tool as well as with IaC as a concept. In the previous paragraph it was concluded that it is not necessarily very difficult to learn how to use Terraform, however this does take up time which might not be available. Our interviewee estimated this process to take up to a week, however he did have a lot of experience with infrastructure. If having no experience with infrastructure or infrastructure is not an important part of a company, learning Terraform may not be a good investment. After learning the tool existing infrastructure can be imported easily, and the tool is quickly setup.
 
 #### Overhead in using Terraform
+
 Because Terraform allows infrastructure as code, the infrastructure is often managed under version control. A branch structure and pull requests are often used to collaborate. Along with the benefits this has, it also introduces some overhead to create all the documentation around the code and changes to the code. Besides this Terraform does not provide any real overhead.
 
 #### Reliability of Terraform
+
 A major concern in the decision to use Terraform is the reliability of the tool. A created configuration can be applied many times in exactly the same manner, which is a reliable feature. However, a reliability risk of Terraform is a state called drift, which is a term for when the real-world state of the infrastructures differs from the configuration. This cannot be detected automatically, and must be fixed by manually updating the configuration or infrastructure. Being aware of this responsibility is important when working with any IaC tool.
 
 Furthermore, Terraform is still quite young: a v1 has not yet been released, and new features are being added frequently. On the other hand, some big corporations are already using Terraform in large projects so some battle testing has been done.
 
 
-Collaboration
-----------------
+### Collaboration
+
 One of the biggest selling points of Terraform is being able to work on an infrastructure configuration via version control with a team of people. This can be done rather easily, as long as the state is stored remotely. A local state makes collaborating hard, as it should be checked into and pulled from version control with each change.
 
 The interviewee explained that currently their CI/CD pipeline is in development. At the moment they do code review via PRs on GitHub, and once merged manually apply the configuration. Automatic unit testing could be done using [TerraTest](https://github.com/gruntwork-io/terratest).
 
 #### Contribute to existing projects
+
 Joining in development of an existing Terraform should not be hard, as long as the configuration has been set up modularly. This means certain blocks of responsibility in the infrastructure configuration have been separated. The Terraform files are self-explanatory for the most part, assuming knowledge of the syntax and the way cloud infrastructure is orchestrated.
 
 Terraform supplies a `graph` command, which combined with for example [GraphViz](http://www.graphviz.org/)'s `dot` command can be used to draw a diagram of the Terraform resources according to the configuration files in the current directory. This visualization can help in getting a feeling for the existing configuration.
@@ -355,8 +352,7 @@ Terraform supplies a `graph` command, which combined with for example [GraphViz]
 $ terraform graph | dot -Tsvg > graph.svg
 ```
 
-Conclusion
-==========
+## Conclusion
 
 Terraform is an interesting Infrastructure-as-Code project with many benefits, e.g. version control in IT infrastructure management. With the availability of many cloud services, this type of software can become very important in the future. 
 
@@ -371,9 +367,9 @@ Looking into Terraform's technical debt, we found much duplicate code and many c
 Lastly, we introduce a usability perspective. We looked at what Terraform's UI is like; it uses a command line interface. Terraform appears quite easy to learn. However, it does require knowledge about infrastructure and cloud services, which makes it more difficult. Terraform can be effective as it allows for version control and faster provisioning of resources. A reliability risk of terraform is a state called drift; when the real-world infrastructure differs from the configuration. This cannot be detected automatically and must be fixed manually. A benefit of Terraform is cooperating on infrastructure via version control. This is easy when the state is stored remotely, a local state makes this almost impossible.
 
 
-References
-==========
+## References
 
+_References in footnotes_.
 
 [^Rozanski]: Rozanski, Nick, and Eoin Woods. 2011. Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives. 2nd ed. Addison-Wesley Professional.
 [^AboutHashiCorp]: HashiCorp. “About Hashicorp.” 2018. https://www.hashicorp.com/.
