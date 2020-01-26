@@ -11,7 +11,8 @@ project: vim
 
 Vim is a text editor most commonly used by system administrators who use it as a command line tool to edit scripts, texts and code. Vim is highly customizable with multiple shortcuts and commands available. It is this flexibility that has built its popularity but also the fact that Vim is open source and therefore users have a big say in the development of the product. Vim was originally created by Bram Moolenaar in an attempt to recreate an editor he had  previously used, VI, and hence the name was born, "VI Improved", what became Vim in short. The first release of Vim was in November 1991 making it older than most students in this course. Vim quickly established itself as a stable and reliable editor and became the editor-of-choice for system administrators. Despite the arrival of commercial editors such as Microsoft VS, Notepad++ and many others, Vim still remains popular, especially with the aforementioned system administrators. Bram still remains the main developer of Vim and due to a broad and active community of developers, updates are still common with around 30 commits per week on average and a lively mail list discussing potential changes and improvements.
 
-# Table of content
+## Table of content
+
 1. Stakeholder analysis  
 1.1 Core developers  
 1.2 Other developers  
@@ -40,11 +41,11 @@ Vim is a text editor most commonly used by system administrators who use it as a
 6.2 Evolution of Vim
 7. Conclusion  
 
-# 1. Stakeholder analysis
+## 1. Stakeholder analysis
 
 A stakeholder in the architecture of a system is an individual, team, organization, or classes thereof, having an interest in the realization of the system [1]. This paragraph describes the different stakeholders in the Vim project. The types of stakeholders are based on types defined in the book of Rozanski and Woods [1]. Next to those types, three more types of stakeholders have been defined, namely integrator, sponors and eco-system enhancers.
 
-## 1.1 Core developers
+### 1.1 Core developers
 
 #### Bram Moolenaar (@brammool)
 Stakeholder type: **Acquirer, Developer, Maintainer, Production engineer, Communicator, Integrator**  
@@ -54,7 +55,7 @@ Bram is the author of the open-source project Vim and is actively updating the r
 Stakeholder type: **Developers, Maintainers, Production engineers**  
 This [list of authors](http://vimdoc.sourceforge.net/htmldoc/intro.html) (non-exhaustive) lists authors that are production engineers and developers that help porting Vim from a single platform to Windows, Mac OS and various other operating platforms [3].
 
-## 1.2 Other developers
+### 1.2 Other developers
 
 #### K. Takata & Christian Brabandt (@k-takata, @chrisbra)
 Stakeholder type: **Assessors, Testers, Developers, Production Engineers, contact person**  
@@ -68,13 +69,13 @@ Enno developed several plugins for Vim and is actively contributing to the core 
 Stakeholder type: **Developer, Assessor, Contributor**  
 Dominique actively contributes to the main Vim codebase by reviewing pull requests, proposing new features and bug fixes and producing [valgrind](http://vimdoc.sourceforge.net/htmldoc/debug.html#valgrind) reports for Vim [4].
 
-## 1.3 Communicators
+### 1.3 Communicators
 
 #### Dan Sharp and Stefan 'Sec' Zehl
 Stakeholder type: **Communicators**  
 Dan is the active maintainer of the official [Vim documentation](http://vimdoc.sourceforge.net) on Sourceforge. Stefan is the maintainer of the [official website](https://www.vim.org/) of Vim open-source project.
 
-## 1.4 Communities
+### 1.4 Communities
 
 Vim users, developers and sponsors formed various Vim communities that actively contribute to both the administrative and program development of the Vim project.
 
@@ -98,12 +99,12 @@ Vim users use Vim and its components from basic word processing, development ope
 Stakeholder type: **Support Staff**  
 A google help group is a collection of users and their discussions on Vim-related issues. Users are encouraged to ask for help in a Google group. The Google group consists of several mailing lists, of which one is specifically for discussion on the current development of Vim. Several of the individuals mentioned earlier are present and active in that group, however so are other individuals who have not been mentioned and therefore this is considered its own group of stakeholders.
 
-## 1.5 Competitors
+### 1.5 Competitors
 Vim competitors are every text editor or IDE, including Atom, gedit, notepad++ and VS code. However, the main competitors of Vim are the ones in the same niche - command-line text editors including EMACS and Nano:
 * MACS is an extensible, customizable text editor. At its core, Emacs is a Lisp interpreter that just so happens to support text editing. However, it includes a bunch of plugins that greatly extend its functionality.
 * Nano is a text editor for Unix-like computing systems or operating environments using a command line interface. It is licensed under the GNU General Public License (GPL), thus it is very popular to use in command-line.
 
-## 1.6 Managing stakeholders
+### 1.6 Managing stakeholders
 
 In each project stakeholders have to be managed. To get an overview of the power and interest each stakeholder has on the realization of Vim a Power-Interest grid can be found in figure 1.
 
@@ -119,11 +120,12 @@ Sponsors donate money to Vim, which eventually goes to a charity. They donate mo
 
 Users have almost no power in the realization of Vim, but users stimulate the developers to work on Vim and thus have a little power. Users do have I high interest though, because they depend on Vim.
 
-# 2. Context view
+## 2. Context view
 
 In this paragraph we are going to describe relationships, dependencies, and interactions between the system (Vim project), its environment and the ecosystem in general. Firstly, the system scope is described, followed by the context model scheme and a detailed explanation of relationships with external entities.
 
-## 2.1 System scope and responsibilities
+### 2.1 System scope and responsibilities
+
 Vim is known as a stable editor and it is continuously developed as an open-source project. Its prominent features are listed below:
 * persistent, multi-level undo tree
 * extensive plugin platform
@@ -131,7 +133,8 @@ Vim is known as a stable editor and it is continuously developed as an open-sour
 * powerful search and replace features
 * integrates with many tools and platforms
 
-## 2.2 Context model
+### 2.2 Context model
+
 Figure 2 graphically displays the context view. The different components of the context view are explained below.
 
 ![context_view](images/image.png)
@@ -182,14 +185,15 @@ Vim can be extended by extensions and plugins created externally by people who a
 
 Vim has been adopted by many companies and organizations due to its popularity in the development circle. Adopters use Vim to edit, compile or organize their coding and ext-based files, and promote the tool to internal employees and managerial staff. The adopters include Lyft, Starbucks, CircleCI and more. Adopters are an external entity since it provides information data and user feedbacks to the developers.
 
-# 3. Merge decision strategy
+## 3. Merge decision strategy
+
 To get an insight into when pull requests (PRs) are accepted or rejected, multiple PRs have been analyzed. Based on this insight, a theory about the merge decision strategy has been formed.
 
-## 3.1 Criteria for pull requests to be analyzed
+### 3.1 Criteria for pull requests to be analyzed
 
 The PRs that have been chosen to be analyzed are relatively new, as they are all proposed in the last two months. Vim has been around for a long time and since we are interested in the current merge decision strategy it has been decided to look at relatively new PRs. Other criteria to decide whether a PR would be analyzed and included is the amount of comments on the PR and the amount of new information about the merge decision strategy it would offer. To get a complete picture about the merge decision strategy, approximately the same amount of accepted and rejected pull request have been analyzed.
 
-## 3.2 Information obtained from pull requests
+### 3.2 Information obtained from pull requests
 
 Often a PR gets accepted by Bram, the integrator, without any explanation and sometimes he comments "Thanks, I'll include it". In a second situation multiple people have a discussion about the PR and decide either that it can be merged or that the proposer has to alter the PR or someone else has to offer an alternative PR, and then it can be included. Sometimes Bram is included in those discussions and sometimes he isn't.  In a third situation Bram himself is not certain on whether to merge the PR and asks others to comment on the quality of the PR. The fourth possibility for a PR to be accepted is when a PR is proposed and Bram himself makes an alteration to the PR and includes that.
 
@@ -197,16 +201,18 @@ Of the closed PRs, not a lot are rejected. They might get rejected at first, but
 
 One of the mailing lists used is specifically for discussion about the current development of Vim, therefore often a lot of discussion takes place before a PR is made. This might be a reason why a lot of PRs get accepted.
 
-## 3.3 Theory about the merge decision strategy
+### 3.3 Theory about the merge decision strategy
+
 As there is only one integrator, Bram, he has the final say on whether to merge a PR. But as is stated above, he does listen to other contributors and even asks for input on whether to include a PR. If multiple people see the PR as added value for Vim, whether the change is small or of a larger size, the PR will be merged.
 
 In Appendix A a complete overview of the PRs analyzed can be found, including the information obtained from each of them.
 
-# 4. Development view
+## 4. Development view
 
 The development view describes the architecture that supports the software development process [1]. First the module structure will be discussed, second the common design model and third the codeline model.
 
-## 4.1  Module structure model
+### 4.1  Module structure model
+
 In this section a module structure model, which shows the organization of the source files into modules that contain related code [1], is discussed. Such a structure provides an overview of the source code which guides developers to understand and navigate the codebase.
 
 Before diving into the module structure diagram several points should be covered:
@@ -215,9 +221,8 @@ Before diving into the module structure diagram several points should be covered
 
 In figure 3 the core components of Vim may be observed. Each small rectangle represents a logical part of the software which mostly corresponds to a ```*.c``` file with a corresponding header file ```*.h```. Arrows indicate logical relationships within bigger modules, however, these relations are high level, they help to understand module interactions and are much more complex in the code. Each bigger square represents a logical group of multiple modules. Also, keep in mind that this grouping is arbitrary as files in C are not grouped, packaged or somehow logically separated.
 
- ![module_structure](images/component_model.png)
-
-Figure 3. Logical components of Vim project
+![module_structure](images/component_model.png)  
+**Figure 3. Logical components of Vim project**
 
 In order to explain logical relationship of components, lets start from the main loop, which is being run in `main` module and continue with logical interactions that happen inside of Vim.  The `main` module provides necessary initialization and gives control to commands group.
 
@@ -233,7 +238,7 @@ The `User interface` group obviously is responsible for correct visualization of
 
 Finally, another important part of Vim is 'Core': modules 'Vim' and 'Global' which are mostly included into other modules and contain state information and core code, that is being used in many different modules.
 
-## 4.2 Common design model
+### 4.2 Common design model
 
 A set of design constraints apply in the Vim project to maximize commonality across element implementations. The common processing and standardization of design is discussed in this paragraph.
 
@@ -258,7 +263,7 @@ A set of design constraints apply in the Vim project to maximize commonality acr
 
     - **Documentation:** The documentation of each folder and section of the Github repository is formulated by either Markdown or text format. With [`readme.md`](https://github.com/vim/vim/blob/master/README.md) as the main documentation for that session and possible [`contributing.md`](https://github.com/vim/vim/blob/master/CONTRIBUTING.md) for potential contributions to be submitted by developers.
 
-## 4.3 Codeline model
+### 4.3 Codeline model
 
 In this section code folder structure, building, releasing, testing and deploying procedures are discussed. The chapter is structured based on the "Codeline Models" chapter in Rozanski & Woods.
 
@@ -291,25 +296,28 @@ In terms of testing, the Vim team is using it's own script called Vimscript. It 
 Vim is using TravisCI for continuous integration. It runs tests and builds code for Linux and Mac environments after each commit (Windows is handled separately).
 The tool also generates CodeCov report.
 
-# 5. Technical debt
+## 5. Technical debt
 
 Vim is a very mature project, activity has been mostly steady throughout its 28 years and the core team, lead by  Bram, has also been stable throughout. For the last decade or so Vim has been fairly static, not many new features  have been implemented, there just aren't many new features left to implement, and so the focus has been more on  improving the smaller things. Unfortunately the git history "only" goes back to 2004 but based on comments made by  Bram and our analysis of the git history it is clear that this shift in focus from implementing to improving has  drastically reduced the technical debt within the code. However a mature project such as Vim suffers from a different kind of technical debt; organisational debt. Through the years the team around Vim has developed a certain way of  operating and even though this way of operating may have got Vim to where it is today there are several "organisational smells" that should be considered.
 
 First organisational debt is discussed, second the bus factor, third the automated analysis, fourth the hotspots, fifth the test coverage and as last a conclusion is provided.
 
-## 5.1 Organisational debt
+### 5.1 Organisational debt
+
 The backlog for Vim is quite large and non-centralised. There is a large (6k lines) `TODO.txt` file with a list of issues, there is also a backlog in Git and finally there are roughly 800 TODO items in the code itself. Some of these
 are connected, for example with git issue numbers, but there is no centralized list of issues or overview available. Additionally the organization of communications regarding bugs, feature requests and issues is quite complicated,
 consisting of a combination of Google Groups, Mailing Lists and Github's inbuilt features. This system works well  for current members of the community, who are familiar with the system and know it well, however it is unnecessarily
 complex. This is typical of many traits in the Vim community, the complexity is well understood by experienced and prominent members but for newer or less experienced members it creates a higher barrier of entry reducing.
 
-## 5.2  Bus factor
+### 5.2  Bus factor
+
 The Bus Factor for Vim is 1. If Bram gets hit by a bus the project will suffer greatly. Bram is the sole Git contributor, by far the most active in commenting on issues and Vim is his creation. Several other members of the community are also important and, combined, would probably have the knowledge needed to continue the project but short-term progress would be severely limited
 
-## 5.3 Automated analysis
+### 5.3 Automated analysis
+
 According to our analysis conducted with SonarQube Vim receives an A for technical debt, with an estimated 224 days of work required to eliminate the debt. 224 days might seem like a lot but considering there are a total of 348.000 LoC in the codebase that is not too bad. But in order to get a more focused look we also analysed the git history using CodeScene. CodeScene is a tool that analyses git commits and indicates which files change most frequently and thus should be prioritized with regards to technical debt.
 
-##### Hotspots
+#### Hotspots
 
 Using CodeScene we identified 7 critical hotspots which account for 17% of the total LoCs but were edited in just under 40% of the commits analysed. Based on this we decided to further analyse the technical debt and code smells
 found in those 7 classes. As can be seen in table 3 technical debt for each of these classes seems to be consistent with the size of each class compared to the rest of the project. However we found a total of 174 functions
@@ -329,21 +337,22 @@ across these 7 classes whose cognitive complexity was above the 25 recommended b
 
 Table 3. List of results from CodeScene and SonarQube
 
-##### Test Coverage
+#### Test Coverage
 
 Vim has been using Coveralls to monitor test coverage since 2015 and during that time coverage has gone up from a steady 58% to just under 80% today. The Vim community is aware of the need for improved coverage and therefore any PR
 that reduces test coverage gets flagged, however this does not necessarily mean that the PR will be rejected. Aside from the level of coverage there does not seem to be much of a structure to the test suite. Almost all tests are contained in a directory called `/src/testdir` with only a few tests contained in subdirectories and while newer tests have names indicative of what is being tested older tests are simply identified with a number. All of this combined leads to a fairly disorganized test suite which will continue to grow and become even more disorganized if nothing is done. If the Vim community is sincere in their goal to improve the test suite this problem needs to be addressed.
 
-## 5.4 Conclusion
+### 5.4 Conclusion
+
 Ultimately Technical Debt is a measurement of the cost of introducing new features or improving old ones. It is fair to say that in the case of Vim this cost is very low. We estimate that over the last year there have been on average around 20 new releases every week. An informal analysis shows that the time from when a bug is reported in Git until it a fix has been released is usually less than a week. For the long-term future of Vim there are several  organisational issues that need to be fixed, these range from simply inconveniencing new community members to
 possibly endangering the future of Vim. Vim has gotten to the point where it will soon be time to consider what happens when core members retire due to old age and new members need to take their place, before that time comes, Vim will have to have made some changes.
 
 
-# 6. Evolution perspective
+## 6. Evolution perspective
 
 The evolution perspective describes all of the possible types of changes that a system may experience during its lifetime. First a brief history of the development of Vim is provided, second the evolution of Vim is discussed in which especially the lack of documentation, the context view, development view, technical debt and competitors are discussed.
 
-## 6.1 History of Vim
+### 6.1 History of Vim
 
 Bram Moolenaar released the first version of Vim in 1991 and continued developing Vim during the years. An overview of the history of Vim can be found in figure 4 [8].
 
@@ -351,7 +360,8 @@ Bram Moolenaar released the first version of Vim in 1991 and continued developin
 
  Figure 4. History of Vim
 
-## 6.2 Evolution of Vim
+### 6.2 Evolution of Vim
+
 Vim is currently in a stable deployed state with a stable core. Vim is highly flexible and many developers personalize Vim by adding add-ons.  
 The Developer Survey Results of Stack Overflow of 2018 show that Vim has a market share of around 25% [9]. Since so many developers are used to the way Vim works and think Vim is sufficient for now, they probably will not change to another text editor any time soon. But what will happen to Vim in the coming years when the technical environment changes? We don’t know what technical developments will come or when they will come, but we can assess how Vim will do in future technical environments.
 
@@ -375,11 +385,11 @@ Because of the lack of documentation, new developers have a high probability of 
 
 Because of multiple reasons Vim might lose market share in the future. The first reason is because Vim is mostly written in C and this programming language is becoming less used and learned, because of this less people will be able to understand and alter Vim’s code. The second reason is because of Vim’s interface, the current interface offers a lot of possibilities that a developer might want and need, but it looks more old-fashioned compared to some competitors. The third reason is because of the functions Vim offers, some developers prefer other functions than the ones Vim offers and thus decide to use a competitor instead of Vim.
 
-# 7. Conclusion
+## 7. Conclusion
 
 After close to 30 years of existence, Vim is a mature project, set in its ways on knowing exactly what it wants to be, its community is as active as ever with a considerable crowd participating in discussions every day. The user group is stable and under the leadership of its creator, Bram Moolenaar, so is the development community. Despite being created in a world where memory was a serious constraint, the internet didn't exist and most of current programming languages and tools such as Github or Java were a distant future, Vim has managed to adapt to the incredible changes in IT over the last three decades and is as relevant as ever. Yet certain core elements have not been adapted to more modern views on software architecture, especially parts of file organization, workflow and communication patterns. Today the main focus of Vim is to continue to make sure that Vim will be available in as many platforms as possible and maintenance of current functionality, the team is semi-actively working towards improving things such as test coverage and documentation. There is no reason to expect anything other than a bright future for Vim.
 
-# References
+## References
 
 [1] Rozanski, N., &amp; Woods, E. (2011). _Software systems architecture: working with stakeholders using viewpoints and perspectives_. Addison-Wesley.  
 [2] Gousios, G. (2014). How do project owners use pull requests on Github? Retrieved February 15, 2019, from http://www.gousios.gr/blog/How-do-project-owners-use-pull-requests-on-Github.html  
@@ -391,7 +401,7 @@ After close to 30 years of existence, Vim is a mature project, set in its ways o
 [8] Moolenaar, B. (2016). Vim 25 presentation by Bram Moolenaar on 2016 November 2 [Video]. Retrieved from https://www.youtube.com/watch?v=ayc_qpB-93o&feature=youtu.be  
 [9] Stack Overflow (2018). StackOverflow's developer survey results 2018. https://insights.stackoverflow.com/survey/2018/#technology-most-loved-dreaded-and-wanted-platforms  
 
-# Appendix A: Analyzis of pull requests
+## Appendix A: Analysis of pull requests
 
 This appendix contains a complete overview of the PRs analyzed for the merge decision strategy, including the information obtained from each of them. The PRs are grouped into accepted or rejected PRs.
 
