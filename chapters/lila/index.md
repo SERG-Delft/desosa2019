@@ -1,7 +1,7 @@
 ---
 layout: default
 project: lila
-title: Lila
+chaptertitle: Lila
 chapter: true
 ---
 

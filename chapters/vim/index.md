@@ -1,7 +1,7 @@
 ---
 layout: default
 chapter: true
-title: Vim
+chaptertitle: Vim
 project: vim
 ---
 

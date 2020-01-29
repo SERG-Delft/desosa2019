@@ -1,7 +1,7 @@
 ---
 layout: default
 project: keras
-title: Keras
+chaptertitle: Keras
 chapter: true
 ---
 

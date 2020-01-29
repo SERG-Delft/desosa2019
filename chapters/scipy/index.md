@@ -1,7 +1,7 @@
 ---
 layout: default
 project: scipy
-title: SciPy
+chaptertitle: SciPy
 chapter: true
 ---
 

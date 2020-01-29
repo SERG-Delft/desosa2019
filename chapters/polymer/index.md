@@ -1,7 +1,7 @@
 ---
 layout: default
 project: polymer
-title: "Polymer"
+chaptertitle: "Polymer"
 chapter: true
 ---
 

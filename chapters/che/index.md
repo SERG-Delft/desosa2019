@@ -1,5 +1,5 @@
 ---
-title: Eclipse Che
+chaptertitle: Eclipse Che
 cover-image: images/eclipse-che.png
 chapter: true
 layout: default

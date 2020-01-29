@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: Servo
+chaptertitle: Servo
 project: servo
 layout: default
 ---

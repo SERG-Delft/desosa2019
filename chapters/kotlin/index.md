@@ -1,7 +1,7 @@
 ---
 layout: default
 project: kotlin
-title: Kotlin
+chaptertitle: Kotlin
 chapter: true
 ---
 

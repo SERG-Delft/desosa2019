@@ -1,7 +1,7 @@
 ---
 layout: default
 project: mapsme
-title: MAPS.ME
+chaptertitle: MAPS.ME
 chapter: true
 ---
 # MAPS.ME

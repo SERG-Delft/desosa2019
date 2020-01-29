@@ -1,7 +1,7 @@
 ---
 layout: default
 project: powershell
-title: PowerShell
+chaptertitle: PowerShell
 chapter: true
 ---
 

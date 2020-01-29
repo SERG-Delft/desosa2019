@@ -1,7 +1,7 @@
 ---
 layout: default
 project: gutenberg
-title: Gutenberg
+chaptertitle: Gutenberg
 chapter: true
 ---
 

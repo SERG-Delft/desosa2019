@@ -1,7 +1,7 @@
 ---
 layout: default
 project: pandas
-title: "Pandas"
+chaptertitle: "Pandas"
 chapter: true
 ---
 

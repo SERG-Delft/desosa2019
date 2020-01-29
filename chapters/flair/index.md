@@ -1,7 +1,7 @@
 ---
 layout: default
 project: flair
-title: "Flair"
+chaptertitle: "Flair"
 chapter: true
 ---
 
