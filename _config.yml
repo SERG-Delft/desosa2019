@@ -4,4 +4,4 @@ relative_permalinks: false
 timezone: UTC
 exclude: ['README.md','test_links.rb','Makefile','preamble.tex']
 
-url: "https://serg-delft.github.io/"
+url: "https://serg-delft.github.io/desosa2019"
