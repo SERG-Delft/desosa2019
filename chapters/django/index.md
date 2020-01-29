@@ -1,7 +1,7 @@
 ---
 layout: default
 project: django
-title: Django
+chaptertitle: Django
 chapter: true
 ---
 

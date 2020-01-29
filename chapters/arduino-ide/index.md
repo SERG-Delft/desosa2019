@@ -1,7 +1,7 @@
 ---
 layout: default
 project: arduino-ide
-title: Arduino IDE
+chaptertitle: Arduino IDE
 chapter: true
 ---
 

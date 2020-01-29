@@ -1,7 +1,7 @@
 ---
 layout: default
 project: zulip
-title: Zulip
+chaptertitle: Zulip
 chapter: true
 ---
 

@@ -1,19 +1,17 @@
 ---
-title: Eclipse Che
+chaptertitle: Eclipse Che
 cover-image: images/eclipse-che.png
 chapter: true
 layout: default
 project: eclipse-che
-author:
-  - Gerben Oolbekkink (gjwoolbekkink)
-  - Ana Šemrov (asemrov)
-  - Yorick de Vries (yorickdevries)
-  - Rukai Yin (ryin)
 ---
 
 <!-- NOTE explicit page break -->
 
 # Eclipse Che
+
+**Gerben Oolbekkink (gjwoolbekkink), Ana Šemrov (asemrov), Yorick de Vries (yorickdevries), Rukai Yin (ryin)**
+
 
 ## Introduction
 

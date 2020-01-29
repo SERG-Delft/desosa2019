@@ -1,7 +1,7 @@
 ---
 layout: default
 project: home-assistant
-title: Home Assistant
+chaptertitle: Home Assistant
 chapter: true
 ---
 

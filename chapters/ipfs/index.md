@@ -1,7 +1,7 @@
 ---
 layout: default
 project: ipfs
-title: IPFS
+chaptertitle: IPFS
 chapter: true
 ---
 

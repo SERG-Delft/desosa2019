@@ -1,7 +1,7 @@
 ---
 layout: default
 project: cockpit
-title: Cockpit
+chaptertitle: Cockpit
 chapter: true
 ---
 

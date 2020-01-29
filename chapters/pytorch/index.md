@@ -1,7 +1,7 @@
 ---
 layout: default
 project: pytorch
-title: PyTorch
+chaptertitle: PyTorch
 chapter: true
 ---
 

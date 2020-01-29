@@ -1,7 +1,7 @@
 ---
 layout: default
 project: react-native
-title: "React Native"
+chaptertitle: "React Native"
 chapter: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 project: flutter
-title: Flutter
+chaptertitle: Flutter
 chapter: true
 ---
 

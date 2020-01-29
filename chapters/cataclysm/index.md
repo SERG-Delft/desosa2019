@@ -1,7 +1,7 @@
 ---
 layout: default
 project: cataclysm
-title: Cataclysm
+chaptertitle: Cataclysm
 chapter: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 project: spring-boot
-title: Spring Boot
+chaptertitle: Spring Boot
 chapter: true
 ---
 

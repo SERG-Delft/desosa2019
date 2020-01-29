@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: Zephyr
+chaptertitle: Zephyr
 project: zephyr
 layout: default
 ---

@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: Terraform
+chaptertitle: Terraform
 project: terraform
 layout: default
 ---

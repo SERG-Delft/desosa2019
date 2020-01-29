@@ -1,6 +1,6 @@
 ---
 chapter: true
-title: Poco
+chaptertitle: Poco
 project: poco
 layout: default
 ---
