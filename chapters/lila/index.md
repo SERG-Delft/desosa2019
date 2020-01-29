@@ -377,7 +377,7 @@ List of rejected pull requests:
 9. https://github.com/ornicar/lila/pull/2338
 10. https://github.com/ornicar/lila/pull/3268
 
-## References
+## References / Footnotes
 
 [^ornicar]: “Ornicar github.” [Online]. Available: https://github.com/ornicar. [Accessed: 18-Mar-2019].
 [^lichess-about]: “About lichess.” [Online]. Available: https://lichess.org/about. [Accessed: 01-Apr-2019].
