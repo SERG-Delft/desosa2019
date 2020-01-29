@@ -3,7 +3,6 @@ layout: default
 project: mapsme
 title: MAPS.ME
 chapter: true
-author: Henk Grent; Mark Haakman; Frenk van Mil; Casper Schröder;
 ---
 # MAPS.ME
 **By [Henk Grent](https://github.com/HenkGrent),
