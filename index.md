@@ -89,6 +89,7 @@ We value your feedback on any of the material in the book. For your feedback, yo
 We would like to thank:
 
 * Anand Kanav, Arjan Langerak, and Bernd Kreynen, who did an amazing job as teaching assistants to the course
+* Casper Boone and Stavrangelos Gamvrinos, who helped integrating the chapters into the DESOSA book
 * Our 2019 guest speakers Mike Ciavarella, Bert Wolter, Ayushi Rastogi, Xavier Devroey, Erci Greuter, Marco di Biase, and Matthias Noback.
 * Alex Nederlof and Michael de Jong who were instrumental in the earlier editions of this course.
 * All open source developers who helpfully responded to the student's questions and contributions.
