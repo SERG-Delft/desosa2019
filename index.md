@@ -119,7 +119,13 @@ We would like to thank:
 [aosa]: http://aosabook.org/
 
 
-## Copyright and License
+## Copyright, License and Availability
+
+This book is available in [html] (easy on line reading, chapter by chapter), [pdf] (self contained, 726 pages) and [epub]  (for e-reader convenience) formats.
+
+[html]: https://se.ewi.tudelft.nl/desosa2019/index.html
+[pdf]: output/desosa2019.pdf
+[epub]: output/desosa2019.epub
 
 The copyright of the chapters is with the authors of the chapters. All chapters are licensed under the [Creative Commons Attribution 4.0 International License][cc-by].
 Reuse of the material is permitted, provided adequate attribution (such as a link to chapter on the [DESOSA book site][desosa]) is included.
