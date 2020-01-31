@@ -11,6 +11,7 @@ RESOURCE_PATH=$(subst $(EVAL) $(EVAL),:,$(CHAPTERS)):./
 
 EXTRACTDIR=zzz-epub-extract
 TARGET_DIR=target
+OUTPUT_DIR=output
 
 EPUB_OUT=$(TARGET_DIR)/$(DOC).epub
 PDF_OUT=$(TARGET_DIR)/$(DOC).pdf
@@ -72,4 +73,11 @@ docker:
 
 serve:
 	cd _site && python -m SimpleHTTPServer 4000
+
+release:
+	mkdir -p $(OUTPUT_DIR)
+	$(MAKE) pdf
+	cp $(PDF_OUT) $(OUTPUT_DIR)
+	$(MAKE) epub
+	cp $(EPUB_OUT) $(OUTPUT_DIR)
 
